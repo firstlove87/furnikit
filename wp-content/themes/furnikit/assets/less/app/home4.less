@@ -1,0 +1,66 @@
+.home-style4{
+	.furnikit_breadcrumbs{
+		display:none;
+	}
+	.zr-category-slider2{
+		margin-bottom: 70px;
+	}
+	.wpb_revslider_element {
+		margin-bottom: 0;
+	}
+}
+.subcribe{
+	max-width: 1300px; margin: 0 10%; overflow: hidden;	
+	h3{
+		font-size: 22px; text-transform: capitalize; float: left; position: relative; padding: 15px 0 0 155px;
+		.rtl &{
+			padding: 15px 155px 0 0; float: right;
+		}
+		&:before{
+			content:""; width: 131px; height: 48px; background: url(../assets/img/icon-mail.png) center center no-repeat;
+			position: absolute;	top: 0; left: 0;
+			.rtl &{
+				left: auto; right: 0;
+			}
+		}
+		label{
+			color: @color;
+		}
+	}
+	.mc4wp-form{
+		float: right; margin-top: 5px;
+		.rtl &{
+			float: left;
+		}
+		p{
+			margin-bottom: 0;
+		}
+		.mc4wp-form-fields{
+			overflow: hidden; min-width: 350px;
+		}
+		input[type="email"]{
+			border:1px @body-color solid; border-radius: 0;
+			color:#8c8c8c; font-size: 12px;
+			height:40px; padding: 0 15px; width: 65%; float: left;
+			.rtl &{
+				float: right;
+			}
+		}
+		input[type="submit"]{
+			border:0; width: 35%; font-size: 11px; padding: 0; border-radius: 0;
+			background-color:@body-color;
+			height:40px; line-height: 40px;
+			color:#fff;	text-transform:uppercase;
+			text-align: center;	font-weight:500; float: left;
+			.rtl &{
+				float: right;
+			}
+			&:hover{
+				background-color:#3b3b3b;
+			}
+		}
+		.mc4wp-success{
+			color: @body-color;
+		}
+	}
+}

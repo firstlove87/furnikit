@@ -1,0 +1,73 @@
+.header{
+	&.header-style2{
+		position:relative; padding: 0 15px;
+		.furnikit-logo{
+			margin-right: 50px;	padding: 30px 0;
+			.rtl &{
+				margin-right: 0; margin-left: 50px;
+			}
+		}
+		.main-menu{
+			padding: 13px 0;
+		}
+		.header-right{
+			.header-right-inner{
+				.header-login{
+					padding: 38px 0; border-right: 1px solid @border-color;
+					.rtl &{
+						border-right: none; border-left: 1px solid @border-color;
+					}
+					.top-login > a{
+						display: block;	padding: 0 30px;text-transform: uppercase; font-size: 11px;	letter-spacing: 2px;
+					}
+				}
+			}
+		}
+		.sticky-menu{
+			position: fixed; z-index: 999; background: #fff; box-shadow: 0 1px 1px #ccc; width:100% !important; .transition(all 0.2s);
+			.header-right .header-right-inner .header-login{
+				border: none;
+				.rtl &{
+					border: none;
+				}
+			}
+		}
+		.header-bar .search-cate .icon-search{
+			float: none;
+		}
+		.search-cate .top-form.top-search{
+			position: fixed;
+			bottom: auto;
+		}
+	}
+}
+.admin-bar .header-style2 .search-cate .top-form.top-search{
+	top: 30px;
+}
+.header-bar{
+	position: absolute; top: 0; right: 0; width: 81px; z-index: 999; text-align: center; background: transparent;
+	.search-cate, .header-wishlist, .right-header{
+		display: block;
+	}
+	.search-cate{
+		margin-top: 0;
+		.icon-search{
+			margin: 0 auto;
+		}
+	}
+	.top-form-minicart.furnikit-minicart{
+		float: none;
+		.rtl &{
+			float: none;
+		}
+		.top-minicart-icon{
+			float: none; margin: 0 auto;
+			.rtl &{
+				float: none;
+			}
+		}
+	}
+	.header-wishlist{
+		margin-top: 0;
+	}
+}

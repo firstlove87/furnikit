@@ -1,0 +1,1 @@
+<?php furnikit_product_listing_check(); ?>

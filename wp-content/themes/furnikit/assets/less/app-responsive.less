@@ -1,0 +1,117 @@
+@import "bootstrap/responsive-utilities.less";
+@import "responsive/max-1280.less";
+@import "responsive/min-1200.less";
+@import "responsive/max-1199.less";
+@import "responsive/min-992-max-1199.less";
+@import "responsive/max-991.less";
+@import "responsive/min-768-max-991.less";
+@import "responsive/max-767.less";
+@import "responsive/max-640.less";
+@import "responsive/min-481-max-640.less";
+@import "responsive/max-480.less";
+@import "responsive/max-360.less";
+@import "responsive/max-320.less";
+
+@media (min-width: 1368px){
+	.wp-comingsoon{
+		min-height:980px;
+	}
+}
+@media (max-width: 1366px){
+	
+}
+@media (min-width: 1200px) and (max-width: 1366px) {
+	
+}
+
+@media (min-width: 1200px) {    
+	.clear_lg {
+			clear: both;
+	}
+	.rtl{
+		[class*="col-lg-"], [class*="col-md-"], [class*="col-sm-"], [class*="col-xs-"] {
+			float: right;
+		}
+	}
+}
+@media (max-width: 1199px) and ( min-width: 992px ) {
+	.clear_md {
+			clear: both;
+	}
+	.rtl{
+		[class*="col-md-"], [class*="col-sm-"], [class*="col-xs-"] {
+			float: right;
+		}
+	}
+	.wpb_revslider_element .rev_slider_wrapper{
+		ul > li.tp-revslider-slidesli  .tp-parallax-wrap .tp-caption.rev-btn{
+			display:none !important;
+		}
+	}
+}
+
+@media (max-width: 991px) and ( min-width: 768px ) { 
+	// .clear_sm {
+			// clear: both;
+	// }
+	#cpanel-form a.cpanel-control {
+			display: none;
+	}
+	.rtl{
+		[class*="col-sm-"], [class*="col-xs-"] {
+			float: right;
+		}
+	}
+}
+@media (max-width: 767px) { 
+	.clear_xs {
+			clear: both;
+	}
+	.rtl{
+		.block-text1-home4{
+			[class*="col-lg-"]{
+				float:none;
+			}
+		}
+		[class*="col-xs-"] {
+			float: right;
+		}
+	}
+	.sidebar-row{
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		aside#left{
+			order: 1;
+			width: 100%;
+		}
+		aside#right{
+			order: 1;
+			width: 100%;
+		}
+		> div{
+			width: 100%;
+		}
+	}
+	.woocommerce-account #contents .entry-content .woocommerce-MyAccount-content,
+	.woocommerce-account #contents .entry-content nav.woocommerce-MyAccount-navigation{
+		width: 100%;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+}
+@media (max-width: 479px) { 
+	[class*="col-xs-"]{
+		float: none;
+		//width:auto;
+	}
+	.rtl{
+		[class*="col-xs-"] {
+			float: none;
+		}
+	}
+}
+

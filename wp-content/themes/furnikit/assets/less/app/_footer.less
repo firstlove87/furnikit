@@ -1,0 +1,86 @@
+.footer {
+	> .footer-top-wrapper {
+		padding: 0 15px;
+		>.container{
+			color: #eee; max-width: 1740px;
+			text-align: center;	
+			background: #222;
+			padding: 79px 15px 24px 15px;
+			a{
+				color: #eee;
+				&:hover{
+					color: @color;
+				}		
+			}
+			h2.widgettitle{
+				font-size: 20px; color: #fff;margin-bottom: 20px; font-weight: normal;
+			}
+			.footer-contact{
+				.wpb_single_image {
+					margin-bottom: 25px;
+				}
+			}
+			.footer-info{
+				padding: 0 70px;			
+				.footer-info-desc{
+					margin-bottom: 31px; line-height: 25px; .opacity(0.5);
+				}
+				a.footer-info-more{
+					display: inline-block; font-size:11px; text-transform: uppercase;
+					padding: 10px 30px 7px 30px; border: 1px solid #fff; .transition(all 0.3s);					
+					&:hover{
+						background: #fff; .transition(all 0.3s);
+					}
+				}
+			}
+			.widget_nav_menu{
+				ul{
+					> li{
+						a{
+							display: block;	padding: 10px 0; .opacity(0.5); color: #fff; .transition(all 0.3s);
+							&:hover{
+								.opacity(1); .transition(all 0.3s);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.footer-copyright{
+	font-size: 14px; padding: 35px 0; text-align: center; color: @body-color; position: relative;
+	p{
+		margin: 0;
+	}
+	a{
+		color: @color;
+		&:hover{
+			color: darken(@color, 10 );
+		}
+	}
+	.copyright-text{
+		position: absolute; left: 0; right: 0; text-align: center;
+	}
+	.sidebar-copyright{
+		position: relative; z-index: 9;
+		.socials-footer{
+			margin: 3px 0 0 0; list-style: none;
+			li{
+				display: inline-block; vertical-align: top;
+				a{
+					color: @body-color; .transition(all 0.3s); padding: 5px 15px 5px 0;
+					.rtl &{
+						padding: 5px 0 5px 15px;
+					}
+					&:hover{
+						color: @color; .transition(all 0.3s);
+					}
+				}
+			}
+		}
+		.widget_media_image a img{
+			margin-bottom: 0;
+		}
+	}
+}

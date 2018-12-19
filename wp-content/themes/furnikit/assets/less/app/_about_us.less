@@ -1,0 +1,159 @@
+.zr-count{
+	.flex-display( flex ); .flex-wrap(wrap); 
+	background: url( ../assets/img/bg_childcat.jpg); padding: 48px 0 40px 0; margin-bottom: 73px;
+	.item{
+		width:25%; text-align: center;
+		.wrap{
+			display: inline-block; vertical-align: top;
+			i.fa{
+				font-size: 36px; color: #fff; background: @body-color; width: 70px; height: 70px; line-height:70px; margin-bottom:25px;
+			}
+			.content{
+				h3{
+					font-size: 30px; color: @body-color; font-weight: bold; margin-bottom: 7px; .transition(all 0.3s);
+				}
+				p{
+					color: @body-color; margin: 0; text-transform: uppercase;
+				}
+			}
+			&:hover{
+				i.fa{
+					background: @color; .transition(all 0.3s);
+				}
+				.content h3{
+					color: @color; .transition(all 0.3s);
+				}
+			}
+		}
+	}
+}
+.zr-ourteam-slider{
+	.title-sytle1; margin-bottom: 60px;
+	.resp-slider-container{
+		.slick-slider {
+			.slick-list {
+				margin: 0 -15px;
+			}
+			.item {
+				padding: 0 15px;
+				text-align: center;
+				.item-wrap {
+					background: url( ../assets/img/bg_childcat.jpg);
+					.item-img {
+						img {
+							margin: auto; width: 100%;
+						}
+						img:hover {
+							.opacity(0.75);
+						}
+					}
+					.item-content {
+						.item-top{
+							background: #fff; margin: 0 20px; top: -20px; position: relative; padding: 20px 0;
+						}
+						h3 {
+							font-size: 14px; font-weight: 600; text-transform: uppercase; color: @body-color;
+						}
+						.team-info {
+							margin-bottom: 3px; font-size: 12px;
+						}
+					}
+					.item-social {
+						.team-social {
+							display: inline-block;
+							vertical-align: top;
+							margin: 5px 2px;
+							a {
+								display: inline-block;
+								vertical-align: top;
+								width: 46px;
+								height: 46px;
+								line-height: 46px;
+								text-align: center;
+								font-size: 14px;
+								color: #fff;
+								background-color: #999999;
+								.border-radius(100%);
+								.transition(all .3s);
+								&:hover {
+									background-color: @color;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.content-wrap >.vc_column-inner{
+	max-width: 1200px; margin: 0 auto;
+}
+.about-top{
+	.title{
+		h3{
+			position: relative; text-transform: capitalize; text-align: center; font-weight: bold; font-size: 40px; margin-bottom: 72px;
+			&:before{
+				content: "";width: 40px;height: 2px;background: @color;position: absolute; bottom: -22px; left: 50%; margin-left: -20px;
+			}
+		}
+	}
+	.vc_tta-container{
+		.vc_tta-tabs-container{
+			margin-bottom: 46px !important;
+			ul.vc_tta-tabs-list{
+				border: 1px @border-color solid; margin: 0;
+				.vc_tta-tab{
+					border-width: 0 1px 0 0 !important; background: #fff; margin: 0 !important; width: 33.332%; text-align: center;
+					border-color: @border-color; border-style: solid;
+					.rtl &{
+						border-width: 0 0 0 1px !important;
+					}
+					a{
+						border: none !important; border-radius: 0; background: #fff !important; text-transform: uppercase; font-weight: 600;
+					}
+					&.vc_active, &:hover{
+						a{
+							background: @body-color !important; color: #fff;
+						}
+					}
+					&:last-child{
+						border-right: none;
+					}
+				}
+			}
+		}
+		.vc_tta-panels-container{
+			.vc_tta-panels{
+				background: #fff !important; border: none !important;
+				.vc_tta-panel-body{
+					padding: 0 !important;
+				}
+			}
+		}
+	}
+}
+.tab-about-content{
+	padding-top: 13px;
+	h3{
+		font-size: 16px; color: #222; position: relative; text-transform: uppercase; padding: 5px 0; margin-bottom: 34px;
+		&:before{
+			content: ""; width: 100px; height: 1px; background: #222; position: absolute; bottom: 4px; left: 0;
+		}
+	}
+	.des1{
+		font-size: 40px; color: #222; text-transform: capitalize; margin-bottom:35px; font-weight: bold;
+	}
+	p{
+		color: rgba(0, 0, 0, 0.7); line-height: 28px; margin-bottom: 20px; font-size: 15px;
+	}
+	.readmore{
+		a{
+			font-size: 11px;border: 1px @body-color solid; text-transform: uppercase;padding: 5px 33px;
+			display: inline-block;vertical-align: top; .transition(all 0.3s);
+			&:hover{
+				background: @body-color; color: #fff; .transition(all 0.3s);
+			}
+		}
+	}
+}

@@ -1,0 +1,182 @@
+.contact-right{
+	.flex-display( flex ); .flex-wrap(wrap);
+	background: url( ../assets/img/bg_childcat.jpg); padding: 20px; margin-bottom: 30px;
+	.item{
+		width:50%; text-align: center; background: #fff; padding: 32px 0;
+		a{
+			padding: 20px 20px; display: block;
+			i.fa{
+				font-size: 36px; color: #fff; background: @body-color; width: 70px; height: 70px; line-height:70px; margin-bottom:20px;
+			}
+			.content{
+				h3{
+					font-size: 20px; color: @body-color; .transition(all 0.3s);
+				}
+				p{
+					color: @body-color; .opacity(0.7); margin: 0;
+				}
+			}
+			&:hover{
+				i.fa{
+					background: @color; .transition(all 0.3s);
+				}
+				.content h3{
+					color: @color; .transition(all 0.3s);
+				}
+			}
+		}
+		&.item-1, &.item-3{
+			border-right: 1px @border-color solid;
+		}
+		&.item-1, &.item-2{
+			border-bottom: 1px @border-color solid;
+		}
+	}
+}
+.contact-mail{
+	text-align:center;
+	.block-title{
+		margin-bottom: 20px;
+		h3{
+			font-size: 20px;color: #222;text-align: center;position: relative;
+			text-transform: uppercase;padding: 5px 0; font-weight: 600;
+			&:before{
+				content: ""; width: 140px; height: 2px; background: #222; position: absolute; bottom: 0; left: 50%; margin-left: -70px;
+			}
+		}
+	}
+	.des{
+		margin-bottom: 30px; color: rgba(0, 0, 0, 0.7); line-height: 24px;
+	}
+	.wpcf7{
+		.conf-name, .conf-mail, .conf-sub{
+			width: 32%; float: left; margin-bottom: 20px; overflow: hidden;
+			.rtl &{
+				float: right;
+			}
+			input{
+				width: 100%;
+				.rtl &{
+					text-align: right;
+				}
+			}
+			input::-webkit-input-placeholder {
+				color: #555;
+			}
+			input::-moz-placeholder {  
+				color: #555;  
+			}
+			input:-ms-input-placeholder {  
+				color: #555; 
+			}
+			.wpcf7-form-control-wrap{
+				input{
+					padding: 10px 20px; .border-radius(0);
+				}
+			}
+		}
+		.conf-name, .conf-mail{
+			margin-right: 2%;
+			.rtl &{
+				margin-right: 0; margin-left: 2%;
+			}
+		}
+		.your-message{
+			textarea{
+				.border-radius(0);
+				.rtl &{
+					text-align: right;
+				}
+			}
+			textarea::-webkit-input-placeholder {
+				color: #555;
+			}
+			textarea::-moz-placeholder {  
+				color: #555;  
+			}
+			textarea:-ms-input-placeholder{ 
+				color: #555; 
+			}
+		}
+		.wpcf7-submit{
+			padding: 0 15px; .border-radius(0); background: @body-color; .transition(all 0.3s); border: none; font-weight: bold;
+			&:hover{
+				background: @color; .transition(all 0.3s); border: none;
+			}
+		}
+		.ajax-loader{
+			margin-top: 23px;
+			.rtl &{
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+.wpcf7{
+	.wp-input {
+		margin: 0 -15px;
+		.wpcf7-form-control-wrap{
+			width:33.333%;
+			float: left;
+			padding: 0 15px;
+			input{
+				width:100%;.border-radius(0);
+			}
+			input::-webkit-input-placeholder {
+				color: #555;
+			}
+			input::-moz-placeholder {  
+				color: #555;  
+			}
+			input:-ms-input-placeholder {  
+				color: #555; 
+			}
+			.wpcf7-text{
+				height:40px;
+				border:1px solid @border-color;
+				font-size:13px;
+				color:#555;
+				padding:10px 20px;
+				margin-bottom:20px;
+
+			}
+		}
+	}
+	textarea{
+		padding:10px 20px;
+		height:40px;
+		border:1px solid @border-color;
+		font-size:13px;
+		width:100%;
+		min-height:150px;
+		.border-radius(0);
+	}
+	textarea::-webkit-input-placeholder {
+		color: #555;
+	}
+	textarea::-moz-placeholder {  
+		color: #555;  
+	}
+	textarea:-ms-input-placeholder {  
+		color: #555; 
+	}
+	&.your-message{
+		float:none; clear:both;
+	}
+	.wpcf7-submit{
+		margin-top:10px;
+		color:#fff; line-height: 40px;
+		font-size:14px;
+		text-transform:uppercase;
+		border:0;
+		background-color:@body-color;
+		padding:0 30px;
+		.border-radius(0);
+		.rtl &{
+			float: right;
+		}
+		&:hover{
+			background-color:@color;
+		}
+	}
+}

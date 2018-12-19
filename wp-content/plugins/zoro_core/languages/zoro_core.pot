@@ -1,0 +1,897 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ZR Core\n"
+"POT-Creation-Date: 2017-02-07 10:49+0700\n"
+"PO-Revision-Date: 2016-11-16 11:28+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;esc_html__;_e;_x;esc_html_e;_n;esc_attr__;"
+"esc_attr_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: zr-core.php:331
+msgid "Home"
+msgstr ""
+
+#: zr-core.php:404 zr-core.php:419
+msgid "Archives for"
+msgstr ""
+
+#: zr-core.php:423
+msgid "You searched for"
+msgstr ""
+
+#: zr-core.php:426
+msgid "Error 404: Page not found"
+msgstr ""
+
+#: zr-core.php:676
+msgid "enjoy it"
+msgstr ""
+
+#: zr-core.php:681 zr-core.php:708
+msgid "Don't show this popup again!"
+msgstr ""
+
+#: zr-core.php:699
+msgid "Please active mailchimp plugin first!"
+msgstr ""
+
+#: zr-core.php:712
+msgid "follow us"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:17
+#: zr_plugins/zr-instagram/zr-instagram.php:100
+msgid "Zr Instagram Gallery"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:23
+msgid "Zr Instagram Gallery Widget"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:83
+msgid "Error: The access_token provided is invalid."
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:104
+#: zr_plugins/zr-ourteam/zr-ourteam.php:129
+#: zr_plugins/zr-portfolio/portfolio.php:206
+#: zr_plugins/zr-testimonial/zr-testimonial.php:118 visual-map.php:29
+#: visual-map.php:72
+msgid "ZR Core"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:110
+#: zr_plugins/zr-instagram/zr-instagram.php:113
+#: zr_plugins/zr-instagram/zr-instagram.php:349
+#: zr_plugins/zr-ourteam/zr-ourteam.php:135
+#: zr_plugins/zr-ourteam/zr-ourteam.php:139
+#: zr_plugins/zr-ourteam/zr-ourteam.php:447
+#: zr_plugins/zr-portfolio/portfolio.php:212
+#: zr_plugins/zr-portfolio/portfolio.php:215
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:76
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:79
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:512
+#: zr_plugins/zr-testimonial/zr-testimonial.php:127
+#: zr_plugins/zr-testimonial/zr-testimonial.php:131
+#: zr_plugins/zr-testimonial/zr-testimonial.php:414
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:178
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:181
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:365
+#: visual-map.php:36 visual-map.php:38 visual-map.php:78 visual-map.php:82
+msgid "Title"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:119
+#: zr_plugins/zr-instagram/zr-instagram.php:122
+#: zr_plugins/zr-ourteam/zr-ourteam.php:165
+#: zr_plugins/zr-ourteam/zr-ourteam.php:169
+#: zr_plugins/zr-portfolio/portfolio.php:257
+#: zr_plugins/zr-portfolio/portfolio.php:260
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:129
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:132
+#: zr_plugins/zr-testimonial/zr-testimonial.php:137
+#: zr_plugins/zr-testimonial/zr-testimonial.php:141 visual-map.php:130
+#: visual-map.php:134
+msgid "Number Of Post"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:128
+#: zr_plugins/zr-instagram/zr-instagram.php:131
+#: zr_plugins/zr-instagram/zr-instagram.php:363
+msgid "Instagram User ID"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:137
+#: zr_plugins/zr-instagram/zr-instagram.php:140
+#: zr_plugins/zr-instagram/zr-instagram.php:370
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:205
+msgid "Access Token"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:146
+#: zr_plugins/zr-instagram/zr-instagram.php:378
+#: zr_plugins/zr-ourteam/zr-ourteam.php:185
+#: zr_plugins/zr-ourteam/zr-ourteam.php:526
+#: zr_plugins/zr-portfolio/portfolio.php:266
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:138
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:582
+#: zr_plugins/zr-testimonial/zr-testimonial.php:177
+msgid "Number of Columns >1200px: "
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:149
+#: zr_plugins/zr-ourteam/zr-ourteam.php:189
+#: zr_plugins/zr-portfolio/portfolio.php:269
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:141
+#: zr_plugins/zr-testimonial/zr-testimonial.php:180
+msgid "Number of Columns >1200px:"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:155
+#: zr_plugins/zr-instagram/zr-instagram.php:158
+#: zr_plugins/zr-ourteam/zr-ourteam.php:195
+#: zr_plugins/zr-ourteam/zr-ourteam.php:199
+#: zr_plugins/zr-portfolio/portfolio.php:275
+#: zr_plugins/zr-portfolio/portfolio.php:278
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:147
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:150
+#: zr_plugins/zr-testimonial/zr-testimonial.php:186
+#: zr_plugins/zr-testimonial/zr-testimonial.php:189
+msgid "Number of Columns on 992px to 1199px:"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:164
+#: zr_plugins/zr-instagram/zr-instagram.php:167
+#: zr_plugins/zr-ourteam/zr-ourteam.php:205
+#: zr_plugins/zr-ourteam/zr-ourteam.php:208
+#: zr_plugins/zr-portfolio/portfolio.php:284
+#: zr_plugins/zr-portfolio/portfolio.php:287
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:156
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:159
+#: zr_plugins/zr-testimonial/zr-testimonial.php:195
+#: zr_plugins/zr-testimonial/zr-testimonial.php:198
+msgid "Number of Columns on 768px to 991px:"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:173
+#: zr_plugins/zr-instagram/zr-instagram.php:176
+#: zr_plugins/zr-ourteam/zr-ourteam.php:214
+#: zr_plugins/zr-ourteam/zr-ourteam.php:218
+#: zr_plugins/zr-portfolio/portfolio.php:293
+#: zr_plugins/zr-portfolio/portfolio.php:296
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:165
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:168
+#: zr_plugins/zr-testimonial/zr-testimonial.php:204
+#: zr_plugins/zr-testimonial/zr-testimonial.php:207
+msgid "Number of Columns on 480px to 767px:"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:182
+#: zr_plugins/zr-instagram/zr-instagram.php:185
+#: zr_plugins/zr-ourteam/zr-ourteam.php:224
+#: zr_plugins/zr-ourteam/zr-ourteam.php:228
+#: zr_plugins/zr-portfolio/portfolio.php:302
+#: zr_plugins/zr-portfolio/portfolio.php:305
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:174
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:177
+#: zr_plugins/zr-testimonial/zr-testimonial.php:213
+#: zr_plugins/zr-testimonial/zr-testimonial.php:216
+msgid "Number of Columns in 480px or less than:"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:191
+#: zr_plugins/zr-ourteam/zr-ourteam.php:234
+#: zr_plugins/zr-ourteam/zr-ourteam.php:648
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:183
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:704
+#: zr_plugins/zr-testimonial/zr-testimonial.php:222
+msgid "Speed"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:194
+#: zr_plugins/zr-ourteam/zr-ourteam.php:238
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:186
+#: zr_plugins/zr-testimonial/zr-testimonial.php:225
+msgid "Speed Of Slide"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:200
+#: zr_plugins/zr-instagram/zr-instagram.php:203
+#: zr_plugins/zr-ourteam/zr-ourteam.php:244
+#: zr_plugins/zr-ourteam/zr-ourteam.php:248
+#: zr_plugins/zr-ourteam/zr-ourteam.php:626
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:192
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:195
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:682
+#: zr_plugins/zr-testimonial/zr-testimonial.php:231
+#: zr_plugins/zr-testimonial/zr-testimonial.php:234
+msgid "Auto Play"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:209
+#: zr_plugins/zr-instagram/zr-instagram.php:212
+#: zr_plugins/zr-ourteam/zr-ourteam.php:254
+#: zr_plugins/zr-ourteam/zr-ourteam.php:258
+#: zr_plugins/zr-ourteam/zr-ourteam.php:641
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:201
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:204
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:697
+#: zr_plugins/zr-testimonial/zr-testimonial.php:240
+#: zr_plugins/zr-testimonial/zr-testimonial.php:243
+msgid "Interval"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:218
+#: zr_plugins/zr-instagram/zr-instagram.php:221
+#: zr_plugins/zr-ourteam/zr-ourteam.php:274
+#: zr_plugins/zr-ourteam/zr-ourteam.php:278
+#: zr_plugins/zr-portfolio/portfolio.php:311
+#: zr_plugins/zr-portfolio/portfolio.php:314
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:210
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:213
+#: zr_plugins/zr-testimonial/zr-testimonial.php:257 visual-map.php:154
+#: visual-map.php:158
+msgid "Layout"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:227
+#: zr_plugins/zr-instagram/zr-instagram.php:230
+#: zr_plugins/zr-ourteam/zr-ourteam.php:264
+#: zr_plugins/zr-ourteam/zr-ourteam.php:268
+#: zr_plugins/zr-ourteam/zr-ourteam.php:656
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:219
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:222
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:712
+#: zr_plugins/zr-testimonial/zr-testimonial.php:249
+#: zr_plugins/zr-testimonial/zr-testimonial.php:252
+msgid "Total Items Slided"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:356
+#: zr_plugins/zr-ourteam/zr-ourteam.php:490
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:567
+#: zr_plugins/zr-testimonial/zr-testimonial.php:457
+msgid "Number of Posts"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:398
+#: zr_plugins/zr-ourteam/zr-ourteam.php:663
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:719
+#: zr_plugins/zr-testimonial/zr-testimonial.php:498
+msgid "Template"
+msgstr ""
+
+#: zr_plugins/zr-instagram/zr-instagram.php:404
+#: zr_plugins/zr-ourteam/zr-ourteam.php:670
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:726
+msgid "Default"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:15
+msgid "Zr Ourteam Slider"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:21
+msgid "Zr Ourteam Slider widget"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:35
+msgid "Our Team"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:36
+msgid "Teams Item"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:37
+#: zr_plugins/zr-portfolio/portfolio.php:37
+#: zr_plugins/zr-testimonial/zr-testimonial.php:39
+msgid "Add New"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:38
+msgid "Add New Team Item"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:39
+#: zr_plugins/zr-testimonial/zr-testimonial.php:41
+msgid "Edit Item"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:40
+#: zr_plugins/zr-testimonial/zr-testimonial.php:42
+msgid "New Item"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:41
+msgid "View Team Item"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:42
+msgid "Search Team"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:43
+#: zr_plugins/zr-portfolio/portfolio.php:43
+#: zr_plugins/zr-testimonial/zr-testimonial.php:45
+msgid "Nothing found"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:44
+#: zr_plugins/zr-portfolio/portfolio.php:44
+#: zr_plugins/zr-testimonial/zr-testimonial.php:46
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:67
+msgid "Our Team Detail"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:82
+msgid "Social"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:83
+msgid "Facebook"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:86
+msgid "Twitter"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:89
+msgid "Google Plus"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:92
+msgid "Linkedin"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:97
+msgid "Member Infomation"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:125
+msgid "Zr Our Team"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:145
+#: zr_plugins/zr-ourteam/zr-ourteam.php:149
+#: zr_plugins/zr-portfolio/portfolio.php:239
+#: zr_plugins/zr-portfolio/portfolio.php:242
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:111
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:114
+#: zr_plugins/zr-testimonial/zr-testimonial.php:157
+#: zr_plugins/zr-testimonial/zr-testimonial.php:161 visual-map.php:110
+#: visual-map.php:114
+msgid "Order By"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:155
+#: zr_plugins/zr-ourteam/zr-ourteam.php:159
+#: zr_plugins/zr-ourteam/zr-ourteam.php:475
+#: zr_plugins/zr-portfolio/portfolio.php:248
+#: zr_plugins/zr-portfolio/portfolio.php:251
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:120
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:123
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:552
+#: zr_plugins/zr-testimonial/zr-testimonial.php:167
+#: zr_plugins/zr-testimonial/zr-testimonial.php:171
+#: zr_plugins/zr-testimonial/zr-testimonial.php:442 visual-map.php:120
+#: visual-map.php:124
+msgid "Order"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:175
+#: zr_plugins/zr-ourteam/zr-ourteam.php:179
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:250
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:253
+msgid "Number row per column"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:454
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:531
+#: zr_plugins/zr-testimonial/zr-testimonial.php:421
+msgid "Orderby"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:481
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:558
+#: zr_plugins/zr-testimonial/zr-testimonial.php:448
+msgid "Descending"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:484
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:561
+#: zr_plugins/zr-testimonial/zr-testimonial.php:451
+msgid "Ascending"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:498
+msgid "Number row per column:  "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:518
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:574
+#: zr_plugins/zr-testimonial/zr-testimonial.php:464
+msgid "Excerpt length (in words): "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:546
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:602
+msgid "Number of Columns on 992px to 1199px: "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:566
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:622
+msgid "Number of Columns on 768px to 991px: "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:586
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:642
+msgid "Number of Columns on 480px to 767px: "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:606
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:662
+msgid "Number of Columns in 480px or less than: "
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:632
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:688
+msgid "False"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:635
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:691
+msgid "True"
+msgstr ""
+
+#: zr_plugins/zr-ourteam/zr-ourteam.php:674
+msgid "Theme 1"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:35
+msgid "Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:36
+msgid "Portfolio Item"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:38
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:39
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:40
+msgid "New Portfolio Item"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:41
+msgid "View Portfolio Item"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:42
+msgid "Search Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:65
+msgid "Categories Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:68
+msgid "Tags"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:77
+msgid "Portfolio Meta"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:89
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:47
+msgid "Skill Needed"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:92
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:57
+msgid "URL"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:95
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:62
+msgid "Copyright"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:98
+msgid "Image Size Mansonry Layout"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:145
+msgid "All Category Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:185
+msgid "Please select a category"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:202
+msgid "Zr Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:221
+#: zr_plugins/zr-portfolio/portfolio.php:224
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:86
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:89
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:519 visual-map.php:89
+#: visual-map.php:93
+msgid "Description"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:230
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:52
+msgid "Category"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:233
+msgid "Select Categories"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:320
+msgid "Show Tab"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:323
+msgid "Show Tab Filter"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/portfolio.php:329
+#: zr_plugins/zr-portfolio/portfolio.php:332
+msgid "Show button loadmore"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:42 zr_plugins/zr-portfolio/resize.php:175
+msgid "No image URL has been entered."
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:76 zr_plugins/zr-portfolio/resize.php:210
+msgid "Image is BMP. Please use either JPG or PNG."
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:238
+msgid "Failed to get $file_path information using \"@getimagesize\"."
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:281
+msgid "Resize path invalid (GIF)"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:285
+msgid "Resize path invalid (PNG)."
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:293
+msgid "Resize path invalid (JPG)."
+msgstr ""
+
+#: zr_plugins/zr-portfolio/resize.php:308
+msgid "Failed to get $dest_file_name (resized image) info via @getimagesize"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/templates/portfolio-item.php:36
+msgid "All"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/templates/portfolio-item.php:125
+msgid "Show More Portfolio"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/templates/portfolio-item.php:125
+msgid "All Items Loaded"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:39
+msgid "Project Description"
+msgstr ""
+
+#: zr_plugins/zr-portfolio/templates/single-portfolio.php:43
+msgid "Project Detail"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:24
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:30
+msgid "Zr Responsive Slider Widget"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:56 visual-map.php:8
+#: visual-map.php:16
+msgid "All Categories"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:66
+msgid "YA Responsive Post Slider"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:70
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:172
+msgid "My shortcodes"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:96 visual-map.php:101
+msgid "Category filter:"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:103
+msgid "Excerpt length (in words)"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:105
+msgid "Excerpt length (in words)."
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/zr-resp-slider.php:525
+msgid "Category ID"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/themes/default.php:49
+#: zr_plugins/zr-responsive-post/themes/layout1.php:73
+#: zr_plugins/zr-responsive-post/themes/layout2.php:74
+#: zr_plugins/zr-responsive-post/themes/layout3.php:70
+msgid " comments"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/themes/default.php:49
+#: zr_plugins/zr-responsive-post/themes/layout1.php:73
+#: zr_plugins/zr-responsive-post/themes/layout2.php:74
+#: zr_plugins/zr-responsive-post/themes/layout3.php:70
+msgid " comment"
+msgstr ""
+
+#: zr_plugins/zr-responsive-post/themes/default.php:53
+#: zr_plugins/zr-responsive-post/themes/layout1.php:77
+#: zr_plugins/zr-responsive-post/themes/layout2.php:78
+msgid "Read more"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:18
+#: zr_plugins/zr-testimonial/zr-testimonial.php:115
+msgid "Zr Testimonial Slider"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:24
+msgid "Zr Testimonial Slider widget"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:37
+msgid "Testimonial"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:38
+msgid "Testimonial Item"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:40
+msgid "Add New Item"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:43
+msgid "View Item"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:44
+msgid "Search"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:69
+msgid "Testimonial Options"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:80
+msgid "Author Name"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:82
+msgid "Author URL"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:84
+msgid "Author Infomation"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:147
+#: zr_plugins/zr-testimonial/zr-testimonial.php:151
+msgid "Exerpt Length"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:261
+msgid "Layout Default"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:262
+msgid "Layout Indicators Up"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:263
+msgid "Layout Indicators"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:264
+msgid "Layout Slide Style 1"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:266
+msgid "Select Layout"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:270 visual-map.php:60
+msgid "Extra class name"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:273 visual-map.php:62
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:471
+msgid "El_class"
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:479
+msgid "Style title "
+msgstr ""
+
+#: zr_plugins/zr-testimonial/zr-testimonial.php:505
+msgid "Theme1"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:140
+msgid "Zr Twitter Slider"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:146
+msgid "Zr Twitter Slider Widget"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:168
+msgid "YA Twitter Slider"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:187
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:190
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:372
+msgid "Consumer Key"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:196
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:199
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:379
+msgid "Consumer Secret"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:208
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:214
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:217
+msgid "Access Token Secret"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:223
+msgid "Cache Tweets (hours)"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:226
+msgid "Cache Tweets"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:232
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:235
+msgid "Twitter Username"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:241
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:244
+msgid "Number Tweets to display"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:259
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:262
+msgid "Exclude Reply"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:386
+msgid "Access Token: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:394
+msgid "Access Token Secret: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:402
+msgid "Cache Tweets in every: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:406
+msgid "Hour(s)"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:410
+msgid "Twitter Username: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:418
+msgid "Number Tweets to display: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:427
+msgid "Number of row per on item slider: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/zr-twitter-slider-widget.php:446
+msgid "Exclude Reply: "
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/themes/default.php:35
+msgid "Reply"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/themes/default.php:36
+msgid "Retweet"
+msgstr ""
+
+#: zr_plugins/zr-twitter-slider/themes/default.php:37
+msgid "Favorite"
+msgstr ""
+
+#: visual-map.php:5
+msgid "Same window"
+msgstr ""
+
+#: visual-map.php:6
+msgid "New window"
+msgstr ""
+
+#: visual-map.php:26
+msgid "Zr Vertical Megamenu"
+msgstr ""
+
+#: visual-map.php:44
+msgid "Category menu:"
+msgstr ""
+
+#: visual-map.php:51
+msgid "Theme shortcode want display"
+msgstr ""
+
+#: visual-map.php:54
+msgid "default"
+msgstr ""
+
+#: visual-map.php:56
+msgid "Select different style menu."
+msgstr ""
+
+#: visual-map.php:68
+msgid "Zr Blog Listing"
+msgstr ""
+
+#: visual-map.php:140
+msgid "Columns"
+msgstr ""
+
+#: visual-map.php:144
+msgid "Number of Columns for layout grid"
+msgstr ""

@@ -1,0 +1,15 @@
+Plugin Zr_woocoomerce
+
+==== Version 1.0.0
+ - Release Plugin
+
+
+==== Version 1.1.0
+ - Add Responsive post slider
+ - Update translate package 
+
+==== Version 1.1.1
+ - Fix responsive post slider
+
+==== Version 1.2.0
+ - Add Twitter slider
