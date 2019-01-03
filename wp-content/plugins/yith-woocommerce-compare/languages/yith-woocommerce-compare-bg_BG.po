@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH Woocommerce Compare\n"
-"POT-Creation-Date: 2016-10-19 15:37+0200\n"
-"PO-Revision-Date: 2016-10-19 15:37+0200\n"
+"POT-Creation-Date: 2018-11-28 16:31+0100\n"
+"PO-Revision-Date: 2018-11-28 16:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.10\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -17,33 +17,32 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: plugin-fw\n"
 
-#: includes/class.yith-woocompare-admin.php:122
-#: includes/class.yith-woocompare-admin.php:146
+#: includes/class.yith-woocompare-admin.php:119
+#: includes/class.yith-woocompare-admin.php:143
 msgid "Settings"
 msgstr ""
 
-#: includes/class.yith-woocompare-admin.php:124
-#: includes/class.yith-woocompare-admin.php:150
+#: includes/class.yith-woocompare-admin.php:121
+msgid "License"
+msgstr ""
+
+#: includes/class.yith-woocompare-admin.php:147
 msgid "Premium Version"
 msgstr ""
 
-#: includes/class.yith-woocompare-admin.php:156
-#: includes/class.yith-woocompare-admin.php:157
-#: includes/class.yith-woocompare-frontend.php:446
-#: plugin-options/general-options.php:40 plugin-options/general-options.php:41
+#: includes/class.yith-woocompare-admin.php:153
+#: includes/class.yith-woocompare-admin.php:154
+#: includes/class.yith-woocompare-frontend.php:505
+#: plugin-options/general-options.php:41 plugin-options/general-options.php:42
 #: widgets/class.yith-woocompare-widget.php:51
 msgid "Compare"
 msgstr "Сравни"
 
-#: includes/class.yith-woocompare-admin.php:220
-msgid "Plugin Documentation"
-msgstr ""
-
-#: includes/class.yith-woocompare-admin.php:240
+#: includes/class.yith-woocompare-admin.php:241
 msgid "YITH WooCommerce Compare Activated"
 msgstr ""
 
-#: includes/class.yith-woocompare-admin.php:241
+#: includes/class.yith-woocompare-admin.php:242
 #, php-format
 msgid ""
 "In the YIT Plugin tab you can find the YITH WooCommerce Compare options. "
@@ -52,11 +51,11 @@ msgid ""
 "PREMIUM version with many new options, <a href=\"%s\">discover it now</a>."
 msgstr ""
 
-#: includes/class.yith-woocompare-admin.php:252
+#: includes/class.yith-woocompare-admin.php:253
 msgid "YITH WooCommerce Compare Updated"
 msgstr ""
 
-#: includes/class.yith-woocompare-admin.php:253
+#: includes/class.yith-woocompare-admin.php:254
 #, php-format
 msgid ""
 "From now on, you can find all the options of YITH WooCommerce Compare under "
@@ -70,66 +69,74 @@ msgstr ""
 msgid "Do you want to hard crop the image?"
 msgstr ""
 
-#: includes/class.yith-woocompare-frontend.php:186
+#: includes/class.yith-woocompare-frontend.php:223
 msgid "Added"
 msgstr "Добавено"
 
-#: includes/class.yith-woocompare-frontend.php:187 templates/compare.php:49
+#: includes/class.yith-woocompare-frontend.php:224 templates/compare.php:50
 msgid "Product Comparison"
 msgstr "Сравнение на продуктите"
 
-#: includes/class.yith-woocompare-frontend.php:330
+#: includes/class.yith-woocompare-frontend.php:229
+msgid "Close"
+msgstr ""
+
+#: includes/class.yith-woocompare-frontend.php:384
 msgid "In stock"
 msgstr "В наличност"
 
-#: includes/class.yith-woocompare-frontend.php:649
+#: includes/class.yith-woocompare-frontend.php:696
 msgid "No products to compare"
 msgstr "В момента нямате продукти за сравнение"
 
-#: includes/class.yith-woocompare-frontend.php:659 templates/compare.php:109
+#: includes/class.yith-woocompare-frontend.php:709 templates/compare.php:117
 msgid "Remove"
 msgstr "Премахни"
 
-#: includes/class.yith-woocompare-helper.php:45
+#: includes/class.yith-woocompare-helper.php:46
 msgid "Image"
 msgstr "Снимка"
 
-#: includes/class.yith-woocompare-helper.php:46
+#: includes/class.yith-woocompare-helper.php:47
 #: widgets/class.yith-woocompare-widget.php:68
 msgid "Title"
 msgstr "Заглавие"
 
-#: includes/class.yith-woocompare-helper.php:47
+#: includes/class.yith-woocompare-helper.php:48
 msgid "Price"
 msgstr "Цена"
 
-#: includes/class.yith-woocompare-helper.php:48
+#: includes/class.yith-woocompare-helper.php:49
 msgid "Add to cart"
 msgstr "КУПИ"
 
-#: includes/class.yith-woocompare-helper.php:49
+#: includes/class.yith-woocompare-helper.php:50
 msgid "Description"
 msgstr "Описание"
 
-#: includes/class.yith-woocompare-helper.php:50
-msgid "Availability"
-msgstr "Достъпност"
-
 #: includes/class.yith-woocompare-helper.php:51
-msgid "Weight"
+msgid "Sku"
 msgstr ""
 
 #: includes/class.yith-woocompare-helper.php:52
+msgid "Availability"
+msgstr "Достъпност"
+
+#: includes/class.yith-woocompare-helper.php:53
+msgid "Weight"
+msgstr ""
+
+#: includes/class.yith-woocompare-helper.php:54
 msgid "Dimensions"
 msgstr ""
 
-#: init.php:40
+#: init.php:42
 msgid ""
 "YITH WooCommerce Compare is enabled but not effective. It requires "
 "WooCommerce in order to work."
 msgstr ""
 
-#: init.php:48
+#: init.php:50
 msgid ""
 "You can't activate the free version of YITH WooCommerce Compare while you "
 "are using the premium one."
@@ -144,123 +151,125 @@ msgid "Link or Button"
 msgstr "Свържи към бутона"
 
 #: plugin-options/general-options.php:25
-msgid "Choose if you want to use a link or a button for the action button."
+#, fuzzy
+#| msgid "Choose if you want to use a link or a button for the action button."
+msgid "Choose if you want to use a link or a button for the comepare actions."
 msgstr "Изберете дали искате да използвате линк или бутон"
 
-#: plugin-options/general-options.php:31
+#: plugin-options/general-options.php:32
 msgid "Link"
 msgstr "Линк"
 
-#: plugin-options/general-options.php:32
+#: plugin-options/general-options.php:33
 msgid "Button"
 msgstr "Бутон"
 
-#: plugin-options/general-options.php:37
+#: plugin-options/general-options.php:38
 msgid "Link/Button text"
 msgstr "Текст на Линка/Бутона"
 
-#: plugin-options/general-options.php:38
+#: plugin-options/general-options.php:39
 msgid "Type the text to use for the button or the link of the compare."
 msgstr "Напишете текста, който искате да използвате за линка или бутона"
 
-#: plugin-options/general-options.php:46
+#: plugin-options/general-options.php:47
 msgid "Show button in single product page"
 msgstr "Покажете бутона на страницата на продукта"
 
-#: plugin-options/general-options.php:47
+#: plugin-options/general-options.php:48
 msgid "Say if you want to show the button in the single product page."
 msgstr ""
 
-#: plugin-options/general-options.php:55
+#: plugin-options/general-options.php:56
 msgid "Show button in products list"
 msgstr "Покажете бутона в каталога "
 
-#: plugin-options/general-options.php:56
+#: plugin-options/general-options.php:57
 msgid "Say if you want to show the button in the products list."
 msgstr ""
 
-#: plugin-options/general-options.php:64
+#: plugin-options/general-options.php:65
 msgid "Open automatically lightbox"
 msgstr ""
 
-#: plugin-options/general-options.php:65
+#: plugin-options/general-options.php:66
 msgid "Open link after click into \"Compare\" button\"."
 msgstr ""
 
-#: plugin-options/general-options.php:78
+#: plugin-options/general-options.php:79
 msgid "Table Settings"
 msgstr "Настройки на таблицата"
 
-#: plugin-options/general-options.php:85
+#: plugin-options/general-options.php:86
 msgid "Table title"
 msgstr "Заглавие на таблицата"
 
-#: plugin-options/general-options.php:86
+#: plugin-options/general-options.php:87
 msgid "Type the text to use for the table title."
 msgstr ""
 
-#: plugin-options/general-options.php:88 plugin-options/general-options.php:89
+#: plugin-options/general-options.php:89 plugin-options/general-options.php:90
 msgid "Compare products"
 msgstr "Сравнете продуктите си"
 
-#: plugin-options/general-options.php:94
+#: plugin-options/general-options.php:95
 msgid "Fields to show"
 msgstr ""
 
-#: plugin-options/general-options.php:95
+#: plugin-options/general-options.php:96
 msgid ""
 "Select the fields to show in the comparison table and order them by "
 "drag&drop (are included also the woocommerce attributes)"
 msgstr ""
 
-#: plugin-options/general-options.php:103
+#: plugin-options/general-options.php:104
 msgid "Repeat \"Price\" field"
 msgstr ""
 
-#: plugin-options/general-options.php:104
+#: plugin-options/general-options.php:105
 msgid "Repeat the \"Price\" field at the end of the table"
 msgstr ""
 
-#: plugin-options/general-options.php:112
+#: plugin-options/general-options.php:113
 msgid "Repeat \"Add to cart\" field"
 msgstr ""
 
-#: plugin-options/general-options.php:113
+#: plugin-options/general-options.php:114
 msgid "Repeat the \"Add to cart\" field at the end of the table"
 msgstr ""
 
-#: plugin-options/general-options.php:121
+#: plugin-options/general-options.php:122
 msgid "Image size"
 msgstr "Размер на изображението"
 
-#: plugin-options/general-options.php:122
+#: plugin-options/general-options.php:123
 msgid "Set the size for the images"
 msgstr ""
 
-#: templates/admin/premium.php:231 templates/admin/premium.php:421
+#: templates/admin/premium.php:240 templates/admin/premium.php:446
 #, php-format
 msgid ""
 "Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Compare%2$s to "
 "benefit from all features!"
 msgstr ""
 
-#: templates/admin/premium.php:234 templates/admin/premium.php:424
+#: templates/admin/premium.php:243 templates/admin/premium.php:449
 msgid "UPGRADE"
 msgstr ""
 
-#: templates/admin/premium.php:235 templates/admin/premium.php:425
+#: templates/admin/premium.php:244 templates/admin/premium.php:450
 msgid "to the premium version"
 msgstr ""
 
-#: templates/admin/premium.php:241
+#: templates/admin/premium.php:250
 msgid "Premium Features"
 msgstr ""
 
-#: templates/admin/premium.php:249
+#: templates/admin/premium.php:258
 msgid "A DEDICATED PAGE"
 msgstr ""
 
-#: templates/admin/premium.php:252
+#: templates/admin/premium.php:261
 #, php-format
 msgid ""
 "Don't you want to compare your products in a modal window anymore?%3$sWith "
@@ -270,11 +279,11 @@ msgid ""
 "whenever they want."
 msgstr ""
 
-#: templates/admin/premium.php:262
+#: templates/admin/premium.php:271
 msgid "CATEGORY COMPARATION"
 msgstr ""
 
-#: templates/admin/premium.php:265
+#: templates/admin/premium.php:274
 #, php-format
 msgid ""
 "People are often confused by finding products of different categories in the "
@@ -284,11 +293,11 @@ msgid ""
 "affinity."
 msgstr ""
 
-#: templates/admin/premium.php:281
+#: templates/admin/premium.php:290
 msgid "CATEGORY EXCLUSION "
 msgstr ""
 
-#: templates/admin/premium.php:284
+#: templates/admin/premium.php:293
 #, php-format
 msgid ""
 "In your shop there may be product categories you don't want to be affected "
@@ -299,11 +308,11 @@ msgid ""
 "selected categories."
 msgstr ""
 
-#: templates/admin/premium.php:294
+#: templates/admin/premium.php:303
 msgid "TABLE IMAGE"
 msgstr ""
 
-#: templates/admin/premium.php:297
+#: templates/admin/premium.php:306
 #, php-format
 msgid ""
 "Give a personal touch to the %1$scomparison table%2$s your users will see. "
@@ -311,11 +320,11 @@ msgid ""
 "table to your users. "
 msgstr ""
 
-#: templates/admin/premium.php:313
+#: templates/admin/premium.php:322
 msgid "DYNAMIC FIELDS"
 msgstr ""
 
-#: templates/admin/premium.php:316
+#: templates/admin/premium.php:325
 #, php-format
 msgid ""
 "With this precious feature, you will be able to show in the table only the "
@@ -324,11 +333,11 @@ msgid ""
 "be no more empty lines in your comparison table."
 msgstr ""
 
-#: templates/admin/premium.php:326
+#: templates/admin/premium.php:335
 msgid "SOCIAL NETWORK SHARING"
 msgstr ""
 
-#: templates/admin/premium.php:329
+#: templates/admin/premium.php:338
 #, php-format
 msgid ""
 "One of the most appealing features of the premium version of the plugin.Four "
@@ -337,11 +346,11 @@ msgid ""
 "products they have selected."
 msgstr ""
 
-#: templates/admin/premium.php:345
+#: templates/admin/premium.php:354
 msgid "RELATED PRODUCTS"
 msgstr ""
 
-#: templates/admin/premium.php:348
+#: templates/admin/premium.php:357
 #, php-format
 msgid ""
 "All the products that have common categories and/or tags with those in the "
@@ -351,11 +360,11 @@ msgid ""
 "interested into."
 msgstr ""
 
-#: templates/admin/premium.php:358
+#: templates/admin/premium.php:367
 msgid "CUSTOMIZABLE STYLE"
 msgstr ""
 
-#: templates/admin/premium.php:361
+#: templates/admin/premium.php:370
 #, php-format
 msgid ""
 "An advanced option panel that let you change all the colors of the plugin, "
@@ -364,11 +373,11 @@ msgid ""
 "to get to the best result."
 msgstr ""
 
-#: templates/admin/premium.php:377
+#: templates/admin/premium.php:386
 msgid "CUSTOMIZED ATTRIBUTES"
 msgstr ""
 
-#: templates/admin/premium.php:380
+#: templates/admin/premium.php:389
 #, php-format
 msgid ""
 "Let you users compare products following every feature, and considering also "
@@ -376,33 +385,45 @@ msgid ""
 "product detail page. Every single detail will be included."
 msgstr ""
 
-#: templates/admin/premium.php:390
+#: templates/admin/premium.php:399
 msgid "A TAILORED TABLE"
 msgstr ""
 
-#: templates/admin/premium.php:393
+#: templates/admin/premium.php:402
 #, php-format
 msgid ""
 "Select the products you want to compare and the system will offer you the "
 "%1$sshortcode%2$s to generate a comparing table. Simple, rapid and useful."
 msgstr ""
 
-#: templates/admin/premium.php:409
-msgid "WIDGET"
+#: templates/admin/premium.php:418
+msgid "Compare list - widget"
 msgstr ""
 
-#: templates/admin/premium.php:412
+#: templates/admin/premium.php:421
 msgid ""
 "Thanks to YITH WooCommerce Comapre Widget users could verify at any time the "
 "complete list of products added to the compare tab and avoid to open the "
 "popup to check its existence. "
 msgstr ""
 
-#: templates/compare.php:74
+#: templates/admin/premium.php:431
+msgid "Compare counter - widget and shortcode"
+msgstr ""
+
+#: templates/admin/premium.php:434
+msgid ""
+"Moreover, if you want to give your users the chance to see in a glance how "
+"many products they have added to the Compare list, feel free to use the "
+"widget or the shortcode included. And their Compare list is always no more "
+"than one click away."
+msgstr ""
+
+#: templates/compare.php:77
 msgid "Close window [X]"
 msgstr "Затвори"
 
-#: templates/compare.php:101
+#: templates/compare.php:106
 msgid "No products added in the compare table."
 msgstr "Няма добавени продукти за сравнение."
 

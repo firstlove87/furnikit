@@ -282,7 +282,7 @@ if ( !function_exists( 'yit_plugin_get_attachment_id' ) ) {
                 continue;
             }
 
-            foreach ( (array)$meta[ 'sizes' ] as $size => $values ) {
+            foreach ( (array) $meta[ 'sizes' ] as $size => $values ) {
                 if ( $values[ 'file' ] == $file && $url == str_replace( 'https://', 'http://', array_shift( wp_get_attachment_image_src( $id, $size ) ) ) ) {
 
                     return $id;
@@ -484,7 +484,7 @@ if ( !function_exists( 'yit_registered_sidebars' ) ) {
             $return = array( '' => '' );
         }
 
-        foreach ( ( array )$wp_registered_sidebars as $the_ ) {
+        foreach ( ( array ) $wp_registered_sidebars as $the_ ) {
             $return[ $the_[ 'name' ] ] = $the_[ 'name' ];
         }
 
@@ -1140,15 +1140,90 @@ if ( !function_exists( 'yith_plugin_fw_get_version' ) ) {
     }
 }
 
-if ( ! function_exists( 'yith_get_premium_support_url' ) ) {
-	//@TODO: To Remove
+if ( !function_exists( 'yith_get_premium_support_url' ) ) {
+    //@TODO: To Remove
+    /**
+     * Return the url for My Account > Support dashboard
+     *
+     * @return string The complete string, if the main string is not empty or null
+     * @since 2.0.0
+     */
+    function yith_get_premium_support_url() {
+        return 'https://yithemes.com/my-account/support/dashboard/';
+    }
+}
+
+if ( !function_exists( 'yith_plugin_fw_is_panel' ) ) {
+    function yith_plugin_fw_is_panel() {
+        $panel_screen_id = 'yith-plugins_page';
+        $screen          = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+
+        return $screen instanceof WP_Screen && strpos( $screen->id, $panel_screen_id ) !== false;
+    }
+}
+
+/* === Gutenberg Support === */
+
+if( ! function_exists( 'yith_plugin_fw_is_gutenberg_enabled' ) ){
+	function yith_plugin_fw_is_gutenberg_enabled(){
+		return function_exists( 'YITH_Gutenberg' );
+	}
+}
+
+if( ! function_exists( 'yith_plugin_fw_gutenberg_add_block' ) ){
 	/**
-	 * Return the url for My Account > Support dashboard
+	 * Add new blocks to Gutenberg
 	 *
-	 * @return string The complete string, if the main string is not empty or null
-	 * @since 2.0.0
+	 * @param $blocks string|array new blocks
+	 * @return bool true if add a new blocks, false otherwise
+	 *
+	 * @author Andrea Grillo <andrea.grillo@yithemes.com>
 	 */
-	function yith_get_premium_support_url() {
-		return 'https://yithemes.com/my-account/support/dashboard/';
+	function yith_plugin_fw_gutenberg_add_blocks( $blocks ){
+		$added = false;
+		if( yith_plugin_fw_is_gutenberg_enabled() ) {
+			// ADD Blocks
+			$added = YITH_Gutenberg()->add_blocks( $blocks );
+
+			//ADD Blocks arguments
+			if( $added ){
+				YITH_Gutenberg()->set_block_args( $blocks );
+			}
+		}
+
+		return $added;
+	}
+}
+
+if( ! function_exists( 'yith_plugin_fw_gutenberg_get_registered_blocks' ) ){
+	/**
+	 * Return an array with the registered blocks
+	 *
+	 * @return array
+	 */
+	function yith_plugin_fw_gutenberg_get_registered_blocks(){
+		return yith_plugin_fw_is_gutenberg_enabled() ? YITH_Gutenberg()->get_registered_blocks() : array();
+	}
+}
+
+if( ! function_exists( 'yith_plugin_fw_gutenberg_get_to_register_blocks' ) ){
+	/**
+	 * Return an array with the blocks to register
+	 *
+	 * @return array
+	 */
+	function yith_plugin_fw_gutenberg_get_to_register_blocks(){
+		return yith_plugin_fw_is_gutenberg_enabled() ? YITH_Gutenberg()->get_to_register_blocks() : array();
+	}
+}
+
+if( ! function_exists( 'yith_plugin_fw_get_default_logo' ) ){
+	/**
+	 * Get the default SVG logo
+	 *
+	 * @return string default logo image url
+	 */
+	function yith_plugin_fw_get_default_logo(){
+		return YIT_CORE_PLUGIN_URL . '/assets/images/yith-icon.svg';
 	}
 }

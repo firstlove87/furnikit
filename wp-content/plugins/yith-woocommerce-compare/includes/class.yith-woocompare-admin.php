@@ -2,7 +2,7 @@
 /**
  * Admin class
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH WooCommerce Compare
  * @version 2.0.0
  */
@@ -117,8 +117,8 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 		public function action_links( $links ) {
 
 			$links[] = '<a href="' . admin_url( "admin.php?page={$this->_panel_page}" ) . '">' . __( 'Settings', 'yith-woocommerce-compare' ) . '</a>';
-			if ( ! ( defined( 'YITH_WOOCOMPARE_PREMIUM' ) && YITH_WOOCOMPARE_PREMIUM ) ) {
-				$links[] = '<a href="' . $this->get_premium_landing_uri() . '" target="_blank">' . __( 'Premium Version', 'yith-woocommerce-compare' ) . '</a>';
+			if ( defined( 'YITH_WOOCOMPARE_PREMIUM' ) && YITH_WOOCOMPARE_PREMIUM ) {
+				$links[] = '<a href="' . YIT_Plugin_Licence()->get_license_activation_url() . '" target="_blank">' . __( 'License', 'yith-woocommerce-compare' ) . '</a>';
 			}
 
 			return $links;
@@ -154,7 +154,7 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 				'menu_title'       => _x( 'Compare', 'Admin Plugin Name', 'yith-woocommerce-compare' ),
 				'capability'       => 'manage_options',
 				'parent'           => '',
-				'parent_page'      => 'yit_plugin_panel',
+				'parent_page'      => 'yith_plugin_panel',
 				'page'             => $this->_panel_page,
 				'admin-tabs'       => apply_filters( 'yith_woocompare_admin_tabs', $admin_tabs ),
 				'options-path'     => YITH_WOOCOMPARE_DIR . '/plugin-options'

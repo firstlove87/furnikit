@@ -2,7 +2,7 @@
 /**
  * Woocommerce Compare page
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH Woocommerce Compare
  * @version 2.3.2
  */
@@ -138,7 +138,7 @@ $localized_table_text = apply_filters ( 'wpml_translate_single_string', $table_t
                         switch( $field ) {
 
                             case 'image':
-                                echo '<div class="image-wrap">' . wp_get_attachment_image( $product->fields[$field], 'yith-woocompare-image' ) . '</div>';
+                                echo '<div class="image-wrap">' . $product->get_image( 'yith-woocompare-image' ) . '</div>';
                                 break;
 
                             case 'add-to-cart':

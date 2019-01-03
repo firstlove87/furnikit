@@ -9,7 +9,7 @@ function furnikit_register_required_plugins() {
             'name'               => esc_html__( 'WooCommerce', 'furnikit' ), 
             'slug'               => 'woocommerce', 
             'required'           => true, 
-			'version'			 => '3.4.5'
+			'version'			 => '3.5.3'
         ),
 
          array(
@@ -20,32 +20,25 @@ function furnikit_register_required_plugins() {
             'version'            => '5.4.8'
         ),
 		
-		array(
-            'name'     			 => esc_html__( 'SW Core', 'furnikit' ),
-            'slug'      		 => 'zr_core',
-			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zr_core.zip' ), 
-            'required'  		 => true,   
-			'version'			 => '1.6.0'
-		),
 		
 		array(
-            'name'     			 => esc_html__( 'SW WooCommerce', 'furnikit' ),
-            'slug'      		 => 'zr_woocommerce',
-			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zr_woocommerce.zip' ), 
+            'name'     			 => esc_html__( 'ZORO Core', 'furnikit' ),
+            'slug'      		 => 'zoro_core',
+			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zoro_core.zip' ), 
             'required'  		 => true,
-			'version'			 => '1.6.2'
+			'version'			 => '1.0.0'
         ),
 		
 		array(
-            'name'     			 => esc_html__( 'SW Ajax Woocommerce Search', 'furnikit' ),
-            'slug'      		 => 'zr_ajax_woocommerce_search',
-			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zr_ajax_woocommerce_search.zip' ), 
+            'name'     			 => esc_html__( 'ZR Ajax Product Search', 'furnikit' ),
+            'slug'      		 => 'zr-ajax-product-search',
+			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zr-ajax-product-search.zip' ), 
             'required'  		 => true,
-			'version'			 => '1.1.5'
+			'version'			 => '1.0.0'
         ),
 		
 		array(
-            'name'     			 => esc_html__( 'SW Wooswatches', 'furnikit' ),
+            'name'     			 => esc_html__( 'ZR Wooswatches', 'furnikit' ),
             'slug'      		 => 'zr_wooswatches',
 			'source'         	 => esc_url( get_template_directory_uri() . '/lib/plugins/zr_wooswatches.zip' ), 
             'required'  		 => true,

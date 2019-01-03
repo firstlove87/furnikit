@@ -19,7 +19,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
      * Setting Page to Manage Plugins
      *
      * @class      YIT_Plugin_Panel
-     * @package    Yithemes
+     * @package    YITH
      * @since      1.0
      * @author     Andrea Grillo      <andrea.grillo@yithemes.com>
      * @author     Antonio La Rocca   <antonio.larocca@yithemes.com>
@@ -59,9 +59,11 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          * @author   Antonio La Rocca   <antonio.larocca@yithemes.com>
          */
         public function __construct( $args = array() ) {
-
             $args = apply_filters( 'yit_plugin_fw_wc_panel_option_args', $args );
             if ( !empty( $args ) ) {
+                if ( isset( $args[ 'parent_page' ] ) && 'yit_plugin_panel' === $args[ 'parent_page' ] )
+                    $args[ 'parent_page' ] = 'yith_plugin_panel';
+
                 $this->settings         = $args;
                 $this->_tabs_path_files = $this->get_tabs_path_files();
 
@@ -176,7 +178,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          * @param $screen_ids
          *
          * @return mixed
-         * @since 1.0.0
+         * @since    1.0.0
          * @author   Antonino Scarfì      <antonino.scarfi@yithemes.com>
          */
         public function add_allowed_screen_id( $screen_ids ) {
@@ -404,7 +406,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          *
          * @access public
          * @return void
-         * @since 1.0.0
+         * @since  1.0.0
          */
         public function set_default_options() {
             // check if the default options for this panel are already set
@@ -450,7 +452,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          * Add the woocommerce body class in plugin panel page
          *
          * @author Andrea Grillo <andrea.grillo@yithemes.com>
-         * @since 2.0
+         * @since  2.0
          *
          * @param $classes The body classes
          *
@@ -474,7 +476,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          *
          * @return mixed Filtered return value
          * @author Antonio La Rocca <antonio.larocca@yithemes.com>
-         * @since 2.0
+         * @since  2.0
          */
         public function maybe_unserialize_panel_data( $value, $option, $raw_value ) {
 
@@ -506,7 +508,7 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
          *
          * @return mixed Filtered return value
          * @author Leanza Francesco <leanzafrancesco@gmail.com>
-         * @since 3.0.0
+         * @since  3.0.0
          */
         public static function sanitize_option( $value, $option, $raw_value ) {
             if ( isset( $option[ 'type' ] ) && 'yith-field' === $option[ 'type' ] ) {
@@ -549,7 +551,12 @@ if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
                 $field[ 'id' ]      = isset( $field[ 'id' ] ) ? $field[ 'id' ] : '';
                 $field[ 'name' ]    = $field[ 'id' ];
                 $field[ 'default' ] = isset( $field[ 'default' ] ) ? $field[ 'default' ] : '';
-                $field[ 'value' ]   = WC_Admin_Settings::get_option( $field[ 'id' ], $field[ 'default' ] );
+
+                $value = apply_filters( 'yith_plugin_fw_wc_panel_pre_field_value', null, $field );
+                if ( is_null( $value ) ) {
+                    $value = WC_Admin_Settings::get_option( $field[ 'id' ], $field[ 'default' ] );
+                }
+                $field[ 'value' ] = $value;
 
                 require( YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-option-row.php' );
             }

@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
   // delete themes
   $('.tools_page_wp-reset').on('click', '#delete-themes', 'click', function(e) {
     e.preventDefault();
-  
+
     run_tool(this, 'delete_themes');
 
     return false;
@@ -48,14 +48,188 @@ jQuery(document).ready(function($) {
   // delete plugins
   $('.tools_page_wp-reset').on('click', '#delete-plugins', 'click', function(e) {
     e.preventDefault();
-  
+
     run_tool(this, 'delete_plugins');
 
     return false;
   }); // delete plugins
 
 
-  function run_tool(button, tool_name) {
+  // drop custom tables
+  $('.tools_page_wp-reset').on('click', '#drop-custom-tables', 'click', function(e) {
+    e.preventDefault();
+
+    run_tool(this, 'drop_custom_tables');
+
+    return false;
+  }); // drop custom tables
+
+
+  // truncate custom tables
+  $('.tools_page_wp-reset').on('click', '#truncate-custom-tables', 'click', function(e) {
+    e.preventDefault();
+
+    run_tool(this, 'truncate_custom_tables');
+
+    return false;
+  }); // truncate custom tables
+
+
+  // compare snapshot
+  $('#wpr-snapshots').on('click', '.compare-snapshot', 'click', function(e) {
+    e.preventDefault();
+    uid = $(this).data('ss-uid');
+    button = $(this);
+
+    block_ui($(button).data('wait-msg'));
+    $.get({
+      url: ajaxurl,
+      data: {
+        action: 'wp_reset_run_tool',
+        _ajax_nonce: wp_reset.nonce_run_tool,
+        tool: 'compare_snapshots',
+        extra_data: uid
+      }
+    }).always(function(data) {
+      swal.close();
+    }).done(function(data) {
+      if (data.success) {
+        msg = $(button).data('title').replace('%s', $(button).data('name'));
+        swal({
+          width: '90%',
+          title: msg,
+          html: data.data,
+          showConfirmButton: false,
+          allowEnterKey:false,
+          focusConfirm: false,
+          showCloseButton: true,
+          customClass: 'compare-snapshots'
+        });
+      } else {
+        swal({ type: 'error', title: wp_reset.documented_error + ' ' + data.data });
+      }
+    }).fail(function(data) {
+      swal({ type: 'error', title: wp_reset.undocumented_error });
+    });
+
+    return false;
+  }); // compare snapshot
+
+
+  // restore snapshot
+  $('#wpr-snapshots').on('click', '.restore-snapshot', 'click', function(e) {
+    e.preventDefault();
+    uid = $(this).data('ss-uid');
+
+    run_tool(this, 'restore_snapshot', uid);
+
+    return false;
+  }); // restore snapshot
+
+
+  // download snapshot
+  $('#wpr-snapshots').on('click', '.download-snapshot', 'click', function(e) {
+    e.preventDefault();
+    uid = $(this).data('ss-uid');
+    button = this;
+
+    block_ui($(this).data('wait-msg'));
+    $.get({
+      url: ajaxurl,
+      data: {
+        action: 'wp_reset_run_tool',
+        _ajax_nonce: wp_reset.nonce_run_tool,
+        tool: 'download_snapshot',
+        extra_data: uid
+      }
+    }).always(function(data) {
+      swal.close();
+    }).done(function(data) {
+      if (data.success) {
+        msg = $(button).data('success-msg').replace('%s', data.data);
+        swal({ type: 'success', title: msg });
+      } else {
+        swal({ type: 'error', title: wp_reset.documented_error + ' ' + data.data });
+      }
+    }).fail(function(data) {
+      swal({ type: 'error', title: wp_reset.undocumented_error });
+    });
+
+    return false;
+  }); // downlod snapshot
+
+
+  // delete snapshot
+  $('#wpr-snapshots').on('click', '.delete-snapshot', 'click', function(e) {
+    e.preventDefault();
+    uid = $(this).data('ss-uid');
+
+    run_tool(this, 'delete_snapshot', uid);
+
+    return false;
+  }); // delete snapshot
+
+
+  // create snapshot
+  $('.tools_page_wp-reset').on('click', '.create-new-snapshot', 'click', function(e) {
+    e.preventDefault();
+    button = $('#create-new-snapshot-primary');
+
+    swal({ title: $(button).data('title'),
+      type: 'question',
+      text: $(button).data('text'),
+      input: 'text',
+      inputPlaceholder: $(button).data('placeholder'),
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: $(button).data('btn-confirm'),
+      cancelButtonText: wp_reset.cancel_button,
+      width: 600
+    }).then((result) => {
+      if (typeof result.value != 'undefined') {
+        block = block_ui($(button).data('msg-wait'));
+        $.get({
+          url: ajaxurl,
+          data: {
+            action: 'wp_reset_run_tool',
+            _ajax_nonce: wp_reset.nonce_run_tool,
+            tool: 'create_snapshot',
+            extra_data: result.value
+          }
+        }).always(function(data) {
+          swal.close();
+        }).done(function(data) {
+          if (data.success) {
+            swal({ type: 'success', title: $(button).data('msg-success') }).then((result) => {
+              location.reload();
+            });
+          } else {
+            swal({ type: 'error', title: wp_reset.documented_error + ' ' + data.data });
+          }
+        }).fail(function(data) {
+          swal({ type: 'error', title: wp_reset.undocumented_error });
+        });
+      } // if confirmed
+    });
+
+    return false;
+  }); // create snapshot
+
+  // show/hide extra table info in snapshot diff
+  $('body.tools_page_wp-reset').on('click', '.header-row', function(e) {
+    e.preventDefault();
+
+    parent = $(this).parents('div.wpr-table-container > table > tbody');
+    $(' > tr:not(.header-row)', parent).toggleClass('hidden');
+
+    $('span.dashicons', parent).toggleClass('dashicons-arrow-down-alt2').toggleClass('dashicons-arrow-up-alt2');
+
+    return false;
+  }); // show hide extra info in diff
+
+
+  // standard way of running a tool, with confirmation, loading and success message
+  function run_tool(button, tool_name, extra_data) {
     confirm_action(wp_reset.confirm_title, $(button).data('text-confirm'), $(button).data('btn-confirm'), wp_reset.cancel_button)
       .then((result) => {
         if (result.value) {
@@ -65,16 +239,28 @@ jQuery(document).ready(function($) {
             data: {
               action: 'wp_reset_run_tool',
               _ajax_nonce: wp_reset.nonce_run_tool,
-              tool: tool_name
+              tool: tool_name,
+              extra_data: extra_data
             }
           }).always(function(data) {
             swal.close();
           }).done(function(data) {
             if (data.success) {
               msg = $(button).data('text-done').replace('%n', data.data);
-              swal({ type: 'success', title: msg });
+              swal({ type: 'success', title: msg }).then(() => {
+                if (tool_name == 'restore_snapshot') {
+                  location.reload();
+                }
+              });
+              if (tool_name == 'delete_snapshot') {
+                $('#wpr-ss-' + extra_data).remove();
+                if ($('#wpr-snapshots tr').length <= 1) {
+                  $('#wpr-snapshots').hide();
+                  $('#ss-no-snapshots').show();
+                }
+              }
             } else {
-              swal({ type: 'error', title: wp_reset.undocumented_error });  
+              swal({ type: 'error', title: wp_reset.documented_error + ' ' + data.data });
             }
           }).fail(function(data) {
             swal({ type: 'error', title: wp_reset.undocumented_error });
@@ -140,7 +326,7 @@ jQuery(document).ready(function($) {
              type: 'error',
              confirmButtonText: wp_reset.ok_button,
       });
-      
+
       e.preventDefault();
       return false;
     } // wrong confirmation code
@@ -192,7 +378,7 @@ jQuery(document).ready(function($) {
     return false;
   }); // toggle-card
 
-  
+
   // init cards; collapse those that need collapsing
   cards = localStorage.getItem('wp-reset-cards');
   if (cards != null) {
@@ -204,7 +390,7 @@ jQuery(document).ready(function($) {
     }
   });
 
-  
+
   // dismiss notice / pointer
   $('.wpr-dismiss-notice').on('click', function(e) {
     notice_name = $(this).data('notice');

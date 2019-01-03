@@ -2,7 +2,7 @@
 /**
  * Main class
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH Woocommerce Compare
  * @version 1.1.4
  */
@@ -64,6 +64,9 @@ if( !class_exists( 'YITH_Woocompare' ) ) {
 	        // add image size
 	        YITH_Woocompare_Helper::set_image_size();
 
+            // let's filter the woocommerce image size
+            add_filter( 'woocommerce_get_image_size_yith-woocompare-image', array( $this, 'filter_wc_image_size' ), 10, 1 );
+
             return $this->obj;
         }
 
@@ -117,6 +120,25 @@ if( !class_exists( 'YITH_Woocompare' ) ) {
          */
         public function registerWidgets() {
             register_widget( 'YITH_Woocompare_Widget' );
+        }
+
+        /**
+         * Filter WooCommerce image size attr
+         *
+         * @since 2.3.5
+         * @author Francesco Licandro
+         * @param array $size
+         * @return array
+         */
+        public function filter_wc_image_size( $size ) {
+
+            $size_opt = get_option( 'yith_woocompare_image_size' );
+
+            return array(
+                'width'  => isset( $size_opt['width'] ) ? absint( $size_opt['width'] ) : 600,
+                'height' => isset( $size_opt['height'] ) ? absint( $size_opt['height'] ) : 600,
+                'crop'   => isset( $size_opt['crop'] ) ? 1 : 0,
+            );
         }
 
     }

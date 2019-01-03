@@ -2,7 +2,7 @@
 /**
  * Main class
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH WooCommerce Compare
  * @version 1.1.4
  */

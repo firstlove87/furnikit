@@ -139,6 +139,16 @@ class zr_ourteam_slider_widget extends WP_Widget {
 				"description" => __( "Title", 'zr_core' )
 			 ),
 			 array(
+				"type" => "textfield",
+				"holder" => "div",
+				"class" => "",
+				"heading" => __( "Description", "zr_core" ),
+				"param_name" => "description",
+				"admin_label" => true,
+				"value" => '',
+				"description" => __( "Description", "zr_core" )
+			 ),
+			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
@@ -274,7 +284,7 @@ class zr_ourteam_slider_widget extends WP_Widget {
 				"heading" => __( "Layout", 'zr_core' ),
 				"param_name" => "layout",
 				"admin_label" => true,
-				"value" => array( 'Layout Default' => 'default', 'Layout 1' => 'layout1' ),
+				"value" => array( 'Layout Default' => 'default' ),
 				"description" => __( "Layout", 'zr_core' )
 			 ),
 		  )
@@ -287,6 +297,7 @@ class zr_ourteam_slider_widget extends WP_Widget {
 		extract( shortcode_atts(
 			array(
 				'title' => '',
+				'description' => '',
 				'orderby' => '',
 				'order'	=> '',
 				'numberposts' => 5,
@@ -307,8 +318,6 @@ class zr_ourteam_slider_widget extends WP_Widget {
 		ob_start();		
 		if( $layout == 'default' ){
 			include( 'includes/default.php' );
-		}else{
-			include( 'includes/team-style1.php' );
 		}
 		
 		$content = ob_get_clean();

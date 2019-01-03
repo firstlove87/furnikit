@@ -10,10 +10,10 @@ Base
 }
 body{ 
 	background-color: #fff;
-	color: @body-color;
+	color: #666;
 	font-size: 14px;
 	line-height: normal;
-	font-family: "Nunito",Helvetica,Arial,sans-serif;
+	font-family: "Roboto",Helvetica,Arial,sans-serif;
 	.body-wrapper {
 		overflow: hidden;
 		position: relative;
@@ -199,7 +199,7 @@ ul.menu, .dropdown ul{
 	}
 }
 .container{
-	max-width: 1770px;
+	max-width: 1200px;
 }
 ul.breadcrumb{
 	margin: 0 0 20px;
@@ -229,15 +229,14 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 
 /*	
-	===================================================================
-	content
-	===================================================================	
-	*/
+===================================================================
+content
+===================================================================	
+*/
 	@import "app/global_style.less";
 /**
-	Header
-	**/
-	@import "app/header.less";
+Header
+**/
 	@import "app/_menu.less";
 	@import "app/_res_menu.less";
 	@import "app/home1.less";
@@ -246,7 +245,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	@import "app/home4.less";
 	@import "app/home5.less";
 	@import "app/home6.less";
-	/* Content */
+/* Content */
 	@import "app/_widgets.less";
 	@import "app/_contact_us.less";
 	@import "app/_about_us.less";
@@ -254,6 +253,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	@import "app/_blog.less";
 	@import "app/_blog_detail.less";
 	@import "app/404.less";
+	@import "app/font-nucleo.less";
 
 	@import "app/content.less";
 	@import "app/content_default.less";
@@ -264,5 +264,5 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	@import "app/product_quick_view.less";
 	@import "app/unit_test.less";
 
-	/* Footer */
+/* Footer */
 	@import "app/_footer.less";

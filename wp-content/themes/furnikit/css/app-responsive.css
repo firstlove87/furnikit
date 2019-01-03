@@ -11,64 +11,11 @@
   visibility: hidden !important;
 }
 @media (min-width: 1400px) and (max-width: 1824px) {
-  .header.header-style2 .header-top {
-    width: 85%;
-    float: left;
-  }
-  .rtl .header.header-style2 .header-top {
-    float: right;
-  }
-  .header.header-style2 .header-bar {
-    width: 15%;
-    position: relative;
-    float: left;
-  }
-  .rtl .header.header-style2 .header-bar {
-    float: right;
-  }
-  .header.header-style2 .header-bar .search-cate,
-  .header.header-style2 .header-bar .header-wishlist,
-  .header.header-style2 .header-bar .right-header {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .header.header-style2 .header-bar .search-cate,
-  .header.header-style2 .header-bar .header-wishlist {
-    margin-top: 20px;
-  }
   .zr-child-cat-listing .zr-childcat-container .zr-childcat-top .zr-child-cat-top-inner .child-left .box-title h3 {
     font-size: 31px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1390px) {
-  .header.header-style2 .header-top {
-    width: 85%;
-    float: left;
-  }
-  .rtl .header.header-style2 .header-top {
-    float: right;
-  }
-  .header.header-style2 .header-bar {
-    width: 15%;
-    position: relative;
-    float: left;
-  }
-  .rtl .header.header-style2 .header-bar {
-    float: right;
-  }
-  .header.header-style2 .header-bar .search-cate,
-  .header.header-style2 .header-bar .header-wishlist,
-  .header.header-style2 .header-bar .right-header {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .header.header-style2 .header-bar .search-cate,
-  .header.header-style2 .header-bar .header-wishlist {
-    margin-top: 20px;
-  }
-  .revo-shop {
-    font-size: 12px !important;
-  }
   .countdown-slider .item-countdown .item-wrap .item-detail .item-content .item-info {
     padding: 30px;
   }
@@ -271,9 +218,6 @@
     z-index: 99;
     margin: 12px 0;
   }
-  .header-style3 #main-menu .resmenu-container .navbar-toggle {
-    border: 1px #222 solid;
-  }
   #main-menu .nav-pills {
     display: none;
   }
@@ -334,108 +278,46 @@
   body .container {
     padding: 0 15px;
   }
-  .header.header-style1 .sticky-menu,
-  .header.header-style4 .sticky-menu {
+  .header.header-style1 .sticky-menu {
     position: relative;
   }
-  .header.header-style1 .furnikit-logo,
-  .header.header-style4 .furnikit-logo {
+  .header.header-style1 .furnikit-logo {
     width: 100%;
     margin: 0;
     padding: 15px 0;
   }
-  .header.header-style1 .furnikit-logo a img,
-  .header.header-style4 .furnikit-logo a img {
+  .header.header-style1 .furnikit-logo a img {
     margin: 0 auto;
   }
-  .header.header-style1 #main-menu,
-  .header.header-style4 #main-menu {
+  .header.header-style1 #main-menu {
     padding: 0;
   }
-  .header.header-style1 #main-menu .resmenu-container .navbar-toggle,
-  .header.header-style4 #main-menu .resmenu-container .navbar-toggle {
+  .header.header-style1 #main-menu .resmenu-container .navbar-toggle {
     margin: 0;
   }
-  .header.header-style1 .header-right .header-right-inner .header-login,
-  .header.header-style4 .header-right .header-right-inner .header-login {
+  .header.header-style1 .header-right .header-right-inner .header-login {
     padding: 12px 0 10px 0;
     margin-right: 5px;
   }
-  .rtl .header.header-style1 .header-right .header-right-inner .header-login,
-  .rtl .header.header-style4 .header-right .header-right-inner .header-login {
+  .rtl .header.header-style1 .header-right .header-right-inner .header-login {
     margin-right: 0;
     margin-left: 5px;
   }
-  .header.header-style1 .header-right .header-right-inner .header-login .top-login > a,
-  .header.header-style4 .header-right .header-right-inner .header-login .top-login > a {
+  .header.header-style1 .header-right .header-right-inner .header-login .top-login > a {
     padding: 0 15px 0 0;
   }
-  .rtl .header.header-style1 .header-right .header-right-inner .header-login .top-login > a,
-  .rtl .header.header-style4 .header-right .header-right-inner .header-login .top-login > a {
+  .rtl .header.header-style1 .header-right .header-right-inner .header-login .top-login > a {
     padding: 0 0 0 15px;
   }
   .header.header-style1 .search-cate,
-  .header.header-style1 .top-form-minicart.furnikit-minicart,
-  .header.header-style4 .search-cate,
-  .header.header-style4 .top-form-minicart.furnikit-minicart {
+  .header.header-style1 .top-form-minicart.furnikit-minicart {
     margin-top: 0;
   }
-  .header.header-style1 .header-wishlist,
-  .header.header-style4 .header-wishlist {
+  .header.header-style1 .header-wishlist {
     display: none;
   }
-  .header.header-style1 .resmenu-container .menu-responsive-wrapper,
-  .header.header-style4 .resmenu-container .menu-responsive-wrapper {
+  .header.header-style1 .resmenu-container .menu-responsive-wrapper {
     top: 40px;
-  }
-  .header.header-style2 {
-    padding: 0;
-  }
-  .header.header-style2 .furnikit-logo {
-    width: 100%;
-    float: none;
-    padding: 20px 0 0 0;
-  }
-  .header.header-style2 .furnikit-logo a img {
-    margin: 0 auto;
-  }
-  .header.header-style2 .header-right .header-right-inner .header-login .top-login > a {
-    padding: 0 10px;
-  }
-  .header.header-style2 .sticky-menu {
-    position: relative;
-  }
-  .header.header-style2 .header-right .header-right-inner .header-login {
-    padding: 26px 0;
-  }
-  .header.header-style2 .main-menu {
-    padding: 4px 0;
-  }
-  .header.header-style3 .sticky-menu {
-    position: relative;
-  }
-  .header.header-style3 .furnikit-logo {
-    padding: 24px 0;
-  }
-  .header.header-style3 .header-top .header-left {
-    display: none;
-  }
-  .header.header-style3 .header-top .furnikit-logo {
-    width: 30%;
-    float: left;
-  }
-  .header.header-style3 .header-top .header-right {
-    width: 70%;
-    float: left;
-  }
-  .header.header-style3 .header-top .header-right .search-cate,
-  .header.header-style3 .header-top .header-right .header-wishlist,
-  .header.header-style3 .header-top .header-right .top-form-minicart {
-    margin-top: 14px;
-  }
-  .header.header-style4 .header-top .header-coupon,
-  .free-deli {
-    display: none;
   }
   .countdown-slider .item-countdown .item-wrap .item-detail .item-content {
     padding: 0;

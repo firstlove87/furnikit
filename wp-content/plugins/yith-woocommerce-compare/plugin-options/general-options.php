@@ -2,7 +2,7 @@
 /**
  * Main admin class
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH Woocommerce Compare
  * @version 1.1.1
  */

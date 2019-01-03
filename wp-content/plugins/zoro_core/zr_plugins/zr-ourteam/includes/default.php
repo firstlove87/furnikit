@@ -11,7 +11,10 @@
 	$list = new WP_Query( $default );
 ?>
 <div id="<?php echo esc_attr( $widget_id ) ?>" class="responsive-slider zr-ourteam-slider default loading clearfix" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>" data-rtl="<?php echo ( is_rtl() || $zr_direction == 'rtl' )? 'true' : 'false';?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
-	<div class="block-title"><?php echo ( $title != '' ) ? '<h3>'. esc_html( $title ) .'</h3>' : ''; ?></div>
+	<div class="box-title">
+		<h3><?php  echo $title; ?></h3>
+		<?php echo ( $description != '' ) ? '<div class="description">'. $description .'</div>' : ''; ?>
+	</div>
 	<?php 
 		if ( $list -> have_posts() ){
 	?>
@@ -37,18 +40,15 @@
 				<?php if(has_post_thumbnail()){ ?>
 					<div class="item-img item-height">
 						<div class="item-img-info">				
-							<?php the_post_thumbnail(); ?>								
-					
+							<?php the_post_thumbnail('thumbnail'); ?>
 						</div>
 					</div>
 				<?php } ?>					
 					<div class="item-content">
-						<div class="item-top">
-							<h3><?php the_title(); ?></h3>
-							<?php if( $team_info != '' ){ ?>
-							<div class="team-info"><?php echo esc_html( $team_info ); ?></div>
-							<?php } ?>
-						</div>
+						<h3><?php the_title(); ?></h3>
+						<?php if( $team_info != '' ){ ?>
+						<div class="team-info"><?php echo esc_html( $team_info ); ?></div>
+						<?php } ?>
 					</div>
 					<?php if( $facebook != '' || $twitter != '' || $gplus != '' || $linkedin != '' ){?>																
 						<div class="item-social">

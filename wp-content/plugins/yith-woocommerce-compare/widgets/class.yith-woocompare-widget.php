@@ -2,7 +2,7 @@
 /**
  * Main class
  *
- * @author Your Inspiration Themes
+ * @author YITH
  * @package YITH WooCommerce Ajax Navigation
  * @version 1.1.4
  */

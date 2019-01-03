@@ -3,8 +3,8 @@ Tags: wordpress reset, reset wordpress, reset database, reset wordpress database
 Contributors: WebFactory, wpreset, googlemapswidget, securityninja, underconstructionpage
 Requires at least: 4.0
 Requires PHP: 5.2
-Tested up to: 4.9
-Stable tag: 1.35
+Tested up to: 5.0
+Stable tag: 1.45
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,9 @@ WordPress Reset resets any WordPress site to the default values without modifyin
 == Description ==
 
 <a href="https://wpreset.com/?utm_source=wordpressorg&utm_medium=content&utm_campaign=wp-reset&utm_term=wp-reset-top">WP Reset</a> quickly resets the site's database to the default installation values without modifying any files. It deletes all customizations and content. WP Reset is fast and safe to use. It has multiple fail-safe mechanisms so you can never accidentally lose data. WP Reset is extremely helpful for plugin and theme developers. It **speeds up testing and debugging** by providing a quick way to reset settings and re-test code. It was developed by developers for developers.
+
+https://youtu.be/qMnkCW2PFoI?rel=0
+
 For support please use the <a href="https://wordpress.org/support/plugin/wp-reset">forums</a>, and if you need more information visit <a href="https://wpreset.com/?utm_source=wordpressorg&utm_medium=content&utm_campaign=wp-reset&utm_term=wpreset.com">wpreset.com</a> and be sure to check out the <a href="https://wpreset.com/roadmap/?utm_source=wordpressorg&utm_medium=content&utm_campaign=wp-reset&utm_term=roadmap">roadmap</a> for the list of upcoming features.
 
 Access WP Reset admin page via the "Tools" menu.
@@ -47,20 +50,25 @@ Access WP Reset admin page via the "Tools" menu.
 
 WP Reset comes with full WP-CLI support. Help on our WP-CLI commands is available via _wp help reset_. By default the commands have to be confirmed but you can use the `--yes` option to skip confirmation. Instead of the active user, the first user with admin privileges found in the database will be restored after reset. Please be careful when using WP Reset with WP-CLI - as with using the GUI there is no undo.
 
+#### Database Snapshots
+
+Database snapshot is a copy of all WP database tables, standard and custom ones, saved in the currently used database (as set by _wp-config.php_). Files are not saved or included in snapshots in any way.
+Snapshots are primarily a development tool. Although they can be used for backups (and downloaded as gzipped SQL dumps), we suggest finding a more suitable tool for doing backups of live sites. Use snapshots to find out what changes a plugin made to your database - what custom tables were created, modified, deleted or what changes were made to site's settings. Or use it to quickly restore the development environment after testing database related changes.
+Restoring a snapshot does not affect other snapshots, or WP Reset settings. Snapshots can be compared to current database tables, restored (by overwriting current tables), exported ad gzipped SQL dumps, or deleted. Creating a snapshot on an average WordPress installation takes 1-2 seconds.
+
+https://youtu.be/xBfMmS12vMY?rel=0
+
 #### Multisite (WP-MU) Support
 
 WP Reset has yet to be completely tested with multisite! Please be careful when using it with multisite enabled. We don't recommend to resetting the main site. Sub-sites should be OK. We're working on making WP Reset fully compatible with WP-MU. Till then please be careful. Thank you for understanding.
 
 #### Partial Reset Tools
 
-Delete transients - deletes all transient related database entries. Including expired and non-expired transients, and orphaned timeout entries.
-
-Delete uploads - delete all files and folder in the /uploads/ folder.
-
-Delete plugins - deletes all plugins except WP Reset which remains active.
-
-Delete themes - deletes all themes.
-
+* Delete transients - deletes all transient related database entries. Including expired and non-expired transients, and orphaned timeout entries.
+* Delete uploads - delete all files and folder in the /uploads/ folder.
+* Delete plugins - deletes all plugins except WP Reset which remains active.
+* Delete themes - deletes all themes.
+* Empty or delete custom tables - empties (truncates) or deletes (drops) all custom database tables.
 
 
 == Installation ==
@@ -87,6 +95,20 @@ Or if needed, upload manually;
 3. Additional tools for resetting and deleting various WordPress objects
 
 == Changelog ==
+
+= v1.45 =
+* 2018/11/27
+* new tool: truncate or drop custom DB tables
+* truncate / drop tables tool added to WP-CLI
+* all snapshot tools added to WP-CLI
+* 80k users hit on 2018/11/15 with 430,800 downloads; 30 days for +10k & 57k downloads
+
+= v1.40 =
+* 2018/10/24
+* new tool: DB Snapshots
+* rewrote code documentation for most functions
+* some parts of Snapshots need refactoring
+* 70k users hit on 2018/10/16 with 373,300 downloads; 30 days for +10k & 50k downloads
 
 = v1.35 =
 * 2018/09/18

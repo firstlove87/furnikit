@@ -18,7 +18,14 @@
   text-align: center;
 }
 
-.tools_page_wp-reset.wp-core-ui .button, .tools_page_wp-reset.wp-core-ui .button-primary, .tools_page_wp-reset.wp-core-ui .button-secondary {
+.tools_page_wp-reset .button.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.tools_page_wp-reset.wp-core-ui .button,
+.tools_page_wp-reset.wp-core-ui .button-primary,
+.tools_page_wp-reset.wp-core-ui .button-secondary {
   border-radius: 0;
 }
 
@@ -80,6 +87,10 @@
   line-height: 1.7;
 }
 
+.tools_page_wp-reset .button-delete:hover {
+  color: #cc2f2f;
+}
+
 .tools_page_wp-reset .rotating {
   -webkit-animation:spin 1.5s linear infinite;
   -moz-animation:spin 1.5s linear infinite;
@@ -99,9 +110,12 @@
 
 .tools_page_wp-reset .card {
   padding: 1em 2em 1em 2em;
+  width: 520px;
 }
 
-.tools_page_wp-reset .card.collapsed p, .tools_page_wp-reset .card.collapsed b, .tools_page_wp-reset .card.collapsed ul {
+.tools_page_wp-reset .card.collapsed p,
+.tools_page_wp-reset .card.collapsed b,
+.tools_page_wp-reset .card.collapsed ul {
   display: none;
 }
 
@@ -109,8 +123,139 @@
   border-radius: 0;
 }
 
-@-moz-keyframes spin { 
-  100% { 
+.tools_page_wp-reset .create-new-snapshot-corner {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+}
+
+.tools_page_wp-reset table {
+  width: calc(100% + 4em);
+  border-spacing: 0;
+  border-collapse: separate;
+  margin: 0 0 0 -2em;
+}
+
+.tools_page_wp-reset table td {
+  text-align: left;
+  padding: 5px;
+}
+
+.tools_page_wp-reset table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.tools_page_wp-reset table .ss-actions {
+  width: 55px;
+}
+
+.tools_page_wp-reset table th {
+  text-align: left;
+  border-bottom: thin solid #444444;
+  padding: 5px;
+}
+
+.tools_page_wp-reset table .ss-action {
+  text-decoration: none;
+  margin: 0 7px 5px 0;
+  display: inline-block;
+}
+
+.tools_page_wp-reset table .delete-snapshot {
+  margin: 0;
+}
+
+.tools_page_wp-reset .no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.wpr-table-container {
+  min-width: 960px;
+  max-width: 1200px;
+  margin: 0 auto 15px auto;
+}
+
+.swal2-popup.compare-snapshots {
+  min-height: 90%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.wpr-table-container pre {
+  font-size: 14px;
+  overflow: auto;
+  max-width: 580px;
+}
+
+.wpr-table-container p {
+  font-size: 14px;
+  color: #545454;
+}
+
+.wpr-table-container table {
+  border-spacing: 0;
+  border-collapse: separate;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+
+.wpr-table-container table span.dashicons {
+  position: absolute;
+  right: 10px;
+  top: 13px;
+}
+
+.wpr-table-container table td {
+  width: 50%;
+  padding: 10px;
+}
+
+.wpr-table-container > table > tbody > tr:first-child {
+  cursor: pointer;
+}
+
+.wpr-table-container table tr td:nth-child(2) {
+  border-left: thin solid #00000080;
+}
+
+.wpr-table-container table td {
+  background-color: #f9f9f9;
+}
+
+.wpr-table-container .no-padding {
+  padding: 0;
+}
+
+.wpr-table-container .wpr-table-missing td {
+  background-color: #ff000830;
+}
+
+.wpr-table-container .wpr-table-difference td {
+  background-color: rgba(255, 166, 0, 0.30);
+}
+
+.wpr-table-container .wpr-table-match td {
+  background-color: rgba(9, 255, 0, 0.30);
+}
+
+.wpr-table-container table.table_diff tr td {
+  width: auto;
+  border-left: none;
+  word-break: break-all;
+  font-size: 14px;
+  font-family: monospace;
+  vertical-align: top;
+}
+
+.wpr-table-container .table_diff {
+  width: 100%;
+}
+
+
+@-moz-keyframes spin {
+  100% {
     -moz-transform: rotate(-360deg);
   }
 }
@@ -196,7 +341,7 @@
   font-weight: 600;
   line-height: 32px;
   color: #AAAAAA;
-  padding: 10px 25px;
+  padding: 5px 10px;
   display: block;
   letter-spacing: 1px;
 }
@@ -221,7 +366,7 @@
   display: inline-block;
   font-size: 12px;
   line-height: 16px;
-  margin: 0px 15px 0px 6px;
+  margin: 0px 5px 0px 5px;
   text-decoration: none;
   text-shadow: none;
   background: rgba(255, 255, 255, 0.7);
@@ -265,3 +410,93 @@
   -webkit-box-shadow: none;
 }
 /* tabs */
+
+/* diff */
+
+.Differences {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+}
+
+.Differences thead th {
+	text-align: left;
+	border-bottom: 1px solid #000;
+	background: #aaa;
+	color: #000;
+	padding: 4px;
+}
+.Differences tbody th {
+	text-align: right;
+	background: #ccc;
+	width: 4em;
+	padding: 1px 2px;
+  border-right: 1px solid #00000080;
+  border-bottom: none;
+	vertical-align: middle;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.Differences td {
+	padding: 5px !important;
+	font-family: Consolas, monospace;
+	font-size: 13px;
+}
+
+.DifferencesSideBySide .ChangeInsert td.Left {
+	background: #dfd;
+}
+
+.DifferencesSideBySide .ChangeInsert td.Right {
+	background: #cfc;
+}
+
+.DifferencesSideBySide .ChangeDelete td.Left {
+	background: #f88;
+}
+
+.DifferencesSideBySide .ChangeDelete td.Right {
+	background: #faa;
+}
+
+.DifferencesSideBySide .ChangeReplace .Left {
+	background: #fe9;
+}
+
+.DifferencesSideBySide .ChangeReplace .Right {
+	background: #fd8;
+}
+
+.Differences ins, .Differences del {
+	text-decoration: none;
+}
+
+.DifferencesSideBySide .ChangeReplace ins, .DifferencesSideBySide .ChangeReplace del {
+	background: #fc0;
+}
+
+.Differences .Skipped {
+	background: #f7f7f7;
+}
+
+.DifferencesInline .ChangeReplace .Left,
+.DifferencesInline .ChangeDelete .Left {
+	background: #fdd;
+}
+
+.DifferencesInline .ChangeReplace .Right,
+.DifferencesInline .ChangeInsert .Right {
+	background: #dfd;
+}
+
+.DifferencesInline .ChangeReplace ins {
+	background: #9e9;
+}
+
+.DifferencesInline .ChangeReplace del {
+	background: #e99;
+}
+
+/* diff */
