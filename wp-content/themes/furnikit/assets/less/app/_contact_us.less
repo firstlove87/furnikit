@@ -1,0 +1,141 @@
+.contact_us{
+	&.rtl{
+		.wpcf7 .wpcf7-form-control-wrap input, .wpcf7 textarea{
+			text-align:right;
+		}
+	}
+	.wpcf7{
+		.cf1{
+			width: 48%; float: left; margin-right: 4%;
+			.rtl &{
+				float: right; margin-right: 0; margin-left: 4%;
+			}
+		}
+		.cf2{
+			width: 48%; float: left;
+			.rtl &{
+				float: right;
+			}
+		}
+		.wpcf7-form-control-wrap{
+			input{
+				border-radius:4px;
+				background: #f6f6f6;
+				color:#999; border: none;
+				height:50px;
+				padding:0 15px;
+				width:100%; font-size: 13px;
+				margin-bottom:20px;
+			}
+			.wpcf7-not-valid-tip{
+				margin-top:-10px;
+			}
+		}
+		label{
+			font-weight: 500;
+		}
+		textarea{
+			color:#999; border-radius:4px; background: #f6f6f6; border: none;
+		}
+		input[type="submit"]{
+			background-color:@color;
+			color:#fff; font-size:12px;
+			text-transform:capitalize;
+			padding: 0 30px;
+			border: 0; border-radius:4px;
+			&:hover{
+				background-color:darken(@color, 10%);
+			}
+		}
+	}
+	.title-page{
+		font-size: 36px; color: @body-color; text-transform: capitalize; font-weight: bold; text-align: center; margin-bottom: 55px;
+	}
+}
+.block-contact{
+	margin-bottom: 40px;
+	.item{
+		text-align: center; text-transform: capitalize; margin-bottom: 40px;
+		h3{
+			font-size: 24px; color: @body-color; margin-bottom: 14px;
+		}
+		p{
+			margin-bottom: 0;
+			a{
+				color: #666;
+				&:hover{
+					color: @color;
+				}
+			}
+		}
+	}
+}
+.block-contact2{
+	margin-bottom: 60px;
+	.item{
+		text-transform: capitalize; margin-bottom: 40px;
+		i{
+			margin: 10px 0; font-size: 20px; width: auto; height: auto; line-height: normal; color: @body-color;
+		}
+		h3{
+			font-size: 24px; color: @body-color; margin-bottom: 14px;
+		}
+		p{
+			margin-bottom: 0;
+			a{
+				color: #666;
+				&:hover{
+					color: @color;
+				}
+			}
+		}
+	}
+}
+.wpb_gmaps_widget .wpb_wrapper {
+	padding: 0;
+	.wpb_map_wraper {
+		border: 5px solid #fff;
+	}
+}
+.wpcf7{
+	textarea{
+		padding:10px 20px;
+		height:40px;
+		border:1px solid #ddd;
+		font-size:13px;
+		width:100%;
+		min-height:150px;
+		.border-radius(0);
+	}
+	textarea::-webkit-input-placeholder {
+		color: #555;
+	}
+	textarea::-moz-placeholder {  
+		color: #555;  
+	}
+	textarea:-ms-input-placeholder {  
+		color: #555; 
+	}
+	&.your-message{
+		float:none;
+		clear:both;
+	}
+	.wpcf7-submit{
+		margin-top:10px;
+		color:#fff;
+		font-size:12px;
+		text-transform:uppercase;
+		border:0;
+		background-color:@body-color;
+		height:50px;
+		line-height:50px;
+		padding:0 30px;
+		.border-radius( 4px);
+		.rtl &{
+			float: right;
+		}
+		&:hover{
+			background-color:@color;
+		}
+	}
+}

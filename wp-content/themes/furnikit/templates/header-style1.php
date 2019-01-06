@@ -28,7 +28,7 @@
 					</div>
 				</div>			
 			<?php } ?>
-			<!-- /Primary navbar -->		
+			<!-- /Primary navbar -->
 			<div class="header-right pull-right">
 				<div class="header-right-inner clearfix">
 					<!-- Login box -->
