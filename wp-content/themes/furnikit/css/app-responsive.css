@@ -199,6 +199,13 @@
   .contact-right .item {
     padding: 26px 0;
   }
+  .sidebar .widget.widget_nav_menu .widget-inner ul.menu > li ul.dropdown-menu {
+    margin-left: 5px;
+  }
+  .rtl .sidebar .widget.widget_nav_menu .widget-inner ul.menu > li ul.dropdown-menu {
+    margin-right: 5px;
+    margin-left: 0;
+  }
   .footer > .footer-top-wrapper >.container .footer-info {
     padding: 0;
   }
@@ -220,12 +227,6 @@
   }
   #main-menu .nav-pills {
     display: none;
-  }
-  .free-deli {
-    margin: 0;
-  }
-  .free-deli span {
-    font-size: 20px;
   }
   .countdown-slider .item-countdown .item-wrap .item-detail .item-image-countdown,
   .countdown-slider .item-countdown .item-wrap .item-detail .item-content {
@@ -258,6 +259,13 @@
   }
   .respon-style {
     display: none;
+  }
+  .widget_sp_image {
+    text-align: center;
+  }
+  .widget_sp_image img {
+    display: inline-block;
+    width: auto;
   }
   .subcribe h3 {
     float: none;
@@ -334,13 +342,6 @@
   .countdown-slider .item-countdown .item-wrap .item-detail .item-content .product-countdown .countdown-row .countdown-section .countdown-amount {
     font-size: 16px;
     width: 50px;
-  }
-  .furnikit_breadcrumbs {
-    min-height: 200px;
-    padding-top: 60px;
-  }
-  .furnikit_breadcrumbs .listing-title {
-    display: none;
   }
   .subcribe h3 {
     display: none;

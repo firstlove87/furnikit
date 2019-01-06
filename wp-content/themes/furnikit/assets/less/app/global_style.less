@@ -12,6 +12,38 @@
 		}
 	}	
 }
+.sale-off, .sw-newlabel, .sw-outstock{
+	position:absolute; z-index:1; top:15px; left:15px; font-size:10px; color:#fff; text-align:center; border-radius: 50%;
+	width:35px; line-height:35px; height:35px; text-align:center; background: @color;
+	.rtl &{
+		left:auto; right:15px;
+	}
+}
+.sale-off.has-newicon{
+	top: 55px;
+}
+.sw-newlabel{
+	background: #7fbfff;
+	right: auto;
+	left: 15px;
+	.rtl &{
+		left: auto;
+		right: 15px;
+	}
+}
+.sw-outstock{
+	text-indent: -9999px;
+	background: url( ../assets/img/icon-outstock.png ) no-repeat center center;
+	background-size: 35px 35px;
+	right: auto;
+	left: 15px;
+	width: 35px;
+	height: 35px;
+	.rtl &{
+		left: auto;
+		right: 15px;
+	}
+}
 .block-popup-login {
 	margin-top: 170px;
 	width: 600px;
