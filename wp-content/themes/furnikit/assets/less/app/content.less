@@ -1,7 +1,7 @@
 .item{
 	.item-wrap{
 		.item-detail{
-			position: relative;
+			position: relative; .transition(all 0.5s);
 			.item-img{
 				position:relative;
 				a img{
@@ -15,114 +15,118 @@
 					position: absolute; top: 17px; left: 0; font-size: 11px; text-transform: uppercase; background: @color; color: #fff;
 					padding: 5px; line-height: normal; border-radius: 0; min-height: 23px; z-index:1;
 				}
-				a.fancybox{
-					position: absolute; top: 50%; left: 50%; margin-left: -45px; background: #fff; text-transform: uppercase;
-					.transition(all 0.3s); color: @body-color; padding: 7px 10px 5px 10px; font-size: 11px; .opacity(0); visibility: hidden;
-					&:hover{
-						color: #fff; background: @body-color; .transition(all 0.3s);
+				.yith-wcwl-add-to-wishlist {
+					position: absolute; right: 15px; top:13px; margin:0; 
+					.yith-wcwl-add-button,
+					.yith-wcwl-wishlistaddedbrowse,
+					.yith-wcwl-wishlistexistsbrowse {	
+						position: relative; margin: 0;
+						a { 
+							.transition(all .3s);
+							&:before {
+								content: "\f08a";
+							}
+						}
+						&.show {
+							display: inline-block !important;
+							vertical-align: top;
+						}
+						.feedback {
+							display: none;
+						}
+						.ajax-loading {
+							position: absolute; z-index: 9;
+							left: 0;
+							right: 0;
+							top: 0;
+							bottom: 0;
+							margin: auto;
+						}
+					}
+				}
+				.yith-wcwl-add-to-wishlist .yith-wcwl-add-button a,
+				.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
+				.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a{
+					text-align:center;
+					color: #999;
+					padding: 0;
+					overflow: hidden;
+					position: relative;
+					font-size: 0;
+					min-width: 20px;
+					margin: 0;
+					z-index: 9; .transition(all .3s);
+					&:before {
+						font-family: fontawesome; font-size: 15px; .transition(all .3s);								
+					}
+					&:hover {
+						font-size: 0; padding: 0; .transition(all .3s);
+						&:before {
+							color: @color; .transition(all .3s);
+						}
+					}
+				}
+				.yith-wcwl-wishlistaddedbrowse.show,
+				.yith-wcwl-wishlistexistsbrowse.show {
+					a {
+						background-color: @color;
+						&:before {
+							color: @color;
+						}							
 					}
 				}
 			}
 			.item-content{
-				position: absolute; left: 0; right: 0; bottom: 9px; padding: 10px 0;
+				padding: 10px 0 0 0;
 				h4{
-					text-align: center;
+					font-size: 14px; color: @body-color; font-weight: 500; text-transform: capitalize;
 				}
-				.item-price{
-					text-align: center; padding: 0 20px; display: block;
+				.item-price {
+					position: relative; z-index: 2; margin-bottom: 15px;
+					del{
+						color: #999; margin-top: 1px; text-decoration: line-through; display: inline-block; vertical-align: top;
+					}
 				}
 				.item-bottom{
-					height:0;
+					border-top: 1px @border-color solid; padding-top: 10px;
+					.opacity(0); visibility: hidden; .transition(all 0.5s);
 					.clear {
 						display: none;
 					}	
 					.added_to_cart{
 						font-size: 0;
 					}					
-					.button.add_to_cart_button,	.product_type_external,
+					.button.add_to_cart_button,	.product_type_external, .product_type_simple,
 					.product_type_grouped, .product_type_variable {
-						color: @body-color; position: absolute; left: 14px; bottom:14px; font-size: 0; .transition(all .3s); 
-						.opacity(0); visibility: hidden; .transition(all 0.3s);
+						color: #999; font-size: 12px; font-weight: normal; width: 48%; float: left; margin-right: 4%;
+						text-align: center; border-radius:0; background: #eee; height: 30px; line-height: 30px; padding: 0;
 						&:hover{
-							color: @color; .transition(all .3s);
+							color: #fff; background: @color; .transition(all 0.3s);
 						}
 						&.loading{
-							height:auto;
+							height:auto; opacity: 0.8;
+							&:after{
+								top: 0;
+							}
 							&:before {
-								background: none; position: relative;
-								content: "\f110"; color: @color;
-								-webkit-animation: spin 2s linear infinite;
-								animation: spin 2s linear infinite;
-							}
-						}
-						&:before{
-							content: "\f290"; font-family: fontawesome; display: inline-block;vertical-align: top; font-size: 15px;
-						}
-						&.added{
-							&:before {
-								color: @color;
-							}
-						}
-					}
-					.yith-wcwl-add-to-wishlist {
-						position: absolute; right: 14px; bottom:11px; margin:0; 
-						.opacity(0); visibility: hidden; .transition(all 0.3s);
-						.yith-wcwl-add-button,
-						.yith-wcwl-wishlistaddedbrowse,
-						.yith-wcwl-wishlistexistsbrowse {	
-							position: relative; margin: 0;
-							a { 
-								.transition(all .3s);
-								&:before {
-									content: "\f08a";
-								}
-							}
-							&.show {
-								display: inline-block !important;
-								vertical-align: top;
-							}
-							.feedback {
 								display: none;
 							}
-							.ajax-loading {
-								position: absolute; z-index: 9;
-								left: 0;
-								right: 0;
-								top: 0;
-								bottom: 0;
-								margin: auto;
-							}
 						}
-					}
-					.yith-wcwl-add-to-wishlist .yith-wcwl-add-button a,
-					.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
-					.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a{
-						text-align:center;
-						color: @body-color;
-						padding: 0;
-						overflow: hidden;
-						position: relative;
-						font-size: 0;
-						min-width: 20px;
-						margin: 0;
-						z-index: 9; .transition(all .3s);
-						&:before {
-							font-family: fontawesome; font-size: 15px; .transition(all .3s);								
-						}
-						&:hover {
-							font-size: 0; padding: 0; .transition(all .3s);
-							&:before {
-								color: @color; .transition(all .3s);
-							}
-						}
-					}
-					.yith-wcwl-wishlistaddedbrowse.show,
-					.yith-wcwl-wishlistexistsbrowse.show {
-						a {
-							background-color: @color;
+						&.added{
+							color: #fff; background: @color;
 							&:before {
 								color: @color;
-							}							
+							}
+						}
+					}
+					.compare-button{
+						width: 48%; float: left; text-align: center;
+						a{
+							font-size: 12px; color: #999; font-weight: normal; display: block; border-radius:0; background: #eee;
+							height: 30px; line-height: 30px; padding: 0;
+							&:hover{
+								color: #fff; background: @color; .transition(all 0.3s);
+							}
 						}
 					}
 				}
@@ -130,18 +134,10 @@
 		}
 		&:hover{
 			.item-detail {
-				.item-img{
-					a.fancybox{
-						.opacity(1); visibility: visible; .transition(all 0.3s);
-					}
-				}
+				box-shadow: 0px 0px 10px 3px #ccc; padding: 10px; margin: -10px; .transition(all 0.5s);
 				.item-content{
 					.item-bottom{
-						.button.add_to_cart_button,
-						.product_type_external, .product_type_variable,
-						.product_type_grouped, .yith-wcwl-add-to-wishlist{
-							.opacity(1); visibility: visible; .transition(all 0.3s);
-						}
+						.opacity(1); visibility: visible; .transition(all 0.5s);
 					}
 				}
 			}

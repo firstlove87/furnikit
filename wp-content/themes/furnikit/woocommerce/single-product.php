@@ -14,6 +14,23 @@
 
 <?php get_template_part('header'); ?>
 
+<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+<div class="furnikit_breadcrumbs">
+	<div class="container">
+		<div class="listing-title">			
+			<h1><span><?php furnikit_title(); ?></span></h1>				
+		</div>
+		<?php
+			if (!is_front_page() ) {
+				if (function_exists('furnikit_breadcrumb')){
+					furnikit_breadcrumb('<div class="breadcrumbs custom-font theme-clearfix">', '</div>');
+				} 
+			} 
+		?>
+	</div>
+</div>
+<?php endif; ?>
+
 <?php 
 	$furnikit_single_style = zr_options( 'product_single_style' );
 	if( empty( $furnikit_single_style ) || $furnikit_single_style == 'default' ){ 

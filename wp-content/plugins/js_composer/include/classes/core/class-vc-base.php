@@ -764,6 +764,7 @@ class Vc_Base {
 			'main_button_title_backend_editor' => __( 'Backend Editor', 'js_composer' ),
 			'main_button_title_frontend_editor' => __( 'Frontend Editor', 'js_composer' ),
 			'main_button_title_revert' => __( 'Classic Mode', 'js_composer' ),
+			'main_button_title_gutenberg' => __( 'Gutenberg Editor', 'js_composer' ),
 			'please_enter_templates_name' => __( 'Enter template name you want to save.', 'js_composer' ),
 			'confirm_deleting_template' => __( 'Confirm deleting "{template_name}" template, press Cancel to leave. This action cannot be undone.', 'js_composer' ),
 			'press_ok_to_delete_section' => __( 'Press OK to delete section, Cancel to leave', 'js_composer' ),

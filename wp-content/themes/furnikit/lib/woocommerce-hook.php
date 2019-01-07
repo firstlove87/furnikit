@@ -133,7 +133,7 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 add_action( 'woocommerce_before_shop_loop_item_title', 'furnikit_woocommerce_template_loop_product_thumbnail', 10 );
 
 function furnikit_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
-	global $post;
+	global $post, $product;
 	$html = '';
 	$gallery = get_post_meta($post->ID, '_product_image_gallery', true);
 	$attachment_image = '';
@@ -153,7 +153,10 @@ function furnikit_product_thumbnail( $size = 'shop_catalog', $placeholder_width 
 		$html .= '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.$size.'.png" alt="'. esc_attr__( 'Placeholder', 'furnikit' ) .'">';		
 		$html .= '</a>';
 	}
-	$html .= furnikit_quickview();
+	//$html .= furnikit_quickview();
+	if( class_exists( 'YITH_WCWL' ) && !furnikit_mobile_check() ){
+		$html .= do_shortcode( "[yith_wcwl_add_to_wishlist]" );
+	}
 	return $html;
 }
 
@@ -535,8 +538,8 @@ function furnikit_product_addcart_mid(){
 	$html ='';
 	$product_id = $post->ID;
 	/* compare & wishlist */
-	if( class_exists( 'YITH_WCWL' ) && !furnikit_mobile_check() ){
-		$html .= do_shortcode( "[yith_wcwl_add_to_wishlist]" );
+	if( class_exists( 'YITH_WOOCOMPARE' ) && !furnikit_mobile_check() ){		
+		$html .= '<div class="compare-button"><a href="#" class="compare button" data-product_id="'. $product_id .'" rel="nofollow">'. esc_html__( 'Compare', 'binace' ) .'</a></div>';	
 	}
 	echo sprintf( '%s', $html );
 }

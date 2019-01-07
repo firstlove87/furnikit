@@ -13,6 +13,23 @@
 ?>
 <?php get_template_part('header'); ?>
 
+<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+<div class="furnikit_breadcrumbs">
+	<div class="container">
+		<div class="listing-title">			
+			<h1><span><?php furnikit_title(); ?></span></h1>				
+		</div>
+		<?php
+			if (!is_front_page() ) {
+				if (function_exists('furnikit_breadcrumb')){
+					furnikit_breadcrumb('<div class="breadcrumbs custom-font theme-clearfix">', '</div>');
+				} 
+			} 
+		?>
+	</div>
+</div>
+<?php endif; ?>
+
 <div class="container">
 	<div class="row sidebar-row">
 	

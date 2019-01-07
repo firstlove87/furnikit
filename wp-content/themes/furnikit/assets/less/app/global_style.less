@@ -12,9 +12,34 @@
 		}
 	}	
 }
+/* ========================================================== */
+/* ========================================================== */
+.woocommerce a.added_to_cart,
+.added_to_cart.wc-forward {
+	display: none;
+}
+.item-price {
+	font-size: 14px; color: #666; display: inline-block; vertical-align: top; font-weight: 500;
+	span >.amount, del, >.amount {
+		color: #666;
+		text-decoration: none;
+	}
+	del{
+		font-weight: normal; color: #666;
+	}
+	ins {
+		margin: 0 10px 0 0; text-decoration: none; font-weight: 600;
+		float: left; color: @color; font-size: 16px;
+		.rtl &{
+			float: right; margin: 0 0 0 10px;
+		}
+	}
+}
+/* ========================================================== */
+/* ========================================================== */
 .sale-off, .sw-newlabel, .sw-outstock{
-	position:absolute; z-index:1; top:15px; left:15px; font-size:10px; color:#fff; text-align:center; border-radius: 50%;
-	width:35px; line-height:35px; height:35px; text-align:center; background: @color;
+	position:absolute; z-index:1; top:15px; left:15px; font-size:10px; color:#fff; text-align:center;
+	width:45px; line-height:20px; height:20px; text-align:center; background: @color;
 	.rtl &{
 		left:auto; right:15px;
 	}
@@ -23,7 +48,7 @@
 	top: 55px;
 }
 .sw-newlabel{
-	background: #7fbfff;
+	background: #ff617d;
 	right: auto;
 	left: 15px;
 	.rtl &{

@@ -56,7 +56,7 @@ function furnikit_register_required_plugins() {
             'slug'               => 'js_composer', 
             'source'             => esc_url( get_template_directory_uri() . '/lib/plugins/js_composer.zip' ), 
             'required'           => true, 
-            'version'            => '5.5.4'
+            'version'            => '5.6'
         ),	
 		array(
             'name'      		 => esc_html__( 'MailChimp for WordPress Lite', 'furnikit' ),
