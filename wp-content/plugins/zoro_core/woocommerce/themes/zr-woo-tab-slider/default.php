@@ -4,27 +4,14 @@
 	}
 	$widget_id = isset( $widget_id ) ? $widget_id : $this->generateID();
 ?>
-<div class="zr-wootab-slider zr-woo-tab-<?php echo esc_attr( $layout );?>" id="<?php echo esc_attr( 'woo_tab_' . $widget_id ); ?>" >
+<div class="zr-wootab-slider zr-woo-tab-default" id="<?php echo esc_attr( 'woo_tab_' . $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">				
-		<div class="category-slider-content <?php echo esc_attr( $style );?> clearfix">
-			<!-- Get child category -->
-		<?php 
-		$term_str = '';
-		if( $category != '' ){
-			$term = get_term_by( 'slug', $category, 'product_cat' );
-			if( $term ) :
-				$term_name = $term->name;
-		?>
-			<div class="box-title">
-				<h3><?php echo ( $title1 != '' ) ? $title1 : $term_name ; ?></h3>
-			</div>
-		<?php 							
-			$thumbnail_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-			$thumb = wp_get_attachment_image( $thumbnail_id,'large' );
-		?>			
-			<?php endif; ?>
-			
-		<?php } ?>
+		<div class="category-slider-content clearfix">
+			<?php if( $title1 != '' ){?>
+				<div class="block-title">
+					<h3><?php echo ( $title1 != '' ) ? $title1 : ''; ?></h3>
+				</div>
+			<?php } ?>
 			<button class="button-collapse collapsed pull-right" type="button" data-toggle="collapse" data-target="#<?php echo 'nav_'.$widget_id; ?>"  aria-expanded="false">				
 			</button>
 			<div class="nav-tabs-select clearfix">
@@ -54,6 +41,7 @@
 						</li>			
 					<?php } ?>
 				</ul>
+			</div>
 			</div>
 			<!-- End get child category -->		
 			<div class="tab-content clearfix">		
@@ -149,7 +137,6 @@
 				?>
 				</div>
 			<!-- End product tab slider -->
-			</div>
 		</div>
 	</div>
 </div>

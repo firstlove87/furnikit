@@ -30,14 +30,13 @@
 				$thumbnail_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
 				$thumb = wp_get_attachment_image( $thumbnail_id,'full' );
 		?>
-			<div class="item item-product-cat">					
+			<div class="item-product-cat">					
 				<div class="item-image">
 					<a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>" title="<?php echo esc_attr( $term->name ); ?>"><?php echo $thumb; ?></a>
-				</div>
-				<div class="item-content">
-					<div class="item-des"><?php echo category_description( $term->term_id ); ?></div>
-					<h3><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><?php zr_trim_words( $term->name, $title_length ); ?></a></h3>
-					<p class="shop-now"><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><?php esc_html_e( 'Shop Now', 'zr_core' ) ?></a></p>
+					<div class="item-content">
+						<div class="item-des"><?php echo category_description( $term->term_id ); ?></div>
+						<p class="shop-now"><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><i class="fa fa-angle-right"></i></a></p>
+					</div>
 				</div>
 			</div>
 			<?php endif; ?>

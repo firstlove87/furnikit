@@ -117,16 +117,6 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 							),
 				),
 				 array(
-					"type" => "dropdown",
-					"holder" => "div",
-					"class" => "",
-					"heading" => __( "Select Style", 'zr_core' ),
-					"param_name" => "style",
-					"admin_label" => true,
-					"value" => array( 'Default' => '', 'Style 1' => 'style1'),
-					"description" => __( "Select Style", 'zr_core' )
-				 ),
-				 array(
 					"type" => "multiselect",
 					"holder" => "div",
 					"class" => "",
@@ -279,7 +269,6 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 					'title_length' => 0,
 					'category' => '',
 					'images' => '',
-					'style' =>'',
 					'description1'=>'',
 					'select_order' => 'latest',				
 					'numberposts' => 5,
