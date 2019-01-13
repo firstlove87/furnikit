@@ -209,7 +209,7 @@ if( !class_exists('zr_resp_slider') ) :
 					"class" => "",
 					"heading" => __( "Layout", 'zr_core' ),
 					"param_name" => "layout",
-					"value" => array( 'Layout Default' => '1', 'Layout 1' => '2', 'Layout 2' => '3', 'Layout 3' => '4' ),
+					"value" => array( 'Layout Default' => '1', 'Layout Theme Widget' => '2', 'Layout Theme Widget2' => '3' ),
 					"description" => __( "Layout", 'zr_core' )
 				 ),
 				 array(
@@ -256,9 +256,6 @@ if( !class_exists('zr_resp_slider') ) :
 				include( 'themes/layout1.php' );
 			}elseif( $layout == 3 ){
 				include( 'themes/layout2.php' );
-			}
-			else{
-				include( 'themes/layout3.php' );
 			}
 			
 			$content = ob_get_clean();
@@ -724,7 +721,15 @@ if( !class_exists('zr_resp_slider') ) :
 					<option value="default" <?php if ($widget_template=='default'){?> selected="selected"
 					<?php } ?>>
 						<?php _e('Default', 'zr_core')?>
-					</option>				
+					</option>
+					<option value="layout1" <?php if ($widget_template=='layout1'){?> selected="selected"
+					<?php } ?>>
+						<?php _e('Theme Widget', 'zr_core')?>
+					</option>	
+					<option value="layout2" <?php if ($widget_template=='layout2'){?> selected="selected"
+					<?php } ?>>
+						<?php _e('Theme Widget 2', 'zr_core')?>
+					</option>	
 				</select>
 			</p>           
 		<?php

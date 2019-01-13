@@ -27,6 +27,15 @@
 						<div class="entry-title">
 							<h4><a href="<?php echo get_permalink($post->ID)?>"><?php furnikit_trim_words( $post->post_title ); ?></a></h4>
 						</div>
+						<div class="entry-summary">
+						<?php 												
+							if ( preg_match('/<!--more(.*?)?-->/', $post->post_content, $matches) ) {
+								echo wp_trim_words($post->post_content, 22, '...');
+							} else {
+								the_content('...');
+							}		
+						?>	
+						</div>
 					</div>
 				</div>
 			<?php } elseif( !$format == ''){?>
@@ -82,6 +91,15 @@
 					</div>
 					<div class="entry-title">
 						<h4><a href="<?php echo get_permalink($post->ID)?>"><?php furnikit_trim_words( $post->post_title ); ?></a></h4>
+					</div>
+					<div class="entry-summary">
+						<?php 												
+							if ( preg_match('/<!--more(.*?)?-->/', $post->post_content, $matches) ) {
+								echo wp_trim_words($post->post_content, 22, '...');
+							} else {
+								the_content('...');
+							}		
+						?>	
 					</div>
 				</div>
 			</div>

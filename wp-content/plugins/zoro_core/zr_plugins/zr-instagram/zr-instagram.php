@@ -14,13 +14,13 @@ class zr_instagram_widget extends WP_Widget {
 		/* Register Taxonomy */
 		
 		/* Widget settings. */
-		$widget_ops = array( 'classname' => 'zr-instagram', 'description' => __('Zr Instagram Gallery', 'flytheme') );
+		$widget_ops = array( 'classname' => 'zr-instagram', 'description' => __('Zr Instagram Gallery', 'zr_core') );
 
 		/* Widget control settings. */
 		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'zr_instagram' );
 
 		/* Create the widget. */
-		parent::__construct( 'zr_instagram', __( 'Zr Instagram Gallery Widget', 'flytheme' ), $widget_ops, $control_ops );
+		parent::__construct( 'zr_instagram', __( 'Zr Instagram Gallery Widget', 'zr_core' ), $widget_ops, $control_ops );
 		
 		/* Create Shortcode */
 		add_shortcode( 'instagram', array( $this, 'INST_Shortcode' ) );
@@ -80,7 +80,7 @@ class zr_instagram_widget extends WP_Widget {
 
     $response = curl_exec($ci);		
 		if( !$response ){
-			throw new Exception( __('Error: The access_token provided is invalid.', 'flytheme') );
+			throw new Exception( __('Error: The access_token provided is invalid.', 'zr_core') );
 		}
 		curl_close($ci);
 		$response = json_decode($response);
@@ -97,137 +97,137 @@ class zr_instagram_widget extends WP_Widget {
 	**/
 	function INST_integrateWithVC(){
 		vc_map( array(
-		  "name" => __( "Zr Instagram Gallery", "flytheme" ),
+		  "name" => __( "Zr Instagram Gallery", "zr_core" ),
 		  "base" => "instagram",
 		  "icon" => "icon-wpb-ytc",
 		  "class" => "",
-		  "category" => __( "ZR Core", "flytheme"),
+		  "category" => __( "ZR Core", "zr_core"),
 		  "params" => array(
 			 array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Title", "flytheme" ),
+				"heading" => __( "Title", "zr_core" ),
 				"param_name" => "title",
 				"value" => '',
-				"description" => __( "Title", "flytheme" )
+				"description" => __( "Title", "zr_core" )
 			 ),
 			 array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number Of Post", "flytheme" ),
+				"heading" => __( "Number Of Post", "zr_core" ),
 				"param_name" => "numberposts",
 				"value" => 5,
-				"description" => __( "Number Of Post", "flytheme" )
+				"description" => __( "Number Of Post", "zr_core" )
 			 ),
 			array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Instagram User ID", "flytheme" ),
+				"heading" => __( "Instagram User ID", "zr_core" ),
 				"param_name" => "userid",
 				"value" => 0,
-				"description" => __( "Instagram User ID", "flytheme" )
+				"description" => __( "Instagram User ID", "zr_core" )
 			 ),
 			array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Access Token", "flytheme" ),
+				"heading" => __( "Access Token", "zr_core" ),
 				"param_name" => "access_token",
 				"value" => 5,
-				"description" => __( "Access Token", "flytheme" )
+				"description" => __( "Access Token", "zr_core" )
 			 ),
 			  array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number of Columns >1200px: ", 'flytheme' ),
+				"heading" => __( "Number of Columns >1200px: ", 'zr_core' ),
 				"param_name" => "columns",
 				"value" => array(1,2,3,4,5,6),
-				"description" => __( "Number of Columns >1200px:", 'flytheme' )
+				"description" => __( "Number of Columns >1200px:", 'zr_core' )
 			 ),
 			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number of Columns on 992px to 1199px:", 'flytheme' ),
+				"heading" => __( "Number of Columns on 992px to 1199px:", 'zr_core' ),
 				"param_name" => "columns1",
 				"value" => array(1,2,3,4,5,6),
-				"description" => __( "Number of Columns on 992px to 1199px:", 'flytheme' )
+				"description" => __( "Number of Columns on 992px to 1199px:", 'zr_core' )
 			 ),
 			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number of Columns on 768px to 991px:", 'flytheme' ),
+				"heading" => __( "Number of Columns on 768px to 991px:", 'zr_core' ),
 				"param_name" => "columns2",
 				"value" => array(1,2,3,4,5,6),
-				"description" => __( "Number of Columns on 768px to 991px:", 'flytheme' )
+				"description" => __( "Number of Columns on 768px to 991px:", 'zr_core' )
 			 ),
 			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number of Columns on 480px to 767px:", 'flytheme' ),
+				"heading" => __( "Number of Columns on 480px to 767px:", 'zr_core' ),
 				"param_name" => "columns3",
 				"value" => array(1,2,3,4,5,6),
-				"description" => __( "Number of Columns on 480px to 767px:", 'flytheme' )
+				"description" => __( "Number of Columns on 480px to 767px:", 'zr_core' )
 			 ),
 			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Number of Columns in 480px or less than:", 'flytheme' ),
+				"heading" => __( "Number of Columns in 480px or less than:", 'zr_core' ),
 				"param_name" => "columns4",
 				"value" => array(1,2,3,4,5,6),
-				"description" => __( "Number of Columns in 480px or less than:", 'flytheme' )
+				"description" => __( "Number of Columns in 480px or less than:", 'zr_core' )
 			 ),
 			 array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Speed", 'flytheme' ),
+				"heading" => __( "Speed", 'zr_core' ),
 				"param_name" => "speed",
 				"value" => 1000,
-				"description" => __( "Speed Of Slide", 'flytheme' )
+				"description" => __( "Speed Of Slide", 'zr_core' )
 			 ),
 			 array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Auto Play", 'flytheme' ),
+				"heading" => __( "Auto Play", 'zr_core' ),
 				"param_name" => "autoplay",
 				"value" => array( 'True' => 'true', 'False' => 'false' ),
-				"description" => __( "Auto Play", 'flytheme' )
+				"description" => __( "Auto Play", 'zr_core' )
 			 ),
 			 array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Interval", 'flytheme' ),
+				"heading" => __( "Interval", 'zr_core' ),
 				"param_name" => "interval",
 				"value" => 5000,
-				"description" => __( "Interval", 'flytheme' )
+				"description" => __( "Interval", 'zr_core' )
 			 ),
 			  array(
 				"type" => "dropdown",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Layout", 'flytheme' ),
+				"heading" => __( "Layout", 'zr_core' ),
 				"param_name" => "layout",
 				"value" => array( 'Layout Default' => '1', 'Layout 1' => '2' ),
-				"description" => __( "Layout", 'flytheme' )
+				"description" => __( "Layout", 'zr_core' )
 			 ),
 			 array(
 				"type" => "textfield",
 				"holder" => "div",
 				"class" => "",
-				"heading" => __( "Total Items Slided", 'flytheme' ),
+				"heading" => __( "Total Items Slided", 'zr_core' ),
 				"param_name" => "scroll",
 				"value" => 1,
-				"description" => __( "Total Items Slided", 'flytheme' )
+				"description" => __( "Total Items Slided", 'zr_core' )
 			 ),
 		  )
 	   ) );
@@ -346,28 +346,28 @@ class zr_instagram_widget extends WP_Widget {
           <div style="background: Blue; color: white; font-weight: bold; text-align:center; padding: 3px"> * Data Config * </div>
         </p>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'zr_core')?></label>
 			<br />
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>"
 				type="text"	value="<?php echo esc_attr($title); ?>" />
 		</p>		
 
 		<p>
-			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e('Number of Posts', 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e('Number of Posts', 'zr_core')?></label>
 			<br />
 			<input class="widefat" id="<?php echo $this->get_field_id('numberposts'); ?>" name="<?php echo $this->get_field_name('numberposts'); ?>"
 				type="text"	value="<?php echo esc_attr($number); ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('userid'); ?>"><?php _e('Instagram User ID', 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('userid'); ?>"><?php _e('Instagram User ID', 'zr_core')?></label>
 			<br />
 			<input class="widefat" id="<?php echo $this->get_field_id('userid'); ?>" name="<?php echo $this->get_field_name('userid'); ?>"
 				type="text"	value="<?php echo esc_attr($userid); ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('access_token'); ?>"><?php _e('Access Token', 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('access_token'); ?>"><?php _e('Access Token', 'zr_core')?></label>
 			<br />
 			<input class="widefat" id="<?php echo $this->get_field_id('access_token'); ?>" name="<?php echo $this->get_field_name('access_token'); ?>"
 				type="text"	value="<?php echo esc_attr($access_token); ?>" />
@@ -375,7 +375,7 @@ class zr_instagram_widget extends WP_Widget {
 		
 		<?php $number = array('1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5); ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Number of Columns >1200px: ', 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Number of Columns >1200px: ', 'zr_core')?></label>
 			<br />
 			<select class="widefat"
 				id="<?php echo $this->get_field_id('columns'); ?>"
@@ -395,13 +395,12 @@ class zr_instagram_widget extends WP_Widget {
 		</p> 
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('widget_template'); ?>"><?php _e("Template", 'flytheme')?></label>
+			<label for="<?php echo $this->get_field_id('widget_template'); ?>"><?php _e("Template", 'zr_core')?></label>
 			<br/>
 			
-			<select class="widefat"
-				id="<?php echo $this->get_field_id('widget_template'); ?>"	name="<?php echo $this->get_field_name('widget_template'); ?>">
-				<option value="default" <?php if ($widget_template=='default'){?> selected="selected"<?php } ?>>
-					<?php _e('Default', 'flytheme')?>
+			<select class="widefat" id="<?php echo $this->get_field_id('widget_template'); ?>" name="<?php echo $this->get_field_name('widget_template'); ?>">
+				<option value="theme1" <?php if ($widget_template=='theme1'){?> selected="selected"<?php } ?>>
+					<?php _e('Theme 1', 'zr_core')?>
 				</option>			
 			</select>
 		</p>               

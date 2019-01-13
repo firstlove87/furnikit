@@ -56,10 +56,7 @@
 			 global $post;
 			do_action( 'woocommerce_before_main_content' );
 		?>
-		
-		<!--  Shop Title -->
-		<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-		
+
 		<!-- Description --> 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 		<div class="products-wrapper">	

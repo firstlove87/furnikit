@@ -545,7 +545,9 @@ function furnikit_Options_Setup(){
 						'title' => esc_html__('Layout blog', 'furnikit'),
 						'options' => array(
 								'list'	=>  esc_html__( 'List Layout', 'furnikit' ),
-								'grid' 	=>  esc_html__( 'Grid Layout', 'furnikit' )								
+								'list2'	=>  esc_html__( 'List Layout2', 'furnikit' ),
+								'grid' 	=>  esc_html__( 'Grid Layout', 'furnikit' ),
+								'grid2' 	=>  esc_html__( 'Grid Layout2', 'furnikit' )						
 						),
 						'std' => 'list',
 						'sub_desc' => esc_html__( 'Select style layout blog', 'furnikit' ),

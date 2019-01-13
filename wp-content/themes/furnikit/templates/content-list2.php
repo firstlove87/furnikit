@@ -25,9 +25,6 @@
 						<span class="entry-comment">
 							<a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i><?php echo sprintf( _n( '%d Comment', '%d Comments', $post-> comment_count , 'furnikit' ), number_format_i18n( $post-> comment_count ) ); ?></a>
 						</span>
-						<?php if(has_tag()) :?>
-							<?php the_tags( '<span class="entry-meta-link entry-meta-tag"><i class="fa fa-tags"></i>', ', ', '</span>' ); ?>
-						<?php endif;?>
 					</div>
 					<div class="entry-title">
 						<h4><a href="<?php echo get_permalink($post->ID)?>"><?php furnikit_trim_words( $post->post_title ); ?></a></h4>
@@ -101,9 +98,6 @@
 							<span class="entry-comment">
 								<a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i><?php echo sprintf( _n( '%d Comment', '%d Comments', $post-> comment_count , 'furnikit' ), number_format_i18n( $post-> comment_count ) ); ?></a>
 							</span>
-							<?php if(has_tag()) :?>
-								<?php the_tags( '<span class="entry-meta-link entry-meta-tag"><span class="fa fa-tags"></span>', ', ', '</span>' ); ?>
-							<?php endif;?>
 						</div>
 						<div class="entry-summary">
 						<?php the_content( '...' ); ?>
@@ -112,4 +106,4 @@
 				</div>
 			<?php } ?>
 		</div>
-	</div>
+	</div> V

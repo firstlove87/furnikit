@@ -70,7 +70,7 @@ if( !function_exists('furnikit_comment') ){
 <?php 
 if (comments_open()) : 
 		$aria_req = ( $req ? " aria-required='true'" : '' );
-		$title_reply = '<div class="title">' . esc_html__( 'LEAVE A COMMENT', 'furnikit' ) . '</div>';
+		$title_reply = '<div class="title">' . esc_html__( 'Leave a comment', 'furnikit' ) . '</div>';
 		$comment_notes_before = '<p>' . esc_html__( 'Make sure you enter the(*) required information where indicated. HTML code is not allowed', 'furnikit' ) .'</p>';
 		$author = '<div class="cmm-box-top clearfix">
 				<div class="control-group your-name pull-left">

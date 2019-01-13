@@ -16,7 +16,17 @@ h1.page-title{
 	margin:0;
 }
 .products-wrapper {
-	padding:30px 0;
+	padding:0 0 60px 0;
+	.woocommerce-result-count{
+		font-size: 12px; color: #666; line-height: 35px;
+	}
+	.woocommerce-ordering{
+		margin-bottom: 30px;
+		select{
+			border: 1px #eee solid; border-radius: 4px; font-size: 13px; color: #666; text-transform: uppercase; font-weight: 600;
+			height: 35px; line-height: 35px; padding: 0 5px;
+		}
+	}
 	.products-nav {
 		text-align:center;
 		display: inline-block;
@@ -27,55 +37,6 @@ h1.page-title{
 			margin-bottom: 12px;
 			padding-bottom: 12px;
 			border-bottom: 1px solid #dddddd;
-		}
-		.view-mode-wrap {
-			.view-mode {
-				>a {
-					position: relative;
-					width: 40px;
-					height: 40px;
-					float: left;
-					border: 0;
-					overflow: hidden;
-					background-color: #252525;
-					.rtl &{
-						float:right;
-					}
-					&:before {
-						position: absolute;
-						font-size: 14px;
-						font-family: FontAwesome;
-						text-align: center;
-						width: 40px;
-						height: 40px;
-						line-height: 40px;
-						background-color: transparent;
-						color: #898989;
-						left: 0;
-						color: #fff;
-						.transition(all .3s);
-					}
-					&.active, &:hover {
-						&:before {							
-							background-color: @color;
-						}
-					}
-					&.grid-view {
-						&:before {
-							content: "\f009";
-						}
-					}
-					&.list-view {
-						&:before {
-							content: "\f0c9";
-						}
-					}
-					>span {
-						font-size: 0;
-						display: none;
-					}
-				}
-			}
 		}
 		.catalog-ordering {
 			display:inline-block;
@@ -203,64 +164,8 @@ h1.page-title{
 			}
 		}
 	}
-	.woocommerce-pagination {
-		.note {
-			line-height: 40px;
-			padding: 0 15px;
-		}
-		.page-numbers {
-			margin: 0;
-			vertical-align: top;
-			background-color: #fff;
-			border:0;
-			>li {
-				float: left;
-				border:0;
-				.rtl & {
-					float: right;
-				}
-				.page-numbers {
-					width: 20px;
-					height: 40px;
-					line-height: 40px;
-					display: block;
-					padding: 0;
-					color:#6b6b6b;
-					.transition(all .5s);
-					&.current,&:hover {
-						background-color: #fff;
-						color: @color;
-						.transition(all .5s);
-					}
-					&.prev, &.next {
-						font-size: 0;
-						&:before {
-							font-family: fontawesome;
-							font-size: 14px;							
-						}
-					}
-					&.prev {
-						&:before {
-							content: "\f0d9";	
-							.rtl & {
-								content: "\f0da";	
-							}						
-						}
-					}
-					&.next {
-						&:before {
-							content: "\f0da";	
-							.rtl & {
-								content: "\f0d9";	
-							}						
-						}
-					}
-				}
-			}
-		}
-	}
 	.products-loop {
-		list-style-type: none;
+		list-style-type: none; clear: both; margin-bottom: 0;
 		>li {
 			margin-bottom: 30px;
 			&.product-category{
@@ -540,5 +445,65 @@ h1.page-title{
 .woocommerce.single-product .content_product_detail .product-countdown{
 	.countdown-row{
 		.justify-content( flex-start );
+	}
+}
+.woocommerce .products-wrapper nav.woocommerce-pagination {
+	display:inline-block;width:100%; text-align: right; margin: 0 0 60px 0;
+	.rtl &{
+		text-align: left;
+	}
+	ul.page-numbers{
+		margin: 0; border: none;
+		list-style-type: none;
+		float: none;
+		display:inline-block;
+		li {
+			display: inline-block; vertical-align: top;
+			position: relative; float: none;
+			text-transform: capitalize;
+			text-align: center; border: none;
+			margin:0 2px;
+			.transition(all .3s);
+			.rtl & {
+				float: right;
+			}
+			&:hover{
+				a {
+					color: #fff; background: @body-color;
+				}
+			}
+			a{
+				background: #f6f6f6; border-radius: 4px;
+			}
+			span.current {
+				background-color: @body-color;
+				color: #fff !important;
+			}		
+			a, span.current {
+				display: block;
+				width: 30px;line-height: 30px;height: 30px;
+				text-align:center; font-size:12px;
+				color: #bbb; border-radius: 4px; padding: 0;
+			}
+			.next,.prev{
+				width:60px;text-align:center;text-transform:capitalize;
+				color: #bbb;
+				&:hover{
+					background-color:@body-color; color:#fff;
+				}
+			}
+			.rtl &{
+				.fa-angle-right{
+					&:before{
+						content:'\f104';
+					}
+				}
+				.fa-angle-left{
+					&:before{
+						content:'\f105';
+					}
+				}
+			}
+		}
 	}
 }

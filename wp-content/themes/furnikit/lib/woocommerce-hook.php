@@ -220,24 +220,13 @@ function furnikit_build_url($url_data) {
 }
 
 add_action( 'woocommerce_before_main_content', 'furnikit_banner_listing', 10 );
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
 add_filter( 'furnikit_custom_category', 'woocommerce_maybe_show_product_subcategories' );
 add_action( 'woocommerce_before_shop_loop_item_title', 'zr_label_sales', 10 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'furnikit_template_loop_price', 10 );
-add_action( 'woocommerce_before_shop_loop', 'furnikit_viewmode_wrapper_start', 5 );
-add_action( 'woocommerce_before_shop_loop', 'furnikit_viewmode_wrapper_end', 50 );
-add_action( 'woocommerce_before_shop_loop', 'furnikit_woocommerce_catalog_ordering', 30 );
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 35 );
-add_action( 'woocommerce_before_shop_loop','furnikit_woommerce_view_mode_wrap',15 );
-add_action( 'woocommerce_after_shop_loop', 'furnikit_viewmode_wrapper_start', 5 );
-add_action( 'woocommerce_after_shop_loop', 'furnikit_viewmode_wrapper_end', 50 );
-add_action( 'woocommerce_after_shop_loop', 'furnikit_woommerce_view_mode_wrap', 6 );
-add_action( 'woocommerce_after_shop_loop', 'furnikit_woocommerce_catalog_ordering', 7 );
 remove_action( 'woocommerce_before_shop_loop', 'wc_print_notices', 10 );
 add_action('woocommerce_message','wc_print_notices', 10);
 add_filter( 'woocommerce_pagination_args', 'furnikit_custom_pagination_args' );
@@ -283,28 +272,6 @@ function furnikit_banner_listing(){
 	if( !is_singular( 'product' ) ){
 		echo sprintf( '%s', $html );
 	}
-}
-
-function furnikit_viewmode_wrapper_start(){
-	echo '<div class="products-nav clearfix">';
-}
-function furnikit_viewmode_wrapper_end(){
-	echo '</div>';
-}
-function furnikit_woommerce_view_mode_wrap () {
-	global $wp_query;
-
-	if ( ! woocommerce_products_will_display() || $wp_query->is_search() ) {
-		return;
-	}
-	
-	$html = '<div class="view-mode-wrap pull-left clearfix">
-				<div class="view-mode">
-						<a href="javascript:void(0)" class="grid-view active" title="'. esc_attr__('Grid view', 'furnikit').'"><span>'. esc_html__('Grid view', 'furnikit').'</span></a>
-						<a href="javascript:void(0)" class="list-view" title="'. esc_attr__('List view', 'furnikit') .'"><span>'.esc_html__('List view', 'furnikit').'</span></a>
-				</div>	
-			</div>';
-	echo sprintf( '%s', $html );
 }
 
 function furnikit_template_loop_price(){
@@ -539,7 +506,7 @@ function furnikit_product_addcart_mid(){
 	$product_id = $post->ID;
 	/* compare & wishlist */
 	if( class_exists( 'YITH_WOOCOMPARE' ) && !furnikit_mobile_check() ){		
-		$html .= '<div class="compare-button"><a href="#" class="compare button" data-product_id="'. $product_id .'" rel="nofollow">'. esc_html__( 'Compare', 'binace' ) .'</a></div>';	
+		$html .= '<div class="compare-button"><a href="#" class="compare button" data-product_id="'. $product_id .'" rel="nofollow">'. esc_html__( 'Compare', 'furnikit' ) .'</a></div>';	
 	}
 	echo sprintf( '%s', $html );
 }
@@ -856,7 +823,6 @@ if( furnikit_mobile_check() ){
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 35 );
 	remove_action( 'woocommerce_after_shop_loop', 'furnikit_viewmode_wrapper_start', 5 );
 	remove_action( 'woocommerce_after_shop_loop', 'furnikit_viewmode_wrapper_end', 50 );
-	remove_action( 'woocommerce_after_shop_loop', 'furnikit_woommerce_view_mode_wrap', 6 );
 	remove_action( 'woocommerce_after_shop_loop', 'furnikit_woocommerce_catalog_ordering', 7 );
 	remove_action( 'woocommerce_single_product_summary', 'furnikit_woocommerce_sharing', 50 );
 	add_action( 'woocommerce_single_product_summary', 'furnikit_mobile_woocommerce_sharing', 5 );

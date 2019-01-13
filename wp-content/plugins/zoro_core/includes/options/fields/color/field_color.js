@@ -1,7 +1,7 @@
 (function( $ ) {
 	/*
 	 *
-	 * Flytheme_Options_color function
+	 * Zr_Options_color function
 	 * Adds farbtastic to color elements
 	 *
 	 */
