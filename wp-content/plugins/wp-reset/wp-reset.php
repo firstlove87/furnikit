@@ -3,12 +3,12 @@
   Plugin Name: WP Reset
   Plugin URI: https://wpreset.com/
   Description: Reset the site to default installation values without modifying any files. Deletes all customizations and content.
-  Version: 1.45
+  Version: 1.50
   Author: WebFactory Ltd
   Author URI: https://www.webfactoryltd.com/
   Text Domain: wp-reset
 
-  Copyright 2015 - 2018  Web factory Ltd  (email: wpreset@webfactoryltd.com)
+  Copyright 2015 - 2019  Web factory Ltd  (email: wpreset@webfactoryltd.com)
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License, version 2, as
@@ -26,7 +26,7 @@
 
 // include only file
 if (!defined('ABSPATH')) {
-  wp_die(__('Do not open this file directly.', 'wp-error'));
+  wp_die(__('Do not open this file directly.', 'wp-reset'));
 }
 
 
@@ -216,9 +216,13 @@ class WP_Reset {
   function ajax_dismiss_notice() {
     check_ajax_referer('wp-reset_dismiss_notice');
 
+    if (!current_user_can('administrator')) {
+      wp_send_json_error(__('You are not allowed to run this action.', 'wp-reset'));
+    }
+
     $notice_name = trim(@$_GET['notice_name']);
     if (!$this->dismiss_notice($notice_name)) {
-      wp_send_json_error('Notice is already dismissed.');
+      wp_send_json_error(__('Notice is already dismissed.', 'wp-reset'));
     } else {
       wp_send_json_success();
     }
@@ -264,7 +268,7 @@ class WP_Reset {
    * @return null
    */
   function admin_enqueue_scripts($hook) {
-    // welcome pointer is shown on all pages except WPR, untill dismissed
+    // welcome pointer is shown on all pages except WPR to admins, until dismissed
     $pointers = $this->get_pointers();
     $dismissed_notices = $this->get_dismissed_notices();
 
@@ -274,7 +278,7 @@ class WP_Reset {
       }
     } // foreach
 
-    if (!empty($pointers) && 'tools_page_wp-reset' != $hook) {
+    if (!empty($pointers) && !$this->is_plugin_page() && current_user_can('administrator')) {
       $pointers['_nonce_dismiss_pointer'] = wp_create_nonce('wp-reset_dismiss_notice');
 
       wp_enqueue_style('wp-pointer');
@@ -285,14 +289,14 @@ class WP_Reset {
     }
 
     // exit early if not on WP Reset page
-    if ('tools_page_wp-reset' != $hook) {
+    if (!$this->is_plugin_page()) {
       return;
     }
 
     $options = $this->get_options();
 
-    $js_localize = array('undocumented_error' => __('An undocumented error has occured. Please refresh the page and try again.', 'wp-reset'),
-                         'documented_error' => __('An error has occured.', 'wp-reset'),
+    $js_localize = array('undocumented_error' => __('An undocumented error has occurred. Please refresh the page and try again.', 'wp-reset'),
+                         'documented_error' => __('An error has occurred.', 'wp-reset'),
                          'plugin_name' => __('WP Reset', 'wp-reset'),
                          'settings_url' => admin_url('tools.php?page=wp-reset'),
                          'icon_url' => $this->plugin_url . 'img/wp-reset-icon.png',
@@ -338,7 +342,7 @@ class WP_Reset {
    *
    * @return bool
    */
-  function is_cli_running() {
+  static function is_cli_running() {
     if (defined('WP_CLI') && WP_CLI) {
       return true;
     } else {
@@ -449,7 +453,14 @@ class WP_Reset {
    * @return int  Number of deleted themes.
    */
   function do_delete_themes($keep_default_theme = true) {
-    $default_theme = 'twentyseventeen';
+    global $wp_version;
+
+    if (version_compare($wp_version, '5.0', '<') === true) {
+      $default_theme = 'twentyseventeen';
+    } else {
+      $default_theme = 'twentynineteen';
+    }
+
     $all_themes = wp_get_themes(array('errors' => null));
 
     if (true == $keep_default_theme) {
@@ -504,12 +515,68 @@ class WP_Reset {
 
 
   /**
+   * Delete .htaccess file
+   *
+   * @return bool|WP_Error Action status.
+   */
+  function do_delete_htaccess() {
+    global $wp_filesystem;
+
+    if (empty($wp_filesystem)) {
+      require_once ABSPATH . '/wp-admin/includes/file.php';
+      WP_Filesystem();
+    }
+
+    $htaccess_path = $this->get_htaccess_path();
+    clearstatcache();
+
+    if (!$wp_filesystem->is_readable($htaccess_path)) {
+      return new WP_Error(1, 'Htaccess file does not exist; there\'s nothing to delete.');
+    }
+
+    if (!$wp_filesystem->is_writable($htaccess_path)) {
+      return new WP_Error(1, 'Htaccess file is not writable.');
+    }
+
+    if ($wp_filesystem->delete($htaccess_path, false, 'f')) {
+      return true;
+    } else {
+      return new WP_Error(1, 'Unknown error. Unable to delete htaccess file.');
+    }
+  } // do_delete_htaccess
+
+
+  /**
+   * Get .htaccess file path.
+   *
+   * @return string
+   */
+  function get_htaccess_path() {
+    if (!function_exists('get_home_path')) {
+      require_once ABSPATH . 'wp-admin/includes/file.php';
+    }
+
+    if ($this->is_cli_running()) {
+      $_SERVER['SCRIPT_FILENAME'] = ABSPATH;
+    }
+
+    $filepath = get_home_path() . '.htaccess';
+
+    return $filepath;
+  } // get_htaccess_path
+
+
+  /**
    * Run one tool via AJAX call
    *
    * @return null
    */
   function ajax_run_tool() {
     check_ajax_referer('wp-reset_run_tool');
+
+    if (!current_user_can('administrator')) {
+      wp_send_json_error(__('You are not allowed to run this action.', 'wp-reset'));
+    }
 
     $tool = trim(@$_GET['tool']);
     $extra_data = trim(@$_GET['extra_data']);
@@ -526,6 +593,13 @@ class WP_Reset {
     } elseif ($tool == 'delete_uploads') {
       $cnt = $this->do_delete_uploads();
       wp_send_json_success($cnt);
+    } elseif ($tool == 'delete_htaccess') {
+      $tmp = $this->do_delete_htaccess();
+      if (is_wp_error($tmp)) {
+        wp_send_json_error($tmp->get_error_message());
+      } else {
+        wp_send_json_success($tmp);
+      }
     } elseif ($tool == 'drop_custom_tables') {
       $cnt = $this->do_drop_custom_tables();
       wp_send_json_success($cnt);
@@ -612,7 +686,7 @@ class WP_Reset {
     if (!$current_user->ID) {
       $tmp = get_users(array('role' => 'administrator', 'order' => 'ASC', 'order_by' => 'ID'));
       if (empty($tmp[0]->user_login)) {
-        return new WP_Error('no_user', 'Reset failed. Unable to find any admin users in database.');
+        return new WP_Error(1, 'Reset failed. Unable to find any admin users in database.');
       }
       $current_user = $tmp[0];
     }
@@ -1031,6 +1105,16 @@ class WP_Reset {
     }
     echo '<p><a data-btn-confirm="Empty custom tables" data-text-wait="Emptying custom tables. Please wait." data-text-confirm="All custom tables with prefix <code>' . $wpdb->prefix . '</code> will be emptied. There is NO UNDO. WP Reset will not make any backups." data-text-done="%n custom tables have been emptied." class="button button-delete' . $custom_tables_btns . '" href="#" id="truncate-custom-tables">Empty (truncate) custom tables</a>&nbsp; &nbsp;';
     echo '<a data-btn-confirm="Delete custom tables" data-text-wait="Deleting custom tables. Please wait." data-text-confirm="All custom tables with prefix <code>' . $wpdb->prefix . '</code> will be deleted. There is NO UNDO. WP Reset will not make any backups." data-text-done="%n custom tables have been deleted." class="button button-delete' . $custom_tables_btns . '" href="#" id="drop-custom-tables">Delete (drop) custom tables</a></p>';
+
+    echo '</div>';
+
+    echo '<div class="card">';
+    echo '<h2>' . __('Delete .htaccess File', 'wp-reset') . '</h2>';
+    echo '<p>' . __('This action deletes the .htaccess file located in <code>' . $this->get_htaccess_path() . '</code><br><b>There is NO UNDO. WP Reset does not make any backups.</b></p>', 'wp-reset');
+
+    echo '<p>If you need to edit .htaccess, install our free <a href="' . admin_url('plugin-install.php?s=htaccess+editor&tab=search&type=term') . '" target="_blank">WP Htaccess Editor</a> plugin. It automatically creates backups when you edit .htaccess. To create the default .htaccess file open <a href="' . admin_url('options-permalink.php') . '">Settings - Permalinks</a> and re-save settings. WordPress will recreate the file.</p>';
+
+    echo '<a data-btn-confirm="Delete .htaccess file" data-text-wait="Deleting .htaccess file. Please wait." data-text-confirm="Htaccess file will be deleted. There is NO UNDO. WP Reset will not make any backups." data-text-done="Htaccess file has been deleted." class="button button-delete" href="#" id="delete-htaccess">Delete .htaccess file</a></p>';
 
     echo '</div>';
   } // tab_tools
@@ -1767,7 +1851,7 @@ class WP_Reset {
    */
   function add_plugin_featured($plugin_slug, $res) {
     // check if plugin is alredy on the list
-    if (is_array($res->plugins)) {
+    if (!empty($res->plugins) && is_array($res->plugins)) {
       foreach ($res->plugins as $plugin) {
         if ($plugin->slug == $plugin_slug) {
           return $res;
@@ -1776,9 +1860,7 @@ class WP_Reset {
     }
 
     if ($plugin_info = get_transient('wf-plugin-info-' . $plugin_slug)) {
-      $tmp1 = array_slice($res->plugins, 0, 2, false);
-      $tmp2 = array_slice($res->plugins, 2, sizeof($res->plugins) - 2, false);
-      $res->plugins = array_merge($tmp1, array($plugin_info), $tmp2);
+      array_unshift($res->plugins, $plugin_info);
     } else {
       $plugin_info = plugins_api('plugin_information', array(
         'slug'   => $plugin_slug,
@@ -1855,7 +1937,10 @@ class WP_Reset {
 
 
 // Create plugin instance and hook things up
-global $wp_reset;
-$wp_reset = WP_Reset::getInstance();
-add_action('plugins_loaded', array($wp_reset, 'load_textdomain'));
-register_uninstall_hook(__FILE__, array('WP_Reset', 'uninstall'));
+// Only if in admin - plugin has no frontend functionality
+if (is_admin() || WP_Reset::is_cli_running()) {
+  global $wp_reset;
+  $wp_reset = WP_Reset::getInstance();
+  add_action('plugins_loaded', array($wp_reset, 'load_textdomain'));
+  register_uninstall_hook(__FILE__, array('WP_Reset', 'uninstall'));
+}

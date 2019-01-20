@@ -4,7 +4,7 @@ Tags: shipping, woocommerce, automattic
 Requires at least: 4.4
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 4.1.26
+Stable tag: 4.1.27
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,17 +46,8 @@ If you get stuck, you can ask for help in the Plugin Forum.
 
 == Changelog ==
 
-= 2018-12-10 - version 4.1.26 =
-* Update - Setup notice link to WooCommerce-specific landing page.
+= 2019-01-07 - version 4.1.27 =
+* Fix - Use product name from order instead of product itself.
+* Fix - Prevent errors when WooCommerce isn't active.
 
-= 2018-11-08 - version 4.1.25 =
-* Update - WP 5.0 compatibility.
-
-= 2018-10-18 - version 4.1.24 =
-* Fix - Add missing language .pot file.
-* Update - WC 3.5 compatibility.
-
-= 2018-09-12 - version 4.1.23 =
-* Fix    - Use correct textdomain on some strings.
-* Tweak  - Rework settings notice to correctly provide setup instructions.
-* Tweak  - Coding standards and making the plugin ready for wordpress.org.
+[See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce-shipstation/master/changelog.txt).

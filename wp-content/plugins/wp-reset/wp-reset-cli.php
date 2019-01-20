@@ -2,7 +2,7 @@
 /**
  * WP Reset
  * https://wpreset.com/
- * (c) WebFactory Ltd, 2017-2018
+ * (c) WebFactory Ltd, 2017-2019
  */
 
 
@@ -85,7 +85,7 @@ class WP_Reset_CLI extends WP_CLI_Command {
      *
      * ## OPTIONS
      *
-     * <plugins|themes|transients|uploads|custom-tables>
+     * <plugins|themes|transients|uploads|custom-tables|htaccess>
      * : WP objects to delete.
      *
      * [--yes]
@@ -102,16 +102,19 @@ class WP_Reset_CLI extends WP_CLI_Command {
      * $ wp reset delete custom-tables --truncate --yes
      * Success: 3 custom tables have been emptied.
      *
+     * $ wp reset delete htaccess --yes
+     * Success: Htaccess file has been deleted.
+     *
      * @when after_wp_load
      */
     function delete( $args, $assoc_args ) {
       global $wp_reset, $wpdb;
 
       if ( empty( $args[0] ) ) {
-        WP_CLI::error( 'Please choose a subcommand: plugins, themes, transients, uploads or custom-tables.' );
+        WP_CLI::error( 'Please choose a subcommand: plugins, themes, transients, uploads, htaccess or custom-tables.' );
         return;
-      } elseif ( false == in_array( $args[0], array( 'themes', 'plugins', 'transients', 'uploads', 'custom-tables' ) ) ) {
-        WP_CLI::error( 'Unknown subcommand. Please choose from: plugins, themes, transients, uploads or custom tables.' );
+      } elseif ( false == in_array( $args[0], array( 'themes', 'plugins', 'transients', 'uploads', 'htaccess', 'custom-tables' ) ) ) {
+        WP_CLI::error( 'Unknown subcommand. Please choose from: plugins, themes, transients, uploads, htaccess or custom tables.' );
       } else {
         $subcommand = $args[0];
       }
@@ -148,9 +151,18 @@ class WP_Reset_CLI extends WP_CLI_Command {
             WP_CLI::success( $cnt . ' custom tables have been deleted.' );
           }
         break;
+        case 'htaccess':
+          WP_CLI::confirm( 'Are you sure you want to delete the .htaccess file?', $assoc_args );
+          $tmp = $wp_reset->do_delete_htaccess();
+          if ( !is_wp_error( $tmp ) ) {
+            WP_CLI::success( 'Htaccess file has been deleted.' );
+          } else {
+            WP_CLI::error( 'Htaccess file has not been deleted. ' . $tmp->get_error_message() );
+          }
+        break;
         default:
           // should never come to this but can't hurt
-          WP_CLI::error( 'Unknown subcommand. Please choose from: plugins, themes, transients, uploads or custom-tables.' );
+          WP_CLI::error( 'Unknown subcommand. Please choose from: plugins, themes, transients, uploads, htaccess or custom-tables.' );
           return;
       }
     } // delete

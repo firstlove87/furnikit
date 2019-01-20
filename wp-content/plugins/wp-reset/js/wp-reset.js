@@ -1,7 +1,7 @@
 /**
  * WP Reset
  * https://wpreset.com/
- * (c) WebFactory Ltd, 2017-2018
+ * (c) WebFactory Ltd, 2017-2019
  */
 
 
@@ -73,6 +73,16 @@ jQuery(document).ready(function($) {
 
     return false;
   }); // truncate custom tables
+
+
+  // delete htaccess file
+  $('.tools_page_wp-reset').on('click', '#delete-htaccess', 'click', function(e) {
+    e.preventDefault();
+
+    run_tool(this, 'delete_htaccess');
+
+    return false;
+  }); // delete htaccess file
 
 
   // compare snapshot

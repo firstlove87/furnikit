@@ -11068,30 +11068,55 @@ h1.page-title {
 .footer .footer-style1 .copyright2 a {
   color: #8fd021;
 }
-.footer .footer-style1 .socials-footer ul li a {
-  background: #4a90e2;
-  border-radius: 50%;
+.footer .footer-style1.style2 {
+  background: #2c2c2c;
+}
+.footer .footer-style1.style2 .widget_nav_menu .widgettitle {
   color: #fff;
-  margin-bottom: 5px;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
 }
-.footer .footer-style1 .socials-footer ul li:first-child a {
-  background: #4a90e2;
+.footer .footer-style1.style2 .widget_nav_menu ul li {
+  color: #bbb;
 }
-.footer .footer-style1 .socials-footer ul li:nth-child(2) a {
-  background: #25bbe7;
+.footer .footer-style1.style2 .widget_nav_menu ul li a {
+  color: #bbb;
 }
-.footer .footer-style1 .socials-footer ul li:nth-child(3) a {
-  background: #e73c25;
+.footer .footer-style1.style2 .widget_nav_menu ul li:hover a {
+  color: #8fd021;
 }
-.footer .footer-style1 .socials-footer ul li:nth-child(4) a {
-  background: #282828;
+.footer .footer-style1.style2 .socials-footer h3 {
+  color: #fff;
 }
-.footer .footer-style1 .socials-footer ul li:nth-child(5) a {
-  background: #ef5285;
+.footer .footer-style1.style2 .socials-footer p {
+  color: #bbb;
+}
+.footer .footer-style1.style2 .socials-footer p a {
+  color: #bbb;
+}
+.footer .footer-style1.style2 .socials-footer ul li a {
+  color: #fff;
+}
+.footer .footer-style1.style2 .socials-footer ul li a:hover {
+  color: #8fd021;
+}
+.footer .footer-style1.style2 .footer-top {
+  border-bottom: 1px #5a5a5a solid;
+  margin-bottom: 30px;
+}
+.about-store h3 {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.about-store p {
+  font-size: 13px;
+  line-height: 24px;
+  color: #bbb;
+}
+.about-store p:last-child {
+  color: #999;
+  font-size: 12px;
 }
 .footer-copyright {
   padding: 15px 0;
@@ -11185,6 +11210,7 @@ h1.page-title {
   float: left;
   font-size: 12px;
   border-bottom: 2px #222 solid;
+  background: transparent;
 }
 .rtl .newsletter-top .content-wrap .form-newsletter input[type="email"] {
   float: right;
@@ -11227,5 +11253,82 @@ h1.page-title {
   transition: all 0.3s;
 }
 .newsletter-top .content-wrap .form-newsletter .mc4wp-success {
+  color: #222;
+}
+.newsletter-top2 {
+  margin-bottom: 15px;
+}
+.newsletter-top2 .content-wrap h3 {
+  font-size: 14px;
+  color: #eee;
+  font-weight: 500;
+  margin-top: 10px;
+  float: left;
+}
+.rtl .newsletter-top2 .content-wrap h3 {
+  float: right;
+}
+.newsletter-top2 .content-wrap .form-newsletter {
+  max-width: 320px;
+  margin: 0 auto;
+  float: right;
+}
+.rtl .newsletter-top2 .content-wrap .form-newsletter {
+  float: left;
+}
+.newsletter-top2 .content-wrap .form-newsletter .mc4wp-form-fields {
+  overflow: hidden;
+}
+.newsletter-top2 .content-wrap .form-newsletter input[type="email"] {
+  border: 0;
+  color: #bbb;
+  width: 70%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 0;
+  float: left;
+  font-size: 12px;
+  background: #222;
+}
+.rtl .newsletter-top2 .content-wrap .form-newsletter input[type="email"] {
+  float: right;
+}
+.newsletter-top2 .content-wrap .form-newsletter button[type="submit"] {
+  border: 0;
+  padding: 0 5px;
+  width: 30%;
+  background: transparent;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-transform: capitalize;
+  border: 2px #fff solid;
+  font-weight: normal;
+  border-radius: 0;
+  float: left;
+  font-size: 16px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.rtl .newsletter-top2 .content-wrap .form-newsletter button[type="submit"] {
+  float: right;
+}
+.newsletter-top2 .content-wrap .form-newsletter button[type="submit"]:before {
+  display: none;
+}
+.newsletter-top2 .content-wrap .form-newsletter button[type="submit"]:hover {
+  color: #8fd021;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.newsletter-top2 .content-wrap .form-newsletter .mc4wp-success {
   color: #222;
 }

@@ -222,7 +222,7 @@ class WC_Shipstation_API_Export extends WC_Shipstation_API_Request {
 				$this->xml_append( $item_xml, 'LineItemID', $item_id );
 
 				if ( 'fee' === $item['type'] ) {
-					$this->xml_append( $item_xml, 'Name', $item['name'] );
+					$this->xml_append( $item_xml, 'Name', $wc_gte_30 ? $item->get_name() : $item['name'] );
 					$this->xml_append( $item_xml, 'Quantity', 1, false );
 					$this->xml_append( $item_xml, 'UnitPrice', $order->get_item_total( $item, false, true ), false );
 				}

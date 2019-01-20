@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WooCommerce - ShipStation Integration
  * Plugin URI: https://woocommerce.com/products/shipstation-integration/
- * Version: 4.1.26
+ * Version: 4.1.27
  * Description: Adds ShipStation label printing support to WooCommerce. Requires server DomDocument support.
  * Author: WooCommerce
  * Author URI: https://woocommerce.com/
@@ -18,19 +18,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * WooCommerce fallback notice.
+ *
+ * @since 4.1.26
+ * @return string
+ */
+function woocommerce_shipstation_missing_wc_notice() {
+	/* translators: %s WC download URL link. */
+	echo '<div class="error"><p><strong>' . sprintf( esc_html__( 'Shipstation requires WooCommerce to be installed and active. You can download %s here.', 'woocommerce-shipstation' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</strong></p></div>';
+}
+
+/**
  * Include shipstation class.
  *
  * @since 1.0.0
  */
 function woocommerce_shipstation_init() {
-	define( 'WC_SHIPSTATION_VERSION', '4.1.26' );
+	load_plugin_textdomain( 'woocommerce-shipstation', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		add_action( 'admin_notices', 'woocommerce_shipstation_missing_wc_notice' );
+		return;
+	}
+
+	define( 'WC_SHIPSTATION_VERSION', '4.1.27' );
 	define( 'WC_SHIPSTATION_FILE', __FILE__ );
 
 	if ( ! defined( 'WC_SHIPSTATION_EXPORT_LIMIT' ) ) {
 		define( 'WC_SHIPSTATION_EXPORT_LIMIT', 100 );
 	}
 
-	load_plugin_textdomain( 'woocommerce-shipstation', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 	include_once( 'includes/class-wc-shipstation-integration.php' );
 	include_once( 'includes/class-wc-shipstation-privacy.php' );

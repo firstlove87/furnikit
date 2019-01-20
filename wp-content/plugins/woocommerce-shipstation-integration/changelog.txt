@@ -1,5 +1,9 @@
 *** ShipStation for WooCommerce ***
 
+= 2019-01-07 - version 4.1.27 =
+* Fix - Use product name from order instead of product itself.
+* Fix - Prevent errors when WooCommerce isn't active.
+
 = 2018-12-10 - version 4.1.26 =
 * Update - Setup notice link to WooCommerce-specific landing page.
 
