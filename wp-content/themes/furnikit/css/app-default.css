@@ -6837,8 +6837,23 @@ blockquote p {
 .zr-category-slider .resp-slider-container .slider .item-product-cat .item-image {
   position: relative;
 }
+.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image a {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
 .zr-category-slider .resp-slider-container .slider .item-product-cat .item-image a img {
   margin: 0;
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -o-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content {
   position: absolute;
@@ -6848,21 +6863,32 @@ blockquote p {
   width: 70%;
   padding: 15px 20px 0 20px;
 }
-.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content .item-des p {
+.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content a .item-des p {
   font-size: 16px;
   color: #222;
   font-weight: 500;
   margin-bottom: 3px;
   text-transform: capitalize;
 }
-.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content .item-des p span {
+.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content a .item-des p span {
   color: #ff617d;
 }
 .zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content .shop-now {
   margin-bottom: 0;
-}
-.zr-category-slider .resp-slider-container .slider .item-product-cat .item-image .item-content .shop-now a {
   font-size: 16px;
+  color: #222;
+}
+.zr-category-slider .resp-slider-container .slider .item-product-cat:hover .item-image a img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .zr-woo-tab-default {
   margin-bottom: 80px;

@@ -34,8 +34,10 @@
 				<div class="item-image">
 					<a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>" title="<?php echo esc_attr( $term->name ); ?>"><?php echo $thumb; ?></a>
 					<div class="item-content">
-						<div class="item-des"><?php echo category_description( $term->term_id ); ?></div>
-						<p class="shop-now"><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><i class="fa fa-angle-right"></i></a></p>
+						<a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>">
+							<div class="item-des"><?php echo category_description( $term->term_id ); ?></div>
+							<p class="shop-now"><i class="fa fa-angle-right"></i></p>
+						</a>
 					</div>
 				</div>
 			</div>
