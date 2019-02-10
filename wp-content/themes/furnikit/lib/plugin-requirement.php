@@ -9,7 +9,7 @@ function furnikit_register_required_plugins() {
             'name'               => esc_html__( 'WooCommerce', 'furnikit' ), 
             'slug'               => 'woocommerce', 
             'required'           => true, 
-			'version'			 => '3.5.3'
+			'version'			 => '3.5.4'
         ),
 
          array(

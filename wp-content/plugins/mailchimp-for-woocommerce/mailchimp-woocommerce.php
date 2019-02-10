@@ -16,7 +16,7 @@
  * Plugin Name:       Mailchimp for WooCommerce
  * Plugin URI:        https://mailchimp.com/connect-your-store/
  * Description:       Mailchimp - WooCommerce plugin
- * Version:           2.1.11
+ * Version:           2.1.13
  * Author:            Mailchimp
  * Author URI:        https://mailchimp.com
  * License:           GPL-2.0+
@@ -24,7 +24,7 @@
  * Text Domain:       mailchimp-woocommerce
  * Domain Path:       /languages
  * Requires at least: 4.4
- * Tested up to: 4.9.6
+ * Tested up to: 5.0.3
  */
 
 // If this file is called directly, abort.
@@ -38,9 +38,3 @@ if (!isset($mailchimp_woocommerce_spl_autoloader) || $mailchimp_woocommerce_spl_
 
 register_activation_hook( __FILE__, 'activate_mailchimp_woocommerce');
 add_action('plugins_loaded', 'mailchimp_on_all_plugins_loaded', 12);
-
-if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    $forwarded_address = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
-    $_SERVER['REMOTE_ADDR'] = $forwarded_address[0];
-}
-

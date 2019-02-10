@@ -1,5 +1,5 @@
 .footer {
-	>.container >p{
+	.footer-top-wrapper >.container >p{
 		display: none;
 	}
 	.footer-style1{
@@ -127,6 +127,32 @@
 		}
 	}
 }
+.socials-footer2{
+	h3{
+		display: inline-block; vertical-align: top;
+		a{
+			font-size: 36px; text-transform: capitalize; color: #fff;
+		}
+	}
+	ul{
+		list-style: none; margin: 11px 0 0 20px; display: inline-block; vertical-align: top;
+		.rtl &{
+			margin: 11px 20px 0 0;
+		}
+		li{
+			display: inline-block; vertical-align: top;
+			a{
+				color: #999; font-size: 16px; display: inline-block; vertical-align: top; margin: 0 5px 0 0; .transition(all 0.3s);
+				&:hover{
+					color: @color; .transition(all 0.3s);
+				}
+			}
+		}
+	}
+}
+.clearmar{
+	margin-bottom: 0;
+}
 .newsletter-top{
 	margin-bottom: 15px;
 	.content-wrap{
@@ -191,8 +217,8 @@
 			}
 			button[type="submit"]{
 				border:0; padding: 0 5px; width: 30%; background: transparent; text-align: center; .transition(all 0.3s);
-				height:40px; line-height: 40px;	color: #fff; text-transform:capitalize; border: 2px #fff solid;
-				font-weight:normal; border-radius: 0; float: left; font-size: 16px; font-family: "Roboto",Helvetica,Arial,sans-serif;
+				height:40px; line-height: 39px;	color: #fff; text-transform:capitalize; border: 2px #fff solid;
+				font-weight:normal; border-radius: 0; float: left; font-size: 12px; font-family: "Roboto",Helvetica,Arial,sans-serif;
 				.rtl &{
 					float: right;
 				}

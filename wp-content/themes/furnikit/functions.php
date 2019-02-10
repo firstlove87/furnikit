@@ -2,7 +2,8 @@
 /**
  * Variables
  */
-require_once ( get_template_directory().'/lib/activation.php' );			// Activation Code 
+//require_once ( get_template_directory().'/lib/activation.php' );			// Activation Code
+require_once ( get_template_directory().'/lib/import/zr-import.php' );
 require_once ( get_template_directory().'/lib/defines.php' );
 require_once ( get_template_directory().'/lib/mobile-layout.php' );
 require_once ( get_template_directory().'/lib/classes.php' );		// Utility functions

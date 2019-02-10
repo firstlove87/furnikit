@@ -10992,7 +10992,7 @@ h1.page-title {
 .entry-summary form input[type="submit"]:hover {
   background: #000;
 }
-.footer >.container >p {
+.footer .footer-top-wrapper >.container >p {
   display: none;
 }
 .footer .footer-style1 {
@@ -11184,6 +11184,51 @@ h1.page-title {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
+.socials-footer2 h3 {
+  display: inline-block;
+  vertical-align: top;
+}
+.socials-footer2 h3 a {
+  font-size: 36px;
+  text-transform: capitalize;
+  color: #fff;
+}
+.socials-footer2 ul {
+  list-style: none;
+  margin: 11px 0 0 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.rtl .socials-footer2 ul {
+  margin: 11px 20px 0 0;
+}
+.socials-footer2 ul li {
+  display: inline-block;
+  vertical-align: top;
+}
+.socials-footer2 ul li a {
+  color: #999;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 5px 0 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.socials-footer2 ul li a:hover {
+  color: #8fd021;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.clearmar {
+  margin-bottom: 0;
+}
 .newsletter-top {
   margin-bottom: 15px;
 }
@@ -11305,14 +11350,14 @@ h1.page-title {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
   height: 40px;
-  line-height: 40px;
+  line-height: 39px;
   color: #fff;
   text-transform: capitalize;
   border: 2px #fff solid;
   font-weight: normal;
   border-radius: 0;
   float: left;
-  font-size: 16px;
+  font-size: 12px;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .rtl .newsletter-top2 .content-wrap .form-newsletter button[type="submit"] {
