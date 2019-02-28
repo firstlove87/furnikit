@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
-"POT-Creation-Date: 2018-12-21 10:28:38+00:00\n"
-"PO-Revision-Date: 2018-10-04 14:51+0200\n"
+"POT-Creation-Date: 2019-02-12 14:37+0100\n"
+"PO-Revision-Date: 2019-02-12 14:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: it_IT\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -105,6 +105,7 @@ msgstr "Titolo di default della lista dei desideri"
 #: includes/class.yith-wcwl-admin-init.php:1062
 #: includes/class.yith-wcwl-admin-init.php:1063
 #: includes/class.yith-wcwl-admin-init.php:1299
+#, php-format
 msgid "My wishlist on %s"
 msgstr "La mia lista dei desideri su %s"
 
@@ -377,6 +378,7 @@ msgid "It will be used by Pinterest."
 msgstr "Verrà usato da Pinterest."
 
 #: includes/class.yith-wcwl-admin-init.php:1327
+#, php-format
 msgid ""
 "If you want to take advantage of this feature, you could consider to "
 "purchase the %s."
@@ -391,6 +393,7 @@ msgid "Enable slider in wishlist"
 msgstr "Abilita lo slider nella lista dei desideri"
 
 #: includes/class.yith-wcwl-admin-init.php:1340
+#, php-format
 msgid ""
 "Choose to enable product slider in wishlist page with linked products (<a "
 "href=\"%s\" class=\"thickbox\">Example</a>). %s"
@@ -476,6 +479,7 @@ msgid "Wishlist Activated"
 msgstr "Funzionalità lista dei desideri attivata"
 
 #: includes/class.yith-wcwl-admin-init.php:1551
+#, php-format
 msgid ""
 "In the YIT Plugin tab you can find the Wishlist options. With this menu, you "
 "can access to all the settings of our plugins that you have activated. "
@@ -492,6 +496,7 @@ msgid "Wishlist Updated"
 msgstr "Lista dei desideri aggiornata"
 
 #: includes/class.yith-wcwl-admin-init.php:1563
+#, php-format
 msgid ""
 "From now on, you can find all the options of Wishlist under YIT Plugin -> "
 "Wishlist instead of WooCommerce -> Settings -> Wishlist, as in the previous "
@@ -574,14 +579,13 @@ msgstr "Cerca liste dei desideri"
 msgid "Wishlists"
 msgstr "Wishlist"
 
-#. Translators: %s Order number.
 #: includes/class.yith-wcwl-privacy.php:195
-#, fuzzy
+#, fuzzy, php-format
 msgid "Removed wishlist %s."
 msgstr "La mia lista dei desideri su %s"
 
-#. Translators: %s Order number.
 #: includes/class.yith-wcwl-privacy.php:199
+#, php-format
 msgid "Wishlist %s has been retained."
 msgstr ""
 
@@ -789,6 +793,7 @@ msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:185
 #: templates/admin/wishlist-panel-premium.php:383
+#, php-format
 msgid ""
 "Upgrade to the %1$spremium version%2$s%3$sof %1$sYITH WooCommerce Wishlist"
 "%2$s to benefit from all features!"
@@ -798,6 +803,7 @@ msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:187
 #: templates/admin/wishlist-panel-premium.php:385
+#, php-format
 msgid "%1$sUPGRADE%2$s%3$s to the premium version%2$s"
 msgstr "%1$sAGGIORNA%2$s %3$salla versione premium%2$s "
 
@@ -811,6 +817,7 @@ msgid "Multiple Wishlist"
 msgstr "Molteplici liste dei desideri"
 
 #: templates/admin/wishlist-panel-premium.php:203
+#, php-format
 msgid ""
 "%1$sDoes it ever happened to you to have too many wishes for a single wish "
 "list?%2$s%3$s The possibility to manage one's wishes is a fundamental "
@@ -835,6 +842,7 @@ msgid "Wishlist Private"
 msgstr "Lista dei desideri privata"
 
 #: templates/admin/wishlist-panel-premium.php:214
+#, php-format
 msgid ""
 "By enabling the option wishlist, users will also have the possibility to "
 "%1$smanage the visibility%2$s of their wish lists according to one of the "
@@ -845,11 +853,13 @@ msgstr ""
 "opzioni:"
 
 #: templates/admin/wishlist-panel-premium.php:216
+#, php-format
 msgid "%1$spublic:%2$s all users can look for your wish list and see it;"
 msgstr ""
 "%1$spubblica:%2$s tutti gli utenti possono cercare le tue liste e vederle;"
 
 #: templates/admin/wishlist-panel-premium.php:217
+#, php-format
 msgid ""
 "%1$sshared:%2$s only users possessing a direct link to the wish list page "
 "can display it;"
@@ -858,6 +868,7 @@ msgstr ""
 "pagina Lista dei desideri possono visualizzarle;"
 
 #: templates/admin/wishlist-panel-premium.php:218
+#, php-format
 msgid "%1$sprivate:%2$s only the wish list creator can see it."
 msgstr ""
 "%1$sprivata:%2$s solo colui che ha creato la Lista dei desideri può vederla."
@@ -868,6 +879,7 @@ msgid "Estimate Cost"
 msgstr "Preventivo"
 
 #: templates/admin/wishlist-panel-premium.php:236
+#, php-format
 msgid ""
 "%1$sDo you want to add the possibility to ask for estimates of costs into "
 "your catalogue?%3$s Do you want to manage customised packets for faithful "
@@ -894,6 +906,7 @@ msgid "Admin Panel"
 msgstr "Pannello amministrazione"
 
 #: templates/admin/wishlist-panel-premium.php:247
+#, php-format
 msgid ""
 "Thanks to the useful Admin panel, accessible directly among the WooCommerce "
 "submenu pages, you will have total control on users' wishlists. In addition "
@@ -915,6 +928,7 @@ msgid "Search Wishlists"
 msgstr "Cerca liste dei desideri"
 
 #: templates/admin/wishlist-panel-premium.php:264
+#, php-format
 msgid ""
 "How many times have you been looking for the perfect gift for a important "
 "event but you had no idea of what to buy? %1$s'Search wishlists'%2$s allows "
@@ -934,6 +948,7 @@ msgid "'ADD TO CART' CHECKBOX"
 msgstr "CHECKBOX 'AGGIUNGI AL CARRELLO'"
 
 #: templates/admin/wishlist-panel-premium.php:275
+#, php-format
 msgid ""
 "Your shop offers always a wide selection of products and wishlists of your "
 "users get more and more crowded everyday. Give them the possibility to "
@@ -958,6 +973,7 @@ msgid "DISABLE WISHLIST FOR UNLOGGED USERS"
 msgstr "DISABILITA LISTA DEI DESIDERI PER GLI UTENTI NON COLLEGATI"
 
 #: templates/admin/wishlist-panel-premium.php:292
+#, php-format
 msgid ""
 "Favour users that have registered to your shop and disable plugin "
 "functionalities for all users that have not. By disabling this option, each "
@@ -975,6 +991,7 @@ msgid "MESSAGE TO UNLOGGED USERS"
 msgstr "MESSAGGIO PER GLI UTENTI NON COLLEGATI"
 
 #: templates/admin/wishlist-panel-premium.php:303
+#, php-format
 msgid ""
 "Invite users that are visiting your shop to login if they want to fully "
 "benefit from Wishlist functionalities. Show a %1$scustomised message%2$s and "
@@ -994,6 +1011,7 @@ msgid "POPULAR TABLE"
 msgstr "Tabella dei prodotti più popolari"
 
 #: templates/admin/wishlist-panel-premium.php:320
+#, php-format
 msgid ""
 "Some products draw customer's attention more than others and they do not "
 "hesitate to add products to their wishlist. Table %1$s'Popular'%2$s allows "
@@ -1010,6 +1028,7 @@ msgid "FUNCTIONALITIES IN ONE CLICK"
 msgstr "Funzionalità in un clic"
 
 #: templates/admin/wishlist-panel-premium.php:331
+#, php-format
 msgid ""
 "Users have the possibility to search for a wishlist, create a new one or "
 "display those already created. Add these %1$sfunctionalities%2$s through the "
@@ -1030,6 +1049,7 @@ msgid "PROMOTIONAL EMAIL"
 msgstr "EMAIL PROMOZIONALE"
 
 #: templates/admin/wishlist-panel-premium.php:348
+#, php-format
 msgid ""
 "If you want to give the right input to your users to persuade them to "
 "%1$spurchase the products%2$s they have in their wishlists, you need to use "
@@ -1048,6 +1068,7 @@ msgid "FROM A WISHLIST TO ANOTHER"
 msgstr "DA UNA LISTA DEI DESIDERI ALL'ALTRA"
 
 #: templates/admin/wishlist-panel-premium.php:359
+#, php-format
 msgid ""
 "Who said that a product has to remain forever in the same wishlist? With the "
 "option %1$s\"Show \"Move to another wishlist\" dropdown menu\"%2$s, with "
@@ -1072,6 +1093,7 @@ msgid "DATE OF ADDITION TO A WISHLIST"
 msgstr "DATA INSERIMENTO NELLA LISTA DEI DESIDERI"
 
 #: templates/admin/wishlist-panel-premium.php:376
+#, php-format
 msgid ""
 "Activating the %1$s\"Show date of addition\"%2$s option, users can see the "
 "date in which they have added a particular product to their list: a new way "
@@ -1134,6 +1156,7 @@ msgid "In Stock"
 msgstr "Disponibile"
 
 #: templates/wishlist-view.php:188
+#, php-format
 msgid "Added on : %s"
 msgstr "Aggiunto il: %s"
 
@@ -1157,33 +1180,20 @@ msgstr "Richiedi un preventivo"
 msgid "Your email"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "YITH WooCommerce Wishlist"
-msgstr "YITH WooCommerce Wishlist"
+#~ msgid "YITH WooCommerce Wishlist"
+#~ msgstr "YITH WooCommerce Wishlist"
 
-#. Plugin URI of the plugin/theme
 #, fuzzy
-msgid "https://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
-msgstr "http://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
+#~ msgid "https://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
+#~ msgstr "http://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
 
-#. Description of the plugin/theme
-msgid ""
-"<code><strong>YITH WooCommerce Wishlist</strong></code> gives your users the "
-"possibility to create, fill, manage and share their wishlists allowing you "
-"to analyze their interests and needs to improve your marketing strategies. "
-"<a href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for "
-"your e-commerce on <strong>YITH</strong></a>"
-msgstr ""
-
-#. Author of the plugin/theme
 #, fuzzy
-msgid "YITH"
-msgstr "YITHEMES"
+#~ msgid "YITH"
+#~ msgstr "YITHEMES"
 
-#. Author URI of the plugin/theme
 #, fuzzy
-msgid "https://yithemes.com/"
-msgstr "http://yithemes.com/"
+#~ msgid "https://yithemes.com/"
+#~ msgstr "http://yithemes.com/"
 
 #~ msgid "Live Demo"
 #~ msgstr "Live demo"

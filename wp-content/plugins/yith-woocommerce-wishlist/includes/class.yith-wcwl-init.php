@@ -49,7 +49,7 @@ if ( ! class_exists( 'YITH_WCWL_Init' ) ) {
 		 * @var string
 		 * @since 1.0.0
 		 */
-		public $version = '2.2.7';
+		public $version = '2.2.8';
 
 		/**
 		 * Plugin database version
@@ -270,7 +270,7 @@ if ( ! class_exists( 'YITH_WCWL_Init' ) ) {
 		public function add_body_class( $classes ) {
 			$wishlist_page_id = yith_wcwl_object_id( get_option( 'yith_wcwl_wishlist_page_id' ) );
 
-			if ( is_page( $wishlist_page_id ) ) {
+			if ( ! empty( $wishlist_page_id ) && is_page( $wishlist_page_id ) ) {
 				$classes[] = 'woocommerce-wishlist';
 				$classes[] = 'woocommerce';
 				$classes[] = 'woocommerce-page';
@@ -354,7 +354,7 @@ if ( ! class_exists( 'YITH_WCWL_Init' ) ) {
 		    wp_enqueue_style( 'woocommerce_prettyPhoto_css' );
 			wp_enqueue_style( 'jquery-selectBox' );
 
-			if ( ! wp_script_is( 'yith-wcwl-user-main', 'registered' ) ) {
+			if ( ! wp_style_is( 'yith-wcwl-user-main', 'registered' ) ) {
 				wp_enqueue_style( 'yith-wcwl-main' );
 			}
 			else {

@@ -510,7 +510,7 @@ if( ! class_exists( 'YITH_WCWL_Shortcode' ) ) {
 			$additional_params = apply_filters( 'yith_wcwl_add_to_wishlist_params', $additional_params );
 			$additional_params['template_part'] = isset( $additional_params['template_part'] ) ? $additional_params['template_part'] : $template_part;
 
-			$atts = is_array( $atts ) ? array_filter( $atts ) : $atts;
+			$atts = is_array( $atts ) ? array_filter( $atts ) : (array) $atts;
 
 			$atts = shortcode_atts(
 				$additional_params,

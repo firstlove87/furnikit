@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WCWL\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
-"POT-Creation-Date: 2018-12-21 10:28:38+00:00\n"
-"PO-Revision-Date: 2018-10-04 14:52+0200\n"
+"POT-Creation-Date: 2019-02-12 14:38+0100\n"
+"PO-Revision-Date: 2019-02-12 14:38+0100\n"
 "Last-Translator: Nicola Mustone <mail@nicolamustone.it>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -48,13 +48,11 @@ msgid ""
 msgstr ""
 
 #: includes/class.yith-wcwl-admin-init.php:1017
-msgctxt "[Part of]: Also, please read the plugin documentation"
 msgid "Also, please read the plugin"
 msgstr ""
 
 #: includes/class.yith-wcwl-admin-init.php:1018
 #, fuzzy
-msgctxt "[Part Of]: Also, please read the plugin documentation"
 msgid "documentation"
 msgstr "Tilläggets dokumentation"
 
@@ -101,6 +99,7 @@ msgstr "Titel på önskelistan"
 #: includes/class.yith-wcwl-admin-init.php:1062
 #: includes/class.yith-wcwl-admin-init.php:1063
 #: includes/class.yith-wcwl-admin-init.php:1299
+#, php-format
 msgid "My wishlist on %s"
 msgstr "Min önskelista på %s"
 
@@ -361,6 +360,7 @@ msgid "It will be used by Pinterest."
 msgstr ""
 
 #: includes/class.yith-wcwl-admin-init.php:1327
+#, php-format
 msgid ""
 "If you want to take advantage of this feature, you could consider to "
 "purchase the %s."
@@ -375,6 +375,7 @@ msgid "Enable slider in wishlist"
 msgstr "Aktivera slider i önskelistan"
 
 #: includes/class.yith-wcwl-admin-init.php:1340
+#, php-format
 msgid ""
 "Choose to enable product slider in wishlist page with linked products (<a "
 "href=\"%s\" class=\"thickbox\">Example</a>). %s"
@@ -460,6 +461,7 @@ msgid "Wishlist Activated"
 msgstr "Önskelista aktiverad"
 
 #: includes/class.yith-wcwl-admin-init.php:1551
+#, php-format
 msgid ""
 "In the YIT Plugin tab you can find the Wishlist options. With this menu, you "
 "can access to all the settings of our plugins that you have activated. "
@@ -476,6 +478,7 @@ msgid "Wishlist Updated"
 msgstr "Önskelistan uppdaterad"
 
 #: includes/class.yith-wcwl-admin-init.php:1563
+#, php-format
 msgid ""
 "From now on, you can find all the options of Wishlist under YIT Plugin -> "
 "Wishlist instead of WooCommerce -> Settings -> Wishlist, as in the previous "
@@ -502,9 +505,8 @@ msgid "Product correctly added to cart"
 msgstr "Produkt korrekt tillagd i varukorgen"
 
 #: includes/class.yith-wcwl-install.php:244
-msgctxt "page_slug"
 msgid "wishlist"
-msgstr "onskelista"
+msgstr "önskelista"
 
 #: includes/class.yith-wcwl-privacy.php:50
 msgid "While you visit our site, we’ll track:"
@@ -557,14 +559,13 @@ msgstr "Lägg till i önskelistan"
 msgid "Wishlists"
 msgstr "Önskelista"
 
-#. Translators: %s Order number.
 #: includes/class.yith-wcwl-privacy.php:195
-#, fuzzy
+#, fuzzy, php-format
 msgid "Removed wishlist %s."
 msgstr "Min önskelista på %s"
 
-#. Translators: %s Order number.
 #: includes/class.yith-wcwl-privacy.php:199
+#, php-format
 msgid "Wishlist %s has been retained."
 msgstr ""
 
@@ -587,7 +588,6 @@ msgid "Title"
 msgstr "Fälttitel"
 
 #: includes/class.yith-wcwl-privacy.php:231
-msgctxt "date wishlist was created"
 msgid "Created on"
 msgstr ""
 
@@ -613,13 +613,11 @@ msgstr "Offentlig"
 
 #: includes/class.yith-wcwl-shortcode.php:45
 #, fuzzy
-msgctxt "[gutenberg]: block name"
 msgid "YITH Add to Wishlist"
 msgstr "Lägg till i önskelistan"
 
 #: includes/class.yith-wcwl-shortcode.php:46
 #, fuzzy
-msgctxt "[gutenberg]: block description"
 msgid "Shows Add to Wishlist button"
 msgstr "“Lägg till i önskelista”-knapp"
 
@@ -661,13 +659,11 @@ msgstr ""
 
 #: includes/class.yith-wcwl-shortcode.php:94
 #, fuzzy
-msgctxt "[gutenberg]: block name"
 msgid "YITH Wishlist"
 msgstr "Aktivera YITH Wishlist"
 
 #: includes/class.yith-wcwl-shortcode.php:95
 #, fuzzy
-msgctxt "[gutenberg]: block description"
 msgid "Shows list of products in wishlist"
 msgstr "Visa produktens pris för varje objekt i önskelistan"
 
@@ -765,6 +761,7 @@ msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:185
 #: templates/admin/wishlist-panel-premium.php:383
+#, php-format
 msgid ""
 "Upgrade to the %1$spremium version%2$s%3$sof %1$sYITH WooCommerce Wishlist"
 "%2$s to benefit from all features!"
@@ -772,6 +769,7 @@ msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:187
 #: templates/admin/wishlist-panel-premium.php:385
+#, php-format
 msgid "%1$sUPGRADE%2$s%3$s to the premium version%2$s"
 msgstr ""
 
@@ -785,6 +783,7 @@ msgid "Multiple Wishlist"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:203
+#, php-format
 msgid ""
 "%1$sDoes it ever happened to you to have too many wishes for a single wish "
 "list?%2$s%3$s The possibility to manage one's wishes is a fundamental "
@@ -801,6 +800,7 @@ msgid "Wishlist Private"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:214
+#, php-format
 msgid ""
 "By enabling the option wishlist, users will also have the possibility to "
 "%1$smanage the visibility%2$s of their wish lists according to one of the "
@@ -808,16 +808,19 @@ msgid ""
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:216
+#, php-format
 msgid "%1$spublic:%2$s all users can look for your wish list and see it;"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:217
+#, php-format
 msgid ""
 "%1$sshared:%2$s only users possessing a direct link to the wish list page "
 "can display it;"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:218
+#, php-format
 msgid "%1$sprivate:%2$s only the wish list creator can see it."
 msgstr ""
 
@@ -827,6 +830,7 @@ msgid "Estimate Cost"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:236
+#, php-format
 msgid ""
 "%1$sDo you want to add the possibility to ask for estimates of costs into "
 "your catalogue?%3$s Do you want to manage customised packets for faithful "
@@ -844,6 +848,7 @@ msgid "Admin Panel"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:247
+#, php-format
 msgid ""
 "Thanks to the useful Admin panel, accessible directly among the WooCommerce "
 "submenu pages, you will have total control on users' wishlists. In addition "
@@ -859,6 +864,7 @@ msgid "Search Wishlists"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:264
+#, php-format
 msgid ""
 "How many times have you been looking for the perfect gift for a important "
 "event but you had no idea of what to buy? %1$s'Search wishlists'%2$s allows "
@@ -872,6 +878,7 @@ msgid "'ADD TO CART' CHECKBOX"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:275
+#, php-format
 msgid ""
 "Your shop offers always a wide selection of products and wishlists of your "
 "users get more and more crowded everyday. Give them the possibility to "
@@ -892,6 +899,7 @@ msgid "DISABLE WISHLIST FOR UNLOGGED USERS"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:292
+#, php-format
 msgid ""
 "Favour users that have registered to your shop and disable plugin "
 "functionalities for all users that have not. By disabling this option, each "
@@ -904,6 +912,7 @@ msgid "MESSAGE TO UNLOGGED USERS"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:303
+#, php-format
 msgid ""
 "Invite users that are visiting your shop to login if they want to fully "
 "benefit from Wishlist functionalities. Show a %1$scustomised message%2$s and "
@@ -920,6 +929,7 @@ msgid "POPULAR TABLE"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:320
+#, php-format
 msgid ""
 "Some products draw customer's attention more than others and they do not "
 "hesitate to add products to their wishlist. Table %1$s'Popular'%2$s allows "
@@ -932,6 +942,7 @@ msgid "FUNCTIONALITIES IN ONE CLICK"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:331
+#, php-format
 msgid ""
 "Users have the possibility to search for a wishlist, create a new one or "
 "display those already created. Add these %1$sfunctionalities%2$s through the "
@@ -948,6 +959,7 @@ msgid "PROMOTIONAL EMAIL"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:348
+#, php-format
 msgid ""
 "If you want to give the right input to your users to persuade them to "
 "%1$spurchase the products%2$s they have in their wishlists, you need to use "
@@ -961,6 +973,7 @@ msgid "FROM A WISHLIST TO ANOTHER"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:359
+#, php-format
 msgid ""
 "Who said that a product has to remain forever in the same wishlist? With the "
 "option %1$s\"Show \"Move to another wishlist\" dropdown menu\"%2$s, with "
@@ -981,6 +994,7 @@ msgid "DATE OF ADDITION TO A WISHLIST"
 msgstr ""
 
 #: templates/admin/wishlist-panel-premium.php:376
+#, php-format
 msgid ""
 "Activating the %1$s\"Show date of addition\"%2$s option, users can see the "
 "date in which they have added a particular product to their list: a new way "
@@ -1040,6 +1054,7 @@ msgid "In Stock"
 msgstr "Finns i lager"
 
 #: templates/wishlist-view.php:188
+#, php-format
 msgid "Added on : %s"
 msgstr "Tillagd: %s"
 
@@ -1063,33 +1078,12 @@ msgstr "Fråga efter en uppskattning"
 msgid "Your email"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "YITH WooCommerce Wishlist"
-msgstr "YITH WooCommerce Wishlist"
-
-#. Plugin URI of the plugin/theme
-msgid "https://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"<code><strong>YITH WooCommerce Wishlist</strong></code> gives your users the "
-"possibility to create, fill, manage and share their wishlists allowing you "
-"to analyze their interests and needs to improve your marketing strategies. "
-"<a href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for "
-"your e-commerce on <strong>YITH</strong></a>"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "YITH"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://yithemes.com/"
-msgstr ""
-
+#~ msgctxt "page_slug"
 #~ msgid "wishlist"
-#~ msgstr "önskelista"
+#~ msgstr "onskelista"
+
+#~ msgid "YITH WooCommerce Wishlist"
+#~ msgstr "YITH WooCommerce Wishlist"
 
 #~ msgid ""
 #~ "WARNING: This plugin requires at least WooCommerce 2.2! Please, use this "
