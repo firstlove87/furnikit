@@ -10,6 +10,11 @@
   display: none !important;
   visibility: hidden !important;
 }
+@media (min-width: 1200px) {
+  .about-us .about-top {
+    padding-top: 35px;
+  }
+}
 @media (max-width: 1199px) {
   body.boxed-layout .body-wrapper {
     width: 100%;
