@@ -26,7 +26,6 @@
 			echo '<h3>'. $title .'</h3>';
 			?>
 		</div>
-		<div class="description font-custome"><?php echo ( $description != '' ) ? ''. esc_html( $description ) .'' : ''; ?></div>
 		<div class="slider responsive">
 			<?php foreach ($list as $post){ ?>
 				<?php if($post->post_content != Null) { ?>
@@ -41,20 +40,9 @@
 								<?php endif; ?>
 							</a>
 							<div class="readmore"><a href="<?php echo get_permalink($post->ID)?>"><?php esc_html_e('Read', 'zr_core'); ?></a></div>
+							<span class="entry-date"><a href="<?php echo get_permalink($post->ID)?>"><?php echo get_the_date( '', $post->ID );?></a></span>
 						</div>
 						<div class="entry-content">
-							<div class="entry-meta">
-								<span class="entry-author">
-									<?php esc_html_e('By', 'zr_core'); ?> <?php the_author_posts_link(); ?>
-								</span>
-								<span class="entry-date"><a href="<?php echo get_permalink($post->ID)?>"><?php echo get_the_date( '', $post->ID );?></a></span>
-								<span class="entry-comment">
-									<a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i><?php echo sprintf( _n( '%d Comment', '%d Comments', $post-> comment_count , 'zr_core' ), number_format_i18n( $post-> comment_count ) ); ?></a>
-								</span>
-								<?php if(has_tag()) :?>
-									<?php the_tags( '<span class="entry-meta-link entry-meta-tag"><span class="fa fa-tags"></span>', ', ', '</span>' ); ?>
-								<?php endif;?>
-							</div>
 							<h4><a href="<?php echo get_permalink($post->ID)?>"><?php echo $post->post_title;?></a></h4>			
 						</div>
 					</div>

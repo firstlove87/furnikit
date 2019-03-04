@@ -6,7 +6,7 @@ global $woocommerce; ?>
 <div class="top-form top-form-minicart furnikit-minicart pull-right">
 	<div class="top-minicart-icon pull-right">
 		<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-		<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'furnikit'); ?>"><?php echo '<span class="minicart-number">'.$woocommerce->cart->cart_contents_count.'</span>';?></a>
+		<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'furnikit'); ?>"><?php echo '<span class="minicart-number">'.$woocommerce->cart->cart_contents_count.'</span>';?><?php esc_html_e( ' items', 'furnikit') ?></a>
 	</div>
 	<div class="wrapp-minicart">
 		<div class="minicart-padding">

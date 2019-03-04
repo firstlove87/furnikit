@@ -70,22 +70,12 @@ if ( $list -> have_posts() ){ ?>
 				<?php } ?>
 					<div class="item-wrap">
 						<div class="item-detail">
-							<div class="item-image-countdown">
-								<a href="<?php echo get_permalink($post->ID)?>" >
-									<?php 
-								if ( has_post_thumbnail( $post->ID ) ){
-									
-										echo get_the_post_thumbnail( $post->ID, 'shop_single' ) ? get_the_post_thumbnail( $post->ID, 'shop_single' ): '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';		
-								}else{
-									echo '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';
-								}
-							?></a>				
-							</div>
-							<div class="item-content">
+							<div class="item-content col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="product-countdown" data-date="<?php echo esc_attr( $date ); ?>"  data-price="<?php echo esc_attr( $symboy.$forginal_price ); ?>" data-starttime="<?php echo esc_attr( $start_time ); ?>" data-cdtime="<?php echo esc_attr( $countdown_time ); ?>" data-id="<?php echo 'product_'.$id.$post->ID; ?>"></div>
 								<div class="item-info">
 								<?php if( $title1 != '' ){?>
-									<div class="box-title">
-										<h3><?php echo ( $title1 != '' ) ? $title1 : $term_name; ?></h3>
+									<div class="block-title clearfix">
+										<?php echo ( $title1 != '' ) ? $title1 : $term_name; ?>
 									</div>
 								<?php } ?>
 								<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>
@@ -107,11 +97,20 @@ if ( $list -> have_posts() ){ ?>
 									</span>
 								</div>
 								<?php } ?>
-								<div class="description"><?php echo $post->post_excerpt; ?></div>
-								<div class="product-countdown" data-date="<?php echo esc_attr( $date ); ?>"  data-price="<?php echo esc_attr( $symboy.$forginal_price ); ?>" data-starttime="<?php echo esc_attr( $start_time ); ?>" data-cdtime="<?php echo esc_attr( $countdown_time ); ?>" data-id="<?php echo 'product_'.$id.$post->ID; ?>"></div>	
-								<div class="view-product"><a href="<?php echo get_permalink($post->ID)?>" ><?php esc_html_e( 'View products', 'zr_core' ); ?></a></div>	
+								<div class="shop-now"><a href="<?php echo get_permalink($post->ID)?>" ><?php esc_html_e( 'Shop now', 'zr_core' ); ?></a></div>	
 								</div>
-							</div>															
+							</div>
+							<div class="item-image-countdown col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<a href="<?php echo get_permalink($post->ID)?>" >
+									<?php 
+								if ( has_post_thumbnail( $post->ID ) ){
+									
+										echo get_the_post_thumbnail( $post->ID, 'shop_single' ) ? get_the_post_thumbnail( $post->ID, 'shop_single' ): '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';		
+								}else{
+									echo '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';
+								}
+							?></a>				
+							</div>												
 						</div>
 					</div>
 				<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
