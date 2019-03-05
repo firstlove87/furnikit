@@ -83,11 +83,11 @@ function zr_label_sales(){
 function zr_quickview(){
 	global $product;
 	$html='';
-	if( function_exists( 'mocha_options' ) ){
-		$quickview = mocha_options()->getCpanelValue( 'product_quickview' );
+	if( function_exists( 'zr_options' ) ){
+		$quickview = zr_options()->getCpanelValue( 'product_quickview' );
 	}
 	if( $quickview ):
-		$html = '<a href="javascript:void(0)" data-product_id="'. esc_attr( $product->get_id() ) .'" class="zr-quickview" data-type="quickview" data-ajax_url="' . WC_AJAX::get_endpoint( "%%endpoint%%" ) . '">'. esc_html__( 'Quick View ', 'mocha' ) .'</a>';	
+		$html = '<a href="javascript:void(0)" data-product_id="'. esc_attr( $product->get_id() ) .'" class="zr-quickview" data-type="quickview" data-ajax_url="' . WC_AJAX::get_endpoint( "%%endpoint%%" ) . '">'. esc_html__( 'Quick View ', 'zr_core' ) .'</a>';	
 	endif;
 	return $html;
 }

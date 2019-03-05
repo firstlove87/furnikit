@@ -20,13 +20,11 @@
 <div class="zr-woo-tab-cat zr-ajax" id="<?php echo esc_attr( 'category_' . $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">
 		<div class="category-slider-content clearfix">
-			<div class="block-title">
-				<?php
-				$titles = strpos($title1, ' ');
-				$title = ($titles !== false) ? '<span>' . substr($title1, 0, $titles) . '</span>' .' '. substr($title1, $titles + 1): $title1 ;
-				echo '<h3>'. $title .'</h3>';
-				?>
-			</div>
+			<?php if( $title1 != '' ){?>
+				<div class="block-title">
+					<h3><?php echo ( $title1 != '' ) ? $title1 : ''; ?></h3>
+				</div>
+			<?php } ?>
 			<button class="button-collapse collapsed pull-right" type="button" data-toggle="collapse" data-target="#<?php echo 'nav_'.$widget_id; ?>"  aria-expanded="false">				
 			</button>
 			<div class="nav-tabs-select">
@@ -142,25 +140,7 @@
 						?>
 							<div class="item <?php echo esc_attr( $class )?> product clearfix">
 						<?php } ?>
-							<div class="item-wrap">
-								<div class="item-detail">										
-									<div class="item-img products-thumb">		
-										<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
-										<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
-									</div>										
-									<div class="item-content">																			
-										<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>
-										<?php if ( $price_html = $product->get_price_html() ){?>
-										<div class="item-price">
-											<span>
-												<?php echo $price_html; ?>
-											</span>
-										</div>
-										<?php } ?>
-										<?php do_action( 'zr_woocommerce_custom_action' ); ?>
-									</div>								
-								</div>
-							</div>
+							<?php include( ZRTHEME . '/default-item.php' ); ?>
 							<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
 						<?php $i++; $j++; endwhile; wp_reset_postdata();?>
 						</div>

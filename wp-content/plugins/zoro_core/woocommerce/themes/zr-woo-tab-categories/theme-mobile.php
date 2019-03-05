@@ -17,14 +17,14 @@
 							switch ($so) {
 							case 'latest':
 								$tab_title = __( 'Latest Products', 'zr_core' );
-								( mocha_mobile_check() ) ? $tab_title = __( 'New arrivals', 'zr_core' ) : $tab_title = __( 'Latest Products', 'zr_core' );
+								( zr_mobile_check() ) ? $tab_title = __( 'New arrivals', 'zr_core' ) : $tab_title = __( 'Latest Products', 'zr_core' );
 							break;
 							case 'rating':
 								$tab_title = __( 'Top Rating Products', 'zr_core' );
 							break;
 							case 'bestsales':
 								$tab_title = __( 'Best Selling Products', 'zr_core' );
-								( mocha_mobile_check() ) ? $tab_title = __( 'Best Selling', 'zr_core' ) : $tab_title = __( 'Best Selling Products', 'zr_core' );
+								( zr_mobile_check() ) ? $tab_title = __( 'Best Selling', 'zr_core' ) : $tab_title = __( 'Best Selling Products', 'zr_core' );
 							break;						
 							default:
 								$tab_title = __( 'Featured Products', 'zr_core' );

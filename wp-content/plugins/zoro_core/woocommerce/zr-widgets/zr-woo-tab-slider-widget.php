@@ -445,8 +445,8 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 								<div class="item-detail">										
 									<div class="item-img products-thumb">		
 									<?php if( $layout == 'layout1' ){ ?>
-										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('mocha_shop-image'); ?></a>
-										<?php echo mocha_quickview() ;?>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('shop_catalog'); ?></a>
+										<?php echo zr_quickview() ;?>
 									<?php 
 										}else{
 											do_action( 'woocommerce_before_shop_loop_item_title' ); 

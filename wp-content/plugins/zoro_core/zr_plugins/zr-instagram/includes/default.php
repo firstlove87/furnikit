@@ -27,7 +27,12 @@
 					<div class="slider responsive">
 						<?php foreach( $images as $i => $image ) : ?>
 							<div class="item">
-								<a target="_blank" href="<?php echo esc_url( $url[$i] ); ?>"><img src="<?php echo esc_url( $image->standard_resolution->url );?>" alt=""/><span class="fa fa-instagram"></span></a>
+								<a target="_blank" href="<?php echo esc_url( $url[$i] ); ?>"><img src="<?php echo esc_url( $image->standard_resolution->url );?>" alt=""/>
+								<div class="read-more">
+									<span class="fa fa-instagram"></span>
+									<label><?php esc_html_e( 'Shop this one', 'furnikit') ?></label>
+								</div>
+								</a>
 							</div>
 						<?php endforeach; ?>
 					</div>

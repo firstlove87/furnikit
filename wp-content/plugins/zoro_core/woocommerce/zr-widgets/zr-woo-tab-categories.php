@@ -383,7 +383,7 @@ if ( !class_exists('zr_woo_tab_categories') ) {
 			}
 			if( $list->have_posts() ) :
 		?>
-			<?php if( $layout == 'layout3') :?>
+			<?php if( $layout == 'layout1') :?>
 			<div id="<?php echo esc_attr( 'tab_mobile'. $target ); ?>" class=""> 
 				<div class="resp-slider-container">
 					<div class="items-wrapper clearfix">	
@@ -424,37 +424,29 @@ if ( !class_exists('zr_woo_tab_categories') ) {
 				</div>
 			</div>
 			<?php else: ?>
-			<div id="<?php echo esc_attr( 'tab_'. $target ); ?>" class="woo-tab-container-slider responsive-slider loading clearfix" 					</div>										
-									<div class="item-content">																			
-				data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
-				<div class="resp-slider-container">
-						<div class="slider responsive">
-					<?php 
-						$count_items 	= 0;
-						$numb 			= ( $list->found_posts > 0 ) ? $list->found_posts : count( $list->posts );
-						$count_items 	= ( $numberposts >= $numb ) ? $numb : $numberposts;
-						$i 				= 0;
-						$j				= 0;
-						while($list->have_posts()): $list->the_post();
-						global $product, $post;	
-						$class = ( $product->get_price_html() ) ? '' : 'item-nonprice';
-						if( $i % $item_row == 0 ){
-					?>
-						<div class="item <?php echo esc_attr( $class )?> product clearfix">
-					<?php } ?>
+			<div id="<?php echo esc_attr( 'tab_'. $target ); ?>" class="woo-tab-container-slider responsive-slider loading clearfix" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
+					<div class="resp-slider-container">
+							<div class="slider responsive">
+						<?php 
+							$count_items 	= 0;
+							$numb 			= ( $list->found_posts > 0 ) ? $list->found_posts : count( $list->posts );
+							$count_items 	= ( $numberposts >= $numb ) ? $numb : $numberposts;
+							$i 				= 0;
+							$j				= 0;
+							while($list->have_posts()): $list->the_post();
+							global $product, $post;
+							$class = ( $product->get_price_html() ) ? '' : 'item-nonprice';
+							if( $i % $item_row == 0 ){
+						?>
+							<div class="item <?php echo esc_attr( $class )?> product clearfix">
+						<?php } ?>
 							<div class="item-wrap">
 								<div class="item-detail">										
-									<div class="item-img products-thumb">		
-									<?php if( $layout == 'layout1' ){ ?>
-										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('mocha_shop-image'); ?></a>
-										<?php echo mocha_quickview() ;?>
-									<?php 
-										}else{
-											do_action( 'woocommerce_before_shop_loop_item_title' ); 
-										}
-									?>
-									<?php	zr_label_sales() ?>
-										<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>								
+									<div class="item-img products-thumb">			
+										<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
+									</div>										
+									<div class="item-content">
+										<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>							
 										<!-- price -->
 										<?php if ( $price_html = $product->get_price_html() ){?>
 											<div class="item-price">
@@ -462,16 +454,17 @@ if ( !class_exists('zr_woo_tab_categories') ) {
 													<?php echo $price_html; ?>
 												</span>
 											</div>
-										<?php } ?>
-											<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+										<?php } ?>	
+										<!-- add to cart, wishlist, compare -->
+										<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 									</div>								
 								</div>
+							</div>
+							<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
+						<?php $i++; $j++; endwhile; wp_reset_postdata();?>
 						</div>
-						<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
-					<?php $i++; $j++; endwhile; wp_reset_postdata();?>
 					</div>
 				</div>
-			</div>
 		<?php endif; ?>
 	<?php 
 			else :
