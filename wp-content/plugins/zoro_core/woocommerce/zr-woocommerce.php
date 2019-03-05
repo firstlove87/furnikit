@@ -18,6 +18,7 @@ include_once( 'zr-widgets/zr-slider-countdown-widget.php' );
 include_once( 'zr-widgets/zr-woo-tab-slider-widget.php' );
 include_once( 'zr-widgets/zr-category-slider-widget.php' );
 include_once( 'zr-widgets/zr-related-upsell-widget.php' );
+include_once( 'zr-widgets/zr-woo-tab-categories.php' );
 
 /**
  * Register Widgets
@@ -28,6 +29,7 @@ function zr_register_widgets() {
 	register_widget( 'zr_woo_slider_widget' );	
 	register_widget( 'zr_woo_slider_countdown_widget' );	
 	register_widget( 'zr_woo_tab_slider_widget' );
+	register_widget( 'zr_woo_tab_categories' );
 	register_widget( 'zr_related_upsell_widget' );
 }
 add_action( 'widgets_init', 'zr_register_widgets' );

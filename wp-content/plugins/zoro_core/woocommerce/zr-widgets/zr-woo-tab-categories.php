@@ -1,35 +1,43 @@
 <?php
 /**
-	* ZR Woocommerce Slider
-	* Register Widget Woocommerce Slider
-	* @author 		flytheme
-	* @version     1.0.0
-**/
-if ( !class_exists('zr_woo_slider_widget') ) {
-	class zr_woo_slider_widget extends WP_Widget {
+ * ZR Woo Tab Slider Widget
+ * Plugin URI: http://www.magentech.com
+ * Version: 1.0
+ * This Widget help you to show images of product as a beauty tab reponsive slideshow
+ */
+if ( !class_exists('zr_woo_tab_categories') ) {
+	class zr_woo_tab_categories extends WP_Widget {
+		
+		private $snumber = 1;
+		
 		/**
 		 * Widget setup.
 		 */
-		private $snumber = 1;
-
-		function __construct(){
+		function __construct() {
 			/* Widget settings. */
-			$widget_ops = array( 'classname' => 'zr_woo_slider_widget', 'description' => __('Zr Woo Slider', 'zr_core') );
+			$widget_ops = array( 'classname' => 'zr-woo-tab-categories', 'description' => __('Zr Woo Tab Categories', 'zr_core') );
 
 			/* Widget control settings. */
-			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'zr_woo_slider_widget' );
+			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'zr-woo-tab-categories' );
 
 			/* Create the widget. */
-			parent::__construct( 'zr_woo_slider_widget', __('Zr Woo Slider widget', 'zr_core'), $widget_ops, $control_ops );
-			
-			/* Create Shortcode */
-			add_shortcode( 'woo_slide', array( $this, 'WS_Shortcode' ) );
+			parent::__construct( 'zr-woo-tab-categories', __('Zr Woo Tab Categories widget', 'zr_core'), $widget_ops, $control_ops );
+					
+			add_shortcode( 'woo_tab_categories', array( $this, 'SC_WooTabCat' ) );
 			
 			/* Create Vc_map */
-			if ( class_exists('Vc_Manager') ) {
-				add_action( 'vc_before_init', array( $this, 'WS_integrateWithVC' ), 20 );
+			if ( class_exists('Vc_Manager') && class_exists( 'WooCommerce' ) ) {
+				add_action( 'vc_before_init', array( $this, 'SC_integrateWithVC' ) );
 			}
-						
+			
+			/* Ajax Call */
+			if( version_compare( WC()->version, '2.4', '>=' ) ){
+					add_action( 'wc_ajax_zr_tab_categories', array( $this, 'zr_tab_categories_callback' ) );
+			}
+			else {
+				add_action( 'wp_ajax_zr_tab_categories', array( $this, 'zr_tab_categories_callback') );
+				add_action( 'wp_ajax_nopriv_zr_tab_categories', array( $this, 'zr_tab_categories_callback') );
+			}
 		}
 		
 		public function generateID() {
@@ -37,19 +45,19 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 		}
 		
 		/**
-		* Add Vc Params
+			* Add Vc Params
 		**/
-		function WS_integrateWithVC(){
+		function SC_integrateWithVC(){
 			$terms = get_terms( 'product_cat', array( 'parent' => '', 'hide_empty' => false ) );
-			$term = array( __( 'All Categories', 'zr_core' ) => '' );
+			$term = array();
 			if( count( $terms )  > 0 ){
 				foreach( $terms as $cat ){
 					$term[$cat->name] = $cat -> slug;
 				}
 			}
 			vc_map( array(
-			  "name" => __( "ZR Woocommerce Slider", 'zr_core' ),
-			  "base" => "woo_slide",
+			  "name" => __( "SW Woocommerce Tab Categories", 'zr_core' ),
+			  "base" => "woo_tab_categories",
 			  "icon" => "icon-wpb-ytc",
 			  "class" => "",
 			  "category" => __( "ZR WooCommerce", 'zr_core'),
@@ -64,7 +72,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"value" => '',
 					"description" => __( "Title", 'zr_core' )
 				 ),
-				array(
+				 array(
 					"type" => "textfield",
 					"holder" => "div",
 					"class" => "",
@@ -73,7 +81,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"admin_label" => true,
 					"value" => 0,
 					"description" => __( "Choose Product Title Length if you want to trim word, leave 0 to not trim word", 'zr_core' )
-				),		
+				),
 				 array(
 					"type" => "textfield",
 					"holder" => "div",
@@ -83,21 +91,9 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"admin_label" => true,
 					"value" => '',
 					"description" => __( "Description", 'zr_core' )
-				 ),				
-				 array(
-					'type' => 'attach_image',
-					'heading' => __( 'Banner', 'zr_core' ),
-					'param_name' => 'banner',
-					'value' =>'',
-					'description' => __( 'Banner Child Category', 'zr_core' ),
-					"admin_label" => true,
-					'dependency' => array(
-						'element' => 'layout',
-						'value' => array( 'childcat1', 'default', 'toprate', 'bestsales', 'featured' )
-					)
-				),
+				 ),	
 				  array(
-					"type" => "dropdown",
+					"type" => "multiselect",
 					"holder" => "div",
 					"class" => "",
 					"heading" => __( "Category", 'zr_core' ),
@@ -105,6 +101,16 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"admin_label" => true,
 					"value" => $term,
 					"description" => __( "Select Categories", 'zr_core' )
+				 ),				  
+				 array(
+					"type" => "dropdown",
+					"holder" => "div",
+					"class" => "",
+					"heading" => __( "Select Order Product", 'zr_core' ),
+					"param_name" => "select_order",
+					"admin_label" => true,
+					"value" => array('Latest Products' => 'latest', 'Top Rating Products' => 'rating', 'Best Selling Products' => 'bestsales', 'Featured Products' => 'featured'),
+					"description" => __( "Select Order Product", 'zr_core' )
 				 ),
 				 array(
 					"type" => "dropdown",
@@ -145,6 +151,16 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"admin_label" => true,
 					"value" =>array(1,2,3),
 					"description" => __( "Number row per column", 'zr_core' )
+				 ),				 
+				 array(
+					"type" => "textfield",
+					"holder" => "div",
+					"class" => "",
+					"heading" => __( "Tab Active", 'zr_core' ),
+					"param_name" => "tab_active",
+					"admin_label" => true,
+					"value" => 1,
+					"description" => __( "Select tab active", 'zr_core' )
 				 ),
 				 array(
 					"type" => "dropdown",
@@ -233,7 +249,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"heading" => __( "Layout", 'zr_core' ),
 					"param_name" => "layout",
 					"admin_label" => true,
-					"value" => array( 'Layout Default' => 'default', 'Layout Featured' => 'featured', 'Layout Top Rated' => 'toprate', 'Layout Best Sales' => 'bestsales', 'Layout Child Category' => 'childcat1', 'Layout Child Category1' => 'childcat2' ),
+					"value" => array( 'Layout Default' => 'default', 'Layout 1' => 'layout1' ),
 					"description" => __( "Layout", 'zr_core' )
 				 ),
 				 array(
@@ -252,114 +268,245 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 		/**
 			** Add Shortcode
 		**/
-		function WS_Shortcode( $atts, $content = null ){
+		function SC_WooTabCat( $atts, $content = null ){
 			extract( shortcode_atts(
 				array(
-					'title1' => '',	
+					'title1' => '',
 					'title_length' => 0,
-					'banner' => '',
-					'description' => '',	
+					'category' => '',
+					'images' => '',
+					'description1'=>'',
+					'select_order' => 'latest',	
 					'orderby' => 'name',
 					'order'	=> 'DESC',
-					'category' => '',
 					'numberposts' => 5,
-					'length' => 25,
 					'item_row'=> 1,
+					'tab_active' => 1,
 					'columns' => 4,
 					'columns1' => 4,
 					'columns2' => 3,
 					'columns3' => 2,
 					'columns4' => 1,
 					'speed' => 1000,
-					'autoplay' => 'true',
+					'autoplay' => 'false',
 					'interval' => 5000,
+					'show_more'  => 'yes',
 					'layout'  => 'default',
 					'scroll' => 1
 				), $atts )
 			);
-			ob_start();		
+			ob_start();	
 			if( $layout == 'default' ){
-				include( zr_override_check( 'zr-slider', 'default' ) );					
-			}elseif( $layout == 'featured' ){
-				include( zr_override_check( 'zr-slider', 'featured' ) );			
+				include( zr_override_check( 'zr-woo-tab-categories', 'default' ) );
+			}if( $layout == 'layout1' ){
+				include( zr_override_check( 'zr-woo-tab-categories', 'theme1' ) );
 			}			
-			elseif( $layout == 'toprate' ){
-				include( zr_override_check( 'zr-slider', 'toprated' ) );			
-			}
-			elseif( $layout == 'bestsales' ){
-				include( zr_override_check( 'zr-slider', 'bestsales' ) );			
-			}			
-			elseif( $layout == 'childcat1' ){
-				include( zr_override_check( 'zr-slider', 'childcat1' ) );			
-			}
-			elseif( $layout == 'childcat2' ){
-				include( zr_override_check( 'zr-slider', 'childcat2' ) );			
-			}			
-			
 			$content = ob_get_clean();
 			
 			return $content;
 		}
-		/**
-			* Cut string
-		**/
-		public function ya_trim_words( $text, $num_words = 30, $more = null ) {
-			$text = strip_shortcodes( $text);
-			$text = apply_filters('the_content', $text);
-			$text = str_replace(']]>', ']]&gt;', $text);
-			return wp_trim_words($text, $num_words, $more);
+		
+		function zr_tab_categories_callback(){
+			$category 	 = ( isset( $_POST["catid"] )   	&& $_POST["catid"] != '' ) ? $_POST["catid"] : '';		
+			$so          = ( isset( $_POST["sorder"] )  	&& $_POST["sorder"] != '' ) ? $_POST["sorder"] : 'latest';
+			$layout      = ( isset( $_POST["layout"] )  	&& $_POST["layout"] != '' ) ? $_POST["layout"] : 'default';
+			$target      = ( isset( $_POST["target"] )  	&& $_POST["target"] != '' ) ? str_replace( '#', '', $_POST["target"] ) : '';
+			$numberposts = ( isset( $_POST["number"] )  	&& $_POST["number"] > 0 ) ? $_POST["number"] : 0;
+			$item_row    = ( isset( $_POST["item_row"] )  	&& $_POST["item_row"] > 0 ) ? $_POST["item_row"] : 1;
+			$columns	 = ( isset( $_POST["columns"] )   	&& $_POST["columns"] > 0 ) ? $_POST["columns"] : 1;
+			$columns1	 = ( isset( $_POST["columns1"] )  	&& $_POST["columns1"] > 0 ) ? $_POST["columns1"] : 1;
+			$columns2	 = ( isset( $_POST["columns2"] )  	&& $_POST["columns2"] > 0 ) ? $_POST["columns2"] : 1;
+			$columns3	 = ( isset( $_POST["columns3"] )  	&& $_POST["columns3"] > 0 ) ? $_POST["columns3"] : 1;
+			$columns4	 = ( isset( $_POST["columns4"] )  	&& $_POST["columns4"] > 0 ) ? $_POST["columns4"] : 1;
+			$interval	 = ( isset( $_POST["interval"] )  	&& $_POST["interval"] > 0 ) ? $_POST["interval"] : 1000;
+			$speed		 = ( isset( $_POST["speed"] )  	  	&& $_POST["speed"] > 0 ) ? $_POST["speed"] : 1000;
+			$scroll		 = ( isset( $_POST["scroll"] )  	&& $_POST["scroll"] > 0 ) ? $_POST["scroll"] : 1;
+			$autoplay	 = ( isset( $_POST["autoplay"] )  	&& $_POST["autoplay"] != '' ) ? $_POST["autoplay"] : 'false';
+			$title_length = ( isset( $_POST["title_length"] )  	&& $_POST["title_length"] > 0 ) ? $_POST["title_length"] : 0;
+			$Wc_Query = new WC_Query();
+			$default = array();			
+			if( $so == 'latest' ){
+				$default = array(
+					'post_type'	=> 'product',
+					'paged'		=> 1,
+					'showposts'	=> $numberposts,
+					'orderby'	=> 'date'
+				);						
+			}
+			if( $so == 'rating' ){
+				$default = array(
+					'post_type'		=> 'product',							
+					'post_status' 	=> 'publish',
+					'no_found_rows' => 1,					
+					'showposts' 	=> $numberposts						
+				);
+				$default['meta_query'] = WC()->query->get_meta_query();
+				add_filter( 'posts_clauses',  array( $Wc_Query, 'order_by_rating_post_clauses' ) );
+			}
+			if( $so == 'bestsales' ){
+				$default = array(
+					'post_type' 			=> 'product',							
+					'post_status' 			=> 'publish',
+					'ignore_sticky_posts'   => 1,
+					'showposts'				=> $numberposts,
+					'meta_key' 		 		=> 'total_sales',
+					'orderby' 		 		=> 'meta_value_num',					
+				);
+			}
+			if( $so == 'featured' ){
+				$default = array(
+					'post_type'	=> 'product',
+					'post_status' 			=> 'publish',
+					'ignore_sticky_posts'	=> 1,
+					'showposts' 		=> $numberposts,
+					'meta_query'			=> array(						
+						array(
+							'key' 		=> '_featured',
+							'value' 	=> 'yes'
+						)
+					)
+				);
+			}
+			if( $category != '' ){
+				$default['tax_query'] =  array(
+					array(
+						'taxonomy'	=> 'product_cat',
+						'field'		=> 'slug',
+						'terms'		=> $category,
+						'operator' 	=> 'IN'
+					)
+				);
+			}
+			$list = new WP_Query( $default );
+			if( $so == 'rating' ){			
+				remove_filter( 'posts_clauses',  array( $Wc_Query, 'order_by_rating_post_clauses' ) );
+			}
+			if( $list->have_posts() ) :
+		?>
+			<?php if( $layout == 'layout3') :?>
+			<div id="<?php echo esc_attr( 'tab_mobile'. $target ); ?>" class=""> 
+				<div class="resp-slider-container">
+					<div class="items-wrapper clearfix">	
+						<?php 
+							$count_items = 0;
+							$count_items = ( $numberposts >= $list->found_posts ) ? $list->found_posts : $numberposts;
+							$i = 0;
+							while($list->have_posts()): $list->the_post();					
+							global $product, $post;
+							$class = ( $product->get_price_html() ) ? '' : 'item-nonprice';
+							$symboy = get_woocommerce_currency_symbol( get_woocommerce_currency() );
+							if( $i % $item_row == 0 ){
+						?>
+							<div class="item product <?php echo esc_attr( $class )?>">
+							<?php } ?>
+								<div class="item-wrap">
+									<div class="item-detail">
+										<div class="item-image">									
+											<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
+											<?php zr_label_sales() ?>
+										</div>
+										<div class="item-content">
+											<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>
+											<!-- Price -->
+											<?php if ( $price_html = $product->get_price_html() ){?>
+											<div class="item-price">
+												<span>
+													<?php echo $price_html; ?>
+												</span>
+											</div>
+											<?php } ?>								
+										</div>															
+									</div>
+								</div>
+							<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
+						<?php $i ++; endwhile; wp_reset_postdata();?>
+					</div> 
+				</div>
+			</div>
+			<?php else: ?>
+			<div id="<?php echo esc_attr( 'tab_'. $target ); ?>" class="woo-tab-container-slider responsive-slider loading clearfix" 					</div>										
+									<div class="item-content">																			
+				data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
+				<div class="resp-slider-container">
+						<div class="slider responsive">
+					<?php 
+						$count_items 	= 0;
+						$numb 			= ( $list->found_posts > 0 ) ? $list->found_posts : count( $list->posts );
+						$count_items 	= ( $numberposts >= $numb ) ? $numb : $numberposts;
+						$i 				= 0;
+						$j				= 0;
+						while($list->have_posts()): $list->the_post();
+						global $product, $post;	
+						$class = ( $product->get_price_html() ) ? '' : 'item-nonprice';
+						if( $i % $item_row == 0 ){
+					?>
+						<div class="item <?php echo esc_attr( $class )?> product clearfix">
+					<?php } ?>
+							<div class="item-wrap">
+								<div class="item-detail">										
+									<div class="item-img products-thumb">		
+									<?php if( $layout == 'layout1' ){ ?>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('mocha_shop-image'); ?></a>
+										<?php echo mocha_quickview() ;?>
+									<?php 
+										}else{
+											do_action( 'woocommerce_before_shop_loop_item_title' ); 
+										}
+									?>
+									<?php	zr_label_sales() ?>
+										<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>								
+										<!-- price -->
+										<?php if ( $price_html = $product->get_price_html() ){?>
+											<div class="item-price">
+												<span>
+													<?php echo $price_html; ?>
+												</span>
+											</div>
+										<?php } ?>
+											<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+									</div>								
+								</div>
+						</div>
+						<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
+					<?php $i++; $j++; endwhile; wp_reset_postdata();?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+	<?php 
+			else :
+				echo '<div class="alert alert-warning alert-dismissible" role="alert">
+				<a class="close" data-dismiss="alert">&times;</a>
+				<p>'. esc_html__( 'There is not product on this tab', 'zr_core' ) .'</p>
+				</div>';
+			endif;
+			exit;
 		}
+		
 		/**
 		 * Display the widget on the screen.
 		 */
 		public function widget( $args, $instance ) {
-			wp_reset_postdata();
 			extract($args);
-			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-			$description1 = apply_filters( 'widget_description', empty( $instance['description1'] ) ? '' : $instance['description1'], $instance, $this->id_base );
-			echo $before_widget;
-			if ( !empty( $title ) && !empty( $description1 ) ) { echo $before_title . $title . $after_title . '<h5 class="category_description clearfix">' . $description1 . '</h5>'; }
-			else if (!empty( $title ) && $description1==NULL ){ echo $before_title . $title . $after_title; }
 			
-			if ( !isset($instance['category']) ){
-				$instance['category'] = array();
-			}
-			$id = $this -> number;
-			extract($instance);
+			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+			echo $before_widget;
+			if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }
 
 			if ( !array_key_exists('widget_template', $instance) ){
 				$instance['widget_template'] = 'default';
 			}
-			
-			if ( $tpl =  zr_override_check( 'zr-slider', $instance['widget_template'] ) ){ 			
+			extract($instance);
+		
+			if ( $tpl = zr_override_check( 'zr-woo-tab-slider', $instance['widget_template'] ) ){ 
 				$link_img = plugins_url('images/', __FILE__);
-				$widget_id = $args['widget_id'];		
+				//$widget_id = $args['widget_id'];		
 				include $tpl;
 			}
 					
 			/* After widget (defined by themes). */
 			echo $after_widget;
 		}    
-		
-		/*Call to order clause*/
-		public static function order_by_rating_post_clauses( $args ) {
-			global $wpdb;
-
-			$args['fields'] .= ", AVG( $wpdb->commentmeta.meta_value ) as average_rating ";
-
-			$args['where'] .= " AND ( $wpdb->commentmeta.meta_key = 'rating' OR $wpdb->commentmeta.meta_key IS null ) ";
-
-			$args['join'] .= "
-				LEFT OUTER JOIN $wpdb->comments ON($wpdb->posts.ID = $wpdb->comments.comment_post_ID)
-				LEFT JOIN $wpdb->commentmeta ON($wpdb->comments.comment_ID = $wpdb->commentmeta.comment_id)
-			";
-
-			$args['orderby'] = "average_rating DESC, $wpdb->posts.post_date DESC";
-
-			$args['groupby'] = "$wpdb->posts.ID";
-
-			return $args;
-		}
 		
 		/**
 		 * Update the widget settings.
@@ -370,36 +517,30 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			// strip tag on text field
 			$instance['title1'] = strip_tags( $new_instance['title1'] );
 			$instance['title_length'] = intval( $new_instance['title_length'] );
-			$instance['description'] = strip_tags( $new_instance['description'] );
 			// int or array
 			if ( array_key_exists('category', $new_instance) ){
 				if ( is_array($new_instance['category']) ){
-					$instance['category'] = $new_instance['category'];
+					$instance['category'] = array_map( 'intval', $new_instance['category'] );
 				} else {
-					$instance['category'] = $new_instance['category'];
+					$instance['category'] = intval($new_instance['category']);
 				}
-			}
-			
-			if ( array_key_exists('orderby', $new_instance) ){
-				$instance['orderby'] = strip_tags( $new_instance['orderby'] );
-			}
-
-			if ( array_key_exists('order', $new_instance) ){
-				$instance['order'] = strip_tags( $new_instance['order'] );
-			}
-
+			}	
+			if ( array_key_exists('select_order', $new_instance) ){
+				if ( is_array($new_instance['select_order']) ){
+					$instance['select_order'] = $new_instance['select_order'];
+				} else {
+					$instance['select_order'] = strip_tags( $new_instance['select_order'] );
+				}
+			}		
 			if ( array_key_exists('numberposts', $new_instance) ){
 				$instance['numberposts'] = intval( $new_instance['numberposts'] );
 			}
-
-			if ( array_key_exists('length', $new_instance) ){
-				$instance['length'] = intval( $new_instance['length'] );
-			}
-			
 			if ( array_key_exists('item_row', $new_instance) ){
 				$instance['item_row'] = intval( $new_instance['item_row'] );
 			}
-			
+			if ( array_key_exists('tab_active', $new_instance) ){
+				$instance['tab_active'] = intval( $new_instance['tab_active'] );
+			}		
 			if ( array_key_exists('columns', $new_instance) ){
 				$instance['columns'] = intval( $new_instance['columns'] );
 			}
@@ -430,6 +571,9 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			if ( array_key_exists('autoplay', $new_instance) ){
 				$instance['autoplay'] = strip_tags( $new_instance['autoplay'] );
 			}
+			if ( array_key_exists('show_more', $new_instance) ){
+				$instance['show_more'] = strip_tags( $new_instance['show_more'] );
+			}
 			$instance['widget_template'] = strip_tags( $new_instance['widget_template'] );
 			
 						
@@ -458,10 +602,6 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 						$opts['size'] = 5;
 					}
 				}
-				if (array_key_exists('allow_select_all', $opts) && $opts['allow_select_all']){
-					unset($opts['allow_select_all']);
-					$allow_select_all = '<option value="">All Categories</option>';
-				}
 			} else {
 				// is not multiple
 				unset($opts['multiple']);
@@ -471,7 +611,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 				}
 				if (array_key_exists('allow_select_all', $opts) && $opts['allow_select_all']){
 					unset($opts['allow_select_all']);
-					$allow_select_all = '<option value="">All Categories</option>';
+					$allow_select_all = '<option value="0">All Categories</option>';
 				}
 			}
 		
@@ -506,22 +646,22 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			//print '<pre>'; var_dump($categories);
 			// if (!$templates) return '';
 			$all_category_ids = array();
-			foreach ($categories as $cat) $all_category_ids[] = $cat->slug;
+			foreach ($categories as $cat) $all_category_ids[] = (int)$cat->term_id;
 			
-			$is_valid_field_value = in_array($field_value, $all_category_ids);
+			$is_valid_field_value = is_numeric($field_value) && in_array($field_value, $all_category_ids);
 			if (!$is_valid_field_value && is_array($field_value)){
 				$intersect_values = array_intersect($field_value, $all_category_ids);
 				$is_valid_field_value = count($intersect_values) > 0;
 			}
 			if (!$is_valid_field_value){
-				$field_value = '';
+				$field_value = '0';
 			}
 		
 			$select_html = '<select ' . $select_attributes . '>';
 			if (isset($allow_select_all)) $select_html .= $allow_select_all;
-			foreach ($categories as $cat){			
-				$select_html .= '<option value="' . $cat->slug . '"';
-				if ($cat->slug == $field_value || (is_array($field_value)&&in_array($cat->slug, $field_value))){ $select_html .= ' selected="selected"';}
+			foreach ($categories as $cat){
+				$select_html .= '<option value="' . $cat->term_id . '"';
+				if ($cat->term_id == $field_value || (is_array($field_value)&&in_array($cat->term_id, $field_value))){ $select_html .= ' selected="selected"';}
 				$select_html .=  '>'.$cat->name.'</option>';
 			}
 			$select_html .= '</select>';
@@ -537,35 +677,34 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 		public function form( $instance ) {
 
 			/* Set up some default widget settings. */
-			$defaults = array();
-			$instance = wp_parse_args( (array) $instance, $defaults ); 		
-					 
-			$title1 			= isset( $instance['title1'] )    		? strip_tags($instance['title1']) : '';
-			$title_length	= isset( $instance['title_length'] )  ? intval($instance['title_length']) : 0;
-			$description 	= isset( $instance['description'] )   ? strip_tags($instance['description']) : '';
-			$categoryid 	= isset( $instance['category'] )  		? $instance['category'] : '';
-			$orderby    	= isset( $instance['orderby'] )     	? strip_tags($instance['orderby']) : 'ID';
-			$order      	= isset( $instance['order'] )       	? strip_tags($instance['order']) : 'ASC';
-			$number     	= isset( $instance['numberposts'] ) 	? intval($instance['numberposts']) : 5;
-			$length     	= isset( $instance['length'] )      	? intval($instance['length']) : 25;
-			$item_row     = isset( $instance['item_row'] )      ? intval($instance['item_row']) : 1;
-			$columns     	= isset( $instance['columns'] )      	? intval($instance['columns']) : 1;
-			$columns1     = isset( $instance['columns1'] )     	? intval($instance['columns1']) : 1;
-			$columns2     = isset( $instance['columns2'] )      ? intval($instance['columns2']) : 1;
-			$columns3     = isset( $instance['columns3'] )      ? intval($instance['columns3']) : 1;
-			$columns4     = isset( $instance['columns'] )      	? intval($instance['columns4']) : 1;
-			$autoplay     = isset( $instance['autoplay'] )      ? strip_tags($instance['autoplay']) : 'false';
-			$interval     = isset( $instance['interval'] )      ? intval($instance['interval']) : 5000;
-			$speed     		= isset( $instance['speed'] )      		? intval($instance['speed']) : 1000;
-			$scroll     	= isset( $instance['scroll'] )      	? intval($instance['scroll']) : 1;
-			$widget_template   	= isset( $instance['widget_template'] ) ? strip_tags($instance['widget_template']) : 'default';
+			$defaults 			= array();
+			$instance 			= wp_parse_args( (array) $instance, $defaults ); 		
+			$title1					= isset( $instance['title1'] )      	? strip_tags($instance['title1']) : '';
+			$title_length		= isset( $instance['title_length'] ) ? intval($instance['title_length']) : '';  
+			$categoryid 		= isset( $instance['category'] )    	? $instance['category'] : 0;
+			$select_order   = isset( $instance['select_order'] ) ? $instance['select_order'] : array();		
+			$number     		= isset( $instance['numberposts'] ) 	? intval($instance['numberposts']) : 5;
+			$item_row     	= isset( $instance['item_row'] )      ? intval($instance['item_row']) : 1;
+			$length     		= isset( $instance['length'] )      	? intval($instance['length']) : 25;
+			$tab_active    	= isset( $instance['tab_active'] )    ? intval($instance['tab_active']) : 1;
+			$columns     		= isset( $instance['columns'] )      	? intval($instance['columns']) : 1;
+			$columns1     	= isset( $instance['columns1'] )      ? intval($instance['columns1']) : 1;
+			$columns2     	= isset( $instance['columns2'] )      ? intval($instance['columns2']) : 1;
+			$columns3     	= isset( $instance['columns3'] )      ? intval($instance['columns3']) : 1;
+			$columns4    		= isset( $instance['columns'] )      	? intval($instance['columns4']) : 1;
+			$autoplay     	= isset( $instance['autoplay'] )      ? strip_tags($instance['autoplay']) : 'false';
+			$interval     	= isset( $instance['interval'] )      ? intval($instance['interval']) : 5000;
+			$speed     			= isset( $instance['speed'] )      		? intval($instance['speed']) : 1000;
+			$scroll     		= isset( $instance['scroll'] )      	? intval($instance['scroll']) : 1;
+			$show_more   		= isset( $instance['show_more'] ) 		? strip_tags($instance['show_more']) : 'yes';
+			$widget_template = isset( $instance['widget_template'] ) ? strip_tags($instance['widget_template']) : 'default';
 					   
 					 
-			?>		
+			?>
+
 			</p> 
 			  <div style="background: Blue; color: white; font-weight: bold; text-align:center; padding: 3px"> * Data Config * </div>
 			</p>
-			
 			<p>
 				<label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title', 'zr_core')?></label>
 				<br />
@@ -581,30 +720,23 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id('description'); ?>"><?php _e('Description', 'zr_core')?></label>
-				<br />
-				<input class="widefat" id="<?php echo $this->get_field_id('description'); ?>" name="<?php echo $this->get_field_name('description'); ?>"
-					type="text"	value="<?php echo esc_attr($description); ?>" />
-			</p>
-			
-			<p id="wgd-<?php echo $this->get_field_id('category'); ?>">
 				<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Category', 'zr_core')?></label>
 				<br />
 				<?php echo $this->category_select('category', array('allow_select_all' => true), $categoryid); ?>
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id('orderby'); ?>"><?php _e('Orderby', 'zr_core')?></label>
+				<label for="<?php echo $this->get_field_id('select_order'); ?>"><?php _e('Select Order', 'zr_core')?></label>
 				<br />
-				<?php $allowed_keys = array('name' => 'Name', 'author' => 'Author', 'date' => 'Date', 'title' => 'Title', 'modified' => 'Modified', 'parent' => 'Parent', 'ID' => 'ID', 'rand' =>'Rand', 'comment_count' => 'Comment Count'); ?>
+				<?php $allowed_key = array('latest' => 'Latest Products', 'bestsales' => 'Best Sellers', 'rating' => 'Top Rating Products', 'featured' => 'Featured Products'); ?>
 				<select class="widefat"
-					id="<?php echo $this->get_field_id('orderby'); ?>"
-					name="<?php echo $this->get_field_name('orderby'); ?>">
+					id="<?php echo $this->get_field_id('select_order'); ?>"
+					name="<?php echo $this->get_field_name('select_order').'[]'; ?>" multiple>
 					<?php
 					$option ='';
-					foreach ($allowed_keys as $value => $key) :
+					foreach ($allowed_key as $value => $key) :
 						$option .= '<option value="' . $value . '" ';
-						if ($value == $orderby){
+						if ( in_array( $value, $select_order ) ){
 							$option .= 'selected="selected"';
 						}
 						$option .=  '>'.$key.'</option>';
@@ -615,35 +747,12 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('order'); ?>"><?php _e('Order', 'zr_core')?></label>
-				<br />
-				<select class="widefat"
-					id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>">
-					<option value="DESC" <?php if ($order=='DESC'){?> selected="selected"
-					<?php } ?>>
-						<?php _e('Descending', 'zr_core')?>
-					</option>
-					<option value="ASC" <?php if ($order=='ASC'){?> selected="selected"	<?php } ?>>
-						<?php _e('Ascending', 'zr_core')?>
-					</option>
-				</select>
-			</p>
-
-			<p>
 				<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e('Number of Posts', 'zr_core')?></label>
 				<br />
 				<input class="widefat" id="<?php echo $this->get_field_id('numberposts'); ?>" name="<?php echo $this->get_field_name('numberposts'); ?>"
 					type="text"	value="<?php echo esc_attr($number); ?>" />
 			</p>
 
-			<p>
-				<label for="<?php echo $this->get_field_id('length'); ?>"><?php _e('Excerpt length (in words): ', 'zr_core')?></label>
-				<br />
-				<input class="widefat"
-					id="<?php echo $this->get_field_id('length'); ?>" name="<?php echo $this->get_field_name('length'); ?>" type="text" 
-					value="<?php echo esc_attr($length); ?>" />
-			</p> 
-			
 			<?php $row_number = array( '1' => 1, '2' => 2, '3' => 3 ); ?>
 			<p>
 				<label for="<?php echo $this->get_field_id('item_row'); ?>"><?php _e('Number row per column:  ', 'zr_core')?></label>
@@ -663,6 +772,14 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					echo $option;
 					?>
 				</select>
+			</p> 
+			
+			<p>
+				<label for="<?php echo $this->get_field_id('tab_active'); ?>"><?php _e('Tab active: ', 'zr_core')?></label>
+				<br />
+				<input class="widefat"
+					id="<?php echo $this->get_field_id('tab_active'); ?>" name="<?php echo $this->get_field_name('tab_active'); ?>" type="text" 
+					value="<?php echo esc_attr($tab_active); ?>" />
 			</p> 
 			
 			<?php $number = array('1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6); ?>
@@ -804,6 +921,23 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			</p>
 			
 			<p>
+				<label for="<?php echo $this->get_field_id('show_more'); ?>"><?php _e("Show More Category", 'zr_core')?></label>
+				<br/>
+				
+				<select class="widefat"
+					id="<?php echo $this->get_field_id('show_more'); ?>"	name="<?php echo $this->get_field_name('show_more'); ?>">
+					<option value="yes" <?php if ($show_more=='yes'){?> selected="selected"
+					<?php } ?>>
+						<?php _e('Yes', 'zr_core')?>
+					</option>
+					<option value="no" <?php if ($show_more=='no'){?> selected="selected"
+					<?php } ?>>
+						<?php _e('No', 'zr_core')?>
+					</option>				
+				</select>
+			</p>
+			
+			<p>
 				<label for="<?php echo $this->get_field_id('widget_template'); ?>"><?php _e("Template", 'zr_core')?></label>
 				<br/>
 				
@@ -811,32 +945,16 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					id="<?php echo $this->get_field_id('widget_template'); ?>"	name="<?php echo $this->get_field_name('widget_template'); ?>">
 					<option value="default" <?php if ($widget_template=='default'){?> selected="selected"
 					<?php } ?>>
-						<?php _e('Default', 'zr_core')?>		
-					</option>			
-					<option value="featured" <?php if ($widget_template=='featured'){?> selected="selected"
-					<?php } ?>>
-						<?php _e('Featured Slider', 'zr_core')?>
+						<?php _e('Default', 'zr_core')?>
 					</option>
-					<option value="toprated" <?php if ($widget_template=='toprated'){?> selected="selected"
+					<option value="theme1" <?php if ($widget_template=='theme1'){?> selected="selected"
 					<?php } ?>>
-						<?php _e('Top Rated Slider', 'zr_core')?>
-					</option>
-					<option value="bestsales" <?php if ($widget_template=='bestsales'){?> selected="selected"
-					<?php } ?>>
-						<?php _e('Best Selling Slider', 'zr_core')?>
-					</option>
-					<option value="childcat" <?php if ($widget_template=='childcat'){?> selected="selected"
-					<?php } ?>>
-						<?php _e('Child Category Style 1', 'zr_core')?>
-					</option>
-					<option value="childcat1" <?php if ($widget_template=='childcat1'){?> selected="selected"
-					<?php } ?>>
-						<?php _e('Child Category Style 2', 'zr_core')?>
+						<?php _e('Layout 1', 'zr_core')?>
 					</option>
 				</select>
-			</p>  
+			</p>               
 		<?php
-		}	
+		}		
 	}
 }
 ?>
