@@ -10,14 +10,6 @@
 <header id="header" class="header header-<?php echo esc_attr( $furnikit_page_header ); ?>">
 	<div class="header-top clearfix">
 		<div class="container">
-			<div class="header-left col-lg-4 col-md-4 col-sm-4">
-				<a class="top-icon" href="javascript:void(0)"><i class="fa fa-bars" aria-hidden="true"></i></a>
-				<?php if ( is_active_sidebar( 'top2' ) ) { ?>	
-					<div class="header-bar">
-					<?php dynamic_sidebar( 'top2' ); ?>
-					</div>
-				<?php } ?>
-			</div>	
 			<!-- Logo -->
 			<div class="furnikit-logo col-lg-4 col-md-4 col-sm-4">
 				<?php furnikit_logo(); ?>
