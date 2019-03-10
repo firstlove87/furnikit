@@ -3098,6 +3098,10 @@ select:-webkit-autofill {
   font-size: 16px !important;
   font-weight: 500 !important;
 }
+.wpb_revslider_element .revo-des3 {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
 .wpb_revslider_element .revo-more1 {
   font-size: 14px !important;
   height: 40px !important;
@@ -3116,6 +3120,30 @@ select:-webkit-autofill {
 .wpb_revslider_element .revo-more1:hover {
   background: #8fd021;
   color: #fff;
+  -webkit-transition: all 0.3s !important;
+  -moz-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+  -ms-transition: all 0.3s !important;
+  transition: all 0.3s !important;
+}
+.wpb_revslider_element .revo-more2 {
+  font-size: 14px !important;
+  height: 40px !important;
+  line-height: 39px !important;
+  padding: 0 20px;
+  background: #222;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 600 !important;
+  -webkit-transition: all 0.3s !important;
+  -moz-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+  -ms-transition: all 0.3s !important;
+  transition: all 0.3s !important;
+  color: #fff;
+}
+.wpb_revslider_element .revo-more2:hover {
+  background: #8fd021;
   -webkit-transition: all 0.3s !important;
   -moz-transition: all 0.3s !important;
   -o-transition: all 0.3s !important;
