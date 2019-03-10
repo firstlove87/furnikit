@@ -8,7 +8,7 @@
 		</div>';
 	}
 ?>
-<div id="<?php echo 'slider_' . $widget_id; ?>" class="zr-category-slider3 <?php echo esc_attr( $style ); ?>">
+<div id="<?php echo 'slider_' . $widget_id; ?>" class="zr-category-slider3">
 	<?php	if( $title1 != '' ){ ?>
 	<div class="block-title">
 		<h3><span><?php echo $title1; ?></span></h3>

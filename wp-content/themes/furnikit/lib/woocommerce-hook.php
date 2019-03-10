@@ -83,35 +83,18 @@ add_action( 'wp', 'furnikit_cart_filter' );
 function furnikit_cart_filter(){
 	$furnikit_page_header = ( get_post_meta( get_the_ID(), 'page_header_style', true ) != '' ) ? get_post_meta( get_the_ID(), 'page_header_style', true ) : zr_options('header_style');
 	$filter = zr_woocommerce_version_check( $version = '3.0.3' ) ? 'woocommerce_add_to_cart_fragments' : 'add_to_cart_fragments';
-	if( $furnikit_page_header == 'style6' ):
+	if( $furnikit_page_header == 'style2' || $furnikit_page_header == 'style3' ):
 		add_filter($filter, 'furnikit_add_to_cart_fragment_style2', 100);
-	elseif( $furnikit_page_header == 'style7' ):
-		add_filter($filter, 'furnikit_add_to_cart_fragment_style3', 100);
-	elseif( $furnikit_page_header == 'style8' ):
-		add_filter($filter, 'furnikit_add_to_cart_fragment_style4', 100);
 	else :
 		add_filter($filter, 'furnikit_add_to_cart_fragment', 100);
 	endif;
-}
-
-function furnikit_add_to_cart_fragment_style3( $fragments ) {
-	ob_start();
-	get_template_part( 'woocommerce/minicart-ajax-style3' );
-	$fragments['.furnikit-minicart3'] = ob_get_clean();
-	return $fragments;		
 }
 
 function furnikit_add_to_cart_fragment_style2( $fragments ) {
 	ob_start();
 	get_template_part( 'woocommerce/minicart-ajax-style2' );
 	$fragments['.furnikit-minicart2'] = ob_get_clean();
-	return $fragments;		
-}
-function furnikit_add_to_cart_fragment_style4( $fragments ) {
-	ob_start();
-	get_template_part( 'woocommerce/minicart-ajax-style4' );
-	$fragments['.furnikit-minicart4'] = ob_get_clean();
-	return $fragments;		
+	return $fragments;
 }
 
 function furnikit_add_to_cart_fragment( $fragments ) {

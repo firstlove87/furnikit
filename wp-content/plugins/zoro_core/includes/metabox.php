@@ -137,9 +137,7 @@ function zr_metabox_init(){
 				'description' => esc_html__( ' Chose to select header page content for this page. ', 'zr_core' ),
 				'std'	 => '',
 				'values' => array( '' => esc_html__( 'Header Style', 'zr_core' ), 'style1' => esc_html__( 'Header Style1', 'zr_core' ), 'style2' => esc_html__( 'Header Style2', 'zr_core' ), 'style3' => esc_html__( 'Header Style3', 'zr_core' ),
-							'style4' => esc_html__( 'Header Style4', 'zr_core' ), 'style5' => esc_html__( 'Header Style5', 'zr_core' ),'style6' => esc_html__( 'Header Style6', 'zr_core' ),
-							'style7' => esc_html__( 'Header Style7', 'zr_core' ), 'style8' => esc_html__( 'Header Style8', 'zr_core' ),'style9' => esc_html__( 'Header Style9', 'zr_core' ), 'style10' => esc_html__( 'Header Style10', 'zr_core' ),
-							'style11' => esc_html__( 'Header Style11', 'zr_core' ), 'style12' => esc_html__( 'Header Style12', 'zr_core' )
+					'style4' => esc_html__( 'Header Style4', 'zr_core' ), 'style5' => esc_html__( 'Header Style5', 'zr_core' ),
 				)
 			)		
 		)

@@ -3,29 +3,15 @@
 		$select_order = explode( ',', $select_order );
 	}
 	$widget_id = isset( $widget_id ) ? $widget_id : $this->generateID();
-	$viewall = get_permalink( wc_get_page_id( 'shop' ) );	
 ?>
 <div class="zr-wootab-slider zr-woo-tab-style2" id="<?php echo esc_attr( 'woo_tab_' . $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">				
-		<div class="category-slider-content <?php echo esc_attr( $style );?> clearfix">
-			<!-- Get child category -->
-		<?php 
-		$term_str = '';
-		if( $category != '' ){
-			$term = get_term_by( 'slug', $category, 'product_cat' );
-			if( $term ) :
-				$term_name = $term->name;
-		?>
-			<div class="box-title">
-				<h3><?php echo ( $title1 != '' ) ? $title1 : $term_name ; ?></h3>
-			</div>
-		<?php 							
-			$thumbnail_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-			$thumb = wp_get_attachment_image( $thumbnail_id,'large' );
-		?>			
-			<?php endif; ?>
-			
-		<?php } ?>
+		<div class="category-slider-content clearfix">
+			<?php if( $title1 != '' ){?>
+				<div class="block-title">
+					<h3><?php echo ( $title1 != '' ) ? $title1 : ''; ?></h3>
+				</div>
+			<?php } ?>
 			<button class="button-collapse collapsed pull-right" type="button" data-toggle="collapse" data-target="#<?php echo 'nav_'.$widget_id; ?>"  aria-expanded="false">				
 			</button>
 			<div class="nav-tabs-select clearfix">
@@ -55,6 +41,7 @@
 						</li>			
 					<?php } ?>
 				</ul>
+			</div>
 			</div>
 			<!-- End get child category -->		
 			<div class="tab-content clearfix">		
@@ -120,7 +107,7 @@
 				?>
 					<div id="<?php echo esc_attr( 'tab_'. $select_order[$active]. '_' .$widget_id ); ?>" class="woo-tab-container-slider responsive-slider loading clearfix" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
 						<div class="resp-slider-container">
-								<div class="slider responsive">
+							<div class="slider responsive">
 							<?php 
 								$count_items 	= 0;
 								$numb 			= ( $list->found_posts > 0 ) ? $list->found_posts : count( $list->posts );
@@ -149,9 +136,7 @@
 					endif;				
 				?>
 				</div>
-				<div class="woocommmerce-shop"><a href="<?php echo esc_url($viewall); ?>" title="Woocommerce Shop"><?php echo esc_html__('View all','zr_core');?></a></div>
 			<!-- End product tab slider -->
-			</div>
 		</div>
 	</div>
 </div>

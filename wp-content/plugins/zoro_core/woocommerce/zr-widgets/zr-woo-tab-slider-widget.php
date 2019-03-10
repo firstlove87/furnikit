@@ -93,7 +93,7 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 					"description" => __( "Description", 'zr_core' ),
 					"dependency" => array(
 						'element' => 'layout',
-						'value' => 'layout1' 
+						'value' => 'layout5' 
 					),
 				),
 				  array(
@@ -112,9 +112,9 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 					'param_name' => 'images',
 					'description' => __( 'Select images', 'zr_core' ),
 					"dependency" => array(
-								'element' => 'layout',
-								'value' => 'layout1' 
-							),
+						'element' => 'layout',
+						'value' => 'layout5' 
+					),
 				),
 				 array(
 					"type" => "multiselect",

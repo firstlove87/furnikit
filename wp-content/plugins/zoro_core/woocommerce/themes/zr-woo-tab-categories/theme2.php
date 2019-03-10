@@ -4,7 +4,7 @@
 		$select_order = explode( ',', $select_order );
 	}
 ?>
-<div class="zr-wootab-slider zr-woo-tab-style3" id="<?php echo esc_attr( $widget_id ); ?>" >
+<div class="zr-wootab-slider zr-woo-tab-cat3" id="<?php echo esc_attr( $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">
 		<div class="top-tab-slider clearfix">
 			<ul class="nav nav-tabs">

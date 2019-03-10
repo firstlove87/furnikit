@@ -9,9 +9,9 @@
 	}
 ?>
 <div id="<?php echo 'slider_' . $widget_id; ?>" class="responsive-slider zr-category-slider2 loading"  data-append=".resp-slider-container" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
-	<?php	if( $title1 != '' ){ ?>
+	<?php if( $title1 != '' ){ ?>
 	<div class="block-title">
-		<h3><span><?php echo $title1; ?></span></h3>
+		<h3><?php echo $title1; ?></h3>
 	</div>
 	<?php } ?>
 	<div class="resp-slider-container">
@@ -20,28 +20,24 @@
 			if( !is_array( $category ) ){
 				$category = explode( ',', $category );
 			}
+			$i = 0;
 			foreach( $category as $cat ){
-				$term = get_term_by('slug', $cat, 'product_cat');	
-				if( $term ) :
-				$thumbnail_id1 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id1', true );
-				$thumb = wp_get_attachment_image( $thumbnail_id1,'full' );
+			$term = get_term_by('slug', $cat, 'product_cat');	
+			if( $term ) :
+			$thumbnail_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+			$thumb = wp_get_attachment_image( $thumbnail_id,'full' );
+			if( $i % $item_row == 0 ){	
 		?>
 			<div class="item item-product-cat">
+				<?php } ?>
 				<div class="item-wrap">
-					<div class="item-image">
+					<div class="item-image pull-left">
 						<a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>" title="<?php echo esc_attr( $term->name ); ?>"><?php echo $thumb; ?></a>
 					</div>
-					<div class="item-content">
-						<?php if( $desciption != '' ){ ?>
-							<div class="description"><?php echo $desciption; ?>
-						</div>
-						<?php } ?>
-						<h4><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><?php zr_trim_words( $term->name, $title_length ); ?></a></h4>
-						<div class="des-cat"><?php echo  $term->description; ?></div>
-						<a class="shop-now" href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><?php echo esc_html__('Shop now','zr_core'); ?></a>
-					</div>
+					<h4><a href="<?php echo get_term_link( $term->term_id, 'product_cat' ); ?>"><?php zr_trim_words( $term->name, $title_length ); ?></a></h4>
 				</div>
-			</div>
+				<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == count($category) ){?> </div><?php } ?>
+				<?php $i++;?>
 			<?php endif; ?>
 		<?php } ?>
 		</div>

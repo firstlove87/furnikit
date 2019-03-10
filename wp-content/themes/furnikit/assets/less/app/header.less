@@ -10,7 +10,10 @@
 	}
 }
 .furnikit-logo{
-	height: 64px; .flex-display( flex ); .align-items( center ); .justify-content( center );
+	height: 64px; .flex-display( flex ); .align-items( center ); 
+	.header-style1 & {
+		.justify-content( center );
+	}
 	a img{
 		max-width: 135px;
 	}
@@ -18,13 +21,235 @@
 .header-wishlist {
 	margin-top: 10px;
 	a i{
-		width: 40px; height:40px; line-height: 40px; text-align:center; font-size: 18px;
+		width: 30px; height:40px; line-height: 40px; text-align:center; font-size: 18px;
+	}
+}
+#lang_sel{
+	a, a:visited{
+		border: 0 none;
+		padding: 0;
+	}
+	a.lang_sel_sel{
+		&:after{
+			content: "\f107";
+			font-family: FontAwesome;
+			display: inline-block;
+			font-size: 12px;
+			margin-left: 4px;
+			vertical-align: top;
+			color:#fff;
+			line-height:18px;
+			.rtl &{
+				margin-right:4px; margin-left:0;
+			}
+		}
+	}
+	img.iclflag{
+		margin-top: -3px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		.rtl &{
+			margin:0 0 0 5px;
+		}
+	}
+	> ul.nav{			
+		display:inline-block; list-style: none;
+		.rtl &{
+			margin-right: 15px; margin-left: 0;
+		}
+		> li{				
+			position: relative;	padding:15px 0;
+			> a{
+				background-color: transparent; padding-left:15px; color: #fff; text-transform:uppercase; font-size: 14px;
+				&:hover{
+					color: @color;
+				}
+				.rtl &{
+					padding-right:15px; padding-left:0;
+				}
+				span{
+					display:inline-block;
+				}
+			}
+			> ul{
+				box-shadow: 1px 1px 2px #ccc;
+				left: 0;
+				top:55px; .transition(all 0.3s);
+				z-index: 99999;
+				position: absolute;
+				background: #fff;
+				width: 100px;
+				padding: 10px 15px;
+				visibility: hidden; opacity: 0;
+				margin:0;
+				.rtl &{
+					left:auto;right:0;
+				}
+				li{
+					background: #fff;	
+					border-right:none;
+					list-style:none;
+					&.active a{
+						color:@color;
+					}
+					a{
+						color: @body-color;
+						display: block;
+						height: auto; font-size: 13px;
+						line-height: 28px;
+						.iclflag{
+							margin-right: 13px;
+							.rtl &{
+								margin-left:13px;
+								margin-right:0;
+							}
+						}
+					}
+					&:hover{
+						a {
+							color: @color;
+						}
+					}
+				}
+				&:before{
+					content: "";
+					display: inline-block;
+					background: transparent;
+					height: 3px;
+					width: 100%;
+					position: absolute;
+					top: -3px;
+					right: 0;
+				}
+			}
+			&:hover{
+				> ul{
+					top:50px; z-index: 999; visibility: visible; opacity: 1; .transition(all 0.3s);
+				}
+			}
+		}
+	}
+}
+.currency_w {
+	margin: 0 0 0 15px;
+	.rtl &{
+		margin: 0 15px 0 0;
+	}
+	> li{
+		position:relative;list-style:none;padding: 15px 0;
+		> a{
+			display: block; color: #fff; text-transform: uppercase;  padding-left: 15px; font-size: 14px;
+			.rtl &{
+				padding-left: 0; padding-right: 15px;
+			}
+			&:after {
+				content: "\f107";
+				font-family: FontAwesome;
+				display: inline-block;
+				margin-left: 4px;
+				color: #fff;
+				line-height:18px;
+				vertical-align: top;
+				.rtl &{
+					margin-right:4px; margin-left:0;
+				}
+			}
+			&:hover{
+				color: @color;
+			}
+		}
+		.currency_switcher {
+			box-shadow: 1px 1px 2px #ccc;
+			left: 0px;
+			position: absolute;
+			background: none repeat scroll 0 0 #fff;
+			visibility: hidden; opacity: 0;
+			width: 75px;
+			padding: 10px 15px;
+			margin:0;
+			top:55px; .transition(all 0.3s);
+			.rtl &{
+				left: auto; right: 0;
+			}
+			li {
+				width: 100%;
+				margin:0;
+				line-height: 28px;
+				list-style:none;
+				&:hover{
+					a {
+						color: @color;
+					}
+				}
+				a {
+					background: none;
+					border: 0px; font-size: 13px;
+					border-radius: 0px;
+					color: @body-color;
+					background: none;
+					display: block;
+					border-bottom: none;
+					&.active{
+						color: @color;
+					}
+				}
+			}
+			&:before{
+				content: "";
+				display: block;
+				background: transparent;
+				height: 3px;
+				position: absolute;
+				top: -3px;
+				width: 100%;
+			}
+		}
+		&:hover {
+			.currency_switcher {
+				top:50px; z-index: 999; visibility: visible; opacity: 1; .transition(all 0.3s);
+			}
+		}
+	}
+}
+.wpb_single_image.vc_align_right{
+	.rtl &{
+		text-align: left;
+	}
+}
+.top-login{
+	padding: 13px 0 0 20px;
+	.rtl &{
+		padding: 13px 20px 0 0;
+	}
+	ul{
+		margin:0;
+		li{
+			list-style:none;
+			a{
+				font-size:12px; position:relative; display:inline-block; vertical-align:top; color: @color; padding: 3px 5px;
+				font-weight: 500; border-radius: 4px; text-transform: uppercase;border: 2px @color solid; .transition(all 0.3s);
+				&:hover{
+					color:#fff; border-color: #fff; .transition(all 0.3s);
+				}
+			}
+		}
+	}
+}
+.top-signup{
+	font-size:12px; position:relative; display:inline-block; vertical-align:top; color: #fff; padding: 3px 5px; margin: 13px 0 0 10px;
+	font-weight: 500; border-radius: 4px; text-transform: uppercase; border: 2px transparent solid; .transition(all 0.3s);
+	.rtl &{
+		margin: 13px 10px 0 0;
+	}
+	&:hover{
+		color:@color; border-color: @color; .transition(all 0.3s);
 	}
 }
 .header-account{
 	position: relative;
 	.top-icon{
-		margin-top: 14px; display: block; font-size: 20px;  width: 30px; text-align: center; height:30px; line-height: 30px;
+		margin-top: 14px; display: block; font-size: 20px;  width: 30px; text-align: center; height:50px; line-height: 30px;
 	}
 	.header-bar{
 		position: absolute; top:80px; left: 0; background: #fff; box-shadow: 0 0 3px 2px #ebebeb; padding: 15px; z-index:9;
@@ -32,30 +257,34 @@
 		.custom-html-widget{
 			border-bottom: 1px @border-color solid; padding-bottom: 20px; margin-bottom: 20px;
 			h3{
-				text-transform: uppercase; font-size: 16px; font-weight: normal;
+				text-transform: uppercase; font-size: 14px; font-weight: normal;
 			}
 			#lang_sel{
-				.nav{
+				ul.nav{
 					margin: 0;
 					>li{
+						padding: 0;
 						>a{
 							display: none;
 						}
 						>ul{
-							margin: 0;
+							margin: 0; position: static; opacity: 1; visibility: visible; padding: 0; width: 100%; box-shadow: none;
 							li {
 								display: inline-block; vertical-align: top; width: auto; margin-right: 10px;
 								.rtl &{
 									margin-right: 0; margin-left: 10px;
 								}
 								a{
-									padding: 5px 10px; margin-top: 0; display: block;
+									padding: 0px 10px; margin-top: 0; display: block; text-transform: uppercase;
 								}
 								&.active, &:hover{
 									background: #f5f5f5;
 									a{
 										color: @body-color;
 									}
+								}
+								&:last-child{
+									margin-right: 0;
 								}
 							}
 						}
@@ -66,23 +295,24 @@
 		.widget_currency_converter{
 			border-bottom: 1px @border-color solid; padding-bottom: 20px;
 			h3{
-				text-transform: uppercase; font-size: 16px; font-weight: normal;
+				text-transform: uppercase; font-size: 14px; font-weight: normal;
 			}
 			.currency_w{
 				margin: 0; list-style: none;
 				>li{
+					padding: 0;
 					>a{
 						display: none;
 					}
 					.currency_switcher{
-						margin: 0;
+						margin: 0; position: static; opacity: 1; visibility: visible; padding: 0; width: 100%; box-shadow: none;
 						li {
 							display: inline-block; vertical-align: top; width: auto; margin-right: 10px;
 							.rtl &{
 								margin-right: 0; margin-left: 10px;
 							}
 							a{
-								padding: 5px 10px; margin-top: 0; display: block;
+								padding: 0px 10px; margin-top: 0; display: block;
 								&.active, &:hover{
 									background: #f5f5f5; color: @body-color;
 								}
@@ -139,6 +369,19 @@
 			}
 			.cart-contents{
 				display: inline-block; vertical-align: top; font-size: 12px; color: @body-color;
+			}
+		}
+	}
+	&.furnikit-minicart2{
+		cursor: pointer; position:relative;
+		.top-minicart-icon{
+			line-height: 40px;height: 40px;
+			i.fa{
+				font-size: 16px; color: @body-color; display: inline-block; vertical-align: top; line-height: 40px; width: 30px; text-align: center;
+			}
+			.cart-contents{
+				position: absolute; top:0; right:-6px; font-size:12px; border-radius: 50%; width: 20px; height: 20px; line-height: 20px;
+				text-align: center; background: @color; color: #fff;
 			}
 		}
 	}

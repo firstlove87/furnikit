@@ -15,11 +15,6 @@ $furnikit_copyright_text 	 = zr_options( 'footer_copyright' );
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			<?php if (is_active_sidebar('footer-copyright1')){ ?>
-			<div class="sidebar-copyright">
-				<?php dynamic_sidebar('footer-copyright1'); ?>
-			</div>
-			<?php } ?>
 			<!-- Copyright text -->
 			<div class="copyright-text">
 				<?php if( $furnikit_copyright_text == '' ) : ?>
@@ -28,9 +23,9 @@ $furnikit_copyright_text 	 = zr_options( 'footer_copyright' );
 					<?php echo wp_kses( $furnikit_copyright_text, array( 'a' => array( 'href' => array(), 'title' => array(), 'class' => array() ), 'p' => array()  ) ) ; ?>
 				<?php endif; ?>
 			</div>
-			<?php if (is_active_sidebar('footer-copyright2')){ ?>
+			<?php if (is_active_sidebar('footer-copyright')){ ?>
 			<div class="sidebar-copyright">
-				<?php dynamic_sidebar('footer-copyright2'); ?>
+				<?php dynamic_sidebar('footer-copyright'); ?>
 			</div>
 			<?php } ?>
 		</div>

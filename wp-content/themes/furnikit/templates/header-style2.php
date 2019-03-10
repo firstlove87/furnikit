@@ -8,7 +8,7 @@ $furnikit_logo = zr_options('sitelogo');
 $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', true ) != '' ) ? get_post_meta( get_the_ID(), 'page_header_style', true ) : zr_options('header_style');
 ?>
 <header id="header" class="header header-<?php echo esc_attr( $furnikit_page_header ); ?> clearfix">
-	<div class="header-top clearfix">	
+	<div class="header-mid clearfix">	
 		<div class="container">
 			<!-- Logo -->
 			<div class="furnikit-logo pull-left">

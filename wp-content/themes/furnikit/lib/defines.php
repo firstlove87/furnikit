@@ -1230,26 +1230,8 @@ function furnikit_widget_setup_args(){
 		),		
 			
 		array(
-				'name' => esc_html__('Search', 'furnikit'),
-				'id'   => 'search',
-				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
-				'after_widget' => '</div></div>',
-				'before_title' => '<div class="block-title-widget"><h2><span>',
-				'after_title' => '</span></h2></div>'
-		),
-
-		array(
 				'name' => esc_html__('Top Header2', 'furnikit'),
 				'id'   => 'top2',
-				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
-				'after_widget'  => '</div></div>',
-				'before_title'  => '<h3>',
-				'after_title'   => '</h3>'
-		),
-					
-		array(
-				'name' => esc_html__('Header Right', 'furnikit'),
-				'id'   => 'header-right',
 				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
 				'after_widget'  => '</div></div>',
 				'before_title'  => '<h3>',
@@ -1302,22 +1284,14 @@ function furnikit_widget_setup_args(){
 		),
 	
 		array(
-				'name' => esc_html__('Footer Copyright1', 'furnikit'),
-				'id'   => 'footer-copyright1',
+				'name' => esc_html__('Footer Copyright', 'furnikit'),
+				'id'   => 'footer-copyright',
 				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
 				'after_widget'  => '</div></div>',
 				'before_title'  => '<h3>',
 				'after_title'   => '</h3>'
 		),
 
-		array(
-				'name' => esc_html__('Footer Copyright2', 'furnikit'),
-				'id'   => 'footer-copyright2',
-				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
-				'after_widget'  => '</div></div>',
-				'before_title'  => '<h3>',
-				'after_title'   => '</h3>'
-		),
 	);
 	return apply_filters( 'furnikit_widget_register', $furnikit_widget_areas );
 }

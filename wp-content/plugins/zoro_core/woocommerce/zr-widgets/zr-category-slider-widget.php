@@ -125,17 +125,20 @@ if ( !class_exists('zr_woo_cat_slider_widget') ) {
 					"value" => $term,
 					"description" => __( "Select Categories", 'zr_core' ),					
 				 ),
-
 				  array(
 					"type" => "dropdown",
 					"holder" => "div",
 					"class" => "",
-					"heading" => __( "Style", 'zr_core' ),
-					"param_name" => "style",
+					"heading" => __( "Number row per column", "zr_core" ),
+					"param_name" => "item_row",
 					"admin_label" => true,
-					"value" => array( 'Default' => '', 'Style 1' => 'style1' ),
-					"description" => __( "Select Style", 'zr_core' )
-				 ),
+					"value" =>array(1,2,3),
+					"description" => __( "Number row per column", "zr_core" ),
+					'dependency' => array(
+						'element' => 'layout',
+						'value' => array( 'layout1' )
+					),
+				 ),	
 				 
 				 array(
 					"type" => "dropdown",
@@ -258,7 +261,7 @@ if ( !class_exists('zr_woo_cat_slider_widget') ) {
 					'image' =>'',
 					'banner_links' => '',
 					'category' => '',
-					'style' => '',
+					'item_row' => 1,
 					'columns' => 4,
 					'columns1' => 4,
 					'columns2' => 3,
