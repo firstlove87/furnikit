@@ -889,6 +889,7 @@ select:-webkit-autofill {
   font-family: FontAwesome;
   position: absolute;
   right: 5px;
+  display: none;
 }
 .rtl .nav-pills >li.dropdown > a:after {
   left: 5px;
@@ -3159,7 +3160,7 @@ select:-webkit-autofill {
 }
 .block-about2 .item .item-wrap {
   background: #fff;
-  padding: 20px 10px;
+  padding: 15px 10px;
   margin-bottom: 0;
 }
 .block-about2 .item .item-wrap .icon {
@@ -3203,6 +3204,7 @@ select:-webkit-autofill {
   text-transform: capitalize;
   margin-bottom: 15px;
   font-weight: 500;
+  line-height: 35px;
 }
 .block-about3 p {
   margin-bottom: 35px;
@@ -3265,6 +3267,9 @@ select:-webkit-autofill {
 }
 .home-style2 .furnikit_breadcrumbs {
   display: none;
+}
+.home-style2 .wpb_revslider_element {
+  margin-bottom: 0;
 }
 .home-style2 .zr-woo-tab-default .resp-tab .category-slider-content {
   padding-right: 0;
@@ -7415,7 +7420,7 @@ blockquote p {
   padding: 20px 15px;
 }
 .responsive-post-slider {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
   position: relative;
 }
 .responsive-post-slider .res-button {
@@ -7731,7 +7736,7 @@ blockquote p {
   margin-bottom: 0;
 }
 .zr-brand-container-slider {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 .zr-brand-container-slider .slider {
   margin: 0 -10px;
@@ -7771,7 +7776,7 @@ blockquote p {
   display: none;
 }
 .sw-instagram-slider {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   position: relative;
 }
 .sw-instagram-slider h3 {
@@ -7915,10 +7920,6 @@ blockquote p {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.zr-woo-tab-default,
-.zr-woo-tab-cat {
-  margin-bottom: 20px;
-}
 .zr-woo-tab-default .resp-tab .category-slider-content,
 .zr-woo-tab-cat .resp-tab .category-slider-content {
   margin-bottom: 10px;
@@ -8040,7 +8041,6 @@ blockquote p {
 }
 .countdown-slider .resp-slider-container .slick-slider .slick-list .item-countdown .item-wrap .item-detail .item-content {
   text-align: center;
-  padding-top: 6%;
 }
 .countdown-slider .resp-slider-container .slick-slider .slick-list .item-countdown .item-wrap .item-detail .item-content .block-title {
   font-size: 36px;
