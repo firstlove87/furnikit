@@ -57,10 +57,25 @@
 		margin-bottom: 35px;
 	}
 	a{
-		height: 40px; line-height: 40px; padding: 0 15px;border-radius: 4px; background: #8fd021;
+		height: 40px; line-height: 40px; padding: 0 15px;border-radius: 4px; background: @color; .transition(all 0.3s);
 		color: #fff; text-transform: capitalize; display: inline-block; vertical-align: top;  font-size: 12px;
 		&:hover{
-			background-color: @color; .transition(all 0.3s);
+			background-color: darken(@color, 10%); color: #fff; .transition(all 0.3s);
+		}
+	}
+}
+.banner-single{
+	overflow: hidden;
+	.vc_figure {
+		width: 100%;
+		a{
+			width: 100%;
+			img{
+				width: 100%; .transition(all 0.5s);
+				&:hover{
+					opacity: (1); .scale(1.02); .transition(all 0.5s);
+				}
+			}
 		}
 	}
 }

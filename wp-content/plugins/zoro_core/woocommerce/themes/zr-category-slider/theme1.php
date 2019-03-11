@@ -24,8 +24,8 @@
 			foreach( $category as $cat ){
 			$term = get_term_by('slug', $cat, 'product_cat');	
 			if( $term ) :
-			$thumbnail_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-			$thumb = wp_get_attachment_image( $thumbnail_id,'full' );
+			$thumbnail_id1 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id1', true );
+			$thumb = wp_get_attachment_image( $thumbnail_id1,'full' );
 			if( $i % $item_row == 0 ){	
 		?>
 			<div class="item item-product-cat">
