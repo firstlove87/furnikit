@@ -249,7 +249,10 @@
 .header-account{
 	position: relative;
 	.top-icon{
-		margin-top: 14px; display: block; font-size: 20px;  width: 30px; text-align: center; height:50px; line-height: 30px;
+		margin-top: 14px; display: block; font-size: 16px; width: 30px; text-align: center; height:50px; line-height: 30px;
+		span{
+			font-family: "Nucleo";
+		}
 	}
 	.header-bar{
 		position: absolute; top:80px; left: 0; background: #fff; box-shadow: 0 0 3px 2px #ebebeb; padding: 15px; z-index:9;
@@ -364,8 +367,8 @@
 		cursor: pointer; position:relative;
 		.top-minicart-icon{
 			line-height: 40px;height: 40px;
-			i.fa{
-				font-size: 16px; color: @body-color; display: inline-block; vertical-align: top; line-height: 40px;
+			> span{
+				font-size: 20px; color: @body-color; display: inline-block; vertical-align: top; line-height: 39px; font-family: "Nucleo";
 			}
 			.cart-contents{
 				display: inline-block; vertical-align: top; font-size: 12px; color: @body-color;
@@ -376,12 +379,8 @@
 		cursor: pointer; position:relative;
 		.top-minicart-icon{
 			line-height: 40px;height: 40px;
-			i.fa{
-				font-size: 16px; color: @body-color; display: inline-block; vertical-align: top; line-height: 40px; width: 30px; text-align: center;
-			}
-			.cart-contents{
-				position: absolute; top:0; right:-6px; font-size:12px; border-radius: 50%; width: 20px; height: 20px; line-height: 20px;
-				text-align: center; background: @color; color: #fff;
+			> span{
+				font-size: 20px; color: @body-color; display: inline-block; vertical-align: top; line-height: 39px; width: 30px; text-align: center; font-family: "Nucleo";
 			}
 		}
 	}

@@ -259,20 +259,10 @@
 				}
 				.dropdown-sub {
 					a {
-						padding: 9px 0 9px 10px; position: relative;
+						padding: 9px 0; position: relative;
 						text-transform: capitalize;	color:#666; font-size: 13px;
-						.rtl &{
-							padding: 9px 10px 9px 0;
-						}
 						&:hover{
 							color: @color;
-						}
-						&:before{
-							content: '\f105';font-family: FontAwesome;font-size: 13px;
-							position: absolute;top: 11px;left: 0;
-							.rtl &{
-								left: auto; right: 0; content:"\f104";
-							}
 						}
 					}
 					>li {

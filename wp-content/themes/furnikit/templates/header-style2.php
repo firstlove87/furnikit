@@ -16,7 +16,7 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 			</div>
 			<?php if( !zr_options( 'disable_cart' ) ) : ?>
 				<div class="header-cart pull-right">
-					<?php get_template_part( 'woocommerce/minicart-ajax' ); ?>
+					<?php get_template_part( 'woocommerce/minicart-ajax-style2' ); ?>
 				</div>
 			<?php endif; ?>
 			<div class="header-wishlist pull-right">
@@ -38,7 +38,7 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 			<?php endif; ?>	
 			<?php if ( is_active_sidebar( 'top' ) ) { ?>
 			<div class="header-account pull-right">
-				<a class="top-icon" href="javascript:void(0)"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<a class="top-icon" href="javascript:void(0)"><span class="icon-single-02"></span></a>
 				<div class="header-bar">
 					<?php dynamic_sidebar( 'top' ); ?>
 				</div>				

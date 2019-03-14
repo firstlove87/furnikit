@@ -13,21 +13,4 @@ $furnikit_copyright_text 	 = zr_options( 'footer_copyright' );
 			?>
 		</div>
 	</div>
-	<div class="footer-copyright">
-		<div class="container">
-			<!-- Copyright text -->
-			<div class="copyright-text">
-				<?php if( $furnikit_copyright_text == '' ) : ?>
-					<p>&copy;<?php echo date('Y') .' '. esc_html__('WordPress Theme Furnikit Fashion. All Rights Reserved. Designed by ','furnikit'); ?><a class="mysite" href="<?php echo esc_url( 'http://www.zorotheme.com/' ); ?>"><?php esc_html_e('ZoroTheme','furnikit');?></a>.</p>
-				<?php else : ?>
-					<?php echo wp_kses( $furnikit_copyright_text, array( 'a' => array( 'href' => array(), 'title' => array(), 'class' => array() ), 'p' => array()  ) ) ; ?>
-				<?php endif; ?>
-			</div>
-			<?php if (is_active_sidebar('footer-copyright')){ ?>
-			<div class="sidebar-copyright">
-				<?php dynamic_sidebar('footer-copyright'); ?>
-			</div>
-			<?php } ?>
-		</div>
-	</div>
 </footer>

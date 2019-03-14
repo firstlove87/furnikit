@@ -421,13 +421,6 @@ function furnikit_Options_Setup(){
 				   'std' => ''
 				),
 				
-				array(
-					'id' => 'footer_copyright',
-					'type' => 'editor',
-					'sub_desc' => '',
-					'title' => esc_html__( 'Copyright text', 'furnikit' )
-				),	
-				
 			)
 	);
 	$options[] = array(
@@ -1283,14 +1276,6 @@ function furnikit_widget_setup_args(){
 				'after_title'   => '</h3>'
 		),
 	
-		array(
-				'name' => esc_html__('Footer Copyright', 'furnikit'),
-				'id'   => 'footer-copyright',
-				'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
-				'after_widget'  => '</div></div>',
-				'before_title'  => '<h3>',
-				'after_title'   => '</h3>'
-		),
 
 	);
 	return apply_filters( 'furnikit_widget_register', $furnikit_widget_areas );

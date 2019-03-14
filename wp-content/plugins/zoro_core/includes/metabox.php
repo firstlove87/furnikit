@@ -52,8 +52,6 @@ function zr_metabox_init(){
 					'home-style2' => esc_html__( 'Home Style2', 'zr_core' ),
 					'home-style3' => esc_html__( 'Home Style3', 'zr_core' ), 
 					'home-style4' => esc_html__( 'Home Style4', 'zr_core' ), 
-					'home-style5' => esc_html__( 'Home Style5', 'zr_core' ),
-					'home-style6' => esc_html__( 'Home Style6', 'zr_core' )
 				)
 			),
 			array(
@@ -137,7 +135,7 @@ function zr_metabox_init(){
 				'description' => esc_html__( ' Chose to select header page content for this page. ', 'zr_core' ),
 				'std'	 => '',
 				'values' => array( '' => esc_html__( 'Header Style', 'zr_core' ), 'style1' => esc_html__( 'Header Style1', 'zr_core' ), 'style2' => esc_html__( 'Header Style2', 'zr_core' ), 'style3' => esc_html__( 'Header Style3', 'zr_core' ),
-					'style4' => esc_html__( 'Header Style4', 'zr_core' ), 'style5' => esc_html__( 'Header Style5', 'zr_core' ),
+					'style4' => esc_html__( 'Header Style4', 'zr_core' ),
 				)
 			)		
 		)

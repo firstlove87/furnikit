@@ -258,7 +258,8 @@ class zr_testimonial_slider_widget extends WP_Widget {
 					'param_name' => 'layout',
 					"admin_label" => true,
 					'value' => array(
-						__( 'Layout Default','zr_core' ) => 'default',					
+						__( 'Layout Default','zr_core' ) => 'default',
+						__( 'Layout Style1','zr_core' ) => 'theme1',
 					),
 					'description' => sprintf( __( 'Select Layout', 'zr_core' ) )
 				),	
@@ -298,6 +299,8 @@ class zr_testimonial_slider_widget extends WP_Widget {
 		ob_start();		
 		if( $layout == 'default' ){
 			include( 'themes/default.php' );
+		}elseif( $layout == 'theme1' ){
+			include( 'themes/layout1.php' );
 		}
 		
 		$content = ob_get_clean();

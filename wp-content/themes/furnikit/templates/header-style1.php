@@ -21,7 +21,7 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 			<div class="row">
 				<!-- Sidebar right -->
 				<?php if( !zr_options( 'disable_search' ) ) : ?>
-					<div class="search-cate col-lg-1">
+					<div class="search-cate col-lg-1 pull-left">
 						<div class="icon-search"><span class="icon-zoom-2"></span></div>
 						<?php if( is_active_sidebar( 'search' ) && class_exists( 'zr_woo_search_widget' ) ): ?>
 							<?php dynamic_sidebar( 'search' ); ?>
@@ -36,7 +36,7 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 				<?php endif; ?>	
 				<!-- Primary navbar -->
 				<?php if ( has_nav_menu( 'primary_menu' ) ) { ?>
-				<div id="main-menu" class="main-menu col-lg-10 clearfix">
+				<div id="main-menu" class="main-menu col-lg-10 pull-left clearfix">
 					<div class="navbar-menu clearfix">
 						<?php
 						$furnikit_menu_class = 'nav nav-pills';
@@ -50,7 +50,7 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 				<?php } ?>
 				<!-- /Primary navbar -->
 				<?php if( !zr_options( 'disable_cart' ) ) : ?>
-					<div class="header-cart col-lg-1">
+					<div class="header-cart col-lg-1 pull-left">
 						<?php get_template_part( 'woocommerce/minicart-ajax' ); ?>
 					</div>
 				<?php endif; ?>

@@ -10,6 +10,12 @@
 	.header-top{
 		background: #2f2f2f;
 	}
+	.nav-pills >li:first-child > a{
+		padding-left: 0;
+		.rtl &{
+			padding-left: 20px; padding-right: 0;
+		}
+	}
 }
 .header-top{
 	.top-mes{
@@ -49,7 +55,6 @@
 	}
 }
 .zr-woo-tab-cat2{
-	margin-bottom: 20px;
 	.resp-tab{
 		.category-slider-content{
 			.title-sytle3;
@@ -157,8 +162,10 @@
 		}
 	}
 }
-.border-in1 .vc_column-inner >.wpb_wrapper{
-	border: 2px @body-color solid; padding: 37px;
+.border-in1 {
+	.vc_column-inner >.wpb_wrapper{
+		border: 2px @body-color solid; padding: 37px;
+	}
 }
 .zr-woo-tab-style2{
 	.resp-tab{
@@ -168,7 +175,7 @@
 				display: none;
 			}
 			.nav-tabs-select{
-				float: none; text-align: center;
+				float: none; text-align: center; padding-bottom: 20px; padding-top: 0;
 				.rtl &{
 					float: none;
 				}
@@ -199,6 +206,66 @@
 							&:before{
 								display: none;
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.testimonial-slider2{
+	margin-bottom: 60px;
+	.box-title h3{
+		font-size: 16px; text-transform: capitalize; color: @body-color; font-weight: 700; text-align: center; margin-bottom: 40px;
+	}
+	.resp-slider-container{
+		.slider{
+			margin: 0 -15px;
+			.item{
+				padding: 0 15px;
+				.item-inner{
+					background: #fff; padding: 20px; border-radius: 4px; margin-bottom: 30px;
+					.image-client{
+						float: left;
+						.rtl &{
+							float: right;
+						}
+						img{
+							border-radius: 50%; width: 50px;  margin-right: 15px;
+							.rtl &{
+								margin-right: 0; margin-left: 15px;
+							}
+						}
+					}
+					.client-comment{
+						line-height: 21px; overflow: hidden;
+						h3{
+							font-size: 16px; text-transform: capitalize; color: @body-color; padding-top: 17px; position: relative;
+							&:after{
+								content: ""; width: 65px; height: 11px;
+								background: url(../assets/img/star-active.png) repeat-x scroll 0 0 rgba(0,0,0,0);
+								display: inline-block; vertical-align: top;	margin: 3px 0 0 10px;
+								.rtl &{
+									margin: 3px 10px 0 0;
+								}
+							}
+						}
+					}
+				}
+			}
+			.slick-dots{
+				margin: 0; text-align: right; padding: 0 15px;
+				.rtl &{
+					text-align: left;
+				}
+				li{
+					list-style: none; display: inline-block; vertical-align: top; margin: 0 3px;
+					button{
+						font-size: 0; width: 10px; height: 10px; padding:0; margin-bottom: 0; .border-radius(50%); .transition(all 0.3s);
+					}
+					&.slick-active, &:hover{
+						button{
+							background: @body-color; border: 1px @body-color solid; .transition(all 0.3s);
 						}
 					}
 				}

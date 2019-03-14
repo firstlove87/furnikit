@@ -5,8 +5,7 @@ if ( !class_exists( 'WooCommerce' ) ) {
 global $woocommerce; ?>
 <div class="top-form top-form-minicart furnikit-minicart2 pull-right">
 	<div class="top-minicart-icon pull-right">
-		<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-		<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'furnikit'); ?>"><?php echo '<span class="minicart-number">'.$woocommerce->cart->cart_contents_count.'</span>';?></a>
+		<span class="icon-bag-16"></span>
 	</div>
 	<div class="wrapp-minicart">
 		<div class="minicart-padding">
