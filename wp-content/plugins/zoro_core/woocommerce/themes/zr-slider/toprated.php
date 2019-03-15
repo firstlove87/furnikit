@@ -37,17 +37,6 @@ if ( $list -> have_posts() ){
 ?>
 	<div id="<?php echo $id; ?>" class="zr-woo-container-slider  responsive-slider toprated-product clearfix loading" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
 		<div class="zr-content">
-			<div class="banner-info">
-			<?php 
-				$thumb = ( $banner != '' ) ? wp_get_attachment_url( $banner ) : 'http://placehold.it/284x284';
-				$class = ( $banner != '' ) ? 'has-banner' : '';
-			?>
-				<a href="<?php echo esc_url( $viewall ); ?>"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_attr( $term_name ); ?>"/></a>
-				<div class="box-title">
-					<h2><span><?php echo ( $title1 != '' ) ? $title1 : $term_name; ?></span></h2>
-					<a href="<?php echo esc_url( $viewall ); ?>"><?php esc_html_e( 'Shop Now', 'zr_core' ) ?> <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
 			<div class="resp-slider-container">
 				<div class="slider responsive">	
 				<?php 

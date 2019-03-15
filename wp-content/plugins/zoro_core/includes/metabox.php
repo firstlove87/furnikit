@@ -1,7 +1,7 @@
 <?php 
 /*
 	* Name: Metabox Page
-	* Develope: Smartaddons
+	* Develope: Zoro
 */
 
 /*

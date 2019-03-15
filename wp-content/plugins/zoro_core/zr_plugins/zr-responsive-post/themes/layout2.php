@@ -1,7 +1,7 @@
 <?php 
 	/**
 		** Theme: Responsive Slider
-		** Author: Smartaddons
+		** Author: Zoro
 		** Version: 1.0
 	**/
 	//var_dump($category);

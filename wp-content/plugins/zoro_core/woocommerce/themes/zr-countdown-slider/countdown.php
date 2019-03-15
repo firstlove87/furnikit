@@ -102,9 +102,8 @@ if ( $list -> have_posts() ){ ?>
 							</div>
 							<div class="item-image-countdown col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<a href="<?php echo get_permalink($post->ID)?>" >
-									<?php 
-								if ( has_post_thumbnail( $post->ID ) ){
-									
+								<?php 
+								if ( has_post_thumbnail( $post->ID ) ){									
 										echo get_the_post_thumbnail( $post->ID, 'shop_single' ) ? get_the_post_thumbnail( $post->ID, 'shop_single' ): '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';		
 								}else{
 									echo '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';

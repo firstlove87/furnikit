@@ -805,6 +805,35 @@ select:-webkit-autofill {
 .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .price del {
   color: #999;
 }
+.best-selling-product .block-title h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 20px;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider {
+  margin: 0;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap {
+  margin-bottom: 20px;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-img a img {
+  width: 100px;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content {
+  overflow: hidden;
+  padding-left: 15px;
+}
+.rtl .best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content {
+  padding-left: 0;
+  padding-right: 15px;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content h4 a {
+  font-size: 14px;
+}
+.best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content .item-price {
+  margin-bottom: 10px;
+}
 .nav-pills {
   display: inline-block;
   margin-left: 0;

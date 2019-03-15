@@ -1,7 +1,7 @@
 <?php
 /*
  ** Name: Widget Advanced
- ** Author: SmartAddons
+ ** Author: Zoro
 */
 
 class ZR_Widgets{

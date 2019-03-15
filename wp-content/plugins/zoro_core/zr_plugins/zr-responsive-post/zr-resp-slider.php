@@ -2,8 +2,8 @@
 /**
  * Name: ZR Responsive Slider Widget
  * Version: 1.0
- * Author: smartaddons.com
- * Author URI: http://smartaddons.com
+ * Author: zoro.com
+ * Author URI: http://zoro.com
  */
  
 

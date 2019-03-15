@@ -9,9 +9,7 @@
 	<div class="item-detail">										
 		<div class="item-img products-thumb">
 		<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>	
-		<?php 
-			do_action( 'woocommerce_before_shop_loop_item_title' ); 
-		?>
+		<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 		<?php zr_label_sales() ?>
 		</div>										
 		<div class="item-content">								

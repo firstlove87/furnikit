@@ -36,19 +36,13 @@ $id = 'zr_bestsales_'.$this->generateID();
 $list = new WP_Query( $default );
 if ( $list -> have_posts() ){
 ?>
-	<div id="<?php echo $id; ?>" class="zr-woo-container-slider  responsive-slider best-selling-product clearfix loading" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
-		<div class="zr-content">
-			<div class="banner-info">
-			<?php 
-				$thumb = ( $banner != '' ) ? wp_get_attachment_url( $banner ) : 'http://placehold.it/284x284';
-				$class = ( $banner != '' ) ? 'has-banner' : '';
-			?>
-				<a href="<?php echo esc_url( $viewall ); ?>"><img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_attr( $term_name ); ?>"/></a>
-				<div class="box-title">
-					<h2><span><?php echo ( $title1 != '' ) ? $title1 : $term_name; ?></span></h2>
-					<a href="<?php echo esc_url( $viewall ); ?>"><?php esc_html_e( 'Shop Now', 'zr_core' ) ?> <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-				</div>
+	<div id="<?php echo $id; ?>" class="responsive-slider best-selling-product clearfix loading" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
+		<?php if( $title1 != '' ){?>
+			<div class="block-title">
+				<h3><?php echo ( $title1 != '' ) ? $title1 : ''; ?></h3>
 			</div>
+		<?php } ?>
+		<div class="zr-content">
 			<div class="resp-slider-container">
 				<div class="slider responsive">	
 				<?php 
@@ -60,9 +54,40 @@ if ( $list -> have_posts() ){
 					$class = ( $product->get_price_html() ) ? '' : 'item-nonprice';
 					if( $i % $item_row == 0 ){
 				?>
-					<div class="item <?php echo esc_attr( $class )?> product">
+					<div class="item-product clearfix">
 				<?php } ?>
-						<?php include( ZRTHEME . '/default-item2.php' ); ?>
+					<div class="item-wrap clearfix">									
+						<div class="item-img pull-left">
+							<a href="<?php echo get_permalink($post->ID)?>" >
+							<?php 
+							if ( has_post_thumbnail( $post->ID ) ){									
+								echo get_the_post_thumbnail( $post->ID, 'shop_catalog' ) ? get_the_post_thumbnail( $post->ID, 'shop_catalog' ): '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';		
+							}else{
+								echo '<img src="'.get_template_directory_uri().'/assets/img/placeholder/'.'large'.'.png" alt="No thumb">';
+							}
+							?></a>	
+						</div>										
+						<div class="item-content">
+							<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php zr_trim_words( get_the_title(), $title_length ); ?></a></h4>
+							<!-- price -->
+							<?php if ( $price_html = $product->get_price_html() ){?>
+								<div class="item-price">
+									<span>
+										<?php echo $price_html; ?>
+									</span>
+								</div>
+							<?php } ?>
+							<!-- rating  -->
+							<?php 
+								$rating_count = $product->get_rating_count();
+								$review_count = $product->get_review_count();
+								$average      = $product->get_average_rating();
+							?>
+							<div class="reviews-content">
+								<div class="star"><?php echo ( $average > 0 ) ?'<span style="width:'. ( $average*13 ).'px"></span>' : ''; ?></div>
+							</div>
+						</div>								
+					</div>
 					<?php if( ( $i+1 ) % $item_row == 0 || ( $i+1 ) == $count_items ){?> </div><?php } ?>
 				<?php $i++; endwhile; wp_reset_postdata();?>
 				</div>

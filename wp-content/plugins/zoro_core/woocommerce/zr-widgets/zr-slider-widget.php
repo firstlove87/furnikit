@@ -84,19 +84,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"value" => '',
 					"description" => __( "Description", 'zr_core' )
 				 ),				
-				 array(
-					'type' => 'attach_image',
-					'heading' => __( 'Banner', 'zr_core' ),
-					'param_name' => 'banner',
-					'value' =>'',
-					'description' => __( 'Banner Child Category', 'zr_core' ),
-					"admin_label" => true,
-					'dependency' => array(
-						'element' => 'layout',
-						'value' => array( 'childcat1', 'default', 'toprate', 'bestsales', 'featured' )
-					)
-				),
-				  array(
+				array(
 					"type" => "dropdown",
 					"holder" => "div",
 					"class" => "",
@@ -233,7 +221,7 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 					"heading" => __( "Layout", 'zr_core' ),
 					"param_name" => "layout",
 					"admin_label" => true,
-					"value" => array( 'Layout Default' => 'default', 'Layout Featured' => 'featured', 'Layout Top Rated' => 'toprate', 'Layout Best Sales' => 'bestsales', 'Layout Child Category' => 'childcat1', 'Layout Child Category1' => 'childcat2' ),
+					"value" => array( 'Layout Default' => 'default', 'Layout Best Sales' => 'bestsales' ),
 					"description" => __( "Layout", 'zr_core' )
 				 ),
 				 array(
@@ -257,7 +245,6 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 				array(
 					'title1' => '',	
 					'title_length' => 0,
-					'banner' => '',
 					'description' => '',	
 					'orderby' => 'name',
 					'order'	=> 'DESC',
@@ -280,21 +267,10 @@ if ( !class_exists('zr_woo_slider_widget') ) {
 			ob_start();		
 			if( $layout == 'default' ){
 				include( zr_override_check( 'zr-slider', 'default' ) );					
-			}elseif( $layout == 'featured' ){
-				include( zr_override_check( 'zr-slider', 'featured' ) );			
-			}			
-			elseif( $layout == 'toprate' ){
-				include( zr_override_check( 'zr-slider', 'toprated' ) );			
-			}
-			elseif( $layout == 'bestsales' ){
+			}elseif( $layout == 'bestsales' ){
 				include( zr_override_check( 'zr-slider', 'bestsales' ) );			
 			}			
-			elseif( $layout == 'childcat1' ){
-				include( zr_override_check( 'zr-slider', 'childcat1' ) );			
-			}
-			elseif( $layout == 'childcat2' ){
-				include( zr_override_check( 'zr-slider', 'childcat2' ) );			
-			}			
+						
 			
 			$content = ob_get_clean();
 			
