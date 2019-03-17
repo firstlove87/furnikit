@@ -542,7 +542,7 @@ function furnikit_advanced(){
 		** Menu Sticky 
 		*/
 		if( $sticky_menu ) :	
-			if( $furnikit_header_style == 'style1' || $furnikit_header_style == 'style2' ){		
+			if( $furnikit_header_style == 'style10' ){		
 				$output .= 'var sticky_navigation_offset = $("#header .header-top").offset();';
 				$output .= 'if( typeof sticky_navigation_offset != "undefined" ) {';
 				$output .= 'var sticky_navigation_offset_top = sticky_navigation_offset.top;';
@@ -560,7 +560,7 @@ function furnikit_advanced(){
 				$output .= 'sticky_navigation();';
 				$output .= '}); }';
 			}
-			elseif( $furnikit_header_style == 'style3' || $furnikit_header_style == 'style4' ){
+			elseif( $furnikit_header_style == 'style1' || $furnikit_header_style == 'style2' || $furnikit_header_style == 'style3' ){
 				$output .= 'var sticky_navigation_offset = $("#header .header-mid ").offset();';
 				$output .= 'if( typeof sticky_navigation_offset != "undefined" ) {';
 				$output .= 'var sticky_navigation_offset_top = sticky_navigation_offset.top;';

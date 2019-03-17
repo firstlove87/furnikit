@@ -70,7 +70,7 @@ if ( $list -> have_posts() ){ ?>
 				<?php } ?>
 					<div class="item-wrap">
 						<div class="item-detail">
-							<div class="item-content col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="item-content col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="product-countdown" data-date="<?php echo esc_attr( $date ); ?>"  data-price="<?php echo esc_attr( $symboy.$forginal_price ); ?>" data-starttime="<?php echo esc_attr( $start_time ); ?>" data-cdtime="<?php echo esc_attr( $countdown_time ); ?>" data-id="<?php echo 'product_'.$id.$post->ID; ?>"></div>
 								<div class="item-info">
 								<?php if( $title1 != '' ){?>
@@ -100,7 +100,7 @@ if ( $list -> have_posts() ){ ?>
 								<div class="shop-now"><a href="<?php echo get_permalink($post->ID)?>" ><?php esc_html_e( 'Shop now', 'zr_core' ); ?></a></div>	
 								</div>
 							</div>
-							<div class="item-image-countdown col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="item-image-countdown col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<a href="<?php echo get_permalink($post->ID)?>" >
 								<?php 
 								if ( has_post_thumbnail( $post->ID ) ){									

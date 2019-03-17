@@ -62,7 +62,7 @@ function zr_metabox_init(){
 				'std'	 => 'none',
 				'values' => array( 
 					'none' => '#000000',
-					'default'	=> '#f66759',
+					'default'	=> '#8fd021',
 					
 				)
 			)

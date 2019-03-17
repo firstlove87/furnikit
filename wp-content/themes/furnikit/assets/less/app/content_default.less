@@ -278,32 +278,8 @@
 					.item-wrap {
 						.item-detail {
 							.item-image-countdown {
-								.item-wrap-image {
-									position: relative;
-									.sale-off{
-
-									}
-									.onsale {
-										display: none;
-									}	
-									.images{
-										width: 50%; float: left;
-										.rtl &{
-											float: right;
-										}
-									}
-								}
-								&:hover {
-									.item-wrap-image {
-										.product-thumb-hover {
-											.wp-post-image {
-												.opacity(0);
-											}
-											.hover-image {
-												.opacity(1);
-											}
-										}
-									}
+								a img{
+									width: 400px; margin: 0 auto;
 								}
 							}
 							.item-content {
@@ -366,6 +342,9 @@
 		}
 	}
 	.button-style1;
+	.res-button{
+		opacity: 0; visibility: hidden;
+	}
 	&:hover{
 		.res-button{
 			opacity: 1; visibility: visible;
@@ -373,7 +352,7 @@
 				font-size: 24px; .transition(all 0.3s);
 			}
 			&:hover:before{
-				background: @color; .transition(all 0.3s);
+				color: @color; .transition(all 0.3s);
 			}
 		}
 	}

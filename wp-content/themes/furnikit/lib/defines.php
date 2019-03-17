@@ -323,10 +323,6 @@ function furnikit_Options_Setup(){
 					'sub_desc' => esc_html__('Select header mobile style', 'furnikit'),
 					'options' => array(
 						'mstyle1'  => esc_html__( 'Style 1', 'furnikit' ),
-						'mstyle2'  => esc_html__( 'Style 2', 'furnikit' ),
-						'mstyle3'  => esc_html__( 'Style 3', 'furnikit' ),
-						'mstyle4'  => esc_html__( 'Style 4', 'furnikit' ),
-						'mstyle5'  => esc_html__( 'Style 5', 'furnikit' ),
 					),
 					'std' => 'style1'
 				),
@@ -338,8 +334,6 @@ function furnikit_Options_Setup(){
 					'sub_desc' => esc_html__('Select footer mobile style', 'furnikit'),
 					'options' => array(
 						'mstyle1'  => esc_html__( 'Style 1', 'furnikit' ),
-						'mstyle2'  => esc_html__( 'Style 2', 'furnikit' ),
-						'mstyle3'  => esc_html__( 'Style 3', 'furnikit' ),
 					),
 					'std' => 'style1'
 				),

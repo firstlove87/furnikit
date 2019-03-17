@@ -644,6 +644,9 @@ function furnikit_single_addcart(){
 		if( class_exists( 'YITH_WCWL' ) ) :
 			$html .= do_shortcode( "[yith_wcwl_add_to_wishlist]" );
 		endif;
+		if( class_exists( 'YITH_WOOCOMPARE' ) ) : 
+			$html .= '<a href="javascript:void(0)" class="compare button" data-product_id="'. $product_id .'" rel="nofollow">'. esc_html__( 'Compare', 'furnikit' ) .'</a>';
+		endif;
 		$html .= '</div>';
 	}
 	echo sprintf( '%s', $html );
