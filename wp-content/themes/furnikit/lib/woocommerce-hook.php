@@ -457,7 +457,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'furnikit_product_descript
 add_action( 'woocommerce_after_shop_loop_item', 'furnikit_product_addcart_start', 1 );
 add_action( 'woocommerce_after_shop_loop_item', 'furnikit_product_addcart_mid', 20 );
 add_action( 'woocommerce_after_shop_loop_item', 'furnikit_product_addcart_end', 99 );
-if( zr_options( 'product_listing_countdown' ) ){
+if( zr_options( 'product_listing_countdown' ) && ( is_shop() || is_tax( 'product_cat' ) || is_tax( 'product_tag' ) || is_post_type_archive( 'product' ) ) ){
 	add_action( 'woocommerce_before_shop_loop_item_title', 'furnikit_product_deal', 20 );
 }
 
@@ -498,17 +498,43 @@ function furnikit_product_addcart_mid(){
 ** Add page deal to listing
 */
 function furnikit_product_deal(){
-	if( ( is_shop() || is_tax( 'product_cat' ) || is_tax( 'product_tag' ) || is_post_type_archive( 'product' ) ) || is_singular( 'product' ) ) {
-		global $product;
-		$start_time 	= get_post_meta( $product->get_id(), '_sale_price_dates_from', true );
-		$countdown_time = get_post_meta( $product->get_id(), '_sale_price_dates_to', true );	
-		
-		if( !empty ($countdown_time ) && $countdown_time > $start_time ) :
+	global $product;
+	$start_time 	= get_post_meta( $product->get_id(), '_sale_price_dates_from', true );
+	$countdown_time = get_post_meta( $product->get_id(), '_sale_price_dates_to', true );	
+	
+	if( !empty ($countdown_time ) && $countdown_time > $start_time ) :
+		if( !is_singular( 'product' ) ) :
 ?>
 		<div class="product-countdown" data-date="<?php echo esc_attr( $countdown_time ); ?>" data-starttime="<?php echo esc_attr( $start_time ); ?>" data-cdtime="<?php echo esc_attr( $countdown_time ); ?>" data-id="<?php echo esc_attr( 'product_' . $product->get_id() ); ?>"></div>
+<?php else: ?>
+		<div class="single-product-countdown">
+			<div class="single-countdown-content clearfix">
+				<div class="single-countdown-left pull-left">
+					<h3><?php echo esc_html__( "Don't miss out!", 'furnikit' ); ?></h3>
+					<h4><?php echo esc_html__( "This promotion will expire in", 'furnikit' ); ?>:</h4>
+				</div>
+				<div class="product-countdown" data-date="<?php echo esc_attr( $countdown_time ); ?>" data-starttime="<?php echo esc_attr( $start_time ); ?>" data-cdtime="<?php echo esc_attr( $countdown_time ); ?>" data-id="<?php echo esc_attr( 'product_' . $product->get_id() ); ?>"></div>
+			</div>
+			<?php 
+				if( $product->get_stock_quantity() != 0 ){ 
+					$available 	 = $product->get_stock_quantity();
+					$total_sales = get_post_meta( $product->get_id(), 'total_sales', true );
+					$bar_width 	 = intval( $available ) / intval( $available + $total_sales ) * 100;
+			?>
+			<div class="single-countdown-quantity clearfix">
+				<div class="countdown-quantity-title">
+					<?php echo esc_html__( 'Sold items', 'furnikit' ); ?>: 
+					<?php echo ' <span>'. esc_html( $available . '/' . ( $available + $total_sales ) ) .'</span>'; ?>
+				</div>
+				<div class="sales-bar-total">
+					<span style="width: <?php echo esc_attr( $bar_width . '%' ); ?>"></span>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
 <?php 
 		endif;
-	}
+	endif;
 }
 
 /*
@@ -550,7 +576,12 @@ add_action( 'woocommerce_single_product_summary', 'furnikit_woocommerce_sharing'
 add_action( 'woocommerce_before_single_product_summary', 'zr_label_sales', 10 );
 add_action( 'woocommerce_before_single_product_summary', 'zr_label_stock', 11 );
 if( zr_options( 'product_single_countdown' ) ){
-	add_action( 'woocommerce_single_product_summary', 'furnikit_product_deal',10 );
+	add_action( 'woocommerce_single_product_summary', 'furnikit_product_deal',30 );
+}
+add_filter( 'woocommerce_get_stock_html', 'furnikit_custom_stock_filter' );
+
+function furnikit_custom_stock_filter( $html ){
+	return;
 }
 
 function furnikit_woocommerce_sharing(){

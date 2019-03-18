@@ -8,11 +8,11 @@ $furnikit_logo = zr_options('sitelogo');
 $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', true ) != '' ) ? get_post_meta( get_the_ID(), 'page_header_style', true ) : zr_options('header_style');
 ?>
 <header id="header" class="header header-<?php echo esc_attr( $furnikit_page_header ); ?> clearfix">
-	<?php if (is_active_sidebar('top2')) {?>
+	<?php if (is_active_sidebar('top3')) {?>
 	<div class="header-top clearfix">
 		<div class="container">			
 			<div class="top-header clearfix">
-				<?php dynamic_sidebar('top2'); ?>
+				<?php dynamic_sidebar('top3'); ?>
 			</div>
 		</div>
 	</div>

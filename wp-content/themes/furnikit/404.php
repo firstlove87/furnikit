@@ -4,7 +4,7 @@
 		<div class="row">
 			<?php $furnikit_404page = zr_options( 'page_404' ); ?>
 			<?php if( $furnikit_404page != '' ) : ?>
-				<?php echo sw_get_the_content_by_id( $furnikit_404page ); ?>
+				<?php echo zr_get_the_content_by_id( $furnikit_404page ); ?>
 			<?php else: ?>	
 				<div class="content_404">
 					<div class="erro-content">
