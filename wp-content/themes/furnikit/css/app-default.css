@@ -4809,7 +4809,7 @@ select:-webkit-autofill {
 }
 .zr-ourteam-slider .slick-slider .item .item-wrap {
   background-color: transparent;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 .zr-ourteam-slider .slick-slider .item .item-wrap .item-img img {
   margin: 0 auto;
@@ -11781,8 +11781,6 @@ h1.page-title {
   color: #ddd;
 }
 .product_detail .content_product_detail .cart .group_table .woocommerce-grouped-product-list-item__price ins {
-  font-size: 24px;
-  color: #8fd021;
   text-decoration: none;
   opacity: 1;
   margin: 0 10px;
