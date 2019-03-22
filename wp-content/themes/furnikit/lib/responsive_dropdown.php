@@ -20,6 +20,7 @@ class Furnikit_Resmenu{
 					if ( typeof container != "undefined" && !container.is(e.target) && container.has(e.target).length === 0 && container.html().length > 0 ){
 						container.find( ".navbar-toggle" ).addClass( "collapsed" );
 						container.find( ".menu-responsive-wrapper" ).removeClass("in").addClass( "collapse" ).height(0);
+						$(".container").removeClass("open");
 					}
 				});
 			});
@@ -28,8 +29,14 @@ class Furnikit_Resmenu{
 		echo sprintf( $html );
 	}
 	function Furnikit_MenuRes_AdFilter( $args ){
-		$args['container'] = false;		
-		$menu = get_registered_nav_menus() ;
+		$args['container'] = false;	
+		$furnikit_theme_locates = array();
+		$furnikit_menu = zr_options( 'menu_location' );
+		if( !is_array( $furnikit_menu ) ){
+			$furnikit_theme_locates[] = $furnikit_menu;
+		}else{
+			$furnikit_theme_locates = $furnikit_menu;
+		}
 		foreach( $menu as $furnikit_theme_locate => $menu_description ){
 			if( $furnikit_theme_locate == $args['theme_location'] ){
 				if( isset( $args['furnikit_resmenu'] ) && $args['furnikit_resmenu'] == true ) {
@@ -55,7 +62,13 @@ class Furnikit_Resmenu{
 			return $args;
 		}
 		$args['container'] = false;
-		$menu = get_registered_nav_menus() ;
+		$furnikit_theme_locates = array();
+		$furnikit_menu = zr_options( 'menu_location' );
+		if( !is_array( $furnikit_menu ) ){
+			$furnikit_theme_locates[] = $furnikit_menu;
+		}else{
+			$furnikit_theme_locates = $furnikit_menu;
+		}
 		foreach( $menu as $furnikit_theme_locate => $menu_description ){
 			if( $furnikit_theme_locate == $args['theme_location'] ){
 				$args['container'] = 'div';

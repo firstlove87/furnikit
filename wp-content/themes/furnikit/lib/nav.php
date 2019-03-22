@@ -885,4 +885,4 @@ add_filter('wp_nav_menu_args', 'furnikit_nav_menu_args');
 /**
 	* Call To Responsive Menu
 **/
-include( get_template_directory().'/lib/responsive_dropdown.php' );
+include( get_template_directory().'/lib/responsive_dropdown_sidebar.php' );
