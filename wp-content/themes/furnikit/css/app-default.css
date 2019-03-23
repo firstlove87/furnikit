@@ -2770,6 +2770,7 @@ select:-webkit-autofill {
 .rtl .header-account .header-bar {
   left: 0;
   right: auto;
+  text-align: right;
 }
 .header-account .header-bar .custom-html-widget {
   border-bottom: 1px #eee solid;
@@ -3385,10 +3386,6 @@ select:-webkit-autofill {
   bottom: 0;
   background: #fff;
 }
-.rtl .search-cate .top-form.top-search {
-  right: auto;
-  left: 0;
-}
 .search-cate .top-form.top-search .search-wrapper {
   padding: 20px 0;
   display: -webkit-flex;
@@ -3654,11 +3651,11 @@ select:-webkit-autofill {
 .home-style2 .zr-woo-tab-default .resp-tab .category-slider-content {
   padding-right: 0;
 }
-.rtl .home-style2 .zr-woo-tab-default .resp-tab .category-slider-content {
-  padding-left: 0;
-}
 .home-style2 .zr-woo-tab-default .resp-tab .tab-content .res-button {
   display: none !important;
+}
+.home-style2.rtl .zr-woo-tab-default .resp-tab .category-slider-content {
+  padding-left: 0;
 }
 .header-style2 {
   padding: 10px 0;
@@ -4008,6 +4005,9 @@ select:-webkit-autofill {
 .zr-woo-tab-style2 .resp-tab .category-slider-content .nav-tabs-select ul li a {
   font-size: 24px;
   padding: 0 30px 0 0;
+}
+.rtl .zr-woo-tab-style2 .resp-tab .category-slider-content .nav-tabs-select ul li a {
+  padding: 0 0 0 30px;
 }
 .zr-woo-tab-style2 .resp-tab .category-slider-content .nav-tabs-select ul li.active:before,
 .zr-woo-tab-style2 .resp-tab .category-slider-content .nav-tabs-select ul li:hover:before {
@@ -6229,6 +6229,8 @@ blockquote p {
   color: #999;
   font-size: 12px;
   text-transform: capitalize;
+  display: inline-block;
+  vertical-align: top;
 }
 .single.main .post .entry-wrap .entry-meta a:hover,
 .single.main .team .entry-wrap .entry-meta a:hover,
@@ -6746,6 +6748,10 @@ blockquote p {
   padding: 0 0 15px;
   border-bottom: 1px solid #eee;
 }
+#comments .title small {
+  display: inline-block;
+  vertical-align: middle;
+}
 #comments .commentlist .children {
   margin-left: 90px;
   margin-right: 0;
@@ -6798,6 +6804,8 @@ blockquote p {
 }
 #comments .comment .media-body .media .media-heading .time a {
   color: #bbb;
+  display: inline-block;
+  vertical-align: top;
 }
 #comments .comment .media-body .media .media-heading .reply a {
   position: relative;
@@ -7502,6 +7510,10 @@ blockquote p {
   right: 15px;
   top: 13px;
   margin: 0;
+}
+.rtl .item .item-wrap .item-detail .item-img .yith-wcwl-add-to-wishlist {
+  right: auto;
+  left: 15px;
 }
 .item .item-wrap .item-detail .item-img .yith-wcwl-add-to-wishlist .yith-wcwl-add-button,
 .item .item-wrap .item-detail .item-img .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse,
@@ -9000,6 +9012,22 @@ blockquote p {
 .woocommerce-page .woocommerce-checkout #payment div.form-row {
   margin-bottom: 60px;
 }
+.woocommerce .woocommerce-checkout #payment div.form-row .checkbox,
+.woocommerce-page .woocommerce-checkout #payment div.form-row .checkbox {
+  padding-left: 0;
+}
+.woocommerce .woocommerce-checkout #payment div.form-row .input-checkbox,
+.woocommerce-page .woocommerce-checkout #payment div.form-row .input-checkbox {
+  margin: 5px 0 0 0;
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.woocommerce .woocommerce-form-login .form-row button.button,
+.woocommerce-page .woocommerce-form-login .form-row button.button {
+  height: 35px;
+  margin-bottom: 15px;
+}
 .woocommerce #customer_login h2,
 .woocommerce-page #customer_login h2 {
   border-bottom: 1px solid #eee;
@@ -9302,6 +9330,11 @@ blockquote p {
   font-weight: 500;
   vertical-align: top;
   display: inline-block;
+}
+.woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input,
+.woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input {
+  float: none;
+  margin: 4px 4px 0 -10px;
 }
 .woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address input,
 .woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address input {
@@ -10328,6 +10361,36 @@ div.stars .rating-hidden {
 .rtl.woocommerce-account #contents .entry-content nav.woocommerce-MyAccount-navigation {
   padding-left: 30px;
   padding-right: 0;
+}
+.rtl.woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input,
+.rtl.woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input {
+  margin: 4px -10px 0 4px;
+}
+.rtl.woocommerce .checkout .col2-set .col-1 .woocommerce-account-fields .input-checkbox,
+.rtl.woocommerce-page .checkout .col2-set .col-1 .woocommerce-account-fields .input-checkbox {
+  float: right;
+  margin: 5px -4px 0 8px;
+}
+.rtl.woocommerce-account .woocommerce-account .button,
+.rtl.woocommerce-account .woocommerce-info .button {
+  float: left;
+}
+.rtl.woocommerce-checkout .woocommerce .woocommerce-customer-details address {
+  text-align: right;
+}
+.rtl.woocommerce-checkout .woocommerce .woocommerce-customer-details .woocommerce-customer-details--email,
+.rtl.woocommerce-checkout .woocommerce .woocommerce-customer-details .woocommerce-customer-details--phone {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+.rtl.woocommerce-checkout .woocommerce .woocommerce-customer-details .woocommerce-customer-details--email:before,
+.rtl.woocommerce-checkout .woocommerce .woocommerce-customer-details .woocommerce-customer-details--phone:before {
+  margin-left: 0;
+  margin-right: -1.5em;
+}
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1 {
+  margin-bottom: 20px;
 }
 .woocommerce-wishlist #contents .page .entry-title {
   margin-bottom: 40px;
@@ -11563,14 +11626,14 @@ h1.page-title {
   -ms-justify-content: flex-start;
   justify-content: flex-start;
 }
+.rtl.woocommerce .products-wrapper nav.woocommerce-pagination {
+  text-align: left;
+}
 .woocommerce .products-wrapper nav.woocommerce-pagination {
   display: inline-block;
   width: 100%;
   text-align: right;
   margin: 0 0 60px 0;
-}
-.rtl .woocommerce .products-wrapper nav.woocommerce-pagination {
-  text-align: left;
 }
 .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers {
   margin: 0;
@@ -11593,9 +11656,6 @@ h1.page-title {
   -o-transition: all .3s;
   -ms-transition: all .3s;
   transition: all .3s;
-}
-.rtl .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers li {
-  float: right;
 }
 .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers li:hover a {
   color: #fff;
@@ -11632,12 +11692,6 @@ h1.page-title {
 .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers li .prev:hover {
   background-color: #222;
   color: #fff;
-}
-.rtl .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers li .fa-angle-right:before {
-  content: '\f104';
-}
-.rtl .woocommerce .products-wrapper nav.woocommerce-pagination ul.page-numbers li .fa-angle-left:before {
-  content: '\f105';
 }
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
@@ -13520,6 +13574,12 @@ h1.page-title {
 }
 .entry-summary form input[type="submit"]:hover {
   background: #000;
+}
+.rtl .wpb_single_image.vc_align_left {
+  text-align: right;
+}
+.rtl .slick-slide {
+  float: right;
 }
 .footer .footer-top-wrapper >.container >p {
   display: none;

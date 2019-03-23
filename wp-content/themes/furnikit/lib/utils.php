@@ -436,7 +436,7 @@ function furnikit_footer_advanced(){
 				
 				<?php if( $furnikit_shortcode != '' ) : ?>
 				<div class="subscribe-form">
-					<?php echo do_shortcode( $furnikit_shortcode ); ?>
+					<?php	echo do_shortcode( $furnikit_shortcode ); ?>
 				</div>
 				<?php endif; ?>
 				
@@ -466,7 +466,7 @@ function furnikit_footer_advanced(){
 		<div class="modal-dialog block-popup-login">
 			<?php ob_start(); ?>
 			<a href="javascript:void(0)" title="<?php esc_attr_e( 'Close', 'furnikit' ) ?>" class="close close-login" data-dismiss="modal"><?php esc_html_e( 'Close', 'furnikit' ) ?></a>
-			<div class="tt_popup_login"><strong><?php esc_html_e('Sign in Or Register', 'furnikit'); ?></strong></div>
+			<div class="tt_popup_login"><?php esc_html_e('Sign in Or Register', 'furnikit'); ?></div>
 			<?php get_template_part('woocommerce/myaccount/login-form'); ?>
 			<?php 
 				if( class_exists( 'APSL_Lite_Class' ) ) :

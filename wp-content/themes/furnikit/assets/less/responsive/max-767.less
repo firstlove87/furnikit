@@ -27,10 +27,8 @@
 			top: 40px;
 		}
 	}
-	.search-cate .top-form.top-search{
-		//position: fixed; left: 0; right: 0; top: 0; z-index: 999; bottom: auto;
-	}
 	.header-style2{
+		padding: 0;
 		.furnikit-logo{
 			height: 75px; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;
 		}
@@ -176,6 +174,9 @@
 					border-radius:0;
 					border:0;
 					background-color:#fff;
+					.rtl &{
+						padding: 0;
+					}
 					&:first-child > a{
 						border-top:0;
 					}
@@ -207,6 +208,9 @@
 				}
 			}
 		}
+	}
+	.rtl.home-style2 .zr-woo-tab-default .button-collapse, .rtl.home-style2 .zr-woo-tab-cat .button-collapse{
+		left: 0;
 	}
 	.zr-woo-container-slider {
 		.zr-content .banner-info{

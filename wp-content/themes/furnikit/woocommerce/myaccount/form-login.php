@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="col-lg-6 col-md-6 col-sm-12">
 		<div class="image-login">
 			<?php $furnikit_img_mobile = ( zr_options( 'mobile_logo_account' ) ) ? zr_options( 'mobile_logo_account' ) : get_template_directory_uri() .'/assets/img/icon-myaccount.png'; ?>
-			<img class="img_logo" alt="<?php esc_attr__( '404', 'furnikit' ) ?>" src="<?php echo esc_url( $furnikit_img_mobile ) ?>">
+			<img class="img_logo" alt="404" src="<?php echo esc_url( $furnikit_img_mobile ) ?>">
 		</div>
 		
 		<h2><?php esc_html_e( 'Login', 'furnikit' ); ?></h2>
@@ -44,12 +44,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_login_form' ); ?>
 			<p class="form-row">
 				<label for="rememberme" class="inline">
-					<input name="rememberme" type="checkbox" id="rememberme" value="<?php esc_attr_e( 'forever', 'furnikit' ) ?>" /> <?php esc_html_e( 'Remember me', 'furnikit' ); ?>
+					<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php esc_html_e( 'Remember me', 'furnikit' ); ?>
 				</label>
 			</p>
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<input type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'furnikit' ) ?>" /> 
+				<input type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'furnikit' ); ?>" /> 
 			</p>
 			<p class="lost_password">
 				<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'furnikit' ); ?></a>
@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<p class="form-row form-row-wide">
 					<label for="reg_password"><?php esc_html_e( 'Password', 'furnikit' ); ?> <span class="required">*</span></label>
-					<input type="password" class="input-text" name="password" id="reg_password" value="<?php esc_attr_e( 'Templates', 'furnikit' ); ?>" />
+					<input type="password" class="input-text" name="password" id="reg_password" value="templates" />
 				</p>
 
 			<?php endif; ?>
@@ -100,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'furnikit' ); ?>" />
+				<input type="submit" class="button" name="register" value="<?php esc_html_e( 'Register', 'furnikit' ); ?>" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
@@ -144,7 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<input type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'furnikit' ); ?>" /> 
+				<input type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'furnikit' ); ?>" /> 
 			</p>
 			<p class="lost_password">
 				<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'furnikit' ); ?></a>
@@ -194,7 +194,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'furnikit' ); ?>" />
+				<input type="submit" class="button" name="register" value="<?php esc_html_e( 'Register', 'furnikit' ); ?>" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>

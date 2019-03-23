@@ -82,10 +82,56 @@
   }
   .header-style2 #main-menu .resmenu-container .navbar-toggle,
   .header-style3 #main-menu .resmenu-container .navbar-toggle {
-    margin-top: 19px;
+    margin-top: 21px;
   }
   #main-menu .nav-pills {
     display: none;
+  }
+  .resmenu-container-sidebar .furnikit_top {
+    padding: 0;
+  }
+  .resmenu-container-sidebar .furnikit_top .top-form.top-search {
+    min-width: auto;
+    box-shadow: 0 0 0 1px #e4e4e4;
+    -webkit-box-shadow: 0 0 0 1px #e4e4e4;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .resmenu-container-sidebar .furnikit_top .top-form.top-search .cat-wrapper {
+    display: none;
+  }
+  .resmenu-container-sidebar .furnikit_top .top-form.top-search input {
+    padding: 0 10px;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .rtl .resmenu-container-sidebar .furnikit_top .top-form.top-search input {
+    border-radius: 4px;
+  }
+  .resmenu-container-sidebar .furnikit_top .top-form.top-search button.form-button {
+    background: none;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  .resmenu-container-sidebar .furnikit_top .top-form.top-search button.form-button:before {
+    color: #999;
+  }
+  .rtl .resmenu-container-sidebar .furnikit_top .top-form.top-search button.form-button {
+    border-radius: 4px 0 0 4px;
+  }
+  .rtl .resmenu-container-sidebar .furnikit_top .top-form.top-search .topsearch-entry {
+    padding-right: 0;
+  }
+  .resmenu-container-sidebar .topsearch-entry .search-append {
+    left: 0;
+  }
+  .resmenu-container .menu-responsive-wrapper ul.furnikit_resmenu {
+    max-height: 228px;
+    overflow-y: auto;
   }
   .header-style1 .search-cate,
   .header-style1 .header-cart {
@@ -94,6 +140,13 @@
   .rtl .header-style1 .search-cate,
   .rtl .header-style1 .header-cart {
     float: left;
+  }
+  .header-style1 .top-form-minicart,
+  .header-style1 .search-cate {
+    margin-top: 12px;
+  }
+  .header-style1 .header-top {
+    padding: 10px 0;
   }
   .countdown-slider .resp-slider-container .slick-slider .slick-list .item-countdown .item-wrap .item-detail .item-content .product-countdown {
     margin-bottom: 30px;
@@ -184,6 +237,9 @@
   }
   .header-style1 .resmenu-container .menu-responsive-wrapper {
     top: 40px;
+  }
+  .header-style2 {
+    padding: 0;
   }
   .header-style2 .furnikit-logo {
     height: 75px;
@@ -356,6 +412,10 @@
     border: 0;
     background-color: #fff;
   }
+  .rtl .zr-woo-tab-default .nav-tabs-select ul > li,
+  .rtl .zr-woo-tab-cat .nav-tabs-select ul > li {
+    padding: 0;
+  }
   .zr-woo-tab-default .nav-tabs-select ul > li:first-child > a,
   .zr-woo-tab-cat .nav-tabs-select ul > li:first-child > a {
     border-top: 0;
@@ -393,6 +453,10 @@
   .zr-woo-tab-cat .nav-tabs-select ul > li.active > a:before,
   .zr-woo-tab-cat .nav-tabs-select ul > li:hover > a:before {
     opacity: 0 !important;
+  }
+  .rtl.home-style2 .zr-woo-tab-default .button-collapse,
+  .rtl.home-style2 .zr-woo-tab-cat .button-collapse {
+    left: 0;
   }
   .zr-woo-container-slider .zr-content .banner-info {
     width: 100%;

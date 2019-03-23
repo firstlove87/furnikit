@@ -261,7 +261,7 @@
 		position: absolute; top:80px; right: 0; background: #fff; box-shadow: 0 0 3px 2px #ebebeb; padding: 15px; z-index:9;
 		min-width: 200px; text-align: left; .opacity(0); visibility: hidden; .transition(all 0.3s);
 		.rtl &{
-			left: 0; right: auto;
+			left: 0; right: auto; text-align: right;
 		}
 		.custom-html-widget{
 			border-bottom: 1px @border-color solid; padding-bottom: 20px; margin-bottom: 20px;
@@ -759,11 +759,7 @@
 		}
 	}	
 	.top-form.top-search{
-		position: absolute;left: 15px; right: 15px; top: 0; display: none; z-index: 9;bottom: 0;
-		background: #fff;
-		.rtl &{
-			right: auto; left: 0;
-		}
+		position: absolute;left: 15px; right: 15px; top: 0; display: none; z-index: 9;bottom: 0; background: #fff;
 		.search-wrapper{
 			padding: 20px 0;
 			.flex-display(flex);
