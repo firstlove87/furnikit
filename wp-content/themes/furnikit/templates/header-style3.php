@@ -20,8 +20,10 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 	<div class="header-mid clearfix">	
 		<div class="container">
 			<!-- Logo -->
-			<div class="furnikit-logo col-lg-2 col-md-2 col-sm-3 col-xs-12 pull-left">
-				<?php furnikit_logo(); ?>
+			<div class="logo-header">
+				<div class="furnikit-logo">
+					<?php furnikit_logo(); ?>
+				</div>
 			</div>
 			<!-- Primary navbar -->
 			<?php if ( has_nav_menu( 'primary_menu' ) ) { ?>

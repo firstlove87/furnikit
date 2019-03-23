@@ -436,7 +436,7 @@ function furnikit_footer_advanced(){
 				
 				<?php if( $furnikit_shortcode != '' ) : ?>
 				<div class="subscribe-form">
-					<?php	echo do_shortcode( $furnikit_shortcode ); ?>
+					<?php echo do_shortcode( $furnikit_shortcode ); ?>
 				</div>
 				<?php endif; ?>
 				
