@@ -279,7 +279,7 @@ function furnikit_typography_css(){
 	$menu_webfont 	= zr_options( 'menu_font' );
 	$custom_webfont = zr_options( 'custom_font' );
 	$custom_class 	= zr_options( 'custom_font_class' );
-	
+	$webfont1 = ( $webfont == '' ) ? 'Roboto' : $webfont;
 	$styles = '<style>';
 	if ( $webfont ):	
 		$webfonts_assign = ( get_post_meta( get_the_ID(), 'webfonts_assign', true ) != '' ) ? get_post_meta( get_the_ID(), 'webfonts_assign', true ) : '';
@@ -335,7 +335,8 @@ function furnikit_typography_webfonts(){
 	$header_webfont = zr_options( 'header_tag_font' );
 	$menu_webfont 	= zr_options( 'menu_font' );
 	$custom_webfont = zr_options( 'custom_font' );
-	
+	$webfont = ( $webfont == '' ) ? 'Roboto' : $webfont;
+
 	if ( $webfont || $header_webfont || $menu_webfont || $custom_webfont ):
 		$font_url = '';
 		$webfont_weight = array();
@@ -560,7 +561,7 @@ function furnikit_advanced(){
 				$output .= 'sticky_navigation();';
 				$output .= '}); }';
 			}
-			elseif( $furnikit_header_style == 'style1' || $furnikit_header_style == 'style2' || $furnikit_header_style == 'style3' ){
+			elseif( $furnikit_header_style == 'style1' || $furnikit_header_style == 'style2' || $furnikit_header_style == 'style3' || $furnikit_header_style == 'style4' ){
 				$output .= 'var sticky_navigation_offset = $("#header .header-mid ").offset();';
 				$output .= 'if( typeof sticky_navigation_offset != "undefined" ) {';
 				$output .= 'var sticky_navigation_offset_top = sticky_navigation_offset.top;';

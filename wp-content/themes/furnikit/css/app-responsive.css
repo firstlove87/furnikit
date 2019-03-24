@@ -81,7 +81,8 @@
     margin: 12px 0;
   }
   .header-style2 #main-menu .resmenu-container .navbar-toggle,
-  .header-style3 #main-menu .resmenu-container .navbar-toggle {
+  .header-style3 #main-menu .resmenu-container .navbar-toggle,
+  .header-style4 #main-menu .resmenu-container .navbar-toggle {
     margin-top: 21px;
   }
   #main-menu .nav-pills {
@@ -214,7 +215,8 @@
   }
   .header-style1 .sticky-menu,
   .header-style2 .sticky-menu,
-  .header-style3 .sticky-menu {
+  .header-style3 .sticky-menu,
+  .header-style4 .sticky-menu {
     position: relative;
   }
   .header-style1 .furnikit-logo {
@@ -551,6 +553,11 @@
 @media (max-width: 360px) {
   .rtl.woocommerce div.product form.cart .group_table td.label {
     text-align: right;
+  }
+}
+@media (max-width: 320px) {
+  .countdown-slider .resp-slider-container .slick-slider .slick-list .item-countdown .item-wrap .item-detail .item-content .product-countdown .countdown-row .countdown-section {
+    margin: 0 5px;
   }
 }
 @media (min-width: 1368px) {

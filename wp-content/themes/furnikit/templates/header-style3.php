@@ -20,8 +20,8 @@ $furnikit_page_header  = ( get_post_meta( get_the_ID(), 'page_header_style', tru
 	<div class="header-mid clearfix">	
 		<div class="container">
 			<!-- Logo -->
-			<div class="logo-header">
-			<div class="furnikit-logo">
+			<div class="logo-header col-lg-2 col-md-2 pull-left">
+				<div class="furnikit-logo">
 					<?php furnikit_logo(); ?>
 				</div>
 			</div>

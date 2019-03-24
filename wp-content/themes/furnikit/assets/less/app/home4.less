@@ -22,8 +22,11 @@
 	.header-account .top-icon{
 		margin-top: 22px;
 	}
-	.header-wishlist, .top-form-minicart{
-		margin-top: 17px;
+	.search-cate, .header-wishlist, .top-form-minicart{
+		margin-top: 19px;
+	}
+	.sticky-menu{
+		position: fixed; z-index: 999; background: #fff; box-shadow: 0 1px 1px #ccc; .transition(all 0.3s);
 	}
 }
 .banner-cate2{
@@ -76,7 +79,7 @@
 			width: 20px; text-align: center; border: 1px #fff solid; margin-left: 20px;
 			.rtl &{
 				margin-left: 0; margin-right: 20px;
-				:before{
+				&:before{
 					content:"\f104";
 				}
 			}

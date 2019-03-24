@@ -2739,7 +2739,7 @@ select:-webkit-autofill {
 .header-account .top-icon {
   margin-top: 14px;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   width: 30px;
   text-align: center;
   height: 50px;
@@ -3741,8 +3741,14 @@ select:-webkit-autofill {
 .home-style3 .wpb_revslider_element {
   margin-bottom: 0px;
 }
+.header-style3 .header-mid >.container {
+  max-width: 1800px;
+}
 .header-style3 .header-top {
   background: #2f2f2f;
+}
+.header-style3 .header-top >.container {
+  max-width: 1800px;
 }
 .header-style3 .nav-pills >li:first-child > a {
   padding-left: 0;
@@ -4170,9 +4176,21 @@ select:-webkit-autofill {
 .header-style4 .header-account .top-icon {
   margin-top: 22px;
 }
+.header-style4 .search-cate,
 .header-style4 .header-wishlist,
 .header-style4 .top-form-minicart {
-  margin-top: 17px;
+  margin-top: 19px;
+}
+.header-style4 .sticky-menu {
+  position: fixed;
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 1px 1px #ccc;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .banner-cate2 {
   position: relative;
@@ -4295,7 +4313,7 @@ select:-webkit-autofill {
   margin-left: 0;
   margin-right: 20px;
 }
-.rtl .go-shop a i :before {
+.rtl .go-shop a i:before {
   content: "\f104";
 }
 .go-shop a:hover {
@@ -7751,6 +7769,8 @@ blockquote p {
   box-shadow: 0px 0px 10px 3px #ccc;
   padding: 10px;
   margin: -10px;
+  z-index: 9;
+  background: #fff;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
