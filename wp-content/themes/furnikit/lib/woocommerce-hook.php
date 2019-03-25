@@ -79,16 +79,13 @@ function furnikit_quickview(){
 /*
 ** Minicart via Ajax
 */
-add_action( 'wp', 'furnikit_cart_filter' );
-function furnikit_cart_filter(){
-	$furnikit_page_header = ( get_post_meta( get_the_ID(), 'page_header_style', true ) != '' ) ? get_post_meta( get_the_ID(), 'page_header_style', true ) : zr_options('header_style');
-	$filter = zr_woocommerce_version_check( $version = '3.0.3' ) ? 'woocommerce_add_to_cart_fragments' : 'add_to_cart_fragments';
-	if( $furnikit_page_header == 'style2' || $furnikit_page_header == 'style3' ):
-		add_filter($filter, 'furnikit_add_to_cart_fragment_style2', 100);
-	else :
-		add_filter($filter, 'furnikit_add_to_cart_fragment', 100);
-	endif;
-}
+$furnikit_page_header = zr_options('header_style');
+$filter = zr_woocommerce_version_check( $version = '3.0.3' ) ? 'woocommerce_add_to_cart_fragments' : 'add_to_cart_fragments';
+if( $furnikit_page_header == 'style2' || $furnikit_page_header == 'style3' ):
+	add_filter($filter, 'furnikit_add_to_cart_fragment_style2', 100);
+else :
+	add_filter($filter, 'furnikit_add_to_cart_fragment', 100);
+endif;
 
 function furnikit_add_to_cart_fragment_style2( $fragments ) {
 	ob_start();
@@ -145,6 +142,7 @@ function furnikit_product_thumbnail( $size = 'shop_catalog', $placeholder_width 
 
 function furnikit_woocommerce_template_loop_product_thumbnail(){
 	echo furnikit_product_thumbnail();
+	do_action( 'zr_wooswatches_variation_custom_action' );
 }
 
 /*
