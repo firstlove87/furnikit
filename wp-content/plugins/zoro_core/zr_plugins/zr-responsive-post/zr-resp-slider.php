@@ -43,9 +43,9 @@ if( !class_exists('zr_resp_slider') ) :
 		** Enqueue Script
 		*/
 		function resp_slider_script(){	
-			wp_register_script( 'slick_slider', ZRURL . '/js/slick.min.js' ,array(), null, false );		
-			if (!wp_script_is('slick_slider')) {
-				wp_enqueue_script('slick_slider');
+			wp_register_script( 'slick-slider', ZRURL . '/js/slick.min.js' ,array(), null, false );		
+			if (!wp_script_is('slick-slider')) {
+				wp_enqueue_script('slick-slider');
 			}                
 		}
 		

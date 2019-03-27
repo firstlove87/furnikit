@@ -6,7 +6,7 @@
 	$widget_id = isset( $widget_id ) ? $widget_id : $this->generateID();
 	$viewall = get_permalink( wc_get_page_id( 'shop' ) );	
 ?>
-<div class="zr-tab-mobile style-moblie" id="<?php echo esc_attr( $widget_id ); ?>" >
+<div class="zr-tab-mobile style-moblie zr-ajax" id="<?php echo esc_attr( $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">
 		<div class="top-tab-slider clearfix">
 			<div class="woocommmerce-shop"><a href="<?php echo esc_url( $viewall ); ?>" title="<?php esc_html_e( 'Woocommerce Shop', 'zr_core' ) ?>"><?php echo esc_html__('View all','zr_core');?></a></div>

@@ -119,8 +119,8 @@ add_action('init', 'zr_head_cleanup');
 ** Enqueue Script
 */
 function zr_enqueueJsFrontend(){
-	wp_register_script( 'slick_slider', plugins_url( 'js/slick.min.js', __FILE__ ),array(), null, true );	
-	wp_register_script( 'custom_js', plugins_url( 'js/custom_js.js', __FILE__ ),array( 'slick_slider' ), null, true );	
+	wp_register_script( 'slick-slider', plugins_url( 'js/slick.min.js', __FILE__ ),array(), null, true );	
+	wp_register_script( 'custom_js', plugins_url( 'js/custom_js.js', __FILE__ ),array( 'slick-slider' ), null, true );	
 	wp_enqueue_script('custom_js');
 }
 
@@ -128,9 +128,9 @@ function zr_addScript(){
 	wp_register_style('zr_photobox_css', ZRURL . '/css/photobox.css', array(), null);	
 	wp_register_script('photobox_js', ZRURL . '/js/photobox.js', array(), null, true);	
 	
-	wp_register_script( 'slick_slider', ZRURL . '/js/slick.min.js',array(), null, true );		
-	if (!wp_script_is('slick_slider')) {
-		wp_enqueue_script('slick_slider');
+	wp_register_script( 'slick-slider', ZRURL . '/js/slick.min.js',array(), null, true );		
+	if (!wp_script_is('slick-slider')) {
+		wp_enqueue_script('slick-slider');
 	}
 	wp_register_script( 'countdown_slider_js', ZRURL . '/js/jquery.countdown.min.js',array(), null, true );		
 	if (!wp_script_is('countdown_slider_js')) {
@@ -302,3 +302,24 @@ function zr_add_script_gallery() {
 	
 	echo $script;
 }
+
+/*
+* Get URL shortcode
+*/
+function get_url($atts) {
+	if(is_front_page()){
+		$frontpage_ID = get_option('page_on_front');
+		$link =  get_site_url().'/?page_id='.$frontpage_ID ;
+		return $link;
+	}
+	elseif(is_page()){
+		$pageid = get_the_ID();
+		$link = get_site_url().'/?page_id='.$pageid ;
+		return $link;
+	}
+	else{
+		$link = $_SERVER['REQUEST_URI'];
+		return $link;
+	}
+}
+add_shortcode( 'get_url', 'get_url' );

@@ -287,6 +287,8 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 					'scroll' => 1
 				), $atts )
 			);
+			wp_enqueue_script( 'slick-slider', ZRURL . '/js/slick.min.js', array(), null, true );
+			wp_enqueue_script( 'zr-category-ajax', ZRURL.  '/js/category-ajax.js', array(), null, true );
 			ob_start();	
 			if( $layout == 'default' ){
 				include( zr_override_check( 'zr-woo-tab-slider', 'default' ) );
@@ -423,7 +425,7 @@ if ( !class_exists('zr_woo_tab_slider_widget') ) {
 				</div>
 			</div>
 			<?php else: ?>
-			<div id="<?php echo esc_attr( 'tab_'. $target ); ?>" class="woo-tab-container-slider responsive-slider loading clearfix" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
+			<div id="<?php echo esc_attr( 'tab_'. $target ); ?>" class="woo-tab-container-slider responsive-slider clearfix" data-lg="<?php echo esc_attr( $columns ); ?>" data-md="<?php echo esc_attr( $columns1 ); ?>" data-sm="<?php echo esc_attr( $columns2 ); ?>" data-xs="<?php echo esc_attr( $columns3 ); ?>" data-mobile="<?php echo esc_attr( $columns4 ); ?>" data-speed="<?php echo esc_attr( $speed ); ?>" data-scroll="<?php echo esc_attr( $scroll ); ?>" data-interval="<?php echo esc_attr( $interval ); ?>"  data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
 				<div class="resp-slider-container">
 					<div class="slider responsive">
 					<?php 

@@ -295,6 +295,8 @@ if ( !class_exists('zr_woo_tab_categories') ) {
 					'scroll' => 1
 				), $atts )
 			);
+			wp_enqueue_script( 'slick-slider', plugins_url( 'js/slick.min.js', __FILE__ ),array(), null, true );
+			wp_enqueue_script( 'zr-category-ajax', plugins_url( 'js/category-ajax.js', __FILE__ ),array(), null, true );
 			ob_start();	
 			if( $layout == 'default' ){
 				include( zr_override_check( 'zr-woo-tab-categories', 'default' ) );

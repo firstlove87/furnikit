@@ -4,7 +4,7 @@
 	}
 	$widget_id = isset( $widget_id ) ? $widget_id : $this->generateID();
 ?>
-<div class="zr-wootab-slider zr-woo-tab-default" id="<?php echo esc_attr( 'woo_tab_' . $widget_id ); ?>" >
+<div class="zr-wootab-slider zr-woo-tab-default zr-ajax" id="<?php echo esc_attr( 'woo_tab_' . $widget_id ); ?>" >
 	<div class="resp-tab" style="position:relative;">				
 		<div class="category-slider-content clearfix">
 			<?php if( $title1 != '' ){?>

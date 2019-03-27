@@ -5,11 +5,6 @@
 (function ($) {
 	$(document).ready(function(){
 		/* Category slider ajax */
-		var el = $( '.active [data-catload=ajax]' );
-		el.each( function(){
-			var els = $(this);
-			zr_tab_click_ajax( els );
-		});		
 		$('[data-catload=ajax]').on('click', function() {
 			zr_tab_click_ajax( $(this) );
 		});
@@ -17,23 +12,38 @@
 			zr_tab_ajax_listing( $(this) );
 		});
 		
-		$('.zr-wootab-slider .tab-content').addClass( 'loading' );
 		$('[data-catload=so_ajax]').on('click', function() {
 			zr_tab_click_ajax( $(this) );
 		});
 		
+		var SMobileSlider = function( $target ) {
+			this.$target = $target;
+			var _target = $target.find( '.responsive' );
+			$target.append( '<span class="res-button slick-prev slick-arrow" data-scroll="left"></span><span data-role="none" class="res-button slick-next slick-arrow" data-scroll="right"></span>' );
+			$target.find( '.res-button' ).on( 'click', function (){
+				var scroll = $(this).data( 'scroll' );
+				var wli = $target.find( '.responsive > div' ).outerWidth() + 4;
+				wli = ( 'left' === scroll ) ? - wli : wli;
+				var pos = _target.scrollLeft() + wli;
+				_target.animate({scrollLeft: pos}, 200);
+			});
+		}
+		
+		$.fn.swp_mobile_scroll = function() {
+			new SMobileSlider( this );
+			return this;
+		};
 		
 		function zr_tab_click_ajax( element ) {			
-			$('.category-ajax-slider .tab-content').addClass( 'loading' );
 			var target 		= $( element.attr( 'href' ) );
-			var id 				= element.attr( 'href' );
+			var id 			= element.attr( 'href' );
 			var length		= element.data( 'length' );
-			var ltype     = element.data( 'type' );
+			var ltype     	= element.data( 'type' );
 			var layout 		= element.data( 'layout' );
 			var orderby 	= element.data( 'orderby' );
 			var order 		= element.data( 'order' );
-			var item_row  = element.data( 'row' );
-			var sorder    = element.data( 'sorder' );
+			var item_row  	= element.data( 'row' );
+			var sorder   	= element.data( 'sorder' );
 			var catid 		= element.data( 'category' );
 			var number 		= element.data( 'number' );
 			var columns 	= element.data( 'lg' );
@@ -45,6 +55,7 @@
 			var scroll 		= element.data( 'scroll' );
 			var speed 		= element.data( 'speed' );
 			var autoplay 	= element.data( 'autoplay' );	
+			var tg_append = element.parents( '.zr-ajax' ).find( ' .tab-content' );
 			var action = '';
 			if( ltype == 'cat_ajax' ) {
 				action = 'zr_category_callback';
@@ -56,8 +67,8 @@
 				action = 'zr_ajax_tab_listing';
 			}
 			var ajaxurl   = element.data( 'ajaxurl' ).replace( '%%endpoint%%', action );
-			if( target.html() == '' ){
-				target.parent().addClass( 'loading' );
+			if( !element.parent().hasClass ('loaded') ){
+				tg_append.addClass( 'loading' );
 				var data 		= {
 					action: action,
 					catid: catid,
@@ -81,13 +92,15 @@
 					autoplay: autoplay,
 				};
 				jQuery.post(ajaxurl, data, function(response) {
-					target.html( response );
-					zr_slider_ajax( target );
+					element.parent().addClass( 'loaded' );
+					tg_append.find( '.tab-pane' ).removeClass( 'active' );
+					tg_append.append( response );
+					zr_slider_ajax( id );
 					$( ".add_to_cart_button" ).attr( "title", "Add to cart" );
-					 $( ".add_to_wishlist" ).attr( "title", "Add to wishlist" );
-					 $( ".compare" ).attr( "title", "Add to compare" );
-					 $( ".group" ).attr( "title", "Quickview" );
-					target.parent().removeClass( 'loading' );
+					$( ".add_to_wishlist" ).attr( "title", "Add to wishlist" );
+					$( ".compare" ).attr( "title", "Add to compare" );
+					$( ".group" ).attr( "title", "Quickview" );
+					tg_append.removeClass( 'loading' );
 				});
 			}
 		}
