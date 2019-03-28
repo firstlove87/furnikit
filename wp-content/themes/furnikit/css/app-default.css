@@ -1961,10 +1961,37 @@ select:-webkit-autofill {
 }
 .mega-menu .wrap-content .item {
   float: left;
-  width: 25%;
+  width: 20%;
   padding: 0 15px;
 }
-.mega-menu .wrap-content .item .item-image img {
+.rtl .mega-menu .wrap-content .item {
+  float: right;
+}
+.mega-menu .wrap-content .item .item-content h3 {
+  font-size: 14px;
+  color: #222;
+  text-transform: capitalize;
+  padding: 10px 0;
+  margin: 0;
+  font-weight: bold;
+}
+.mega-menu .wrap-content .item .item-content ul > li > a {
+  padding: 7px 0;
+  font-size: 13px;
+  color: #666;
+  font-weight: normal;
+}
+.mega-menu .wrap-content .item .item-content ul > li > a:hover {
+  color: #8fd021;
+}
+.mega-menu .wrap-content .item2 {
+  width: 40%;
+  float: left;
+}
+.rtl .mega-menu .wrap-content .item2 {
+  float: right;
+}
+.mega-menu .wrap-content .item2 .item-image img {
   margin-bottom: 10px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -1972,23 +1999,8 @@ select:-webkit-autofill {
   -ms-transition: 0.3s;
   transition: 0.3s;
 }
-.mega-menu .wrap-content .item .item-image:hover img {
+.mega-menu .wrap-content .item2 .item-image:hover img {
   opacity: 0.9;
-}
-.mega-menu .wrap-content .item .item-content h3 {
-  font-size: 14px;
-  color: #222;
-  text-transform: uppercase;
-  padding: 15px 0;
-  border-bottom: 1px solid #eaeaea;
-}
-.mega-menu .wrap-content .item .item-content ul > li > a {
-  padding: 10px 0;
-  font-size: 13px;
-  color: #7d7d7d;
-}
-.mega-menu .wrap-content .item .item-content ul > li > a:hover {
-  color: #8fd021;
 }
 .resmenu-container .navbar-toggle {
   display: none;
@@ -3396,6 +3408,16 @@ select:-webkit-autofill {
   display: -ms-flex;
   display: flex;
 }
+.search-cate .top-form.top-search .search-wrapper .cat-wrapper select {
+  height: 50px;
+  line-height: 50px;
+  border-color: #eee;
+  border-right: none;
+}
+.rtl .search-cate .top-form.top-search .search-wrapper .cat-wrapper select {
+  border-right: none;
+  border-left: 1px;
+}
 .search-cate .top-form.top-search .search-wrapper .content-search {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3425,6 +3447,9 @@ select:-webkit-autofill {
   background: none;
   right: 0;
   border: 0;
+}
+.search-cate .top-form.top-search .search-wrapper .content-search .button-search-pro:before {
+  font-family: FontAwesome;
 }
 .search-cate .top-form.top-search .topsearch-entry {
   padding-left: 0;

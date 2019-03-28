@@ -763,6 +763,14 @@
 		.search-wrapper{
 			padding: 20px 0;
 			.flex-display(flex);
+			.cat-wrapper{
+				select{
+					height: 50px; line-height: 50px; border-color: @border-color; border-right: none;
+					.rtl &{
+						border-right: none; border-left: 1px;
+					}
+				}
+			}
 			.content-search{
 				.flex-display(flex);
 				position: relative;
@@ -784,6 +792,9 @@
 					background: none;
 					right: 0;
 					border: 0;
+					&:before{
+						font-family: FontAwesome;
+					}
 				}
 			}
 		}
