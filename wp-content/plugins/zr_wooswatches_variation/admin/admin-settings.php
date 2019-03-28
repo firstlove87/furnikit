@@ -33,7 +33,7 @@ class zr_wooswatches_variation_Admin_Settings{
 		* @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
 	*/
 	public static function add_settings_tab($settings_tabs ) {
-		$settings_tabs['settings_zr_wooswatches_variation'] = esc_html__( 'Sw WooSwatches', 'zr_wooswatches_variation' );
+		$settings_tabs['settings_zr_wooswatches_variation'] = esc_html__( 'Swatches Variaton', 'zr_wooswatches_variation' );
 		return $settings_tabs;
 	}
 	
@@ -58,7 +58,7 @@ class zr_wooswatches_variation_Admin_Settings{
 	}
 	
 	/**
-	* Declare option for Sw WooSwatches Settings
+	* Declare option for Swatches Variaton Settings
 	**/
 	public static function get_settings(){
 		$settings = array(
@@ -139,7 +139,7 @@ class zr_wooswatches_variation_Admin_Settings{
 	public static function add_wooswatches_product_data_tab( $product_data_tabs ){
 		
 		$product_data_tabs['zr_wooswatches_variation'] = array(
-			'label' => esc_html__( 'Sw WooSwatches', 'zr_wooswatches_variation' ),
+			'label' => esc_html__( 'Swatches Variaton', 'zr_wooswatches_variation' ),
 			'target' => 'zr_wooswatches_variation_data',
 			'priority' => 999,
 			'class'    => array( 'show_if_variable' ),
@@ -160,7 +160,7 @@ class zr_wooswatches_variation_Admin_Settings{
 		
 		if( $product_type == 'variable' ) :
 			$product = new WC_Product_Variable( $post->ID );
-	    $attributes = $product->get_variation_attributes();
+			$attributes = $product->get_variation_attributes();
 		endif;
 		
 		

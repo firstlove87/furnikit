@@ -1,11 +1,11 @@
 <?php 
 /**
  * Plugin Name: Zr Woocommerce Swatches Variation
- * Plugin URI: http://www.smartaddons.com/
+ * Plugin URI: http://www.9xthemes.com/
  * Description: A plugin help to display variable product more beauty.
  * Version: 1.0.5
- * Author: SmartAddons
- * Author URI: http://www.smartaddons.com/
+ * Author: 9xthemes
+ * Author URI: http://www.9xthemes.com/
  * Requires at least: 4.1
  * Tested up to: WorPress 5.1.x and WooCommerce 3.5.x
  * WC tested up to: 3.5.0
@@ -60,7 +60,7 @@ add_action( 'plugins_loaded', 'zr_wooswatches_variation_construct', 20 );
 function zr_wooswatches_variation_admin_notice(){
 	?>
 	<div class="error">
-		<p><?php _e( 'Sw WooSwatches is enabled but not effective. It requires WooCommerce in order to work.', 'zr_wooswatches_variation' ); ?></p>
+		<p><?php _e( 'Swatches Variaton is enabled but not effective. It requires WooCommerce in order to work.', 'zr_wooswatches_variation' ); ?></p>
 	</div>
 <?php
 }

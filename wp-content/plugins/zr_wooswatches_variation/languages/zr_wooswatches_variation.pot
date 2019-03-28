@@ -62,7 +62,7 @@ msgid "Variation Image"
 msgstr ""
 
 #: admin/admin-settings.php:36 admin/admin-settings.php:142
-msgid "Sw WooSwatches"
+msgid "Swatches Variaton"
 msgstr ""
 
 #: admin/admin-settings.php:66
@@ -127,6 +127,6 @@ msgstr ""
 
 #: zr-wooswatches-variation.php:63
 msgid ""
-"Sw WooSwatches is enabled but not effective. It requires WooCommerce in order "
+"Swatches Variaton is enabled but not effective. It requires WooCommerce in order "
 "to work."
 msgstr ""
