@@ -1,3 +1,16 @@
+body.resmenu-open{
+	position: relative;
+	&:before{
+		content: '';
+		background: rgba(0,0,0,0.7);
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 9999;
+		width: 100%;
+	}
+}
 /* =============================================================== */
 /* Dropdown Menu ================================================= */
 .nav-pills {

@@ -11,6 +11,31 @@
 	.sticky-menu{
 		position: fixed; z-index: 999; background: #fff; box-shadow: 0 1px 1px #ccc; .transition(all 0.3s);
 	}
+	.search-cate {
+		.icon-search.close{
+			&:before{
+				display: none;
+			}
+			span:before{
+				content:"\ea17";
+			}
+		}
+		.top-form.top-search {
+			width: 300px; left: 60px; top: -5px;
+			.rtl &{
+				left: auto; right: 60px;
+			}
+			.search-wrapper {
+				padding-top: 0;
+				.cat-wrapper{
+					display: none;
+				}
+				.content-search{
+
+				}
+			}
+		}
+	}
 }
 .furnikit-logo{
 	height: 80px; .flex-display( flex ); .align-items( center ); 
@@ -302,7 +327,7 @@
 			}
 		}
 		.widget_currency_converter{
-			border-bottom: 1px @border-color solid; padding-bottom: 20px;
+			border-bottom: 1px @border-color solid; padding-bottom: 20px; 
 			h3{
 				text-transform: uppercase; font-size: 14px; font-weight: normal;
 			}
@@ -751,7 +776,7 @@
 				color: #000;
 				position: absolute;
 				width: 15px;
-				height: 15px;
+				height: 40px;
 				top: -15px;
 				right: 15px;
 				z-index: 999;
@@ -759,9 +784,9 @@
 		}
 	}	
 	.top-form.top-search{
-		position: absolute;left: 15px; right: 15px; top: 0; display: none; z-index: 9;bottom: 0; background: #fff;
+		position: absolute;left: 15px; right: 15px; top: 0; display: none; z-index: 991; background: #fff;
 		.search-wrapper{
-			padding: 20px 0;
+			padding: 20px 0 0 0;
 			.flex-display(flex);
 			.cat-wrapper{
 				select{
@@ -782,6 +807,9 @@
 					height: 50px;
 					line-height: 48px;
 					margin: 0;
+					.rtl &{
+						padding: 0 15px 0 50px;
+					}
 				}
 				.button-search-pro{
 					position: absolute;
@@ -792,6 +820,9 @@
 					background: none;
 					right: 0;
 					border: 0;
+					.rtl &{
+						right: auto; left: 0;
+					}
 					&:before{
 						font-family: FontAwesome;
 					}

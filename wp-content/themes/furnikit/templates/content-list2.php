@@ -106,4 +106,4 @@
 				</div>
 			<?php } ?>
 		</div>
-	</div> V
+	</div>

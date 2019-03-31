@@ -936,6 +936,19 @@ select:-webkit-autofill {
 .best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content .item-price {
   margin-bottom: 10px;
 }
+body.resmenu-open {
+  position: relative;
+}
+body.resmenu-open:before {
+  content: '';
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 9999;
+  width: 100%;
+}
 .nav-pills {
   display: inline-block;
   vertical-align: top;
@@ -2421,6 +2434,27 @@ select:-webkit-autofill {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
+.header-style1 .search-cate .icon-search.close:before {
+  display: none;
+}
+.header-style1 .search-cate .icon-search.close span:before {
+  content: "\ea17";
+}
+.header-style1 .search-cate .top-form.top-search {
+  width: 300px;
+  left: 60px;
+  top: -5px;
+}
+.rtl .header-style1 .search-cate .top-form.top-search {
+  left: auto;
+  right: 60px;
+}
+.header-style1 .search-cate .top-form.top-search .search-wrapper {
+  padding-top: 0;
+}
+.header-style1 .search-cate .top-form.top-search .search-wrapper .cat-wrapper {
+  display: none;
+}
 .furnikit-logo {
   height: 80px;
   display: -webkit-flex;
@@ -3386,7 +3420,7 @@ select:-webkit-autofill {
   color: #000;
   position: absolute;
   width: 15px;
-  height: 15px;
+  height: 40px;
   top: -15px;
   right: 15px;
   z-index: 999;
@@ -3397,12 +3431,11 @@ select:-webkit-autofill {
   right: 15px;
   top: 0;
   display: none;
-  z-index: 9;
-  bottom: 0;
+  z-index: 991;
   background: #fff;
 }
 .search-cate .top-form.top-search .search-wrapper {
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: -ms-flex;
@@ -3438,6 +3471,9 @@ select:-webkit-autofill {
   line-height: 48px;
   margin: 0;
 }
+.rtl .search-cate .top-form.top-search .search-wrapper .content-search .autosearch-input {
+  padding: 0 15px 0 50px;
+}
 .search-cate .top-form.top-search .search-wrapper .content-search .button-search-pro {
   position: absolute;
   top: 0;
@@ -3447,6 +3483,10 @@ select:-webkit-autofill {
   background: none;
   right: 0;
   border: 0;
+}
+.rtl .search-cate .top-form.top-search .search-wrapper .content-search .button-search-pro {
+  right: auto;
+  left: 0;
 }
 .search-cate .top-form.top-search .search-wrapper .content-search .button-search-pro:before {
   font-family: FontAwesome;
@@ -3693,6 +3733,10 @@ select:-webkit-autofill {
 }
 .header-style2 .main-menu {
   margin-right: 30px;
+}
+.rtl .header-style2 .main-menu {
+  margin-left: 30px;
+  margin-right: 0;
 }
 .header-style2 .sticky-menu {
   position: fixed;
@@ -4913,6 +4957,9 @@ select:-webkit-autofill {
 .sidebar .widget.widget_media_image {
   border: none;
   padding: 0;
+}
+.sidebar .widget .resp-slider-container .slick-slider .item {
+  padding: 0 15px;
 }
 .contact_us.rtl .wpcf7 .wpcf7-form-control-wrap input,
 .contact_us.rtl .wpcf7 textarea {
@@ -7657,6 +7704,10 @@ blockquote p {
 .item .item-wrap .item-detail .item-img .yith-wcwl-wishlistaddedbrowse.show a:before,
 .item .item-wrap .item-detail .item-img .yith-wcwl-wishlistexistsbrowse.show a:before {
   color: #8fd021;
+}
+.item .item-wrap .item-detail .item-img .zr-variation-frontend {
+  padding: 11px 0;
+  border-bottom: 1px #eee solid;
 }
 .item .item-wrap .item-detail .item-content {
   padding: 10px 0 0 0;
