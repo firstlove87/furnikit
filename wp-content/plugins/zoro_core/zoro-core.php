@@ -323,3 +323,16 @@ function get_url($atts) {
 	}
 }
 add_shortcode( 'get_url', 'get_url' );
+
+function zr_bloginfo( $atts){
+	extract( shortcode_atts(array(
+			'show' => 'wpurl',
+			'filter' => 'raw'
+		), $atts)
+	);
+	$html = '';
+	$html .= get_bloginfo($show, $filter);
+
+	return $html;
+}
+add_shortcode( 'bloginfo', 'zr_bloginfo' );

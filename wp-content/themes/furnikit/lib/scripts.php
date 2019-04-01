@@ -65,8 +65,8 @@ function furnikit_scripts() {
 			'message' => esc_html__( 'Please enter your usename and password', 'furnikit' ),
 		);
 		
-		wp_localize_script( 'furnikit_custom_js', 'custom_text', $translation_text );
-		wp_enqueue_script( 'furnikit_custom_js', get_template_directory_uri() . '/js/main.js', array(), null, true );
+		wp_localize_script( 'furnikit-custom', 'custom_text', $translation_text );
+		wp_enqueue_script( 'furnikit-custom', get_template_directory_uri() . '/js/main.js', array(), null, true );
 	}
 	
 	$overflow_text = array(

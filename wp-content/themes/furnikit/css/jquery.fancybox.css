@@ -34,7 +34,7 @@
 }
 
 .fancybox-opened {
-	z-index: 8030;
+	z-index: 10001;
 }
 
 .fancybox-opened .fancybox-skin {
@@ -85,7 +85,7 @@
 	background-position: 0 -108px;
 	opacity: 0.8;
 	cursor: pointer;
-	z-index: 8060;
+	z-index: 10001;
 }
 
 #fancybox-loading div {
@@ -111,7 +111,7 @@
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
-	background: transparent url('fancy/furnikit.gif'); /* helps IE */
+	background: transparent url('fancy/blank.gif'); /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
 }
@@ -180,7 +180,7 @@
 	left: 0;
 	overflow: hidden;
 	display: none;
-	z-index: 8010;
+	z-index: 10000;
 	background: url('fancy/fancybox_overlay.png');
 }
 

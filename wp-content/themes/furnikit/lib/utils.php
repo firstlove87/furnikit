@@ -623,6 +623,8 @@ function furnikit_advanced(){
 						jQuery("#subscribe_popup").trigger("click");
 						jQuery("#subscribe_popup").parents(".fancybox-overlay").addClass("popup-fancy");
 					};';
+				wp_enqueue_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), null);
+				wp_enqueue_script('fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array(), null, true);
 			}
 		$output .= '}(jQuery));';
 		
@@ -636,9 +638,9 @@ function furnikit_advanced(){
 			'message' => esc_html__( 'Please enter your usename and password', 'furnikit' ),
 		);
 		
-		wp_localize_script( 'furnikit_custom_js', 'custom_text', $translation_text );
-		wp_enqueue_script( 'furnikit_custom_js', get_template_directory_uri() . '/js/adminc.js', array(), null, true );
-		wp_add_inline_script( 'furnikit_custom_js', $output );
+		wp_localize_script( 'furnikit-custom', 'custom_text', $translation_text );
+		wp_enqueue_script( 'furnikit-custom', get_template_directory_uri() . '/js/adminc.js', array(), null, true );
+		wp_add_inline_script( 'furnikit-custom', $output );
 	
 }
 add_action( 'wp_enqueue_scripts', 'furnikit_advanced', 101 );
