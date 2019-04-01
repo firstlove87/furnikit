@@ -102,7 +102,7 @@
 								<a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i><?php echo sprintf( _n( '%d Comment', '%d Comments', $post-> comment_count , 'furnikit' ), number_format_i18n( $post-> comment_count ) ); ?></a>
 							</span>
 							<?php if(has_tag()) :?>
-								<?php the_tags( '<span class="entry-meta-link entry-meta-tag"><span class="fa fa-tags"></span>', ', ', '</span>' ); ?>
+								<?php the_tags( '<span class="entry-meta-link entry-meta-tag"><i class="fa fa-tags"></i>', ', ', '</span>' ); ?>
 							<?php endif;?>
 						</div>
 						<div class="entry-summary">

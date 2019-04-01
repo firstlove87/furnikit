@@ -1,20 +1,21 @@
 .contact_us{
-	&.rtl{
+	.rtl &{
+		text-align: right;
 		.wpcf7 .wpcf7-form-control-wrap input, .wpcf7 textarea{
-			text-align:right;
+			text-align: right;
 		}
 	}
 	.wpcf7{
 		.cf1{
 			width: 48%; float: left; margin-right: 4%;
 			.rtl &{
-				float: right; margin-right: 0; margin-left: 4%;
+				float: right; margin-right: 0; margin-left: 4%; text-align: right;
 			}
 		}
 		.cf2{
 			width: 48%; float: left;
 			.rtl &{
-				float: right;
+				float: right; text-align: right;
 			}
 		}
 		.wpcf7-form-control-wrap{

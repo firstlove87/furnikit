@@ -888,7 +888,11 @@ select:-webkit-autofill {
   vertical-align: top;
 }
 .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .search-meta .sku {
-  margin-right: 20px;
+  margin-right: 15px;
+}
+.rtl .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .search-meta .sku {
+  margin-right: 0;
+  margin-left: 15px;
 }
 .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .search-meta .sku > span {
   font-weight: bold;
@@ -2437,9 +2441,6 @@ body.resmenu-open:before {
 .header-style1 .search-cate .icon-search.close:before {
   display: none;
 }
-.header-style1 .search-cate .icon-search.close span:before {
-  content: "\ea17";
-}
 .header-style1 .search-cate .top-form.top-search {
   width: 300px;
   left: 60px;
@@ -2842,7 +2843,7 @@ body.resmenu-open:before {
   margin: 0;
   position: static;
   opacity: 1;
-  visibility: visible;
+  visibility: hidden;
   padding: 0;
   width: 100%;
   box-shadow: none;
@@ -2897,7 +2898,7 @@ body.resmenu-open:before {
   margin: 0;
   position: static;
   opacity: 1;
-  visibility: visible;
+  visibility: hidden;
   padding: 0;
   width: 100%;
   box-shadow: none;
@@ -2957,6 +2958,10 @@ body.resmenu-open:before {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
   top: 65px;
+}
+.header-account:hover .header-bar .widget_currency_converter .currency_w >li .currency_switcher,
+.header-account:hover .header-bar .custom-html-widget #lang_sel ul.nav >li >ul {
+  visibility: visible;
 }
 .top-form-minicart {
   position: relative;
@@ -3424,6 +3429,9 @@ body.resmenu-open:before {
   top: -15px;
   right: 15px;
   z-index: 999;
+}
+.search-cate .icon-search.close span:before {
+  content: "\ea17";
 }
 .search-cate .top-form.top-search {
   position: absolute;
@@ -3943,6 +3951,9 @@ body.resmenu-open:before {
 .rtl .zr-woo-tab-cat2 .resp-tab .category-slider-content .nav-tabs-select li {
   padding: 0 10px;
 }
+.zr-woo-tab-cat2 .item .item-wrap:first-child .item-detail {
+  min-height: 433px;
+}
 .about-top2 h3 {
   font-size: 30px;
   font-weight: bold;
@@ -4260,6 +4271,30 @@ body.resmenu-open:before {
   -o-transition: all 0.3s;
   -ms-transition: all 0.3s;
   transition: all 0.3s;
+}
+.revo-pos .vc_column-inner > .wpb_wrapper {
+  position: relative;
+}
+.revo-pos .new-pos {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  margin-bottom: 0;
+}
+.revo-pos .new-pos .newsletter-top {
+  padding: 50px 65px 40px 65px;
+}
+.revo-pos .new-pos .newsletter-top.style3 .content-wrap h3 {
+  font-size: 18px;
+}
+.revo-pos .new-pos .newsletter-top.style3 .content-wrap p {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+}
+.revo-pos .new-pos .newsletter-top.style3 .content-wrap {
+  min-width: 375px;
 }
 .banner-cate2 {
   position: relative;
@@ -4961,8 +4996,11 @@ body.resmenu-open:before {
 .sidebar .widget .resp-slider-container .slick-slider .item {
   padding: 0 15px;
 }
-.contact_us.rtl .wpcf7 .wpcf7-form-control-wrap input,
-.contact_us.rtl .wpcf7 textarea {
+.rtl .contact_us {
+  text-align: right;
+}
+.rtl .contact_us .wpcf7 .wpcf7-form-control-wrap input,
+.rtl .contact_us .wpcf7 textarea {
   text-align: right;
 }
 .contact_us .wpcf7 .cf1 {
@@ -4974,6 +5012,7 @@ body.resmenu-open:before {
   float: right;
   margin-right: 0;
   margin-left: 4%;
+  text-align: right;
 }
 .contact_us .wpcf7 .cf2 {
   width: 48%;
@@ -4981,6 +5020,7 @@ body.resmenu-open:before {
 }
 .rtl .contact_us .wpcf7 .cf2 {
   float: right;
+  text-align: right;
 }
 .contact_us .wpcf7 .wpcf7-form-control-wrap input {
   border-radius: 4px;
@@ -12016,7 +12056,7 @@ h1.page-title {
   text-transform: capitalize;
 }
 .product_detail .content_product_detail .reviews-content {
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }
 .product_detail .content_product_detail .reviews-content .woocommerce-review-link {
   display: none;

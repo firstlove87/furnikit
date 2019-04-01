@@ -16,9 +16,6 @@
 			&:before{
 				display: none;
 			}
-			span:before{
-				content:"\ea17";
-			}
 		}
 		.top-form.top-search {
 			width: 300px; left: 60px; top: -5px;
@@ -302,7 +299,7 @@
 							display: none;
 						}
 						>ul{
-							margin: 0; position: static; opacity: 1; visibility: visible; padding: 0; width: 100%; box-shadow: none;
+							margin: 0; position: static; opacity: 1; visibility: hidden; padding: 0; width: 100%; box-shadow: none;
 							li {
 								display: inline-block; vertical-align: top; width: auto; margin-right: 10px;
 								.rtl &{
@@ -339,7 +336,7 @@
 						display: none;
 					}
 					.currency_switcher{
-						margin: 0; position: static; opacity: 1; visibility: visible; padding: 0; width: 100%; box-shadow: none;
+						margin: 0; position: static; opacity: 1; visibility: hidden; padding: 0; width: 100%; box-shadow: none;
 						li {
 							display: inline-block; vertical-align: top; width: auto; margin-right: 10px;
 							.rtl &{
@@ -382,6 +379,9 @@
 	&:hover{
 		.header-bar{
 			.opacity(1); visibility: visible; height:auto; .transition(all 0.3s); top: 65px;
+			.widget_currency_converter .currency_w >li .currency_switcher, .custom-html-widget #lang_sel ul.nav >li >ul{
+				visibility: visible;
+			}
 		}
 	}
 }
@@ -780,6 +780,9 @@
 				top: -15px;
 				right: 15px;
 				z-index: 999;
+			}
+			span:before{
+				content: "\ea17";
 			}
 		}
 	}	
