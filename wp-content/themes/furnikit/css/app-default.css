@@ -782,42 +782,6 @@ select:-webkit-autofill {
   color: #666;
   font-weight: 400;
 }
-#subscribe_popup .subscribe-social {
-  padding: 0;
-  position: relative;
-  z-index: 3;
-  margin-top: 10px;
-}
-#subscribe_popup .subscribe-social h3 {
-  color: #fff;
-  font-weight: 700 !important;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-#subscribe_popup .subscribe-social > .subscribe-social-inner .binace-socials ul {
-  margin: 0;
-}
-#subscribe_popup .subscribe-social > .subscribe-social-inner .binace-socials ul > li > a {
-  display: block;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 12px;
-  line-height: 36px;
-  color: #555;
-  background: #fff;
-  margin: 0 10px 0 0;
-  border: 1px solid #eee;
-}
-.rtl #subscribe_popup .subscribe-social > .subscribe-social-inner .binace-socials ul > li > a {
-  margin: 0 0 0 10px;
-}
-#subscribe_popup .subscribe-social > .subscribe-social-inner .binace-socials ul > li > a:hover {
-  border: 1px solid #8fd021;
-  background-color: #8fd021;
-  color: #fff;
-}
 .zr-ajax-product-search .button-search-pro.loading:before {
   background-image: url(../assets/img/loadingp.gif);
   background-color: transparent;

@@ -79,6 +79,15 @@
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  #subscribe_popup .subscribe-popup-container .subscribe-checkbox {
+    margin: 0;
+  }
+  .rtl #subscribe_popup .subscribe-popup-container .subscribe-checkbox {
+    margin: 0;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-checkbox label {
+    display: inline-block;
+  }
   .wpb_revslider_element .shape-in {
     display: none;
   }
@@ -155,6 +164,18 @@
   }
   .resmenu-container-sidebar .topsearch-entry .search-append {
     left: 0;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-content {
+    padding: 30px 0;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-checkbox {
+    margin: 0;
+  }
+  .rtl #subscribe_popup .subscribe-popup-container .subscribe-checkbox {
+    margin: 0;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-checkbox label {
+    display: inline-block;
   }
   .resmenu-container .menu-responsive-wrapper ul.furnikit_resmenu {
     max-height: 228px;
@@ -251,6 +272,10 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .products-wrapper .products-loop.list .item .item-wrap .item-detail .products-thumb {
     width: 180px;
+  }
+  #subscribe_popup {
+    min-width: 680px;
+    width: auto;
   }
 }
 @media (max-width: 767px) {
@@ -376,6 +401,25 @@
   .header-style3 .top-signup,
   .header-style4 .top-signup {
     display: none;
+  }
+  #subscribe_popup {
+    min-width: 600px;
+    padding: 15px 0;
+    width: auto;
+  }
+  #subscribe_popup .subscribe-popup-container .image-newsletter {
+    display: none;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-content {
+    width: 100%;
+    padding: 0;
+  }
+  .rtl #subscribe_popup .subscribe-popup-container .subscribe-checkbox {
+    text-align: center;
+    margin: 0;
+  }
+  .rtl #subscribe_popup .subscribe-popup-container .subscribe-checkbox label {
+    display: inline-block;
   }
   .sw-woo-tab-cat .resp-tab .category-slider-content .block-title h3,
   .responsive-post-slider .resp-slider-container .block-title h3 {
@@ -671,7 +715,29 @@
     margin: 0 0 15px 0;
   }
 }
+@media (max-width: 480px) {
+  #subscribe_popup {
+    min-width: 360px;
+  }
+}
 @media (max-width: 360px) {
+  #subscribe_popup {
+    min-width: 250px;
+    padding: 10px 10px 25px 10px;
+  }
+  #subscribe_popup .subscribe-popup-container {
+    padding: 48px 0px 25px 0px;
+  }
+  #subscribe_popup .subscribe-popup-container h2 {
+    font-size: 20px;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-social > .subscribe-social-inner > a {
+    margin: 0 2px;
+  }
+  #subscribe_popup .subscribe-popup-container .subscribe-form input[type="email"] {
+    width: 205px;
+    padding: 0 10px;
+  }
   .rtl.woocommerce div.product form.cart .group_table td.label {
     text-align: right;
   }

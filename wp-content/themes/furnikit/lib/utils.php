@@ -425,34 +425,32 @@ function furnikit_footer_advanced(){
 	if( zr_options( 'popup_active' ) ) :
 		$furnikit_content = zr_options( 'popup_content' );
 		$furnikit_shortcode = zr_options( 'popup_form' );
-		$popup_attr = ( zr_options( 'popup_background' ) != '' ) ? 'style="background: url( '. esc_url( zr_options( 'popup_background' ) ) .' )"' : '';
+		$popup_attr = ( zr_options( 'popup_background' ) != '' ) ? 'style="background-image: url( '. esc_url( zr_options( 'popup_background' ) ) .' )"' : '';
 ?>
-		<div id="subscribe_popup" class="subscribe-popup"<?php echo sprintf( '%s', $popup_attr ); ?>>
-			<div class="subscribe-popup-container">
-				<?php if( $furnikit_content != '' ) : ?>
-				<div class="popup-content">
-					<?php echo sprintf( '%s', $furnikit_content ); ?>
+		<div id="subscribe_popup" class="subscribe-popup">
+			<div class="subscribe-popup-container clearfix">
+				<div class="image-newsletter pull-left">
+					<img src="<?php echo esc_url( zr_options( 'popup_background' ) )?>" />
 				</div>
-				<?php endif; ?>
-				
-				<?php if( $furnikit_shortcode != '' ) : ?>
-				<div class="subscribe-form">
-					<?php	echo do_shortcode( $furnikit_shortcode ); ?>
-				</div>
-				<?php endif; ?>
-				
-				<div class="subscribe-checkbox">
+				<div class="subscribe-content pull-right">
+					<?php if( $furnikit_content != '' ) : ?>
+					<div class="popup-content">
+						<?php echo sprintf( '%s', $furnikit_content ); ?>
+					</div>
+					<?php endif; ?>
+					
+					<?php if( $furnikit_shortcode != '' ) : ?>
+					<div class="subscribe-form">
+						<?php	echo do_shortcode( $furnikit_shortcode ); ?>
+					</div>
+					<?php endif; ?>					
+					<div class="subscribe-checkbox">
 					<label for="popup_check">
 						<input id="popup_check" name="popup_check" type="checkbox" />
 						<?php echo '<span>' . esc_html__( "Don't show this popup again!", "furnikit" ) . '</span>'; ?>
 					</label>
+					</div>
 				</div>				
-			</div>
-			<div class="subscribe-social">
-				<h3><?php echo esc_html__('follow us','furnikit'); ?></h3>
-				<div class="subscribe-social-inner">
-					<?php zr_social_link() ?>
-				</div>
 			</div>
 		</div>
 	<?php 
