@@ -361,7 +361,6 @@
 	*/
 	var $current ='';
 	$('#lang_sel ul > li > ul li a').on('click',function(){
-	 //console.log($(this).html());
 	 $current = $(this).html();
 	 $('#lang_sel ul > li > a.lang_sel_sel').html($current);
 	 $a = $.cookie('lang_select_furnikit', $current, { expires: 1, path: '/'}); 

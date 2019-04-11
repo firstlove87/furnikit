@@ -36,7 +36,7 @@
 						</label>
 					</div>
 					<?php } ?>
-					<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php esc_attr_e( 'Enter your keyword...', 'furnikit' ); ?>" />
+					<input type="text" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php esc_attr_e( 'Enter your keyword...', 'furnikit' ); ?>" />
 					<button type="submit" title="<?php esc_attr_e( 'Search', 'furnikit' ) ?>" class="fa fa-search button-search-pro form-button"></button>
 					<input type="hidden" name="search_posttype" value="product" />
 				</div>

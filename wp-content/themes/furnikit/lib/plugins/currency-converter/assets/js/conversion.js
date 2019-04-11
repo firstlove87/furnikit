@@ -60,7 +60,6 @@ jQuery(document).ready(function($) {
 				original_price = parseFloat( original_price );
 
 				// Log Conversions
-				// console.log( original_price );
 
 				// Store original price
 				jQuery(this).attr("data-price", original_price);
