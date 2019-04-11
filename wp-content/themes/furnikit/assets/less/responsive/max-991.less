@@ -7,6 +7,9 @@
 		.revo-des4{
 			font-size: 24px !important;
 		}
+		.revo-des5{
+			padding-top: 5px !important; padding-top: 5px !important;
+		}
 	}
 	#main-menu {
 		position: relative;
@@ -23,35 +26,31 @@
 		}
 	}
 	.resmenu-container-sidebar{
-		.furnikit_top{
-			padding: 0;
-			.top-form.top-search{
-				min-width: auto;
-				box-shadow: 0 0 0 1px #e4e4e4;
-				-webkit-box-shadow: 0 0 0 1px #e4e4e4;
-				border-radius: 0; margin: 0; width: 100%;
-				.cat-wrapper{
-					display: none;
+		.top-form.top-search{
+			min-width: auto; position: relative;
+			border-radius: 0; margin: 0; width: 100%;
+			.cat-wrapper{
+				display: none;
+			}
+			input{
+				padding: 0 10px; border-radius: 0; height: 40px; line-height: 40px; width: 100%; margin-bottom: 0;
+				.rtl &{
+					border-radius:0;
 				}
-				input{
-					padding: 0 10px; border-radius: 4px; height: 40px; line-height: 40px;
-					.rtl &{
-						border-radius:4px;
-					}
+			}
+			button.form-button{
+				background: none; font-size: 16px; width: 40px; height: 40px; line-height: 40px;
+				position: absolute; top: 0; right:0; border: none;
+				.rtl &{
+					right: auto; left:0;
 				}
-				button.form-button{
-					background: none; font-size: 16px; border-radius: 0 4px 4px 0; height: 40px; line-height: 40px;
-					&:before{
-						color: #999;
-					}
-					.rtl &{
-						border-radius: 4px 0 0 4px;
-					}
+				&:before{
+					color: #999; font-family: fontawesome;
 				}
-				.topsearch-entry{
-					.rtl &{
-						padding-right: 0;
-					}
+			}
+			.topsearch-entry{
+				.rtl &{
+					padding-right: 0;
 				}
 			}
 		}

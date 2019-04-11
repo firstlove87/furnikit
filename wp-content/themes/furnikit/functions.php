@@ -43,7 +43,15 @@ function furnikit_add_custom_widgets( $furnikit_widget_areas ){
 			'after_widget'  => '</div></div>',
 			'before_title'  => '<h3>',
 			'after_title'   => '</h3>'
-		);
+			);
 	}
+	$furnikit_widget_areas[] = array(
+		'name' => esc_html__('Widget Mobile Top', 'furnikit'),
+		'id'   => 'top-mobile',
+		'before_widget' => '<div class="widget %1$s %2$s"><div class="widget-inner">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+		);
 	return $furnikit_widget_areas;
 }

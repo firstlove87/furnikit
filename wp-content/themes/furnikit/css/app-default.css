@@ -795,7 +795,7 @@ select:-webkit-autofill {
 }
 .zr-ajax-product-search .search-append {
   position: absolute;
-  top: 55px;
+  top: 50px;
   right: 0;
   left: 0;
   padding: 0;
@@ -853,6 +853,7 @@ select:-webkit-autofill {
 }
 .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .search-meta .sku {
   margin-right: 15px;
+  display: none;
 }
 .rtl .zr-ajax-product-search .search-append .autocomplete-suggestion .media-body .search-meta .sku {
   margin-right: 0;
@@ -903,9 +904,6 @@ select:-webkit-autofill {
 }
 .best-selling-product .zr-content .resp-slider-container .slick-slider .item-product .item-wrap .item-content .item-price {
   margin-bottom: 10px;
-}
-body.resmenu-open {
-  position: relative;
 }
 body.resmenu-open:before {
   content: '';
@@ -3563,6 +3561,16 @@ body.resmenu-open:before {
   -o-transition: all 0.3s !important;
   -ms-transition: all 0.3s !important;
   transition: all 0.3s !important;
+}
+.wpb_revslider_element .rev_slider .metis.tparrows {
+  width: 50px !important;
+  height: 50px !important;
+  box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.03) !important;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.wpb_revslider_element .rev_slider .metis.tparrows:before {
+  line-height: 30px;
 }
 .home-style1 .furnikit_breadcrumbs {
   display: none;
@@ -9434,7 +9442,7 @@ blockquote p {
 .woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input,
 .woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input {
   float: none;
-  margin: 4px 4px 0 -10px;
+  margin: 4px 4px 0 1px;
 }
 .woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address input,
 .woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address input {
@@ -10464,7 +10472,7 @@ div.stars .rating-hidden {
 }
 .rtl.woocommerce .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input,
 .rtl.woocommerce-page .checkout .col2-set .col-2 .woocommerce-shipping-fields h3#ship-to-different-address > label input {
-  margin: 4px -10px 0 4px;
+  margin: 4px 1px 0 4px;
 }
 .rtl.woocommerce .checkout .col2-set .col-1 .woocommerce-account-fields .input-checkbox,
 .rtl.woocommerce-page .checkout .col2-set .col-1 .woocommerce-account-fields .input-checkbox {

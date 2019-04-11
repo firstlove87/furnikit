@@ -100,7 +100,7 @@ class furnikit_ResmenuSB{
 					<div class="menu-close"></div>
 					<div class="menu-responsive-inner">
 						<div class="resmenu-top">
-							<?php if( is_active_sidebar( 'search' ) && class_exists( 'sw_woo_search_widget' ) ): ?>
+							<?php if( is_active_sidebar( 'search' ) && class_exists( 'zr_woo_search_widget' ) ): ?>
 								<?php dynamic_sidebar( 'search' ); ?>
 							<?php endif; ?>
 							
