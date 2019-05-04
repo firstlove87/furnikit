@@ -25,7 +25,7 @@ if( $product->get_type() === 'variable' ){
 					$terms = wc_get_product_terms( $product->get_id(), $key, array( 'fields' => 'all' ) );	
 					foreach ( $terms as $i => $term ) {
 						$color  	= get_term_meta( $term->term_id, 'zr_variation_color', true );
-						$thumb_id 	= absint( get_woocommerce_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );						
+						$thumb_id 	= absint( get_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );						
 						
 						if( $thumb_id ){					
 							$class[$i] = 'variation-image';
@@ -65,7 +65,7 @@ if( $product->get_type() === 'variable' ){
 						$terms = wc_get_product_terms( $product->get_id(), $key, array( 'fields' => 'all' ) );	
 						foreach ( $terms as $i => $term ) {
 							$color  	= get_term_meta( $term->term_id, 'zr_variation_color', true );
-							$thumb_id 	= absint( get_woocommerce_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
+							$thumb_id 	= absint( get_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
 							$attr 		= ( $color != '' ) ? 'class="variation-color" style="background-color: '. esc_attr( $color ) .';"' : '';
 							$active 	= ( checked( sanitize_title( $selected_term ), $term->slug, false ) ) ? ' selected' : '';	
 							

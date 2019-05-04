@@ -24,7 +24,7 @@
 					foreach( $term_brands as $j => $term_brand ) {
 						$term = get_term_by( 'slug', $term_brand, 'product_brand' );
 						if( $term ) :
-						$thumbnail_id 	= absint( get_woocommerce_term_meta( $term->term_id, 'thumbnail_bid', true ) );
+						$thumbnail_id 	= absint( get_term_meta( $term->term_id, 'thumbnail_bid', true ) );
 						$thumb = wp_get_attachment_image( $thumbnail_id, array(110, 75) );
 						$thubnail = ( $thumb != '' ) ? $thumb : '<img src="http://placehold.it/170x87" alt=""/>';
 				?>

@@ -368,7 +368,7 @@ class zr_brand_slider_widget extends WP_Widget {
 		
 	public function edit_category_fields( $term ) {
 
-		$thumbnail_id = absint( get_woocommerce_term_meta( $term->term_id, 'thumbnail_bid', true ) );
+		$thumbnail_id = absint( get_term_meta( $term->term_id, 'thumbnail_bid', true ) );
 
 		if ( $thumbnail_id ) {
 			$image = wp_get_attachment_thumb_url( $thumbnail_id );
@@ -475,7 +475,7 @@ class zr_brand_slider_widget extends WP_Widget {
 
 		if ( 'thumb' == $column ) {
 
-			$thumbnail_id = get_woocommerce_term_meta( $id, 'thumbnail_bid', true );
+			$thumbnail_id = get_term_meta( $id, 'thumbnail_bid', true );
 
 			if ( $thumbnail_id ) {
 				$image = wp_get_attachment_thumb_url( $thumbnail_id );

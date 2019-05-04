@@ -1124,15 +1124,7 @@ function furnikit_Options_Setup(){
 						'options' => array( 'ltr' => 'Left to Right', 'rtl' => 'Right to Left' ),
 						'std' => 'ltr'
 					),
-					
-					
-					array(
-						'id' => 'advanced_css',
-						'type' => 'textarea',
-						'sub_desc' => esc_html__( 'Insert your own CSS into this block. This overrides all default styles located throughout the theme', 'furnikit' ),
-						'title' => esc_html__( 'Custom CSS', 'furnikit' )
-					),
-					
+										
 					array(
 						'id' => 'advanced_js',
 						'type' => 'textarea',

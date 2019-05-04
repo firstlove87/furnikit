@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author: templatescustom.com
  * Author URI: http://smartaddons.com
- * WC tested up to: 3.4.0
+ * WC tested up to: 3.6.2
  *
  * This Widget help you to show listing search by ajax.
  */

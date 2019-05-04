@@ -41,7 +41,7 @@
 					foreach( $category as $cat ){
 					$term = get_term_by('slug', $cat, 'product_cat');
 					if( $term ) :
-					$thumbnail_id1 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id1', true );
+					$thumbnail_id1 	= get_term_meta( $term->term_id, 'thumbnail_id1', true );
 					$thumb = wp_get_attachment_image( $thumbnail_id1,'full' );
 			?>
 				<div class="item item-product-cat">

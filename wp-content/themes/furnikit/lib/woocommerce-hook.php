@@ -238,7 +238,7 @@ function furnikit_banner_listing(){
 		global $wp_query;
 		$cat = $wp_query->get_queried_object();
 		if( !is_shop() ) {
-			$thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+			$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
 			$image = wp_get_attachment_url( $thumbnail_id );
 			if( $image ) {
 				$html .= '<img src="'. esc_url( $image ) .'" alt="'. esc_attr__( 'Banner Category', 'furnikit' ) .'"/>';
@@ -631,7 +631,7 @@ function furnikit_get_brand(){
 			<span><?php echo esc_html__( 'Product by', 'furnikit' ) . ': '; ?></span>
 			<?php 
 				foreach( $terms as $key => $term ){
-					$thumbnail_id = absint( get_woocommerce_term_meta( $term->term_id, 'thumbnail_bid', true ) );
+					$thumbnail_id = absint( get_term_meta( $term->term_id, 'thumbnail_bid', true ) );
 					if( $thumbnail_id && zr_options( 'product_brand' ) ){
 			?>
 				<a href="<?php echo get_term_link( $term->term_id, 'product_brand' ); ?>"><img src="<?php echo wp_get_attachment_thumb_url( $thumbnail_id ); ?>" alt="<?php echo esc_attr( $term->name ); ?>" title="<?php echo esc_attr( $term->name ); ?>"/></a>				

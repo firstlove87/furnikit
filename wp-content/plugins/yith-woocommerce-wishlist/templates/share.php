@@ -44,5 +44,13 @@ if ( ! defined( 'YITH_WCWL' ) ) {
                 <a class="email" href="mailto:?subject=<?php echo urlencode( apply_filters( 'yith_wcwl_email_share_subject', $share_link_title ) )?>&amp;body=<?php echo apply_filters( 'yith_wcwl_email_share_body', urlencode( $share_link_url ) ) ?>&amp;title=<?php echo $share_link_title ?>" title="<?php _e( 'Email', 'yith-woocommerce-wishlist' ) ?>"></a>
             </li>
         <?php endif; ?>
+
+        <?php if( $share_whatsapp_enabled && wp_is_mobile() ):
+            ?>
+            <li style="list-style-type: none; display: inline-block;">
+                <a class="whatsapp" href="whatsapp://send?text=<?php _e( 'My wishlist on ', 'yith-woocommerce-wishlist' ); ?> – <?php urlencode($share_link_url); ?>" data-action="share/whatsapp/share" target="_blank" title="<?php _e( 'WhatsApp', 'yith-woocommerce-wishlist' ) ?>"></a>
+            </li>
+        <?php endif;
+        ?>
     </ul>
 </div>

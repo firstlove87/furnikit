@@ -49,7 +49,7 @@ class zr_wooswatches_variation_Frontend{
 				$terms = wc_get_product_terms( $product->get_id(), $attribute, array( 'fields' => 'all' ) );								
 				foreach ( $terms as $key => $term ) {
 					$color  	 = get_term_meta( $term->term_id, 'zr_variation_color', true );
-					$thumb_id 	 = absint( get_woocommerce_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
+					$thumb_id 	 = absint( get_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
 					$active 	 = ( checked( sanitize_title( $args['selected'] ), $term->slug, false ) ) ? ' selected' : '';				
 					$attr 		 = ( $color != '' ) ? 'class="variation-color" style="background-color: '. esc_attr( $color ) .';"' : '';
 					$parent_attr = '';

@@ -272,12 +272,6 @@ if ( ! class_exists( 'YITH_WCWL_Admin_Init' ) ) {
 
 			}
 
-			if ( defined( 'YITH_WCAF_INIT' ) && YITH_WCAF_INIT == $plugin_file ) {
-				$new_row_meta_args['support'] = array(
-					'url' => $this->doc_url
-				);
-			}
-
 			if ( defined( 'YITH_WCWL_PREMIUM' ) ) {
 				$new_row_meta_args['is_premium'] = true;
 
@@ -1293,6 +1287,13 @@ if ( ! class_exists( 'YITH_WCWL_Admin_Init' ) ) {
 					'default' => 'yes',
 					'type'    => 'checkbox'
 				),
+                'share_by_whatsapp' => array(
+                    'name'    => __( 'Share by WhatsApp', 'yith-woocommerce-wishlist' ),
+                    'desc'    => __( 'Show "Share by WhatsApp" button ( only on phones )', 'yith-woocommerce-wishlist' ),
+                    'id'      => 'yith_wcwl_share_whatsapp',
+                    'default' => 'yes',
+                    'type'    => 'checkbox'
+                ),
 				'socials_title' => array(
 					'name'    => __( 'Social title', 'yith-woocommerce-wishlist' ),
 					'id'      => 'yith_wcwl_socials_title',

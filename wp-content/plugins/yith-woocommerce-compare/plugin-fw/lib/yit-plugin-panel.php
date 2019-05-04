@@ -329,11 +329,11 @@ if ( !class_exists( 'YIT_Plugin_Panel' ) ) {
          */
         public function add_premium_version_upgrade_to_menu() {
             /* === Add the How To menu item only if the customer haven't a premium version enabled === */
-            if( function_exists( 'YIT_Plugin_Licence' ) && ! empty( YIT_Plugin_Licence()->get_products() ) ){
-                return false;
+            if ( function_exists( 'YIT_Plugin_Licence' ) && !!YIT_Plugin_Licence()->get_products() ) {
+                return;
             }
 
-	        global $submenu;
+            global $submenu;
             if ( apply_filters( 'yit_show_upgrade_to_premium_version', isset( $submenu[ 'yith_plugin_panel' ] ) ) ) {
                 $submenu[ 'yith_plugin_panel' ][ 'how_to' ] = array(
                     sprintf( '%s%s%s', '<span id="yith-how-to-premium">', __( 'How to install premium version', 'yith-plugin-fw' ), '</span>' ),

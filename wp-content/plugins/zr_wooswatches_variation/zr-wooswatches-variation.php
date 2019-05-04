@@ -8,7 +8,7 @@
  * Author URI: http://www.9xthemes.com/
  * Requires at least: 4.1
  * Tested up to: WorPress 5.1.x and WooCommerce 3.5.x
- * WC tested up to: 3.5.0
+ * WC tested up to: 3.6.2
  * Text Domain: zr_wooswatches_variation
  * Domain Path: /languages/
  */

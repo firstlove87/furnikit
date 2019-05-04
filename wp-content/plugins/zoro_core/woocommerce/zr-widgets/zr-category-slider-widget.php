@@ -358,7 +358,7 @@ if ( !class_exists('zr_woo_cat_slider_widget') ) {
 		
 		public function edit_category_fields( $term ) {
 
-			$thumbnail_id = absint( get_woocommerce_term_meta( $term->term_id, 'thumbnail_id1', true ) );
+			$thumbnail_id = absint( get_term_meta( $term->term_id, 'thumbnail_id1', true ) );
 
 			if ( $thumbnail_id ) {
 				$image = wp_get_attachment_thumb_url( $thumbnail_id );

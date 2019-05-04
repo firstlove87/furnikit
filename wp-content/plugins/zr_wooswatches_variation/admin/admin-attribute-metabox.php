@@ -112,7 +112,7 @@ class Sw_Attribute_Metabox{
 	**/
 	public static function zr_wooswatches_variation_edit_variation_fields( $term ) {
 		$zr_variation_color = get_term_meta( $term->term_id, 'zr_variation_color', true );
-		$thumbnail_id = absint( get_woocommerce_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
+		$thumbnail_id = absint( get_term_meta( $term->term_id, 'variation_thumbnail_id', true ) );
 		if ( $thumbnail_id ) {
 			$image = wp_get_attachment_thumb_url( $thumbnail_id );
 		} else {
